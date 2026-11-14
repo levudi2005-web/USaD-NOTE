@@ -1,0 +1,5 @@
+Tesseract.js 7.0.0 and tesseract.js-core are distributed under Apache-2.0.
+See LICENSE.txt.
+
+The English and Vietnamese trained data are from @tesseract.js-data/eng
+and @tesseract.js-data/vie 1.0.0, distributed under MIT. See ../tessdata/LICENSE.txt.

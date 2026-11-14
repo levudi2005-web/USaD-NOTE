@@ -1,0 +1,2172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?PowerDesigner AppLocale="UTF16" ID="{8504441B-434E-45BB-832D-DD86B2AF3FB5}" Label="" LastModificationDate="2026-11-13" Name="NOTE-MLD" Objects="250" Symbols="250" Type="{5F45F970-76A3-11D1-9C3E-0000C03E49E2}" signature="LDM_DATA_MODEL_XML" version="16.5.0.3982"?>
+<!-- SAP PowerDesigner LDM Logical Data Model (32 Tables) -->
+<Model xmlns:a="attribute" xmlns:c="collection" xmlns:o="object">
+  <o:RootObject Id="o1">
+    <c:Children>
+      <o:Model Id="o2">
+        <a:ObjectID>{8504441B-434E-45BB-832D-DD86B2AF3FB5}</a:ObjectID>
+        <a:Name>NOTE-MLD</a:Name>
+        <a:Code>NOTE_MLD</a:Code>
+        <c:Entities>
+          <o:Entity Id="o1001">
+            <a:ObjectID>{D9238414-FBE0-40F7-8C69-A3DC0131E8E6}</a:ObjectID>
+            <a:Name>users</a:Name>
+            <a:Code>users</a:Code>
+            <c:Attributes>
+              <o:EntityAttribute Id="o1002">
+                <a:ObjectID>{BF346A74-5447-48DC-8AD9-BB74E1581095}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1003">
+                <a:ObjectID>{A192C27D-B63F-4E63-BAC4-BBA05B1B182F}</a:ObjectID>
+                <a:Name>email</a:Name>
+                <a:Code>email</a:Code>
+                <a:DataType>VARCHAR(191)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1004">
+                <a:ObjectID>{CB8A4515-7F83-4E1E-95F7-F6595AD7FCED}</a:ObjectID>
+                <a:Name>password_hash</a:Name>
+                <a:Code>password_hash</a:Code>
+                <a:DataType>VARCHAR(255)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1005">
+                <a:ObjectID>{ACE5D799-65AB-4D99-95AF-857E332254B0}</a:ObjectID>
+                <a:Name>full_name</a:Name>
+                <a:Code>full_name</a:Code>
+                <a:DataType>VARCHAR(100)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1006">
+                <a:ObjectID>{72BF29D5-68C4-4F7B-84F7-98362331C5A7}</a:ObjectID>
+                <a:Name>avatar_url</a:Name>
+                <a:Code>avatar_url</a:Code>
+                <a:DataType>VARCHAR(255)</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1007">
+                <a:ObjectID>{AE272872-9E4B-4EEE-AAA3-C1CC6B063312}</a:ObjectID>
+                <a:Name>title</a:Name>
+                <a:Code>title</a:Code>
+                <a:DataType>VARCHAR(100)</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1008">
+                <a:ObjectID>{4293D30F-B21E-4EFE-981D-811C9CF4AC49}</a:ObjectID>
+                <a:Name>bio</a:Name>
+                <a:Code>bio</a:Code>
+                <a:DataType>TEXT</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1009">
+                <a:ObjectID>{5D12ED00-40A3-40E8-82FD-FDCB53FAE674}</a:ObjectID>
+                <a:Name>theme_preference</a:Name>
+                <a:Code>theme_preference</a:Code>
+                <a:DataType>ENUM('light','dark','auto')</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1010">
+                <a:ObjectID>{9DC9520A-C800-4DDC-812F-C1E4857C3BD7}</a:ObjectID>
+                <a:Name>language</a:Name>
+                <a:Code>language</a:Code>
+                <a:DataType>VARCHAR(10)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1011">
+                <a:ObjectID>{A32B971E-DA8A-4025-8A95-AC554C961524}</a:ObjectID>
+                <a:Name>storage_used</a:Name>
+                <a:Code>storage_used</a:Code>
+                <a:DataType>BIGINT UNSIGNED</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1012">
+                <a:ObjectID>{009A4628-4303-4B7B-B0C8-73A1A86258C3}</a:ObjectID>
+                <a:Name>storage_limit</a:Name>
+                <a:Code>storage_limit</a:Code>
+                <a:DataType>BIGINT UNSIGNED</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1013">
+                <a:ObjectID>{CE5694DE-C9CC-469D-85E3-3D56F2D68CF8}</a:ObjectID>
+                <a:Name>failed_recovery_attempts</a:Name>
+                <a:Code>failed_recovery_attempts</a:Code>
+                <a:DataType>TINYINT UNSIGNED</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1014">
+                <a:ObjectID>{13EEC7AD-B01C-459B-A956-D9BE3812D859}</a:ObjectID>
+                <a:Name>recovery_locked_until</a:Name>
+                <a:Code>recovery_locked_until</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1015">
+                <a:ObjectID>{A1F9171C-46DF-44E0-93E3-1888668093BF}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1016">
+                <a:ObjectID>{FFA60666-9E33-4C3B-B32F-159D5D9A2F8B}</a:ObjectID>
+                <a:Name>updated_at</a:Name>
+                <a:Code>updated_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+            </c:Attributes>
+          </o:Entity>
+          <o:Entity Id="o1017">
+            <a:ObjectID>{0E9BE6F2-CD29-41E1-87BE-939DC6B1E58B}</a:ObjectID>
+            <a:Name>user_recovery_codes</a:Name>
+            <a:Code>user_recovery_codes</a:Code>
+            <c:Attributes>
+              <o:EntityAttribute Id="o1018">
+                <a:ObjectID>{815BDB84-67E2-47DA-BD97-C9271CF4C655}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>BIGINT UNSIGNED</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1019">
+                <a:ObjectID>{CEBECE24-BC97-4C8B-A513-1248BD3A96F6}</a:ObjectID>
+                <a:Name>user_id</a:Name>
+                <a:Code>user_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1020">
+                <a:ObjectID>{7DAB0D87-93AE-4635-8FCA-11EA31C71B6C}</a:ObjectID>
+                <a:Name>code_hash</a:Name>
+                <a:Code>code_hash</a:Code>
+                <a:DataType>CHAR(64)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1021">
+                <a:ObjectID>{FB3A6702-B3D9-4C6F-9888-0BEBAEDA830A}</a:ObjectID>
+                <a:Name>used_at</a:Name>
+                <a:Code>used_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1022">
+                <a:ObjectID>{33D000C8-64DC-4A01-97F7-AA7F37CC358F}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+            </c:Attributes>
+          </o:Entity>
+          <o:Entity Id="o1023">
+            <a:ObjectID>{A35A0461-E54D-46E4-93AB-0186FDF20719}</a:ObjectID>
+            <a:Name>user_sessions</a:Name>
+            <a:Code>user_sessions</a:Code>
+            <c:Attributes>
+              <o:EntityAttribute Id="o1024">
+                <a:ObjectID>{906BB58B-D695-471A-9550-C290FD0F0083}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1025">
+                <a:ObjectID>{129C87BB-CAE7-42E4-9C87-D93B44A5DD14}</a:ObjectID>
+                <a:Name>user_id</a:Name>
+                <a:Code>user_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1026">
+                <a:ObjectID>{C36A636E-DAC0-4C7F-9869-332A199293E8}</a:ObjectID>
+                <a:Name>session_token_hash</a:Name>
+                <a:Code>session_token_hash</a:Code>
+                <a:DataType>CHAR(64)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1027">
+                <a:ObjectID>{9B3BEE80-A1D2-4376-84D9-030C534F8FAE}</a:ObjectID>
+                <a:Name>device_info</a:Name>
+                <a:Code>device_info</a:Code>
+                <a:DataType>VARCHAR(255)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1028">
+                <a:ObjectID>{B3168D73-5A33-4FD0-BF7C-477472014E9E}</a:ObjectID>
+                <a:Name>ip_address</a:Name>
+                <a:Code>ip_address</a:Code>
+                <a:DataType>VARCHAR(45)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1029">
+                <a:ObjectID>{C26370E3-B5FE-4D30-A629-8C93D98B64B6}</a:ObjectID>
+                <a:Name>is_revoked</a:Name>
+                <a:Code>is_revoked</a:Code>
+                <a:DataType>TINYINT(1)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1030">
+                <a:ObjectID>{1497B24C-52F9-4060-8E4F-3A6662B05B4C}</a:ObjectID>
+                <a:Name>last_active_at</a:Name>
+                <a:Code>last_active_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1031">
+                <a:ObjectID>{6C797A3C-F7FA-4389-8D0E-CDB6A1827754}</a:ObjectID>
+                <a:Name>expires_at</a:Name>
+                <a:Code>expires_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1032">
+                <a:ObjectID>{FB1155C5-CADD-4BA9-A833-7A1BD56FCB4C}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+            </c:Attributes>
+          </o:Entity>
+          <o:Entity Id="o1033">
+            <a:ObjectID>{1D53BF3D-FF32-4CD5-B0CD-40FD8A5F408D}</a:ObjectID>
+            <a:Name>folders</a:Name>
+            <a:Code>folders</a:Code>
+            <c:Attributes>
+              <o:EntityAttribute Id="o1034">
+                <a:ObjectID>{F0EE0FA1-0548-4B7C-933E-ECB1D35D5090}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1035">
+                <a:ObjectID>{C61DA9BA-4E67-42E4-89D2-F9717776EBDE}</a:ObjectID>
+                <a:Name>user_id</a:Name>
+                <a:Code>user_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1036">
+                <a:ObjectID>{2B4844CC-AAF8-4997-8795-B8CEB11D3920}</a:ObjectID>
+                <a:Name>parent_id</a:Name>
+                <a:Code>parent_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1037">
+                <a:ObjectID>{715DEA24-EA43-4D32-8524-D373FFE684F1}</a:ObjectID>
+                <a:Name>name</a:Name>
+                <a:Code>name</a:Code>
+                <a:DataType>VARCHAR(150)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1038">
+                <a:ObjectID>{7215C341-1203-48BC-A6E9-EFA96A75D5CF}</a:ObjectID>
+                <a:Name>color</a:Name>
+                <a:Code>color</a:Code>
+                <a:DataType>VARCHAR(30)</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1039">
+                <a:ObjectID>{FD19F5B0-4A5F-48A7-BDF7-44D5AD05BD56}</a:ObjectID>
+                <a:Name>icon</a:Name>
+                <a:Code>icon</a:Code>
+                <a:DataType>VARCHAR(50)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1040">
+                <a:ObjectID>{BD8A6B2C-B9BB-4B83-86EE-DE2551ACECD0}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1041">
+                <a:ObjectID>{5E40F10F-0041-43EF-9A0E-B2F34F6CC28F}</a:ObjectID>
+                <a:Name>updated_at</a:Name>
+                <a:Code>updated_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+            </c:Attributes>
+          </o:Entity>
+          <o:Entity Id="o1042">
+            <a:ObjectID>{AF362554-18DE-4A4A-A48A-C3649031A10B}</a:ObjectID>
+            <a:Name>documents</a:Name>
+            <a:Code>documents</a:Code>
+            <c:Attributes>
+              <o:EntityAttribute Id="o1043">
+                <a:ObjectID>{97495104-C84D-4A2A-92F1-09CE142BB297}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1044">
+                <a:ObjectID>{B6F6FD9D-96FC-4732-8339-25027A651B14}</a:ObjectID>
+                <a:Name>user_id</a:Name>
+                <a:Code>user_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1045">
+                <a:ObjectID>{C7F33C86-F53A-459A-95A4-500757C6BACF}</a:ObjectID>
+                <a:Name>folder_id</a:Name>
+                <a:Code>folder_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1046">
+                <a:ObjectID>{FB10C14F-5155-4E61-BBC8-A1B2E2E3D6BA}</a:ObjectID>
+                <a:Name>name</a:Name>
+                <a:Code>name</a:Code>
+                <a:DataType>VARCHAR(255)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1047">
+                <a:ObjectID>{95964B89-2711-49E3-8E72-2AC1CE3218E8}</a:ObjectID>
+                <a:Name>original_name</a:Name>
+                <a:Code>original_name</a:Code>
+                <a:DataType>VARCHAR(255)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1048">
+                <a:ObjectID>{499BE54C-DE89-4037-AE8A-5A43680ECCBC}</a:ObjectID>
+                <a:Name>file_type</a:Name>
+                <a:Code>file_type</a:Code>
+                <a:DataType>VARCHAR(20)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1049">
+                <a:ObjectID>{EFE38E44-E94A-4ED9-BFCB-D534E6572C8F}</a:ObjectID>
+                <a:Name>mime_type</a:Name>
+                <a:Code>mime_type</a:Code>
+                <a:DataType>VARCHAR(100)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1050">
+                <a:ObjectID>{3FE3125E-5633-4F19-8E5D-EB2EAA76FC25}</a:ObjectID>
+                <a:Name>file_size</a:Name>
+                <a:Code>file_size</a:Code>
+                <a:DataType>BIGINT UNSIGNED</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1051">
+                <a:ObjectID>{B2D82D52-80B3-46D0-9442-4862789A6780}</a:ObjectID>
+                <a:Name>storage_path</a:Name>
+                <a:Code>storage_path</a:Code>
+                <a:DataType>VARCHAR(500)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1052">
+                <a:ObjectID>{BCEDE6C5-C6CC-44C8-AFAF-41FE6E9B0E7A}</a:ObjectID>
+                <a:Name>sha256_checksum</a:Name>
+                <a:Code>sha256_checksum</a:Code>
+                <a:DataType>CHAR(64)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1053">
+                <a:ObjectID>{34AA018B-C2DA-4A0E-B29C-29C39CD9DC3A}</a:ObjectID>
+                <a:Name>processing_status</a:Name>
+                <a:Code>processing_status</a:Code>
+                <a:DataType>ENUM('pending','processing','ready','failed')</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1054">
+                <a:ObjectID>{998B4EE6-8C3B-40AD-BFE6-F2BF29C8EA31}</a:ObjectID>
+                <a:Name>extracted_text</a:Name>
+                <a:Code>extracted_text</a:Code>
+                <a:DataType>LONGTEXT</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1055">
+                <a:ObjectID>{522F9372-5084-4F66-919C-EA7A4DE1C6C1}</a:ObjectID>
+                <a:Name>deleted_at</a:Name>
+                <a:Code>deleted_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1056">
+                <a:ObjectID>{E887F672-0480-4253-A01B-45233C90C7DE}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1057">
+                <a:ObjectID>{716F376C-8FC4-4BA8-8D5D-96880FFCAFAD}</a:ObjectID>
+                <a:Name>updated_at</a:Name>
+                <a:Code>updated_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+            </c:Attributes>
+          </o:Entity>
+          <o:Entity Id="o1058">
+            <a:ObjectID>{135F1C0B-E27E-4F46-845E-7EBCB1A491AA}</a:ObjectID>
+            <a:Name>notes</a:Name>
+            <a:Code>notes</a:Code>
+            <c:Attributes>
+              <o:EntityAttribute Id="o1059">
+                <a:ObjectID>{2FC443FB-13A0-4EA8-A310-79484D18AA8E}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1060">
+                <a:ObjectID>{AC3D49E5-6255-48B4-969F-9F64FD4998E1}</a:ObjectID>
+                <a:Name>user_id</a:Name>
+                <a:Code>user_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1061">
+                <a:ObjectID>{1BA33BC3-1B7D-4AF6-BAB3-347EB3585FD5}</a:ObjectID>
+                <a:Name>folder_id</a:Name>
+                <a:Code>folder_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1062">
+                <a:ObjectID>{A6906F00-E0C4-41B0-8BE4-CC3258DF2ED6}</a:ObjectID>
+                <a:Name>document_id</a:Name>
+                <a:Code>document_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1063">
+                <a:ObjectID>{C5CE9956-C7E5-466B-B5C1-D5887D624127}</a:ObjectID>
+                <a:Name>title</a:Name>
+                <a:Code>title</a:Code>
+                <a:DataType>VARCHAR(255)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1064">
+                <a:ObjectID>{36BEA558-8823-45EE-9FBF-BEB1D3BCD440}</a:ObjectID>
+                <a:Name>category</a:Name>
+                <a:Code>category</a:Code>
+                <a:DataType>VARCHAR(100)</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1065">
+                <a:ObjectID>{F138A13A-FAE5-435D-8AB8-629153A7B424}</a:ObjectID>
+                <a:Name>content</a:Name>
+                <a:Code>content</a:Code>
+                <a:DataType>LONGTEXT</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1066">
+                <a:ObjectID>{C6C2CD11-92FC-4C87-993B-0C6AB3455FDE}</a:ObjectID>
+                <a:Name>is_pinned</a:Name>
+                <a:Code>is_pinned</a:Code>
+                <a:DataType>TINYINT(1)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1067">
+                <a:ObjectID>{924B6423-BCB2-441F-BA7B-06C64EBD833D}</a:ObjectID>
+                <a:Name>is_favorite</a:Name>
+                <a:Code>is_favorite</a:Code>
+                <a:DataType>TINYINT(1)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1068">
+                <a:ObjectID>{2CB36612-85C1-44A9-ABA1-F3E676F70A92}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1069">
+                <a:ObjectID>{DEED9C3C-D164-4211-88DA-8FB4BFE4B2CE}</a:ObjectID>
+                <a:Name>updated_at</a:Name>
+                <a:Code>updated_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+            </c:Attributes>
+          </o:Entity>
+          <o:Entity Id="o1070">
+            <a:ObjectID>{392832EB-585C-42AC-B07C-5D6277681CB5}</a:ObjectID>
+            <a:Name>tags</a:Name>
+            <a:Code>tags</a:Code>
+            <c:Attributes>
+              <o:EntityAttribute Id="o1071">
+                <a:ObjectID>{2EFC56A1-5317-4C2E-A52A-1A3252E682D4}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>BIGINT UNSIGNED</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1072">
+                <a:ObjectID>{78B8E03C-746E-4ED9-94CE-047E4314E4FF}</a:ObjectID>
+                <a:Name>user_id</a:Name>
+                <a:Code>user_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1073">
+                <a:ObjectID>{2C60DCF1-B048-425A-A502-0E5A29338A5C}</a:ObjectID>
+                <a:Name>name</a:Name>
+                <a:Code>name</a:Code>
+                <a:DataType>VARCHAR(50)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1074">
+                <a:ObjectID>{9D767EC1-7A7F-4CF2-928C-E1099B153EDD}</a:ObjectID>
+                <a:Name>color</a:Name>
+                <a:Code>color</a:Code>
+                <a:DataType>VARCHAR(30)</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1075">
+                <a:ObjectID>{B5A3134E-0CF1-4C5E-8CF2-4DC4BFFA1F0A}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+            </c:Attributes>
+          </o:Entity>
+          <o:Entity Id="o1076">
+            <a:ObjectID>{63DFCEDF-E75A-43B7-8188-96D92424CC4D}</a:ObjectID>
+            <a:Name>document_tags</a:Name>
+            <a:Code>document_tags</a:Code>
+            <c:Attributes>
+              <o:EntityAttribute Id="o1077">
+                <a:ObjectID>{55D57A77-59BE-4752-9C8B-6B7A3C6A3107}</a:ObjectID>
+                <a:Name>document_id</a:Name>
+                <a:Code>document_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1078">
+                <a:ObjectID>{4F9F3AB8-55E9-406F-BE9E-7FCDBEF02732}</a:ObjectID>
+                <a:Name>tag_id</a:Name>
+                <a:Code>tag_id</a:Code>
+                <a:DataType>BIGINT UNSIGNED</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1079">
+                <a:ObjectID>{68F7CCD9-99BB-41F4-B6BD-BCE43F631810}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+            </c:Attributes>
+          </o:Entity>
+          <o:Entity Id="o1080">
+            <a:ObjectID>{E4771FA1-76AD-46DA-9B71-6BCB54D48167}</a:ObjectID>
+            <a:Name>collections</a:Name>
+            <a:Code>collections</a:Code>
+            <c:Attributes>
+              <o:EntityAttribute Id="o1081">
+                <a:ObjectID>{6269F0F0-AC91-40C4-B4A8-2BFE43A38356}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1082">
+                <a:ObjectID>{AF442DAB-1600-4262-8D75-5BFC330583E6}</a:ObjectID>
+                <a:Name>user_id</a:Name>
+                <a:Code>user_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1083">
+                <a:ObjectID>{94AD5A8F-B855-40A9-9EEA-0BFD4BD4644C}</a:ObjectID>
+                <a:Name>name</a:Name>
+                <a:Code>name</a:Code>
+                <a:DataType>VARCHAR(150)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1084">
+                <a:ObjectID>{E9FB0BEB-4B20-481B-962A-083B6AC9CE44}</a:ObjectID>
+                <a:Name>description</a:Name>
+                <a:Code>description</a:Code>
+                <a:DataType>TEXT</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1085">
+                <a:ObjectID>{4434F6D0-D1F1-4F6D-A139-E547DF3B5070}</a:ObjectID>
+                <a:Name>color</a:Name>
+                <a:Code>color</a:Code>
+                <a:DataType>VARCHAR(30)</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1086">
+                <a:ObjectID>{203EB1CC-2802-4F3C-99E8-BD7DE2C8971F}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1087">
+                <a:ObjectID>{22FF186E-A04E-4E80-AB53-D1CF1B852A4B}</a:ObjectID>
+                <a:Name>updated_at</a:Name>
+                <a:Code>updated_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+            </c:Attributes>
+          </o:Entity>
+          <o:Entity Id="o1088">
+            <a:ObjectID>{4998BF74-6930-4147-9EF1-7010896EC46A}</a:ObjectID>
+            <a:Name>flashcard_decks</a:Name>
+            <a:Code>flashcard_decks</a:Code>
+            <c:Attributes>
+              <o:EntityAttribute Id="o1089">
+                <a:ObjectID>{EF24B7D9-AD68-4132-8372-B3226AD114E7}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1090">
+                <a:ObjectID>{24CBBCE6-50FE-41CB-8129-843809BE91D6}</a:ObjectID>
+                <a:Name>user_id</a:Name>
+                <a:Code>user_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1091">
+                <a:ObjectID>{F9A4F43F-891C-4284-9012-33CA75F15C0C}</a:ObjectID>
+                <a:Name>document_id</a:Name>
+                <a:Code>document_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1092">
+                <a:ObjectID>{035E5B90-31E6-4D62-80B5-7FEBAF5B4CDA}</a:ObjectID>
+                <a:Name>name</a:Name>
+                <a:Code>name</a:Code>
+                <a:DataType>VARCHAR(150)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1093">
+                <a:ObjectID>{40036E86-DB1F-4C72-9391-A5E896848418}</a:ObjectID>
+                <a:Name>description</a:Name>
+                <a:Code>description</a:Code>
+                <a:DataType>TEXT</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1094">
+                <a:ObjectID>{2BD7A9CE-0334-4CE3-B793-5BA57C6F26B2}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1095">
+                <a:ObjectID>{56D79435-B569-4A33-A3FB-C6F8BC5C5D78}</a:ObjectID>
+                <a:Name>updated_at</a:Name>
+                <a:Code>updated_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+            </c:Attributes>
+          </o:Entity>
+          <o:Entity Id="o1096">
+            <a:ObjectID>{2A6FA069-85FA-474B-B378-3E5829962DA3}</a:ObjectID>
+            <a:Name>flashcards</a:Name>
+            <a:Code>flashcards</a:Code>
+            <c:Attributes>
+              <o:EntityAttribute Id="o1097">
+                <a:ObjectID>{CC266897-1E1D-457B-B6DA-081DB4EBD44C}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1098">
+                <a:ObjectID>{85E89EE9-E928-4AE9-AD1A-CEE00554955F}</a:ObjectID>
+                <a:Name>deck_id</a:Name>
+                <a:Code>deck_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1099">
+                <a:ObjectID>{A14408DF-70E4-459D-83AF-416C38712277}</a:ObjectID>
+                <a:Name>front_text</a:Name>
+                <a:Code>front_text</a:Code>
+                <a:DataType>TEXT</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1100">
+                <a:ObjectID>{89C4E0EA-7EF4-40F6-B65B-28BCDE72A6E8}</a:ObjectID>
+                <a:Name>back_text</a:Name>
+                <a:Code>back_text</a:Code>
+                <a:DataType>TEXT</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1101">
+                <a:ObjectID>{724618D2-D600-4475-A55D-6617FADFB387}</a:ObjectID>
+                <a:Name>is_known</a:Name>
+                <a:Code>is_known</a:Code>
+                <a:DataType>TINYINT(1)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1102">
+                <a:ObjectID>{89A62D9C-2853-49D6-B17A-EB4F80E9F220}</a:ObjectID>
+                <a:Name>review_count</a:Name>
+                <a:Code>review_count</a:Code>
+                <a:DataType>INT UNSIGNED</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1103">
+                <a:ObjectID>{49B010D6-3C71-4796-92AD-466D413257F9}</a:ObjectID>
+                <a:Name>last_reviewed_at</a:Name>
+                <a:Code>last_reviewed_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1104">
+                <a:ObjectID>{6E8BBC9D-9B09-48B9-9778-477174DD60B3}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1105">
+                <a:ObjectID>{9D16BFEF-97F8-4FAE-86BD-E88B78665252}</a:ObjectID>
+                <a:Name>updated_at</a:Name>
+                <a:Code>updated_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+            </c:Attributes>
+          </o:Entity>
+          <o:Entity Id="o1106">
+            <a:ObjectID>{C7FFBFF7-3A80-406B-BF4C-C05B02C8FAFD}</a:ObjectID>
+            <a:Name>collection_items</a:Name>
+            <a:Code>collection_items</a:Code>
+            <c:Attributes>
+              <o:EntityAttribute Id="o1107">
+                <a:ObjectID>{FA55589C-66C4-4A66-9A7B-B0D0B8442E9C}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>BIGINT UNSIGNED</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1108">
+                <a:ObjectID>{881AC07B-03D2-4134-8E83-BCBFE3AD653A}</a:ObjectID>
+                <a:Name>collection_id</a:Name>
+                <a:Code>collection_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1109">
+                <a:ObjectID>{3B075E23-9FB9-497C-84FD-DC752E0C258F}</a:ObjectID>
+                <a:Name>document_id</a:Name>
+                <a:Code>document_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1110">
+                <a:ObjectID>{0B718D23-449B-4885-B1E5-762848F00616}</a:ObjectID>
+                <a:Name>note_id</a:Name>
+                <a:Code>note_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1111">
+                <a:ObjectID>{ED91138A-3371-4F54-981B-9D4EDB71A6AB}</a:ObjectID>
+                <a:Name>deck_id</a:Name>
+                <a:Code>deck_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1112">
+                <a:ObjectID>{6EB0BD39-81EE-4470-825A-70E276FBA1CF}</a:ObjectID>
+                <a:Name>added_at</a:Name>
+                <a:Code>added_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+            </c:Attributes>
+          </o:Entity>
+          <o:Entity Id="o1113">
+            <a:ObjectID>{7C703F20-9110-4927-95E9-4AC2CC66FC27}</a:ObjectID>
+            <a:Name>archives</a:Name>
+            <a:Code>archives</a:Code>
+            <c:Attributes>
+              <o:EntityAttribute Id="o1114">
+                <a:ObjectID>{D2D667B1-ED38-4AE6-83E1-CCE541183D9D}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1115">
+                <a:ObjectID>{59AAC503-1CA6-46B4-949E-893F10C93498}</a:ObjectID>
+                <a:Name>user_id</a:Name>
+                <a:Code>user_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1116">
+                <a:ObjectID>{74068ACE-315F-402E-8A7B-2C4083D136CA}</a:ObjectID>
+                <a:Name>name</a:Name>
+                <a:Code>name</a:Code>
+                <a:DataType>VARCHAR(255)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1117">
+                <a:ObjectID>{4F202E18-B373-4570-8F40-2C65BD69A8A1}</a:ObjectID>
+                <a:Name>original_name</a:Name>
+                <a:Code>original_name</a:Code>
+                <a:DataType>VARCHAR(255)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1118">
+                <a:ObjectID>{DB2B49D3-808E-4B52-9A2B-CC2C248277AD}</a:ObjectID>
+                <a:Name>format</a:Name>
+                <a:Code>format</a:Code>
+                <a:DataType>ENUM('zip','7z')</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1119">
+                <a:ObjectID>{C2DD16F0-4FF0-48EA-A266-6DFA5B22725B}</a:ObjectID>
+                <a:Name>file_size</a:Name>
+                <a:Code>file_size</a:Code>
+                <a:DataType>BIGINT UNSIGNED</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1120">
+                <a:ObjectID>{91EF59DF-17C7-4BFF-8DE4-789C617A4DA5}</a:ObjectID>
+                <a:Name>uncompressed_size</a:Name>
+                <a:Code>uncompressed_size</a:Code>
+                <a:DataType>BIGINT UNSIGNED</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1121">
+                <a:ObjectID>{C6BE128C-B016-4DFE-8D40-EC0B2DE4E585}</a:ObjectID>
+                <a:Name>max_ratio</a:Name>
+                <a:Code>max_ratio</a:Code>
+                <a:DataType>DECIMAL(6,2)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1122">
+                <a:ObjectID>{9935C033-0A72-4E72-854D-FCCC10F00FE9}</a:ObjectID>
+                <a:Name>file_count</a:Name>
+                <a:Code>file_count</a:Code>
+                <a:DataType>INT UNSIGNED</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1123">
+                <a:ObjectID>{F6C058EA-0C03-44CF-A9D0-8BACBC9B0606}</a:ObjectID>
+                <a:Name>storage_path</a:Name>
+                <a:Code>storage_path</a:Code>
+                <a:DataType>VARCHAR(500)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1124">
+                <a:ObjectID>{F4227799-F1B8-4980-97A2-383FDED06F17}</a:ObjectID>
+                <a:Name>sha256_checksum</a:Name>
+                <a:Code>sha256_checksum</a:Code>
+                <a:DataType>CHAR(64)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1125">
+                <a:ObjectID>{3C229EFD-5016-420D-9905-6D3A7F49567D}</a:ObjectID>
+                <a:Name>scan_status</a:Name>
+                <a:Code>scan_status</a:Code>
+                <a:DataType>ENUM('clean','warning','quarantined','rejected')</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1126">
+                <a:ObjectID>{4E901EDA-BF33-44DD-9F30-F46E7A4DE60C}</a:ObjectID>
+                <a:Name>manifest_json</a:Name>
+                <a:Code>manifest_json</a:Code>
+                <a:DataType>LONGTEXT</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1127">
+                <a:ObjectID>{6C1888E4-3BBA-430C-8210-426CBB8C01F6}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1128">
+                <a:ObjectID>{3AEF8531-F828-49CA-9AB1-A86D2FFD3CEB}</a:ObjectID>
+                <a:Name>updated_at</a:Name>
+                <a:Code>updated_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+            </c:Attributes>
+          </o:Entity>
+          <o:Entity Id="o1129">
+            <a:ObjectID>{F2D2AF19-B4E4-4880-B504-0208DF3E05CF}</a:ObjectID>
+            <a:Name>archive_extracted_files</a:Name>
+            <a:Code>archive_extracted_files</a:Code>
+            <c:Attributes>
+              <o:EntityAttribute Id="o1130">
+                <a:ObjectID>{0BC9317A-853D-4BA2-B67A-B79E0137AD35}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>BIGINT UNSIGNED</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1131">
+                <a:ObjectID>{7ECED1D2-7C85-4B05-9FC1-3AAD6986B027}</a:ObjectID>
+                <a:Name>archive_id</a:Name>
+                <a:Code>archive_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1132">
+                <a:ObjectID>{DF854F5A-9D97-4B4C-8F49-CC1366B8C922}</a:ObjectID>
+                <a:Name>document_id</a:Name>
+                <a:Code>document_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1133">
+                <a:ObjectID>{076009AB-F99E-4B54-BAA2-466CCC292552}</a:ObjectID>
+                <a:Name>inner_path</a:Name>
+                <a:Code>inner_path</a:Code>
+                <a:DataType>VARCHAR(500)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1134">
+                <a:ObjectID>{25C0E55B-B428-41AD-934C-1DDB6291CC47}</a:ObjectID>
+                <a:Name>extracted_at</a:Name>
+                <a:Code>extracted_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+            </c:Attributes>
+          </o:Entity>
+          <o:Entity Id="o1135">
+            <a:ObjectID>{6712F954-F5F3-452F-A81E-84D638097710}</a:ObjectID>
+            <a:Name>ai_providers</a:Name>
+            <a:Code>ai_providers</a:Code>
+            <c:Attributes>
+              <o:EntityAttribute Id="o1136">
+                <a:ObjectID>{B2671F2D-7959-489A-A0B3-A260587EAC88}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>VARCHAR(50)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1137">
+                <a:ObjectID>{DBFB0CDB-E77F-4A87-9C96-97F75198CE12}</a:ObjectID>
+                <a:Name>name</a:Name>
+                <a:Code>name</a:Code>
+                <a:DataType>VARCHAR(100)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1138">
+                <a:ObjectID>{062539EC-D5C4-4E73-AA53-C4C7917B89F3}</a:ObjectID>
+                <a:Name>api_base_url</a:Name>
+                <a:Code>api_base_url</a:Code>
+                <a:DataType>VARCHAR(255)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1139">
+                <a:ObjectID>{54130B02-B8AD-45D0-A0CE-81CF9FEDB833}</a:ObjectID>
+                <a:Name>auth_header_format</a:Name>
+                <a:Code>auth_header_format</a:Code>
+                <a:DataType>VARCHAR(100)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1140">
+                <a:ObjectID>{4A83A768-D32D-4B1C-A2E5-B557E0758EBD}</a:ObjectID>
+                <a:Name>icon</a:Name>
+                <a:Code>icon</a:Code>
+                <a:DataType>VARCHAR(50)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1141">
+                <a:ObjectID>{8421DCE8-1D35-43A3-953C-A265220F9CAF}</a:ObjectID>
+                <a:Name>is_active</a:Name>
+                <a:Code>is_active</a:Code>
+                <a:DataType>TINYINT(1)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1142">
+                <a:ObjectID>{9FECDB85-9B09-4C8E-8810-81D8874495E1}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+            </c:Attributes>
+          </o:Entity>
+          <o:Entity Id="o1143">
+            <a:ObjectID>{CDA737D5-46A5-45B7-B479-DE4825E0F4BF}</a:ObjectID>
+            <a:Name>ai_models</a:Name>
+            <a:Code>ai_models</a:Code>
+            <c:Attributes>
+              <o:EntityAttribute Id="o1144">
+                <a:ObjectID>{D6811626-2121-42B2-B259-3DA26B85AC23}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>VARCHAR(100)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1145">
+                <a:ObjectID>{CE8AD05B-1FD7-498A-B383-A0FE59822D11}</a:ObjectID>
+                <a:Name>provider_id</a:Name>
+                <a:Code>provider_id</a:Code>
+                <a:DataType>VARCHAR(50)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1146">
+                <a:ObjectID>{C98955C3-B7AA-4A18-973F-2259382354A5}</a:ObjectID>
+                <a:Name>display_name</a:Name>
+                <a:Code>display_name</a:Code>
+                <a:DataType>VARCHAR(150)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1147">
+                <a:ObjectID>{A53335B6-72AB-40A6-B8A9-253BB9738CF2}</a:ObjectID>
+                <a:Name>context_window</a:Name>
+                <a:Code>context_window</a:Code>
+                <a:DataType>INT UNSIGNED</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1148">
+                <a:ObjectID>{77093F75-9C9D-438D-A012-49249723F3EB}</a:ObjectID>
+                <a:Name>max_output_tokens</a:Name>
+                <a:Code>max_output_tokens</a:Code>
+                <a:DataType>INT UNSIGNED</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1149">
+                <a:ObjectID>{942CAB3E-E615-46E4-BC54-4E7C50B27B23}</a:ObjectID>
+                <a:Name>supports_vision</a:Name>
+                <a:Code>supports_vision</a:Code>
+                <a:DataType>TINYINT(1)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1150">
+                <a:ObjectID>{EFD7FF9B-8878-47E8-8B1B-AB63D38C6AD8}</a:ObjectID>
+                <a:Name>is_default</a:Name>
+                <a:Code>is_default</a:Code>
+                <a:DataType>TINYINT(1)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1151">
+                <a:ObjectID>{7C8D0C4F-A3ED-44DA-BB9E-4F7681902899}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+            </c:Attributes>
+          </o:Entity>
+          <o:Entity Id="o1152">
+            <a:ObjectID>{E2DA3D5E-2948-4038-AA01-AC53FFB4DCA0}</a:ObjectID>
+            <a:Name>ai_connections</a:Name>
+            <a:Code>ai_connections</a:Code>
+            <c:Attributes>
+              <o:EntityAttribute Id="o1153">
+                <a:ObjectID>{1AD2D539-087E-4AD1-860A-CA656E460437}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1154">
+                <a:ObjectID>{E145260E-E828-48DD-A359-DEBA90EF463E}</a:ObjectID>
+                <a:Name>user_id</a:Name>
+                <a:Code>user_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1155">
+                <a:ObjectID>{788E02E2-C12B-448F-A6B9-22CE7900485F}</a:ObjectID>
+                <a:Name>provider_id</a:Name>
+                <a:Code>provider_id</a:Code>
+                <a:DataType>VARCHAR(50)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1156">
+                <a:ObjectID>{16E69C3E-2E08-499A-B089-55037DE9C0EA}</a:ObjectID>
+                <a:Name>name</a:Name>
+                <a:Code>name</a:Code>
+                <a:DataType>VARCHAR(100)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1157">
+                <a:ObjectID>{F15B61EC-5ED0-4FEB-884A-0663C1C8F060}</a:ObjectID>
+                <a:Name>api_endpoint</a:Name>
+                <a:Code>api_endpoint</a:Code>
+                <a:DataType>VARCHAR(255)</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1158">
+                <a:ObjectID>{33EFB7BA-8C36-4122-89CB-88325B872A34}</a:ObjectID>
+                <a:Name>encrypted_api_key</a:Name>
+                <a:Code>encrypted_api_key</a:Code>
+                <a:DataType>VARBINARY(512)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1159">
+                <a:ObjectID>{273274E7-CE41-4D27-8138-58CBA55D8C95}</a:ObjectID>
+                <a:Name>encryption_iv</a:Name>
+                <a:Code>encryption_iv</a:Code>
+                <a:DataType>VARBINARY(16)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1160">
+                <a:ObjectID>{36DF80E7-F7B8-4A75-B714-09D103EFA589}</a:ObjectID>
+                <a:Name>encryption_tag</a:Name>
+                <a:Code>encryption_tag</a:Code>
+                <a:DataType>VARBINARY(16)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1161">
+                <a:ObjectID>{2EBA0CA7-BE26-4FCC-A9A8-B9AB1A5DE8B1}</a:ObjectID>
+                <a:Name>key_version</a:Name>
+                <a:Code>key_version</a:Code>
+                <a:DataType>INT UNSIGNED</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1162">
+                <a:ObjectID>{6A7141CC-F5AD-4AE7-8441-208E5448FDC8}</a:ObjectID>
+                <a:Name>api_key_masked</a:Name>
+                <a:Code>api_key_masked</a:Code>
+                <a:DataType>VARCHAR(64)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1163">
+                <a:ObjectID>{D3C48D19-C9B9-4F54-A60A-1BB188B82FC0}</a:ObjectID>
+                <a:Name>default_model_id</a:Name>
+                <a:Code>default_model_id</a:Code>
+                <a:DataType>VARCHAR(100)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1164">
+                <a:ObjectID>{27DB386E-C48B-4093-9CA8-D43530182B00}</a:ObjectID>
+                <a:Name>is_connected</a:Name>
+                <a:Code>is_connected</a:Code>
+                <a:DataType>TINYINT(1)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1165">
+                <a:ObjectID>{4CE93FDA-4DFF-48E6-BDDB-0D4DB995B77E}</a:ObjectID>
+                <a:Name>last_tested_at</a:Name>
+                <a:Code>last_tested_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1166">
+                <a:ObjectID>{02C17292-1562-4494-9F26-BD73E2F24CCC}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1167">
+                <a:ObjectID>{DE114804-0D7E-4E33-BF35-1C1280929582}</a:ObjectID>
+                <a:Name>updated_at</a:Name>
+                <a:Code>updated_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+            </c:Attributes>
+          </o:Entity>
+          <o:Entity Id="o1168">
+            <a:ObjectID>{758D0C85-FB14-4D60-BF2F-F7C5460E803C}</a:ObjectID>
+            <a:Name>ai_conversations</a:Name>
+            <a:Code>ai_conversations</a:Code>
+            <c:Attributes>
+              <o:EntityAttribute Id="o1169">
+                <a:ObjectID>{B025C7B9-7344-4A2D-B946-56E4F158CF25}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1170">
+                <a:ObjectID>{1DA9E3D9-9059-48A5-946A-EF674D3D37E3}</a:ObjectID>
+                <a:Name>user_id</a:Name>
+                <a:Code>user_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1171">
+                <a:ObjectID>{773794DE-76D9-4702-B12C-0E15A1F42762}</a:ObjectID>
+                <a:Name>connection_id</a:Name>
+                <a:Code>connection_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1172">
+                <a:ObjectID>{C043AB62-5B65-4941-A147-7041B25F3343}</a:ObjectID>
+                <a:Name>model_name</a:Name>
+                <a:Code>model_name</a:Code>
+                <a:DataType>VARCHAR(100)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1173">
+                <a:ObjectID>{5B38760F-2EA0-40A4-B3FB-1496171A2FB5}</a:ObjectID>
+                <a:Name>title</a:Name>
+                <a:Code>title</a:Code>
+                <a:DataType>VARCHAR(200)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1174">
+                <a:ObjectID>{F265FA3A-435D-4A33-97EB-AEA69F5EB1A3}</a:ObjectID>
+                <a:Name>pinned_document_id</a:Name>
+                <a:Code>pinned_document_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1175">
+                <a:ObjectID>{C981E24B-DBB4-4431-A07B-1AE2FE0D1C81}</a:ObjectID>
+                <a:Name>total_tokens_used</a:Name>
+                <a:Code>total_tokens_used</a:Code>
+                <a:DataType>INT UNSIGNED</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1176">
+                <a:ObjectID>{85E097AA-4242-49F0-A7E3-01AD987FAB1C}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1177">
+                <a:ObjectID>{095F2F0C-40E0-4E3D-B41B-FB6AB747ED71}</a:ObjectID>
+                <a:Name>updated_at</a:Name>
+                <a:Code>updated_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+            </c:Attributes>
+          </o:Entity>
+          <o:Entity Id="o1178">
+            <a:ObjectID>{65260562-6C0C-4201-B30E-B5A51F80F11D}</a:ObjectID>
+            <a:Name>ai_messages</a:Name>
+            <a:Code>ai_messages</a:Code>
+            <c:Attributes>
+              <o:EntityAttribute Id="o1179">
+                <a:ObjectID>{DDFD7D1F-67D3-49AA-87DE-9FFD3028CF3B}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>BIGINT UNSIGNED</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1180">
+                <a:ObjectID>{2C19305D-AA36-410B-853F-386458490252}</a:ObjectID>
+                <a:Name>conversation_id</a:Name>
+                <a:Code>conversation_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1181">
+                <a:ObjectID>{0DAC78D0-E73C-4AD4-8B0F-984886B31300}</a:ObjectID>
+                <a:Name>role</a:Name>
+                <a:Code>role</a:Code>
+                <a:DataType>ENUM('user','assistant','system')</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1182">
+                <a:ObjectID>{EB17F153-883C-4D59-B230-B661674AB1B9}</a:ObjectID>
+                <a:Name>content</a:Name>
+                <a:Code>content</a:Code>
+                <a:DataType>LONGTEXT</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1183">
+                <a:ObjectID>{05124A56-8325-4F76-AB88-720710C60C47}</a:ObjectID>
+                <a:Name>prompt_tokens</a:Name>
+                <a:Code>prompt_tokens</a:Code>
+                <a:DataType>INT UNSIGNED</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1184">
+                <a:ObjectID>{2C167D1E-4824-4E30-8BAF-49E0C7885565}</a:ObjectID>
+                <a:Name>completion_tokens</a:Name>
+                <a:Code>completion_tokens</a:Code>
+                <a:DataType>INT UNSIGNED</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1185">
+                <a:ObjectID>{88D88240-E4EA-4B08-8E17-6612C97E016D}</a:ObjectID>
+                <a:Name>references_json</a:Name>
+                <a:Code>references_json</a:Code>
+                <a:DataType>JSON</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1186">
+                <a:ObjectID>{CBE26556-5161-4A0A-A43E-F6AD6C4C7FB4}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+            </c:Attributes>
+          </o:Entity>
+          <o:Entity Id="o1187">
+            <a:ObjectID>{8545E76F-4915-47CE-A2DC-C3967761C2C6}</a:ObjectID>
+            <a:Name>ai_tasks</a:Name>
+            <a:Code>ai_tasks</a:Code>
+            <c:Attributes>
+              <o:EntityAttribute Id="o1188">
+                <a:ObjectID>{882B8387-CCD6-4420-90E2-A88ED050EFE6}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1189">
+                <a:ObjectID>{F545D445-2CEF-47CC-B7AB-51751A28999D}</a:ObjectID>
+                <a:Name>user_id</a:Name>
+                <a:Code>user_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1190">
+                <a:ObjectID>{16FBA429-7585-49F7-ACA8-F40E1FD018AA}</a:ObjectID>
+                <a:Name>source_document_id</a:Name>
+                <a:Code>source_document_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1191">
+                <a:ObjectID>{EB20BC5E-847D-46BB-B69C-C5A10286C6F0}</a:ObjectID>
+                <a:Name>connection_id</a:Name>
+                <a:Code>connection_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1192">
+                <a:ObjectID>{E0D7B854-B8A9-42B7-8490-0895E1CD0848}</a:ObjectID>
+                <a:Name>name</a:Name>
+                <a:Code>name</a:Code>
+                <a:DataType>VARCHAR(150)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1193">
+                <a:ObjectID>{2B700FBB-7D5E-46D3-8CFD-7D4849E61103}</a:ObjectID>
+                <a:Name>description</a:Name>
+                <a:Code>description</a:Code>
+                <a:DataType>TEXT</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1194">
+                <a:ObjectID>{90C2BED5-E7F8-47C9-AAC8-0D98DAAFD0DD}</a:ObjectID>
+                <a:Name>trigger_type</a:Name>
+                <a:Code>trigger_type</a:Code>
+                <a:DataType>ENUM('manual','on_upload','on_extract')</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1195">
+                <a:ObjectID>{63BC6888-CF59-46D9-BA7B-D996D39DC978}</a:ObjectID>
+                <a:Name>status</a:Name>
+                <a:Code>status</a:Code>
+                <a:DataType>ENUM('queued','processing','completed','failed')</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1196">
+                <a:ObjectID>{CAE0A21F-0C91-43BD-95B1-164FFB931C2F}</a:ObjectID>
+                <a:Name>progress</a:Name>
+                <a:Code>progress</a:Code>
+                <a:DataType>TINYINT UNSIGNED</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1197">
+                <a:ObjectID>{8F0CE96C-A3E9-471C-B2D9-3B4A10F3FEBC}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1198">
+                <a:ObjectID>{AA8B925F-183C-43E9-9E86-8D1B6CDCBC29}</a:ObjectID>
+                <a:Name>completed_at</a:Name>
+                <a:Code>completed_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+              </o:EntityAttribute>
+            </c:Attributes>
+          </o:Entity>
+          <o:Entity Id="o1199">
+            <a:ObjectID>{EEFC5302-47F0-49D5-9048-F96938D0FA83}</a:ObjectID>
+            <a:Name>ai_task_logs</a:Name>
+            <a:Code>ai_task_logs</a:Code>
+            <c:Attributes>
+              <o:EntityAttribute Id="o1200">
+                <a:ObjectID>{A80D9901-E0D7-4F86-8CAE-E213E76A598D}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>BIGINT UNSIGNED</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1201">
+                <a:ObjectID>{C2A2BB6B-5011-42B2-A62F-70A9968A141C}</a:ObjectID>
+                <a:Name>task_id</a:Name>
+                <a:Code>task_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1202">
+                <a:ObjectID>{5D4954CB-0588-4257-92AC-7EAF724A049C}</a:ObjectID>
+                <a:Name>step_name</a:Name>
+                <a:Code>step_name</a:Code>
+                <a:DataType>VARCHAR(100)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1203">
+                <a:ObjectID>{12F53045-9EA8-4992-B97F-8C1E6A94268A}</a:ObjectID>
+                <a:Name>status</a:Name>
+                <a:Code>status</a:Code>
+                <a:DataType>ENUM('running','success','failed')</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1204">
+                <a:ObjectID>{F2141899-E66B-4DA0-8E7D-2D04D8072211}</a:ObjectID>
+                <a:Name>duration_ms</a:Name>
+                <a:Code>duration_ms</a:Code>
+                <a:DataType>INT UNSIGNED</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1205">
+                <a:ObjectID>{EFF6CE19-9351-4DB9-AB97-76814A262C14}</a:ObjectID>
+                <a:Name>tokens_used</a:Name>
+                <a:Code>tokens_used</a:Code>
+                <a:DataType>INT UNSIGNED</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1206">
+                <a:ObjectID>{E0C35929-ADD5-45E6-96B0-3A1A6A5A002F}</a:ObjectID>
+                <a:Name>input_summary</a:Name>
+                <a:Code>input_summary</a:Code>
+                <a:DataType>TEXT</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1207">
+                <a:ObjectID>{F3FFB9D0-308E-4432-B8C1-714A5C1371C6}</a:ObjectID>
+                <a:Name>output_summary</a:Name>
+                <a:Code>output_summary</a:Code>
+                <a:DataType>LONGTEXT</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1208">
+                <a:ObjectID>{D4881A93-5361-4F7A-A92C-F3989BE4C191}</a:ObjectID>
+                <a:Name>error_message</a:Name>
+                <a:Code>error_message</a:Code>
+                <a:DataType>TEXT</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1209">
+                <a:ObjectID>{F20F964C-99D2-42C7-B6E4-D81CB73854B6}</a:ObjectID>
+                <a:Name>executed_at</a:Name>
+                <a:Code>executed_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+            </c:Attributes>
+          </o:Entity>
+          <o:Entity Id="o1210">
+            <a:ObjectID>{4E7F5CE4-1213-49C9-9BCF-D55101CC834C}</a:ObjectID>
+            <a:Name>ai_contexts</a:Name>
+            <a:Code>ai_contexts</a:Code>
+            <c:Attributes>
+              <o:EntityAttribute Id="o1211">
+                <a:ObjectID>{7791873D-C5A9-494B-BAAB-486F4E4BFB02}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1212">
+                <a:ObjectID>{CB69A588-D4F1-40FA-8E58-63A4FC2C6AF2}</a:ObjectID>
+                <a:Name>user_id</a:Name>
+                <a:Code>user_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1213">
+                <a:ObjectID>{501796D5-9064-4EFA-90CA-18B26EC78A33}</a:ObjectID>
+                <a:Name>title</a:Name>
+                <a:Code>title</a:Code>
+                <a:DataType>VARCHAR(200)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1214">
+                <a:ObjectID>{083EE99D-8C41-46D1-A339-B1617DFAC0EE}</a:ObjectID>
+                <a:Name>schema_version</a:Name>
+                <a:Code>schema_version</a:Code>
+                <a:DataType>VARCHAR(20)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1215">
+                <a:ObjectID>{1D47B0EA-BD2C-49A0-BA0C-A3C0D59EF4D0}</a:ObjectID>
+                <a:Name>current_version</a:Name>
+                <a:Code>current_version</a:Code>
+                <a:DataType>VARCHAR(20)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1216">
+                <a:ObjectID>{C544BC3B-B8D5-4792-8FC5-749D23358F93}</a:ObjectID>
+                <a:Name>summary</a:Name>
+                <a:Code>summary</a:Code>
+                <a:DataType>TEXT</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1217">
+                <a:ObjectID>{14949B48-DCE8-4166-8621-12A93354311C}</a:ObjectID>
+                <a:Name>knowledge_points_json</a:Name>
+                <a:Code>knowledge_points_json</a:Code>
+                <a:DataType>LONGTEXT</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1218">
+                <a:ObjectID>{1F86553C-9A80-4B3F-9038-324EDD956A0C}</a:ObjectID>
+                <a:Name>conclusions_json</a:Name>
+                <a:Code>conclusions_json</a:Code>
+                <a:DataType>LONGTEXT</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1219">
+                <a:ObjectID>{3D06E1A5-EBE9-47F8-BFC7-794B69988CAC}</a:ObjectID>
+                <a:Name>open_questions_json</a:Name>
+                <a:Code>open_questions_json</a:Code>
+                <a:DataType>LONGTEXT</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1220">
+                <a:ObjectID>{F96F063B-2303-466B-BAFC-40C3F2B5BF1E}</a:ObjectID>
+                <a:Name>learning_progress</a:Name>
+                <a:Code>learning_progress</a:Code>
+                <a:DataType>TINYINT UNSIGNED</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1221">
+                <a:ObjectID>{39A67313-F060-46C5-85A6-6458BC1F0A7C}</a:ObjectID>
+                <a:Name>handoff_directive</a:Name>
+                <a:Code>handoff_directive</a:Code>
+                <a:DataType>TEXT</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1222">
+                <a:ObjectID>{8EB436D8-A5CC-4A27-951E-F0D458C03E7F}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1223">
+                <a:ObjectID>{A6554334-DD97-4AA2-97D4-85C018B2D428}</a:ObjectID>
+                <a:Name>updated_at</a:Name>
+                <a:Code>updated_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+            </c:Attributes>
+          </o:Entity>
+          <o:Entity Id="o1224">
+            <a:ObjectID>{0649273C-F0F0-45C6-9F41-74E2BB56AE88}</a:ObjectID>
+            <a:Name>ai_context_versions</a:Name>
+            <a:Code>ai_context_versions</a:Code>
+            <c:Attributes>
+              <o:EntityAttribute Id="o1225">
+                <a:ObjectID>{31E3F926-5CA4-4089-81C9-56D7C4D6010A}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>BIGINT UNSIGNED</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1226">
+                <a:ObjectID>{ABE80192-63B3-4886-A462-A02A476F9E5A}</a:ObjectID>
+                <a:Name>context_id</a:Name>
+                <a:Code>context_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1227">
+                <a:ObjectID>{C272087B-0598-4569-8E14-0581FC061011}</a:ObjectID>
+                <a:Name>version_tag</a:Name>
+                <a:Code>version_tag</a:Code>
+                <a:DataType>VARCHAR(20)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1228">
+                <a:ObjectID>{533235E1-A0C8-48BF-AADA-52D14BCE1ED1}</a:ObjectID>
+                <a:Name>snapshot_json</a:Name>
+                <a:Code>snapshot_json</a:Code>
+                <a:DataType>LONGTEXT</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1229">
+                <a:ObjectID>{68B411E7-43B0-4659-A119-FFB3A4E65C79}</a:ObjectID>
+                <a:Name>change_note</a:Name>
+                <a:Code>change_note</a:Code>
+                <a:DataType>VARCHAR(255)</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1230">
+                <a:ObjectID>{69AD2A12-8984-47E8-B04B-D5E6FC1886A7}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+            </c:Attributes>
+          </o:Entity>
+          <o:Entity Id="o1231">
+            <a:ObjectID>{6BBC992D-9B0F-479F-AE44-E7E4130F6F7A}</a:ObjectID>
+            <a:Name>quizzes</a:Name>
+            <a:Code>quizzes</a:Code>
+            <c:Attributes>
+              <o:EntityAttribute Id="o1232">
+                <a:ObjectID>{2E9F5BD4-AC21-4002-B90A-C0503611959B}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1233">
+                <a:ObjectID>{FD528F1D-C2EB-4E4D-A40B-3495A3DCC47C}</a:ObjectID>
+                <a:Name>user_id</a:Name>
+                <a:Code>user_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1234">
+                <a:ObjectID>{5365FF98-F317-484F-9863-7981A3BB426A}</a:ObjectID>
+                <a:Name>document_id</a:Name>
+                <a:Code>document_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1235">
+                <a:ObjectID>{15B73C53-0512-4F33-BDB5-7757CCE27B88}</a:ObjectID>
+                <a:Name>title</a:Name>
+                <a:Code>title</a:Code>
+                <a:DataType>VARCHAR(200)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1236">
+                <a:ObjectID>{848A8FFF-3C7E-405D-9745-40F5E67E3B19}</a:ObjectID>
+                <a:Name>description</a:Name>
+                <a:Code>description</a:Code>
+                <a:DataType>TEXT</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1237">
+                <a:ObjectID>{ACAB277E-33E6-4B79-BF05-71D792160B3C}</a:ObjectID>
+                <a:Name>time_limit_sec</a:Name>
+                <a:Code>time_limit_sec</a:Code>
+                <a:DataType>INT UNSIGNED</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1238">
+                <a:ObjectID>{A4AFCA4F-A8D7-481C-B145-1DFC49C3445E}</a:ObjectID>
+                <a:Name>max_attempts</a:Name>
+                <a:Code>max_attempts</a:Code>
+                <a:DataType>TINYINT UNSIGNED</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1239">
+                <a:ObjectID>{B2AA9325-39CA-46A2-96A4-039465B32ED6}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1240">
+                <a:ObjectID>{9A6CF1E5-5144-4407-A3C2-E7765D551612}</a:ObjectID>
+                <a:Name>updated_at</a:Name>
+                <a:Code>updated_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+            </c:Attributes>
+          </o:Entity>
+          <o:Entity Id="o1241">
+            <a:ObjectID>{F4622220-3D47-4AD1-892A-166A938A03F5}</a:ObjectID>
+            <a:Name>quiz_questions</a:Name>
+            <a:Code>quiz_questions</a:Code>
+            <c:Attributes>
+              <o:EntityAttribute Id="o1242">
+                <a:ObjectID>{EB1BBEAD-809C-4A83-8C84-2ACD35B82F12}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1243">
+                <a:ObjectID>{98795175-0B64-4616-9CE3-5A8086FA5598}</a:ObjectID>
+                <a:Name>quiz_id</a:Name>
+                <a:Code>quiz_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1244">
+                <a:ObjectID>{046518D3-6C1B-431D-B30F-85A9107F0F97}</a:ObjectID>
+                <a:Name>question_text</a:Name>
+                <a:Code>question_text</a:Code>
+                <a:DataType>TEXT</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1245">
+                <a:ObjectID>{EFD44C3A-5BA0-4498-9A35-98BA5F6AB64E}</a:ObjectID>
+                <a:Name>order_index</a:Name>
+                <a:Code>order_index</a:Code>
+                <a:DataType>INT UNSIGNED</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1246">
+                <a:ObjectID>{F66327C7-87F4-4686-BE56-CFA6ADD9632F}</a:ObjectID>
+                <a:Name>explanation</a:Name>
+                <a:Code>explanation</a:Code>
+                <a:DataType>TEXT</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1247">
+                <a:ObjectID>{46219965-BB51-4CD4-A089-401AF8B53DB4}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+            </c:Attributes>
+          </o:Entity>
+          <o:Entity Id="o1248">
+            <a:ObjectID>{FEF6D8D5-575E-47D3-996B-E75E19183560}</a:ObjectID>
+            <a:Name>quiz_options</a:Name>
+            <a:Code>quiz_options</a:Code>
+            <c:Attributes>
+              <o:EntityAttribute Id="o1249">
+                <a:ObjectID>{73DCC46E-F15D-4243-AF7A-8A2B8BC149CD}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1250">
+                <a:ObjectID>{F1925599-E9AD-4271-B293-6275B10B1E0E}</a:ObjectID>
+                <a:Name>question_id</a:Name>
+                <a:Code>question_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1251">
+                <a:ObjectID>{4C1425D5-7FF1-4393-AB30-AFBC3041CA54}</a:ObjectID>
+                <a:Name>option_text</a:Name>
+                <a:Code>option_text</a:Code>
+                <a:DataType>TEXT</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1252">
+                <a:ObjectID>{72B62166-821C-426E-9283-0FC64648ED10}</a:ObjectID>
+                <a:Name>is_correct</a:Name>
+                <a:Code>is_correct</a:Code>
+                <a:DataType>TINYINT(1)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1253">
+                <a:ObjectID>{BFB46DD3-B21A-4A0C-81F3-7469DE43CB92}</a:ObjectID>
+                <a:Name>order_index</a:Name>
+                <a:Code>order_index</a:Code>
+                <a:DataType>TINYINT UNSIGNED</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+            </c:Attributes>
+          </o:Entity>
+          <o:Entity Id="o1254">
+            <a:ObjectID>{D4041326-60E1-4389-8B45-F9206ACA8B70}</a:ObjectID>
+            <a:Name>quiz_attempts</a:Name>
+            <a:Code>quiz_attempts</a:Code>
+            <c:Attributes>
+              <o:EntityAttribute Id="o1255">
+                <a:ObjectID>{3F1402A4-02E4-4442-B301-32136BD848E4}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1256">
+                <a:ObjectID>{102D9945-D3BB-43F2-8447-5B3E186B7920}</a:ObjectID>
+                <a:Name>quiz_id</a:Name>
+                <a:Code>quiz_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1257">
+                <a:ObjectID>{85B518F0-33F5-44E3-B09F-55361D53E4F5}</a:ObjectID>
+                <a:Name>user_id</a:Name>
+                <a:Code>user_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1258">
+                <a:ObjectID>{5049B6A4-C0DB-41BB-983F-59A0D61DA5E0}</a:ObjectID>
+                <a:Name>score</a:Name>
+                <a:Code>score</a:Code>
+                <a:DataType>DECIMAL(5,2)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1259">
+                <a:ObjectID>{A45753D0-4105-46B8-9F63-4938F5411798}</a:ObjectID>
+                <a:Name>correct_answers</a:Name>
+                <a:Code>correct_answers</a:Code>
+                <a:DataType>INT UNSIGNED</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1260">
+                <a:ObjectID>{51720F29-DBFC-4885-91F9-5BDE0EDC7F93}</a:ObjectID>
+                <a:Name>total_questions</a:Name>
+                <a:Code>total_questions</a:Code>
+                <a:DataType>INT UNSIGNED</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1261">
+                <a:ObjectID>{E277503C-FFE2-41DE-B9B7-0A5AF4F62D28}</a:ObjectID>
+                <a:Name>duration_sec</a:Name>
+                <a:Code>duration_sec</a:Code>
+                <a:DataType>INT UNSIGNED</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1262">
+                <a:ObjectID>{7EA8566B-38A9-4E54-94FF-900F8B945344}</a:ObjectID>
+                <a:Name>started_at</a:Name>
+                <a:Code>started_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1263">
+                <a:ObjectID>{0EED8C9A-ABF2-4B44-945C-24FF2AAC705E}</a:ObjectID>
+                <a:Name>completed_at</a:Name>
+                <a:Code>completed_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+            </c:Attributes>
+          </o:Entity>
+          <o:Entity Id="o1264">
+            <a:ObjectID>{80E62C50-5BD9-4FD3-ACD4-8C9F2E766A13}</a:ObjectID>
+            <a:Name>quiz_attempt_answers</a:Name>
+            <a:Code>quiz_attempt_answers</a:Code>
+            <c:Attributes>
+              <o:EntityAttribute Id="o1265">
+                <a:ObjectID>{F3E9A7E9-BCA7-450E-B165-FFF4ED787136}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>BIGINT UNSIGNED</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1266">
+                <a:ObjectID>{73ADA654-DBB1-4E70-9BE0-2B8D5C0A37EF}</a:ObjectID>
+                <a:Name>attempt_id</a:Name>
+                <a:Code>attempt_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1267">
+                <a:ObjectID>{B76C5EB5-2F1C-4052-8E49-0BF36DD76756}</a:ObjectID>
+                <a:Name>question_id</a:Name>
+                <a:Code>question_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1268">
+                <a:ObjectID>{13F9FA10-7F01-4D19-A27A-5CF82DB45DCA}</a:ObjectID>
+                <a:Name>selected_option_id</a:Name>
+                <a:Code>selected_option_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1269">
+                <a:ObjectID>{76A9C99B-92C9-40FB-BD01-55261BB5B62D}</a:ObjectID>
+                <a:Name>is_correct</a:Name>
+                <a:Code>is_correct</a:Code>
+                <a:DataType>TINYINT(1)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+            </c:Attributes>
+          </o:Entity>
+          <o:Entity Id="o1270">
+            <a:ObjectID>{CC8685E6-6CCD-4FDF-95E6-678E5D3FE767}</a:ObjectID>
+            <a:Name>shared_links</a:Name>
+            <a:Code>shared_links</a:Code>
+            <c:Attributes>
+              <o:EntityAttribute Id="o1271">
+                <a:ObjectID>{ABCE87DC-1394-4097-B0D9-39861C4F685C}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1272">
+                <a:ObjectID>{40BF82E3-D4B2-4A6D-BE63-5213599444C0}</a:ObjectID>
+                <a:Name>user_id</a:Name>
+                <a:Code>user_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1273">
+                <a:ObjectID>{C60119E6-5FBC-44EA-A698-7B804232A8CA}</a:ObjectID>
+                <a:Name>document_id</a:Name>
+                <a:Code>document_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1274">
+                <a:ObjectID>{0F4F6339-15CE-44D2-88E9-9F6773856E68}</a:ObjectID>
+                <a:Name>title</a:Name>
+                <a:Code>title</a:Code>
+                <a:DataType>VARCHAR(255)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1275">
+                <a:ObjectID>{A4C7E4AA-4A5D-478A-BE04-0714BE003613}</a:ObjectID>
+                <a:Name>token_hash</a:Name>
+                <a:Code>token_hash</a:Code>
+                <a:DataType>CHAR(64)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1276">
+                <a:ObjectID>{16A392A4-108D-42FB-8A04-2AB9C3749D3D}</a:ObjectID>
+                <a:Name>password_hash</a:Name>
+                <a:Code>password_hash</a:Code>
+                <a:DataType>VARCHAR(255)</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1277">
+                <a:ObjectID>{9FF6CB4E-0579-4F81-946B-A3A130981F23}</a:ObjectID>
+                <a:Name>allow_download</a:Name>
+                <a:Code>allow_download</a:Code>
+                <a:DataType>TINYINT(1)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1278">
+                <a:ObjectID>{36CC813F-A81E-4034-AA8C-C65149218F48}</a:ObjectID>
+                <a:Name>expires_at</a:Name>
+                <a:Code>expires_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1279">
+                <a:ObjectID>{B56B38FD-3889-4646-AC38-23F705332318}</a:ObjectID>
+                <a:Name>views_count</a:Name>
+                <a:Code>views_count</a:Code>
+                <a:DataType>INT UNSIGNED</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1280">
+                <a:ObjectID>{F16FF2B6-FB98-4E2D-840E-AEFE527BB9ED}</a:ObjectID>
+                <a:Name>failed_pass_attempts</a:Name>
+                <a:Code>failed_pass_attempts</a:Code>
+                <a:DataType>INT UNSIGNED</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1281">
+                <a:ObjectID>{C0FD7698-145F-47C4-9964-87838ED21BFA}</a:ObjectID>
+                <a:Name>pass_locked_until</a:Name>
+                <a:Code>pass_locked_until</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1282">
+                <a:ObjectID>{C203036C-51E4-47D7-895E-7F3A8AB60864}</a:ObjectID>
+                <a:Name>is_revoked</a:Name>
+                <a:Code>is_revoked</a:Code>
+                <a:DataType>TINYINT(1)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1283">
+                <a:ObjectID>{DD17790D-7DE2-445B-AACA-7EB46E04E850}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1284">
+                <a:ObjectID>{20F59F05-F496-4246-847F-6F4E23B69B7B}</a:ObjectID>
+                <a:Name>updated_at</a:Name>
+                <a:Code>updated_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+            </c:Attributes>
+          </o:Entity>
+          <o:Entity Id="o1285">
+            <a:ObjectID>{E539E052-0CE9-49F4-AD3D-2037999E67C7}</a:ObjectID>
+            <a:Name>share_access_logs</a:Name>
+            <a:Code>share_access_logs</a:Code>
+            <c:Attributes>
+              <o:EntityAttribute Id="o1286">
+                <a:ObjectID>{3CDA6E2F-C5C7-4B03-B080-D34872AEEDA1}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>BIGINT UNSIGNED</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1287">
+                <a:ObjectID>{1FEDC372-55DD-4C6F-BEED-CA8D64B43A86}</a:ObjectID>
+                <a:Name>shared_link_id</a:Name>
+                <a:Code>shared_link_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1288">
+                <a:ObjectID>{BC89B70F-2B65-4C4C-95D9-2C4D9F9D0A80}</a:ObjectID>
+                <a:Name>action</a:Name>
+                <a:Code>action</a:Code>
+                <a:DataType>ENUM('view','download')</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1289">
+                <a:ObjectID>{241D6300-2BA4-4B9C-AF59-2D5AF940E440}</a:ObjectID>
+                <a:Name>ip_address</a:Name>
+                <a:Code>ip_address</a:Code>
+                <a:DataType>VARCHAR(45)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1290">
+                <a:ObjectID>{A0801BA5-92E2-4FBE-A83E-4F2E0541E282}</a:ObjectID>
+                <a:Name>user_agent</a:Name>
+                <a:Code>user_agent</a:Code>
+                <a:DataType>VARCHAR(255)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1291">
+                <a:ObjectID>{5BBF2E07-F4C2-4F84-BF0B-88390D74666A}</a:ObjectID>
+                <a:Name>accessed_at</a:Name>
+                <a:Code>accessed_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+            </c:Attributes>
+          </o:Entity>
+          <o:Entity Id="o1292">
+            <a:ObjectID>{8C38DAD9-00BB-48F6-8204-45625117BAEC}</a:ObjectID>
+            <a:Name>activity_logs</a:Name>
+            <a:Code>activity_logs</a:Code>
+            <c:Attributes>
+              <o:EntityAttribute Id="o1293">
+                <a:ObjectID>{8A5E78A1-E6F1-435D-85E5-53F8C0A83AE2}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>BIGINT UNSIGNED</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1294">
+                <a:ObjectID>{F1DD7FD3-2E82-4245-9D43-8132C84E5E6F}</a:ObjectID>
+                <a:Name>user_id</a:Name>
+                <a:Code>user_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1295">
+                <a:ObjectID>{42055F07-9610-4257-92A1-CA09F088B343}</a:ObjectID>
+                <a:Name>event_type</a:Name>
+                <a:Code>event_type</a:Code>
+                <a:DataType>VARCHAR(50)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1296">
+                <a:ObjectID>{C0A3D528-FA13-47B4-B8A1-95A8A66097C4}</a:ObjectID>
+                <a:Name>description</a:Name>
+                <a:Code>description</a:Code>
+                <a:DataType>VARCHAR(255)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1297">
+                <a:ObjectID>{47DCC778-0E60-41A3-AD15-2A9CE793202D}</a:ObjectID>
+                <a:Name>entity_type</a:Name>
+                <a:Code>entity_type</a:Code>
+                <a:DataType>VARCHAR(30)</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1298">
+                <a:ObjectID>{430D41E8-6B8A-4987-95BC-ED24AAC29BEB}</a:ObjectID>
+                <a:Name>entity_id</a:Name>
+                <a:Code>entity_id</a:Code>
+                <a:DataType>VARCHAR(36)</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1299">
+                <a:ObjectID>{C006736A-F9EC-49BB-81C5-BD546EE6689B}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+            </c:Attributes>
+          </o:Entity>
+          <o:Entity Id="o1300">
+            <a:ObjectID>{C0361D52-C54A-459A-A7A2-3E808587E875}</a:ObjectID>
+            <a:Name>notifications</a:Name>
+            <a:Code>notifications</a:Code>
+            <c:Attributes>
+              <o:EntityAttribute Id="o1301">
+                <a:ObjectID>{278E1E81-8800-4F7C-901E-B611C811D006}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1302">
+                <a:ObjectID>{0A853A8D-DED7-416B-BC50-BE6C11C8E782}</a:ObjectID>
+                <a:Name>user_id</a:Name>
+                <a:Code>user_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1303">
+                <a:ObjectID>{91C80C0B-97DD-49B3-BA69-4C3CBF03A7C4}</a:ObjectID>
+                <a:Name>title</a:Name>
+                <a:Code>title</a:Code>
+                <a:DataType>VARCHAR(150)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1304">
+                <a:ObjectID>{12E25F86-35E4-4E9B-ABB1-A1689FF0EE56}</a:ObjectID>
+                <a:Name>message</a:Name>
+                <a:Code>message</a:Code>
+                <a:DataType>TEXT</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1305">
+                <a:ObjectID>{2F504D81-A408-4155-AB60-276D612B19D1}</a:ObjectID>
+                <a:Name>type</a:Name>
+                <a:Code>type</a:Code>
+                <a:DataType>ENUM('learning','ai','share','system')</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1306">
+                <a:ObjectID>{8745E241-10DC-4A5B-AF8E-35B03BE05BB2}</a:ObjectID>
+                <a:Name>icon</a:Name>
+                <a:Code>icon</a:Code>
+                <a:DataType>VARCHAR(50)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1307">
+                <a:ObjectID>{35442EA1-EEB5-476B-8263-7FD6CDBF67AF}</a:ObjectID>
+                <a:Name>is_read</a:Name>
+                <a:Code>is_read</a:Code>
+                <a:DataType>TINYINT(1)</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o1308">
+                <a:ObjectID>{A434886F-FA2D-4935-B909-0F85CCE9F045}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+              </o:EntityAttribute>
+            </c:Attributes>
+          </o:Entity>
+        </c:Entities>
+      </o:Model>
+    </c:Children>
+  </o:RootObject>
+</Model>

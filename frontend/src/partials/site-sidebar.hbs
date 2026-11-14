@@ -1,0 +1,125 @@
+<nav id="sidebar" class="sidebar js-sidebar offcanvas-lg offcanvas-start note-sidebar" tabindex="-1" aria-label="Điều hướng NOTE">
+  <div class="sidebar-content js-simplebar">
+    <div class="note-sidebar-top">
+      <div class="d-flex align-items-center justify-content-between mb-3">
+        <a class="sidebar-brand note-brand d-flex align-items-center gap-2" href="#dashboard" aria-label="NOTE, tổng quan" data-view-link="dashboard">
+          <img src="/img/note-logo.png" alt="Logo NOTE" width="32" height="32" class="rounded">
+          <span class="fs-4 fw-bold tracking-tight">NOTE</span>
+        </a>
+      </div>
+      <p class="note-space-label text-uppercase small text-body-secondary fw-semibold mb-2">Workspace & AI Knowledge</p>
+      <div class="dropdown w-100">
+        <button class="btn btn-primary w-100 d-flex align-items-center justify-content-center gap-2 py-2 fw-medium shadow-sm" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <i data-lucide="plus"></i>
+          <span>Tạo mới nhanh</span>
+          <i data-lucide="chevron-down" class="ms-auto small"></i>
+        </button>
+        <ul class="dropdown-menu w-100 shadow-sm border">
+          <li><button class="dropdown-item d-flex align-items-center gap-2 py-2" type="button" data-note-create><i data-lucide="notebook-pen" class="text-primary"></i> Ghi chú mới</button></li>
+          <li><button class="dropdown-item d-flex align-items-center gap-2 py-2" type="button" data-file-picker><i data-lucide="upload" class="text-info"></i> Tải lên tài liệu</button></li>
+          <li><button class="dropdown-item d-flex align-items-center gap-2 py-2" type="button" data-archive-picker-trigger><i data-lucide="archive" class="text-warning"></i> Thêm gói ZIP / 7Z</button></li>
+          <li><hr class="dropdown-divider my-1"></li>
+          <li><button class="dropdown-item d-flex align-items-center gap-2 py-2" type="button" data-card-create><i data-lucide="layers" class="text-success"></i> Tạo bộ flashcard</button></li>
+          <li><button class="dropdown-item d-flex align-items-center gap-2 py-2" type="button" data-quiz-create><i data-lucide="list-checks" class="text-secondary"></i> Tạo bài trắc nghiệm</button></li>
+        </ul>
+      </div>
+    </div>
+
+    <ul class="sidebar-nav note-navigation list-unstyled mb-auto">
+      <li class="sidebar-header text-uppercase small text-body-tertiary fw-bold px-3 pt-3 pb-1">TRUNG TÂM TRI THỨC</li>
+      <li class="sidebar-item">
+        <a class="sidebar-link d-flex align-items-center gap-2 px-3 py-2" href="#dashboard" data-view-link="dashboard">
+          <i data-lucide="layout-dashboard"></i>
+          <span>1. Tổng quan</span>
+        </a>
+      </li>
+      <li class="sidebar-item">
+        <a class="sidebar-link d-flex align-items-center gap-2 px-3 py-2" href="#library" data-view-link="library">
+          <i data-lucide="book-open"></i>
+          <span>2. Thư viện tài liệu</span>
+        </a>
+      </li>
+      <li class="sidebar-item">
+        <a class="sidebar-link d-flex align-items-center gap-2 px-3 py-2" href="#folders" data-view-link="folders">
+          <i data-lucide="folder"></i>
+          <span>3. Thư mục</span>
+        </a>
+      </li>
+      <li class="sidebar-item">
+        <a class="sidebar-link d-flex align-items-center gap-2 px-3 py-2" href="#collections" data-view-link="collections">
+          <i data-lucide="library-big"></i>
+          <span>4. Bộ sưu tập</span>
+        </a>
+      </li>
+      <li class="sidebar-item">
+        <a class="sidebar-link d-flex align-items-center gap-2 px-3 py-2" href="#archives" data-view-link="archives">
+          <i data-lucide="archive"></i>
+          <span>5. ZIP / 7Z</span>
+          <span class="badge rounded-pill bg-primary-subtle text-primary ms-auto">Core</span>
+        </a>
+      </li>
+
+      <li class="sidebar-header text-uppercase small text-body-tertiary fw-bold px-3 pt-3 pb-1">TRÍ TUỆ NHÂN TẠO</li>
+      <li class="sidebar-item">
+        <a class="sidebar-link d-flex align-items-center gap-2 px-3 py-2" href="#assistant" data-view-link="assistant">
+          <i data-lucide="sparkles"></i>
+          <span>6. AI Assistant</span>
+        </a>
+      </li>
+      <li class="sidebar-item">
+        <a class="sidebar-link d-flex align-items-center gap-2 px-3 py-2" href="#ai-context" data-view-link="ai-context">
+          <i data-lucide="cpu"></i>
+          <span>7. AI Context</span>
+          <span class="badge rounded-pill bg-info-subtle text-info ms-auto">Handoff</span>
+        </a>
+      </li>
+
+      <li class="sidebar-header text-uppercase small text-body-tertiary fw-bold px-3 pt-3 pb-1">HỌC TẬP & ÔN TẬP</li>
+      <li class="sidebar-item">
+        <a class="sidebar-link d-flex align-items-center gap-2 px-3 py-2" href="#flashcards" data-view-link="flashcards">
+          <i data-lucide="layers"></i>
+          <span>8. Flashcards</span>
+        </a>
+      </li>
+      <li class="sidebar-item">
+        <a class="sidebar-link d-flex align-items-center gap-2 px-3 py-2" href="#quiz" data-view-link="quiz">
+          <i data-lucide="list-checks"></i>
+          <span>9. Quiz</span>
+        </a>
+      </li>
+
+      <li class="sidebar-header text-uppercase small text-body-tertiary fw-bold px-3 pt-3 pb-1">TỰ ĐỘNG & KẾT NỐI</li>
+      <li class="sidebar-item">
+        <a class="sidebar-link d-flex align-items-center gap-2 px-3 py-2" href="#ai-workflows" data-view-link="ai-workflows">
+          <i data-lucide="workflow"></i>
+          <span>10. Quy trình AI</span>
+        </a>
+      </li>
+      <li class="sidebar-item">
+        <a class="sidebar-link d-flex align-items-center gap-2 px-3 py-2" href="#sharing" data-view-link="sharing">
+          <i data-lucide="share-2"></i>
+          <span>11. Chia sẻ</span>
+        </a>
+      </li>
+      <li class="sidebar-item">
+        <a class="sidebar-link d-flex align-items-center gap-2 px-3 py-2" href="#settings" data-view-link="settings">
+          <i data-lucide="settings"></i>
+          <span>12. Cài đặt</span>
+        </a>
+      </li>
+    </ul>
+
+    <div class="note-sidebar-bottom p-3 border-top mt-auto">
+      <div class="d-flex align-items-center gap-3">
+        <div class="note-user-avatar flex-shrink-0 bg-primary text-white rounded-circle d-flex align-items-center justify-content-center fw-bold" style="width:36px;height:36px">N</div>
+        <div class="note-user-meta overflow-hidden">
+          <strong class="d-block text-truncate small fw-semibold" data-user-profile-name>Người dùng</strong>
+          <small class="d-block text-body-secondary text-truncate" style="font-size:11px">Lưu trữ cục bộ an toàn</small>
+        </div>
+        <a class="btn btn-sm btn-ghost-secondary ms-auto p-1 text-body-secondary" href="#settings" data-view-link="settings" aria-label="Cài đặt">
+          <i data-lucide="settings"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>

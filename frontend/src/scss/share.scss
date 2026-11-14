@@ -1,0 +1,263 @@
+:root {
+  color-scheme: dark;
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  background: #1b221e;
+  color: #e9ede8;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body.note-public-share {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(ellipse at 50% 0, rgb(141 179 155 / 8%), transparent 50%),
+    #1b221e;
+  color: #e9ede8;
+}
+
+.public-share-shell {
+  width: min(100% - 32px, 960px);
+  margin: 0 auto;
+  padding: 28px 0 48px;
+}
+
+.public-share-brand,
+.public-share-brand a,
+.public-share-meta,
+.public-share-footer {
+  display: flex;
+  align-items: center;
+}
+
+.public-share-brand {
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.public-share-brand a {
+  gap: 10px;
+  color: #e9ede8;
+  font-size: 19px;
+  font-weight: 750;
+  letter-spacing: -0.04em;
+  text-decoration: none;
+}
+
+.public-share-brand img {
+  border-radius: 9px;
+  object-fit: cover;
+}
+
+.public-share-label,
+.public-share-meta {
+  color: #a1aaa2;
+  font-size: 12px;
+}
+
+.public-share-card {
+  overflow: hidden;
+  border: 1px solid #39433c;
+  border-radius: 16px;
+  background: #202823;
+  box-shadow: 0 18px 55px rgb(0 0 0 / 18%);
+}
+
+.public-share-heading {
+  padding: clamp(20px, 5vw, 36px);
+  border-bottom: 1px solid #39433c;
+}
+
+.public-share-status {
+  min-height: 20px;
+  margin: 0 0 14px;
+  color: #a1aaa2;
+  font-size: 13px;
+}
+
+.public-share-status[data-tone="danger"] {
+  color: #efa89f;
+}
+
+.public-share-status[data-tone="success"] {
+  color: #a7c7b1;
+}
+
+.public-share-heading h1 {
+  margin: 0;
+  color: #f2f5f0;
+  font-size: clamp(22px, 4vw, 32px);
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.public-share-description {
+  margin: 12px 0 0;
+  color: #c0c8c0;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+.public-share-meta {
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin-top: 20px;
+}
+
+.public-share-content {
+  min-height: 200px;
+  padding: clamp(18px, 4vw, 32px);
+  color: #e9ede8;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.public-share-content img,
+.public-share-content video {
+  max-width: 100%;
+}
+
+.public-share-pdf {
+  display: block;
+  width: 100%;
+  min-height: min(78vh, 900px);
+  border: 0;
+  background: #fff;
+}
+
+.public-share-image {
+  display: block;
+  max-height: 76vh;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.public-share-rich-text,
+.public-share-slides,
+.public-share-chapters {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.public-share-rich-text img,
+.public-share-chapters img {
+  max-width: 100%;
+  height: auto;
+}
+
+.public-share-rich-text table,
+.public-share-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.public-share-rich-text td,
+.public-share-rich-text th,
+.public-share-table td {
+  padding: 8px;
+  border: 1px solid #39433c;
+  text-align: left;
+  vertical-align: top;
+}
+
+.public-share-slides section,
+.public-share-chapters section {
+  margin: 0 0 24px;
+  padding: 16px;
+  border: 1px solid #39433c;
+  border-radius: 10px;
+}
+
+.public-share-slides h2,
+.public-share-chapters h2 {
+  margin-top: 0;
+  font-size: 17px;
+}
+
+.public-share-text {
+  margin: 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font: inherit;
+}
+
+.public-share-select,
+.public-share-password-form input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #536057;
+  border-radius: 8px;
+  background: #1b221e;
+  color: #e9ede8;
+}
+
+.public-share-password-form {
+  display: grid;
+  gap: 10px;
+  max-width: 400px;
+  margin-top: 24px;
+}
+
+.public-share-password-form button,
+.public-share-footer button {
+  padding: 10px 14px;
+  border: 1px solid #8db39b;
+  border-radius: 8px;
+  background: #293c31;
+  color: #e9ede8;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.public-share-password-form button:hover,
+.public-share-footer button:hover {
+  background: #354d3e;
+}
+
+.public-share-footer {
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px clamp(20px, 5vw, 36px);
+  border-top: 1px solid #39433c;
+  color: #a1aaa2;
+  font-size: 12px;
+}
+
+@media (max-width: 540px) {
+  .public-share-shell {
+    width: min(100% - 20px, 960px);
+    padding-top: 16px;
+  }
+
+  .public-share-brand {
+    margin-bottom: 18px;
+  }
+
+  .public-share-label {
+    font-size: 10px;
+    text-align: right;
+  }
+
+  .public-share-card {
+    border-radius: 12px;
+  }
+
+  .public-share-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

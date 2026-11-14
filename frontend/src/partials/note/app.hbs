@@ -1,0 +1,1356 @@
+<div class="note-app" id="note-app">
+  <!-- 1. TỔNG QUAN (DASHBOARD) -->
+  <section class="note-view note-dashboard-view" data-view-panel="dashboard">
+    <div class="note-page-header">
+      <div>
+        <p class="text-uppercase small text-body-secondary fw-bold mb-1" data-today-label></p>
+        <h1 class="h2 fw-bold mb-1">Chào bạn, hôm nay bạn muốn khám phá điều gì?</h1>
+        <p class="text-body-secondary">Quản lý tài liệu thông minh, tích hợp AI và ôn tập kiến thức hiệu quả.</p>
+      </div>
+      <div class="d-flex align-items-center gap-2">
+        <button class="btn btn-primary d-flex align-items-center gap-2" type="button" data-note-create>
+          <i data-lucide="plus"></i> Ghi chú mới
+        </button>
+        <button class="btn btn-outline-secondary d-flex align-items-center gap-2" type="button" data-file-picker>
+          <i data-lucide="upload"></i> Tải tài liệu
+        </button>
+      </div>
+    </div>
+
+    <!-- Stats Grid -->
+    <div class="row g-3 mb-4" aria-label="Thống kê tổng quan">
+      <div class="col-6 col-lg-2 col-md-4">
+        <div class="card border-0 shadow-sm h-100 p-3">
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <span class="text-body-secondary small fw-medium">Tài liệu</span>
+            <span class="p-2 rounded bg-info-subtle text-info"><i data-lucide="book-open" style="width:18px;height:18px"></i></span>
+          </div>
+          <h3 class="fw-bold mb-0" data-stat="documents">0</h3>
+          <small class="text-body-tertiary mt-1" style="font-size:11px">Trong thư viện</small>
+        </div>
+      </div>
+      <div class="col-6 col-lg-2 col-md-4">
+        <div class="card border-0 shadow-sm h-100 p-3">
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <span class="text-body-secondary small fw-medium">Lưu trữ</span>
+            <span class="p-2 rounded bg-warning-subtle text-warning"><i data-lucide="hard-drive" style="width:18px;height:18px"></i></span>
+          </div>
+          <h3 class="fw-bold mb-0" data-stat="storage-used">0 B</h3>
+          <small class="text-body-tertiary mt-1" style="font-size:11px">Tổng dung lượng tài liệu</small>
+        </div>
+      </div>
+      <div class="col-6 col-lg-2 col-md-4">
+        <div class="card border-0 shadow-sm h-100 p-3">
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <span class="text-body-secondary small fw-medium">Bộ Flashcards</span>
+            <span class="p-2 rounded bg-success-subtle text-success"><i data-lucide="layers" style="width:18px;height:18px"></i></span>
+          </div>
+          <h3 class="fw-bold mb-0" data-stat="decks">0</h3>
+          <small class="text-body-tertiary mt-1" style="font-size:11px"><span data-stat="due-cards">0</span> thẻ cần ôn</small>
+        </div>
+      </div>
+      <div class="col-6 col-lg-2 col-md-4">
+        <div class="card border-0 shadow-sm h-100 p-3">
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <span class="text-body-secondary small fw-medium">Bài Quiz</span>
+            <span class="p-2 rounded bg-primary-subtle text-primary"><i data-lucide="list-checks" style="width:18px;height:18px"></i></span>
+          </div>
+          <h3 class="fw-bold mb-0" data-stat="quizzes">0</h3>
+          <small class="text-body-tertiary mt-1" style="font-size:11px">Trắc nghiệm ôn tập</small>
+        </div>
+      </div>
+      <div class="col-6 col-lg-2 col-md-4">
+        <div class="card border-0 shadow-sm h-100 p-3">
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <span class="text-body-secondary small fw-medium">AI Usage</span>
+            <span class="p-2 rounded bg-danger-subtle text-danger"><i data-lucide="sparkles" style="width:18px;height:18px"></i></span>
+          </div>
+          <h3 class="fw-bold mb-0" data-stat="ai-queries">—</h3>
+          <small class="text-body-tertiary mt-1" style="font-size:11px">Chưa có thống kê</small>
+        </div>
+      </div>
+      <div class="col-6 col-lg-2 col-md-4">
+        <div class="card border-0 shadow-sm h-100 p-3">
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <span class="text-body-secondary small fw-medium">Tiến độ</span>
+            <span class="p-2 rounded bg-purple-subtle text-purple"><i data-lucide="chart-pie" style="width:18px;height:18px"></i></span>
+          </div>
+          <h3 class="fw-bold mb-0"><span data-stat="progress">0</span>%</h3>
+          <div class="progress mt-2" style="height: 4px;">
+            <div class="progress-bar bg-success" role="progressbar" data-progress-bar style="width: 0%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Shortcuts -->
+    <div class="card border-0 shadow-sm p-3 mb-4">
+      <div class="d-flex align-items-center gap-3 overflow-x-auto pb-1">
+        <button class="btn btn-light d-flex align-items-center gap-2 px-3 py-2 border rounded-pill flex-shrink-0" type="button" data-view-button="library">
+          <i data-lucide="book-open" class="text-primary"></i> <span>Mở thư viện tài liệu</span>
+        </button>
+        <button class="btn btn-light d-flex align-items-center gap-2 px-3 py-2 border rounded-pill flex-shrink-0" type="button" data-view-button="archives">
+          <i data-lucide="archive" class="text-warning"></i> <span>Quản lý gói ZIP/7Z</span>
+        </button>
+        <button class="btn btn-light d-flex align-items-center gap-2 px-3 py-2 border rounded-pill flex-shrink-0" type="button" data-view-button="assistant">
+          <i data-lucide="sparkles" class="text-success"></i> <span>Hỏi đáp AI Assistant</span>
+        </button>
+        <button class="btn btn-light d-flex align-items-center gap-2 px-3 py-2 border rounded-pill flex-shrink-0" type="button" data-view-button="ai-context">
+          <i data-lucide="cpu" class="text-info"></i> <span>Mở AI Context Capsule</span>
+        </button>
+        <button class="btn btn-light d-flex align-items-center gap-2 px-3 py-2 border rounded-pill flex-shrink-0" type="button" data-view-button="flashcards">
+          <i data-lucide="layers" class="text-danger"></i> <span>Ôn luyện Flashcard</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Main Dashboard Grid -->
+    <div class="row g-4">
+      <!-- Cột trái: Tài liệu vừa mở & Ghi chú gần đây -->
+      <div class="col-lg-8">
+        <div class="card border-0 shadow-sm mb-4">
+          <div class="card-header bg-transparent border-bottom d-flex align-items-center justify-content-between py-3">
+            <div>
+              <h5 class="fw-bold mb-0">Tài liệu vừa mở</h5>
+              <small class="text-body-secondary">Truy cập nhanh tài liệu trong không gian</small>
+            </div>
+            <a href="#library" class="btn btn-sm btn-outline-secondary" data-view-link="library">Xem thư viện <i data-lucide="arrow-right" class="small"></i></a>
+          </div>
+          <div class="card-body p-0">
+            <div class="list-group list-group-flush" data-dashboard-documents>
+              <!-- Populated by JS -->
+            </div>
+          </div>
+        </div>
+
+        <div class="card border-0 shadow-sm mb-4">
+          <div class="card-header bg-transparent border-bottom d-flex align-items-center justify-content-between py-3">
+            <div>
+              <h5 class="fw-bold mb-0">Ghi chú gần đây</h5>
+              <small class="text-body-secondary">Tiếp tục suy nghĩ và liên kết kiến thức</small>
+            </div>
+            <a href="#notes" class="btn btn-sm btn-outline-secondary" data-view-link="notes">Tất cả ghi chú <i data-lucide="arrow-right" class="small"></i></a>
+          </div>
+          <div class="card-body p-0">
+            <div class="list-group list-group-flush" data-dashboard-notes>
+              <!-- Populated by JS -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cột phải: Kế hoạch & Hoạt động gần đây -->
+      <div class="col-lg-4">
+        <div class="card border-0 shadow-sm mb-4">
+          <div class="card-header bg-transparent border-bottom d-flex align-items-center justify-content-between py-3">
+            <div>
+              <h5 class="fw-bold mb-0">Kế hoạch hôm nay</h5>
+              <small class="text-body-secondary">Mục tiêu ôn luyện</small>
+            </div>
+            <button class="btn btn-sm btn-primary" type="button" data-task-create><i data-lucide="plus"></i> Thêm</button>
+          </div>
+          <div class="card-body">
+            <div data-dashboard-tasks></div>
+          </div>
+        </div>
+
+        <div class="card border-0 shadow-sm mb-4">
+          <div class="card-header bg-transparent border-bottom py-3">
+            <h5 class="fw-bold mb-0">Hoạt động gần đây</h5>
+            <small class="text-body-secondary">Nhật ký thao tác trên thiết bị</small>
+          </div>
+          <div class="card-body">
+            <div class="note-activity-list" data-activity-list></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. THƯ VIỆN TÀI LIỆU (LIBRARY) -->
+  <section class="note-view" data-view-panel="library" data-document-library hidden>
+    <div class="note-page-header">
+      <div>
+        <p class="text-uppercase small text-body-secondary fw-bold mb-1">TÀI NGUYÊN</p>
+        <h1 class="h2 fw-bold mb-1">Thư viện tài liệu</h1>
+        <p class="text-body-secondary">Đọc, trích xuất và quản lý đa định dạng: PDF, DOCX, XLSX, PPTX, EPUB, TXT, Ảnh.</p>
+      </div>
+      <div class="d-flex align-items-center gap-2">
+        <button class="btn btn-primary d-flex align-items-center gap-2" type="button" data-file-picker>
+          <i data-lucide="upload"></i> Tải tài liệu
+        </button>
+        <button class="btn btn-outline-secondary d-flex align-items-center gap-2" type="button" data-create-folder-trigger>
+          <i data-lucide="folder-plus"></i> Thư mục mới
+        </button>
+      </div>
+    </div>
+
+    <!-- Dropzone Area -->
+    <div class="note-panel note-dropzone mb-4" data-dropzone tabindex="0" role="button" aria-label="Kéo thả hoặc chọn tệp tài liệu">
+      <input type="file" class="visually-hidden" data-file-input accept=".pdf,.docx,.xlsx,.xls,.csv,.pptx,.epub,.txt,.md,.markdown,.png,.jpg,.jpeg,.webp,.bmp,application/pdf,text/plain,image/png,image/jpeg,image/webp,image/bmp" multiple>
+      <span class="note-drop-icon"><i data-lucide="file-up"></i></span>
+      <strong>Kéo thả tài liệu vào đây để đưa vào kho tri thức</strong>
+      <span>hoặc <button class="btn btn-link p-0 text-decoration-none fw-bold" type="button" data-file-picker>duyệt tệp từ máy tính</button></span>
+      <small class="text-body-secondary">PDF, DOCX, XLSX, PPTX, EPUB, TXT, Markdown, PNG/JPG · Xử lý bảo mật trên trình duyệt</small>
+    </div>
+
+    <div class="note-document-status alert alert-info mb-4" data-document-status role="status" aria-live="polite" hidden></div>
+
+    <!-- Toolbar: Search, Filter, Sort, Layout Switcher -->
+    <div class="card border-0 shadow-sm p-3 mb-4">
+      <div class="row g-2 align-items-center">
+        <div class="col-md-5">
+          <div class="input-group">
+            <span class="input-group-text bg-body-tertiary border-end-0"><i data-lucide="search" style="width:16px;height:16px"></i></span>
+            <input type="search" class="form-control border-start-0 ps-0" placeholder="Tìm kiếm theo tên tài liệu..." aria-label="Tìm tài liệu" data-document-search>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <select class="form-select" aria-label="Lọc loại tài liệu" data-document-type>
+            <option value="">Tất cả định dạng</option>
+            <option value="pdf">PDF Document</option>
+            <option value="docx">Microsoft Word (DOCX)</option>
+            <option value="xlsx">Bảng tính (XLSX, CSV)</option>
+            <option value="pptx">PowerPoint (PPTX)</option>
+            <option value="epub">Sách điện tử (EPUB)</option>
+            <option value="txt">Văn bản (TXT, MD)</option>
+            <option value="image">Hình ảnh / OCR</option>
+          </select>
+        </div>
+        <div class="col-md-2">
+          <select class="form-select" aria-label="Lọc thư mục" data-document-folder-filter>
+            <option value="">Tất cả thư mục</option>
+          </select>
+        </div>
+        <div class="col-md-2 text-end">
+          <div class="btn-group" role="group" aria-label="Kiểu hiển thị">
+            <button type="button" class="btn btn-outline-secondary active" data-library-layout="list" title="Dạng danh sách"><i data-lucide="list"></i></button>
+            <button type="button" class="btn btn-outline-secondary" data-library-layout="grid" title="Dạng lưới"><i data-lucide="layout-grid"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Multi-select Bulk Actions Bar (Floating) -->
+    <div class="note-floating-actions" data-bulk-actions-bar hidden>
+      <span class="small fw-semibold"><span data-bulk-count>0</span> mục đã chọn</span>
+      <button class="btn btn-sm btn-outline-primary" type="button" data-bulk-add-context><i data-lucide="cpu"></i> Thêm vào AI Context</button>
+      <button class="btn btn-sm btn-outline-secondary" type="button" data-bulk-move-folder><i data-lucide="folder-input"></i> Di chuyển</button>
+      <button class="btn btn-sm btn-outline-danger" type="button" data-bulk-delete><i data-lucide="trash"></i> Xóa</button>
+      <button class="btn btn-sm btn-light" type="button" data-bulk-cancel><i data-lucide="x"></i> Bỏ chọn</button>
+    </div>
+
+    <!-- Library Content Layout -->
+    <div class="note-library-layout">
+      <div class="note-panel note-document-list" data-document-list></div>
+      <article class="note-panel note-document-preview" data-document-preview>
+        <div class="note-empty-state">
+          <span class="note-empty-icon"><i data-lucide="file-text"></i></span>
+          <h2>Chọn tài liệu để xem</h2>
+          <p>Tài liệu được xử lý cục bộ trên thiết bị của bạn. Hỗ trợ xem trực tiếp, tìm kiếm và trích xuất.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 3. THƯ MỤC (FOLDERS) -->
+  <section class="note-view" data-view-panel="folders" hidden>
+    <div class="note-page-header">
+      <div>
+        <p class="text-uppercase small text-body-secondary fw-bold mb-1">CẤU TRÚC TRI THỨC</p>
+        <h1 class="h2 fw-bold mb-1">Thư mục</h1>
+        <p class="text-body-secondary">Tổ chức tài liệu và ghi chú theo hệ thống phân cấp logic.</p>
+      </div>
+      <button class="btn btn-primary d-flex align-items-center gap-2" type="button" data-create-folder-trigger>
+        <i data-lucide="folder-plus"></i> Tạo thư mục
+      </button>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <div class="card border-0 shadow-sm p-3">
+          <h6 class="fw-bold mb-3 d-flex align-items-center justify-content-between">
+            <span>Cây thư mục</span>
+            <small class="text-body-secondary fw-normal">Phân cấp</small>
+          </h6>
+          <div class="list-group list-group-flush" data-folder-tree-list></div>
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <div class="card border-0 shadow-sm p-4">
+          <div class="d-flex align-items-center justify-content-between border-bottom pb-3 mb-3">
+            <div>
+              <h5 class="fw-bold mb-0" data-folder-current-name>Tất cả tài liệu & thư mục</h5>
+              <small class="text-body-secondary" data-folder-current-count>0 mục</small>
+            </div>
+            <div class="d-flex gap-2">
+              <button class="btn btn-sm btn-outline-secondary" type="button" data-folder-rename-btn><i data-lucide="square-pen"></i> Đổi tên</button>
+              <button class="btn btn-sm btn-outline-danger" type="button" data-folder-delete-btn><i data-lucide="trash"></i> Xóa thư mục</button>
+            </div>
+          </div>
+          <div class="row g-3" data-folder-items-grid>
+            <!-- Items populated by JS -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. BỘ SƯU TẬP (COLLECTIONS) -->
+  <section class="note-view" data-view-panel="collections" hidden>
+    <div class="note-page-header">
+      <div>
+        <p class="text-uppercase small text-body-secondary fw-bold mb-1">CHỦ ĐỀ & DỰ ÁN</p>
+        <h1 class="h2 fw-bold mb-1">Bộ sưu tập</h1>
+        <p class="text-body-secondary">Gom nhóm đa chiều: liên kết tài liệu, ghi chú và bộ thẻ vào cùng một chuyên đề.</p>
+      </div>
+      <button class="btn btn-primary d-flex align-items-center gap-2" type="button" data-create-collection-trigger>
+        <i data-lucide="folder-heart"></i> Tạo bộ sưu tập
+      </button>
+    </div>
+
+    <div class="row g-4" data-collections-grid>
+      <!-- Populated by JS -->
+    </div>
+  </section>
+
+  <!-- 5. ZIP / 7Z MANAGER (CHỨC NĂNG CHÍNH THỨC) -->
+  <section class="note-view" data-view-panel="archives" hidden>
+    <div class="note-page-header">
+      <div>
+        <div class="d-flex align-items-center gap-2">
+          <h1 class="h2 fw-bold mb-0">Quản lý gói nén ZIP / 7Z</h1>
+          <span class="badge bg-primary-subtle text-primary border border-primary-subtle">Core Feature</span>
+        </div>
+        <p class="text-body-secondary mt-1">Duyệt cây thư mục bên trong file nén, kiểm tra an toàn và trích xuất trực tiếp vào Thư viện tài liệu.</p>
+      </div>
+      <button class="btn btn-primary d-flex align-items-center gap-2" type="button" data-archive-picker-trigger>
+        <i data-lucide="file-archive"></i> Tải gói ZIP / 7Z
+      </button>
+    </div>
+
+    <!-- Drag & Drop Archive Zone -->
+    <div class="note-panel note-dropzone mb-4" data-archive-dropzone tabindex="0" role="button" aria-label="Tải lên tệp ZIP hoặc 7Z">
+      <input type="file" class="visually-hidden" data-archive-input accept=".zip,.7z,application/zip,application/x-7z-compressed" multiple>
+      <span class="note-drop-icon"><i data-lucide="archive"></i></span>
+      <strong>Thêm gói nén ZIP hoặc 7Z vào hệ thống</strong>
+      <span>hoặc <button class="btn btn-link p-0 text-decoration-none fw-bold" type="button" data-archive-picker-trigger>chọn từ máy tính</button></span>
+      <small class="text-body-secondary">Tự động phân tích cây thư mục nội bộ và kiểm tra mã độc an toàn (ngăn thực thi file .exe, .bat, .sh)</small>
+    </div>
+
+    <div class="row g-4">
+      <!-- Cột trái: Danh sách các gói nén -->
+      <div class="col-lg-4">
+        <div class="card border-0 shadow-sm p-3 h-100">
+          <h6 class="fw-bold mb-3 d-flex align-items-center justify-content-between">
+            <span>Danh sách gói nén</span>
+            <small class="text-body-secondary fw-normal" data-archive-count>0 gói</small>
+          </h6>
+          <div class="list-group list-group-flush" data-archive-list style="max-height: 520px; overflow-y: auto;">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Cột phải: Chi tiết gói nén, cây thư mục & công cụ trích xuất -->
+      <div class="col-lg-8">
+        <div class="card border-0 shadow-sm p-4" data-archive-detail-card>
+          <div class="d-flex align-items-center justify-content-between border-bottom pb-3 mb-3">
+            <div>
+              <div class="d-flex align-items-center gap-2">
+                <h5 class="fw-bold mb-0" data-arch-title>Chọn một gói nén để xem</h5>
+                <span class="badge bg-success-subtle text-success" data-arch-safe-badge><i data-lucide="shield-check" style="width:12px;height:12px"></i> An toàn</span>
+              </div>
+              <small class="text-body-secondary" data-arch-meta>Dung lượng &bull; Số lượng tệp &bull; Ngày tải</small>
+            </div>
+            <div class="d-flex gap-2">
+              <button class="btn btn-sm btn-outline-primary" type="button" data-arch-download-btn><i data-lucide="download"></i> Tải lại</button>
+              <button class="btn btn-sm btn-primary" type="button" data-arch-extract-all-btn><i data-lucide="folder-output"></i> Giải nén tất cả</button>
+              <button class="btn btn-sm btn-outline-danger" type="button" data-arch-remove-btn><i data-lucide="trash"></i> Xóa</button>
+            </div>
+          </div>
+
+          <!-- Tree View & File List Tabs -->
+          <ul class="nav nav-tabs mb-3" role="tablist">
+            <li class="nav-item">
+              <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#arch-tree-tab" type="button"><i data-lucide="folder-tree"></i> Cây thư mục</button>
+            </li>
+            <li class="nav-item">
+              <button class="nav-link" data-bs-toggle="tab" data-bs-target="#arch-files-tab" type="button"><i data-lucide="list"></i> Danh sách tệp chi tiết</button>
+            </li>
+            <li class="nav-item">
+              <button class="nav-link" data-bs-toggle="tab" data-bs-target="#arch-history-tab" type="button"><i data-lucide="clock"></i> Lịch sử giải nén</button>
+            </li>
+          </ul>
+
+          <div class="tab-content">
+            <!-- Cây thư mục -->
+            <div class="tab-pane fade show active" id="arch-tree-tab">
+              <div class="note-tree-container" data-arch-tree-container style="min-height: 280px; max-height: 400px; overflow-y: auto;">
+                <p class="text-body-secondary small">Chưa có cây thư mục được chọn.</p>
+              </div>
+              <div class="mt-3 d-flex justify-content-between align-items-center">
+                <small class="text-body-secondary"><i data-lucide="info" style="width:14px;height:14px"></i> Nhấp đúp vào tệp để xem thông tin an toàn</small>
+                <button class="btn btn-sm btn-success" type="button" data-arch-extract-selected-btn><i data-lucide="square-check"></i> Trích xuất tệp đã chọn</button>
+              </div>
+            </div>
+
+            <!-- Danh sách tệp -->
+            <div class="tab-pane fade" id="arch-files-tab">
+              <div class="table-responsive" style="max-height: 360px; overflow-y: auto;">
+                <table class="table table-hover align-middle small mb-0">
+                  <thead class="table-light">
+                    <tr>
+                      <th style="width: 32px;"><input type="checkbox" class="form-check-input" data-arch-select-all></th>
+                      <th>Đường dẫn tệp</th>
+                      <th>Kích thước</th>
+                      <th>Định dạng</th>
+                      <th>Trạng thái</th>
+                      <th class="text-end">Thao tác</th>
+                    </tr>
+                  </thead>
+                  <tbody data-arch-files-tbody></tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Lịch sử giải nén -->
+            <div class="tab-pane fade" id="arch-history-tab">
+              <div class="list-group list-group-flush" data-arch-history-list></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. AI ASSISTANT (CHAT, MARKDOWN, ACTIONS) -->
+  <section class="note-view" data-view-panel="assistant" hidden>
+    <div class="note-page-header">
+      <div>
+        <p class="text-uppercase small text-body-secondary fw-bold mb-1">TRÍ TUỆ NHÂN TẠO</p>
+        <h1 class="h2 fw-bold mb-1">AI Assistant</h1>
+        <p class="text-body-secondary">Hỗ trợ đọc sâu, tóm tắt, giải thích khái niệm và tạo nội dung học tập theo yêu cầu.</p>
+      </div>
+      <div class="d-flex align-items-center gap-2">
+        <a href="#settings" class="btn btn-outline-secondary btn-sm d-flex align-items-center gap-2" data-view-link="settings">
+          <i data-lucide="key"></i> Cấu hình API Key (BYOK)
+        </a>
+      </div>
+    </div>
+
+    <!-- AI Connection Status Badge -->
+    <div class="note-ai-status mb-4" data-ai-status-banner>
+      <span><i data-lucide="sparkles"></i></span>
+      <div>
+        <strong>AI Assistant sẵn sàng kết nối</strong>
+        <p>Mô hình BYOK (Bring Your Own Key): Google Gemini, Groq, OpenRouter hoặc Local AI.</p>
+      </div>
+      <span class="badge rounded-pill bg-success-subtle text-success border border-success-subtle" data-ai-connection-indicator>Đang dùng: Gemini 1.5 Flash</span>
+    </div>
+
+    <div class="row g-4">
+      <!-- Cột trái: Lịch sử hội thoại & Prompts tác vụ nhanh -->
+      <div class="col-lg-3">
+        <div class="card border-0 shadow-sm p-3 mb-3">
+          <div class="d-flex align-items-center justify-content-between mb-3">
+            <h6 class="fw-bold mb-0">Hội thoại</h6>
+            <button class="btn btn-sm btn-outline-primary" type="button" data-chat-new><i data-lucide="plus"></i> Mới</button>
+          </div>
+          <div class="list-group list-group-flush small" data-chat-sessions-list style="max-height: 240px; overflow-y: auto;">
+            <button type="button" class="list-group-item list-group-item-action active rounded mb-1">Phiên thảo luận hiện tại</button>
+          </div>
+        </div>
+
+        <div class="card border-0 shadow-sm p-3">
+          <h6 class="fw-bold mb-3">Tác vụ AI phổ biến</h6>
+          <div class="d-grid gap-2">
+            <button class="btn btn-light btn-sm text-start border d-flex align-items-center gap-2" type="button" data-quick-action="summarize">
+              <i data-lucide="file-text" class="text-primary"></i> <span>Tóm tắt tài liệu</span>
+            </button>
+            <button class="btn btn-light btn-sm text-start border d-flex align-items-center gap-2" type="button" data-quick-action="explain">
+              <i data-lucide="lightbulb" class="text-warning"></i> <span>Giải thích thuật ngữ</span>
+            </button>
+            <button class="btn btn-light btn-sm text-start border d-flex align-items-center gap-2" type="button" data-quick-action="make-flashcards">
+              <i data-lucide="layers" class="text-success"></i> <span>Tạo flashcards</span>
+            </button>
+            <button class="btn btn-light btn-sm text-start border d-flex align-items-center gap-2" type="button" data-quick-action="make-quiz">
+              <i data-lucide="list-checks" class="text-info"></i> <span>Tạo bài trắc nghiệm</span>
+            </button>
+            <button class="btn btn-light btn-sm text-start border d-flex align-items-center gap-2" type="button" data-quick-action="outline">
+              <i data-lucide="list-ordered" class="text-secondary"></i> <span>Lập đề cương chi tiết</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cột phải: Chat Stream & Message Composer -->
+      <div class="col-lg-9">
+        <div class="card border-0 shadow-sm d-flex flex-column" style="height: 640px;">
+          <!-- Chat Header with Model Picker -->
+          <div class="card-header bg-transparent border-bottom d-flex align-items-center justify-content-between py-2 px-3">
+            <div class="d-flex align-items-center gap-2">
+              <select class="form-select form-select-sm" style="max-width: 220px;" data-ai-active-model>
+                <option value="gemini-1.5-flash">Gemini 1.5 Flash (Google)</option>
+                <option value="gemini-1.5-pro">Gemini 1.5 Pro (Google)</option>
+                <option value="llama-3.3-70b-versatile">Llama 3.3 70B (Groq)</option>
+                <option value="claude-3.5-sonnet">Claude 3.5 Sonnet (OpenRouter)</option>
+                <option value="custom">Local AI (Ollama/vLLM)</option>
+              </select>
+              <select class="form-select form-select-sm" style="max-width: 220px;" data-ai-attach-document>
+                <option value="">-- Đính kèm tài liệu nguồn --</option>
+              </select>
+            </div>
+            <button class="btn btn-sm btn-ghost-secondary text-body-secondary" type="button" data-chat-clear title="Xóa lịch sử chat"><i data-lucide="trash"></i></button>
+          </div>
+
+          <!-- Chat Stream Messages -->
+          <div class="note-chat-stream flex-grow-1" data-chat-stream>
+            <div class="note-chat-bubble ai-bubble">
+              <div class="note-user-avatar bg-primary text-white rounded-circle d-flex align-items-center justify-content-center fw-bold" style="width:32px;height:32px;font-size:12px">AI</div>
+              <div class="bubble-content">
+                <p>Xin chào! Tôi là trợ lý AI của không gian <strong>NOTE</strong>.</p>
+                <p>Tôi có thể giúp bạn đọc tài liệu, tóm tắt ý chính, trích xuất bảng biểu hoặc tự động sinh bộ câu hỏi trắc nghiệm và flashcards để bạn ôn tập ngay lập tức.</p>
+                <p class="text-body-secondary small mb-0"><i data-lucide="shield-check" style="width:14px;height:14px"></i> Bảo mật: Hệ thống hỗ trợ mô hình BYOK và xử lý dữ liệu minh bạch.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Processing / Thinking Indicator -->
+          <div class="px-4 py-2 bg-body-tertiary border-top d-flex align-items-center gap-2 small text-body-secondary" data-ai-thinking-state hidden>
+            <span class="spinner-border spinner-border-sm text-primary" role="status"></span>
+            <span>Trợ lý AI đang phân tích dữ liệu nguồn...</span>
+          </div>
+
+          <!-- Chat Composer Input -->
+          <div class="p-3 border-top">
+            <form data-ai-chat-form>
+              <div class="input-group">
+                <textarea class="form-control" rows="2" placeholder="Hỏi bất cứ điều gì về tài liệu của bạn... (Enter để gửi, Shift+Enter xuống dòng)" aria-label="Tin nhắn cho AI" data-chat-input required></textarea>
+                <button class="btn btn-primary px-4 d-flex align-items-center justify-content-center" type="submit">
+                  <i data-lucide="send"></i>
+                </button>
+              </div>
+              <div class="d-flex align-items-center justify-content-between mt-2 small text-body-secondary">
+                <span>Gợi ý: Đính kèm tài liệu ở thanh trên để nhận trích dẫn chính xác.</span>
+                <span class="small">Enter để gửi</span>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. AI CONTEXT (CAPSULE, HANDOFF, SCHEMA VALIDATOR) -->
+  <section class="note-view" data-view-panel="ai-context" hidden>
+    <div class="note-page-header">
+      <div>
+        <div class="d-flex align-items-center gap-2">
+          <h1 class="h2 fw-bold mb-0">AI Context Capsules</h1>
+          <span class="badge bg-info-subtle text-info border border-info-subtle">Handoff Protocol</span>
+        </div>
+        <p class="text-body-secondary mt-1">Đóng gói tri thức có cấu trúc: Tóm tắt, Nguồn kiểm chứng, Kết luận, Câu hỏi mở và Chỉ dẫn cho mô hình AI tiếp theo.</p>
+      </div>
+      <div class="d-flex align-items-center gap-2">
+        <button class="btn btn-outline-secondary d-flex align-items-center gap-2" type="button" data-context-import-btn>
+          <i data-lucide="upload"></i> Nhập JSON
+        </button>
+        <button class="btn btn-primary d-flex align-items-center gap-2" type="button" data-context-create-btn>
+          <i data-lucide="plus"></i> Tạo AI Context mới
+        </button>
+      </div>
+    </div>
+
+    <!-- AI Context vs Chat History Explainer Alert -->
+    <div class="alert alert-light border border-info-subtle d-flex align-items-start gap-3 mb-4">
+      <i data-lucide="info" class="text-info mt-1" style="width:20px;height:20px"></i>
+      <div>
+        <strong class="text-info-emphasis">Phân biệt rõ ràng AI Context với Lịch sử Chat:</strong>
+        <p class="small text-body-secondary mb-0">Lịch sử chat là luồng đối thoại thô. AI Context là một bản snapshot kiến thức đã được chắt lọc, định chuẩn JSON Schema, chứa đựng các kết luận đã kiểm chứng và câu hỏi còn mở, sẵn sàng chuyển giao (Handoff) cho bất kỳ mô hình AI nào khác mà không làm mất ngữ cảnh.</p>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      <!-- Cột trái: Danh sách Context Capsules -->
+      <div class="col-lg-4">
+        <div class="card border-0 shadow-sm p-3 h-100">
+          <h6 class="fw-bold mb-3 d-flex align-items-center justify-content-between">
+            <span>Danh sách Context Capsules</span>
+            <small class="text-body-secondary fw-normal" data-context-count>1 mục</small>
+          </h6>
+          <div class="list-group list-group-flush" data-context-list style="max-height: 540px; overflow-y: auto;">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Cột phải: Chi tiết Capsule & Thao tác chuyển giao (Handoff) -->
+      <div class="col-lg-8">
+        <div class="card border-0 shadow-sm p-4" data-context-detail-card>
+          <div class="d-flex align-items-start justify-content-between border-bottom pb-3 mb-3">
+            <div>
+              <div class="d-flex align-items-center gap-2">
+                <h4 class="fw-bold mb-0" data-ctx-title>Chọn một AI Context</h4>
+                <span class="badge bg-primary-subtle text-primary" data-ctx-version>v1.0.0</span>
+              </div>
+              <small class="text-body-secondary" data-ctx-updated>Cập nhật lần cuối: Vừa xong</small>
+            </div>
+            <div class="d-flex flex-wrap gap-2">
+              <button class="btn btn-sm btn-outline-secondary" type="button" data-ctx-action="snapshot" title="Tạo bản snapshot mới"><i data-lucide="camera"></i> Snapshot</button>
+              <button class="btn btn-sm btn-outline-secondary" type="button" data-ctx-action="export-json" title="Xuất JSON"><i data-lucide="download"></i> Xuất JSON</button>
+              <button class="btn btn-sm btn-outline-info" type="button" data-ctx-action="validate-json" title="Kiểm tra tính hợp lệ của Schema"><i data-lucide="circle-check"></i> Validate</button>
+              <button class="btn btn-sm btn-primary" type="button" data-ctx-action="handoff" title="Sao chép prompt chuyển giao"><i data-lucide="send"></i> AI Handoff</button>
+            </div>
+          </div>
+
+          <!-- Structured Tabs -->
+          <ul class="nav nav-tabs mb-3" role="tablist">
+            <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#ctx-summary-tab" type="button"><i data-lucide="file-text"></i> Tóm tắt & Nguồn</button></li>
+            <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#ctx-insights-tab" type="button"><i data-lucide="check-check"></i> Kết luận & Kiến thức</button></li>
+            <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#ctx-questions-tab" type="button"><i data-lucide="circle-question-mark"></i> Câu hỏi còn mở</button></li>
+            <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#ctx-directive-tab" type="button"><i data-lucide="terminal"></i> Chỉ dẫn cho AI tiếp theo</button></li>
+            <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#ctx-history-tab" type="button"><i data-lucide="clock"></i> Lịch sử phiên bản</button></li>
+          </ul>
+
+          <div class="tab-content">
+            <div class="tab-pane fade show active" id="ctx-summary-tab">
+              <h6 class="fw-bold mb-2">Tóm tắt nội dung cốt lõi:</h6>
+              <div class="p-3 bg-body-tertiary rounded mb-3" data-ctx-summary-box></div>
+              <h6 class="fw-bold mb-2">Tài liệu và nguồn tham chiếu:</h6>
+              <div class="list-group list-group-flush" data-ctx-sources-list></div>
+            </div>
+
+            <div class="tab-pane fade" id="ctx-insights-tab">
+              <h6 class="fw-bold mb-2">Kiến thức và kết luận đã xác thực:</h6>
+              <div class="list-group list-group-flush" data-ctx-insights-list></div>
+            </div>
+
+            <div class="tab-pane fade" id="ctx-questions-tab">
+              <h6 class="fw-bold mb-2">Câu hỏi còn mở cần nghiên cứu tiếp:</h6>
+              <div class="list-group list-group-flush" data-ctx-questions-list></div>
+            </div>
+
+            <div class="tab-pane fade" id="ctx-directive-tab">
+              <h6 class="fw-bold mb-2">Hướng dẫn cho AI tiếp theo (AI Directive):</h6>
+              <pre class="p-3 bg-body-tertiary border rounded small" data-ctx-directive-box style="white-space: pre-wrap;"></pre>
+            </div>
+
+            <div class="tab-pane fade" id="ctx-history-tab">
+              <div class="list-group list-group-flush" data-ctx-versions-list></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. FLASHCARDS (3D FLIP & STUDY) -->
+  <section class="note-view" data-view-panel="flashcards" hidden>
+    <div class="note-page-header">
+      <div>
+        <p class="text-uppercase small text-body-secondary fw-bold mb-1">HỌC TẬP CHỦ ĐỘNG</p>
+        <h1 class="h2 fw-bold mb-1">Flashcards</h1>
+        <p class="text-body-secondary">Phương pháp ôn tập ngắt quãng (Spaced Repetition) với hiệu ứng lật thẻ 3D.</p>
+      </div>
+      <div class="d-flex align-items-center gap-2">
+        <button class="btn btn-outline-primary d-flex align-items-center gap-2" type="button" data-ai-generate-cards>
+          <i data-lucide="sparkles"></i> Tạo bằng AI
+        </button>
+        <button class="btn btn-primary d-flex align-items-center gap-2" type="button" data-card-create>
+          <i data-lucide="plus"></i> Tạo thẻ thủ công
+        </button>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <div class="card border-0 shadow-sm p-3">
+          <div class="card-header bg-transparent border-bottom px-0 pb-3 mb-2">
+            <h5 class="fw-bold mb-0">Bộ thẻ học</h5>
+            <small class="text-body-secondary">Chọn bộ thẻ để ôn luyện</small>
+          </div>
+          <div class="note-deck-list" data-deck-list style="max-height: 480px; overflow-y: auto;"></div>
+        </div>
+      </div>
+
+      <div class="col-lg-8">
+        <div class="card border-0 shadow-sm p-4">
+          <div class="d-flex align-items-center justify-content-between mb-3">
+            <div>
+              <h5 class="fw-bold mb-0" data-review-deck>Bộ thẻ</h5>
+              <small class="text-body-secondary">Nhấn vào thẻ hoặc nhấn Space để lật</small>
+            </div>
+            <span class="badge bg-secondary-subtle text-secondary fs-6 px-3 py-1" data-review-progress>0 / 0</span>
+          </div>
+
+          <div class="progress mb-4" style="height: 6px;">
+            <div class="progress-bar bg-success" role="progressbar" data-card-progress style="width: 0%"></div>
+          </div>
+
+          <!-- 3D Flip Card Viewport -->
+          <div class="note-flip-card-viewport mb-4">
+            <div class="note-flip-card" data-flashcard tabindex="0" role="button" aria-pressed="false">
+              <!-- Mặt trước -->
+              <div class="note-flip-card-front">
+                <div class="d-flex align-items-center justify-content-between">
+                  <span class="badge bg-primary-subtle text-primary">MẶT TRƯỚC (CÂU HỎI)</span>
+                  <small class="text-body-tertiary"><i data-lucide="rotate-cw"></i> Click để lật</small>
+                </div>
+                <div class="my-auto text-center">
+                  <h3 class="fw-bold mb-0" data-card-content>Chọn một bộ thẻ để bắt đầu</h3>
+                </div>
+                <div class="text-center text-body-tertiary small">
+                  <span>Phím tắt: [Space] Lật thẻ &bull; [1] Chưa nhớ &bull; [2] Đã nhớ</span>
+                </div>
+              </div>
+
+              <!-- Mặt sau -->
+              <div class="note-flip-card-back">
+                <div class="d-flex align-items-center justify-content-between">
+                  <span class="badge bg-success-subtle text-success">MẶT SAU (ĐÁP ÁN)</span>
+                  <small class="text-body-tertiary"><i data-lucide="rotate-cw"></i> Click để lật lại</small>
+                </div>
+                <div class="my-auto text-center">
+                  <h4 class="fw-medium mb-0" data-card-back-content>Nội dung câu trả lời</h4>
+                </div>
+                <div class="text-center text-body-tertiary small">
+                  <span>Đánh giá mức độ nhớ của bạn bên dưới</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="d-flex align-items-center justify-content-center gap-3">
+            <button class="btn btn-outline-danger px-4 py-2 d-flex align-items-center gap-2" type="button" data-card-review="again">
+              <i data-lucide="rotate-ccw"></i> Chưa nhớ (Phím 1)
+            </button>
+            <button class="btn btn-success px-4 py-2 d-flex align-items-center gap-2" type="button" data-card-review="known">
+              <i data-lucide="check"></i> Đã nhớ (Phím 2)
+            </button>
+          </div>
+
+          <div class="d-flex align-items-center justify-content-between mt-3 pt-3 border-top">
+            <button class="btn btn-link text-decoration-none text-body-secondary" type="button" data-card-nav="-1">
+              <i data-lucide="chevron-left"></i> Thẻ trước
+            </button>
+            <button class="btn btn-outline-secondary btn-sm" type="button" data-card-shuffle>
+              <i data-lucide="shuffle"></i> Xáo trộn thẻ
+            </button>
+            <button class="btn btn-link text-decoration-none text-body-secondary" type="button" data-card-nav="1">
+              Thẻ kế tiếp <i data-lucide="chevron-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. QUIZ (TRẮC NGHIỆM INTERACTIVE) -->
+  <section class="note-view" data-view-panel="quiz" hidden>
+    <div class="note-page-header">
+      <div>
+        <p class="text-uppercase small text-body-secondary fw-bold mb-1">ĐÁNH GIÁ NĂNG LỰC</p>
+        <h1 class="h2 fw-bold mb-1">Bài trắc nghiệm (Quiz)</h1>
+        <p class="text-body-secondary">Kiểm tra mức độ thấu hiểu kiến thức với câu hỏi trắc nghiệm A/B/C/D kèm giải thích chi tiết.</p>
+      </div>
+      <div class="d-flex align-items-center gap-2">
+        <button class="btn btn-outline-primary d-flex align-items-center gap-2" type="button" data-ai-generate-quiz>
+          <i data-lucide="sparkles"></i> Tạo Quiz bằng AI
+        </button>
+        <button class="btn btn-primary d-flex align-items-center gap-2" type="button" data-quiz-create>
+          <i data-lucide="plus"></i> Tạo câu hỏi mới
+        </button>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <div class="card border-0 shadow-sm p-3">
+          <h5 class="fw-bold mb-3 border-bottom pb-2">Danh sách bài Quiz</h5>
+          <div data-quiz-list style="max-height: 480px; overflow-y: auto;"></div>
+        </div>
+      </div>
+
+      <div class="col-lg-8">
+        <div class="card border-0 shadow-sm p-4" data-quiz-stage>
+          <div class="note-empty-state">
+            <span class="note-empty-icon"><i data-lucide="list-checks"></i></span>
+            <h2>Chọn một bài Quiz để làm</h2>
+            <p>Chọn từ danh sách bên trái hoặc nhấn "Tạo Quiz bằng AI" để trích xuất tự động từ tài liệu.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. QUY TRÌNH AI (AI WORKFLOWS) -->
+  <section class="note-view" data-view-panel="ai-workflows" hidden>
+    <div class="note-page-header">
+      <div>
+        <p class="text-uppercase small text-body-secondary fw-bold mb-1">TỰ ĐỘNG HÓA THÔNG MINH</p>
+        <h1 class="h2 fw-bold mb-1">Quy trình AI (Pipelines)</h1>
+        <p class="text-body-secondary">Chuỗi tác vụ tự động: Quét tài liệu -> OCR -> Tóm tắt -> Sinh câu hỏi -> Đóng gói AI Context.</p>
+      </div>
+      <button class="btn btn-primary d-flex align-items-center gap-2" type="button" data-workflow-create-btn>
+        <i data-lucide="plus"></i> Tạo quy trình mới
+      </button>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-lg-8">
+        <div class="card border-0 shadow-sm p-4 mb-4">
+          <h5 class="fw-bold mb-4">Các quy trình đang chạy & sẵn sàng</h5>
+          <div class="d-flex flex-column gap-3" data-workflows-list>
+            <!-- Populated by JS -->
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="card border-0 shadow-sm p-3 mb-4">
+          <h6 class="fw-bold mb-3">Lịch sử chạy quy trình</h6>
+          <div class="list-group list-group-flush small" data-workflows-history-list style="max-height: 380px; overflow-y: auto;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. CHIA SẺ (SHARING & PUBLIC LINKS) -->
+  <section class="note-view" data-view-panel="sharing" hidden>
+    <div class="note-page-header">
+      <div>
+        <p class="text-uppercase small text-body-secondary fw-bold mb-1">CỘNG TÁC & PHÂN PHỐI</p>
+        <h1 class="h2 fw-bold mb-1">Quản lý liên kết chia sẻ</h1>
+        <p class="text-body-secondary">Tạo liên kết an toàn, bảo vệ bằng mật khẩu, giới hạn thời hạn và xem trước trang chia sẻ độc lập.</p>
+      </div>
+      <div class="d-flex align-items-center gap-2">
+        <a href="/share.html" target="_blank" class="btn btn-outline-secondary d-flex align-items-center gap-2">
+          <i data-lucide="external-link"></i> Xem trước trang Public Share
+        </a>
+        <button class="btn btn-primary d-flex align-items-center gap-2" type="button" data-create-share-trigger>
+          <i data-lucide="share-2"></i> Tạo liên kết mới
+        </button>
+      </div>
+    </div>
+
+    <div class="card border-0 shadow-sm p-4">
+      <div class="table-responsive">
+        <table class="table table-hover align-middle mb-0">
+          <thead class="table-light">
+            <tr>
+              <th>Tài liệu chia sẻ</th>
+              <th>Liên kết</th>
+              <th>Thời hạn</th>
+              <th>Mật khẩu</th>
+              <th>Tải xuống</th>
+              <th>Lượt xem</th>
+              <th>Trạng thái</th>
+              <th class="text-end">Thao tác</th>
+            </tr>
+          </thead>
+          <tbody data-shares-tbody>
+            <!-- Populated by JS -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12. CÀI ĐẶT (SETTINGS & BYOK AI CONFIG) -->
+  <section class="note-view" data-view-panel="settings" hidden>
+    <div class="note-page-header">
+      <div>
+        <p class="text-uppercase small text-body-secondary fw-bold mb-1">TÙY CHỈNH HỆ THỐNG</p>
+        <h1 class="h2 fw-bold mb-1">Cài đặt</h1>
+        <p class="text-body-secondary">Quản lý hồ sơ, bảo mật, kết nối AI (BYOK), lưu trữ và giao diện hiển thị.</p>
+      </div>
+    </div>
+
+    <div class="card border-0 shadow-sm">
+      <div class="card-header bg-transparent border-bottom p-0">
+        <ul class="nav nav-tabs px-3 border-0" id="settingsTabs" role="tablist">
+          <li class="nav-item"><button class="nav-link active py-3" data-bs-toggle="tab" data-bs-target="#tab-profile" type="button"><i data-lucide="user"></i> Hồ sơ</button></li>
+          <li class="nav-item"><button class="nav-link py-3" data-bs-toggle="tab" data-bs-target="#tab-ai-connections" type="button"><i data-lucide="key"></i> Kết nối AI (BYOK)</button></li>
+          <li class="nav-item"><button class="nav-link py-3" data-bs-toggle="tab" data-bs-target="#tab-storage" type="button"><i data-lucide="hard-drive"></i> Lưu trữ & Dữ liệu</button></li>
+          <li class="nav-item"><button class="nav-link py-3" data-bs-toggle="tab" data-bs-target="#tab-appearance" type="button"><i data-lucide="palette"></i> Giao diện</button></li>
+          <li class="nav-item"><button class="nav-link py-3" data-bs-toggle="tab" data-bs-target="#tab-notifications" type="button"><i data-lucide="bell"></i> Thông báo</button></li>
+          <li class="nav-item"><button class="nav-link py-3" data-bs-toggle="tab" data-bs-target="#tab-security" type="button"><i data-lucide="shield"></i> Bảo mật & Phiên</button></li>
+        </ul>
+      </div>
+
+      <div class="card-body p-4">
+        <div class="tab-content">
+          <!-- Tab 1: Profile -->
+          <div class="tab-pane fade show active" id="tab-profile">
+            <h5 class="fw-bold mb-3">Hồ sơ người dùng</h5>
+            <form data-profile-form class="col-lg-6">
+              <div class="mb-3">
+                <label class="form-label">Tên hiển thị</label>
+                <input type="text" class="form-control" name="name" value="" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Email tài khoản</label>
+                <input type="email" class="form-control" name="email" value="" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Chức danh / Vai trò</label>
+                <input type="text" class="form-control" name="title" value="">
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Giới thiệu</label>
+                <textarea class="form-control" rows="3" name="bio"></textarea>
+              </div>
+              <button class="btn btn-primary" type="submit">Lưu thay đổi</button>
+            </form>
+          </div>
+
+          <!-- Tab 2: BYOK AI Connections -->
+          <div class="tab-pane fade" id="tab-ai-connections">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+              <div>
+                <h5 class="fw-bold mb-0">Quản lý kết nối AI (BYOK - Bring Your Own Key)</h5>
+                <small class="text-body-secondary">Hỗ trợ kết nối bảo mật với Google Gemini, Groq, OpenRouter và máy chủ Custom OpenAI-compatible.</small>
+              </div>
+            </div>
+            <div class="row g-4" data-byok-providers-grid>
+              <!-- Populated by JS -->
+            </div>
+          </div>
+
+          <!-- Tab 3: Storage & Data -->
+          <div class="tab-pane fade" id="tab-storage">
+            <h5 class="fw-bold mb-3">Quản lý dung lượng lưu trữ</h5>
+            <div class="col-lg-8">
+              <div class="p-3 bg-body-tertiary rounded mb-4">
+                <div class="d-flex justify-content-between small fw-semibold mb-2">
+                  <span>Tổng dung lượng tài liệu: <span data-storage-used>0 B</span></span>
+                  <span>Theo kích thước tệp trong thư viện</span>
+                </div>
+              </div>
+              <div class="d-flex flex-wrap gap-2 mb-4">
+                <button class="btn btn-outline-secondary" type="button" data-export-data><i data-lucide="download"></i> Xuất dữ liệu JSON toàn bộ</button>
+                <button class="btn btn-outline-danger" type="button" data-clear-all-data><i data-lucide="trash"></i> Xóa toàn bộ dữ liệu & đặt lại</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 4: Appearance -->
+          <div class="tab-pane fade" id="tab-appearance">
+            <h5 class="fw-bold mb-3">Tùy biến giao diện</h5>
+            <div class="col-lg-6">
+              <label class="form-label">Chế độ màu sắc (Theme Mode)</label>
+              <div class="note-theme-options d-flex gap-2 mb-4">
+                <button type="button" class="btn btn-outline-secondary" data-color-mode-value="light"><i data-lucide="sun"></i> Sáng</button>
+                <button type="button" class="btn btn-outline-secondary" data-color-mode-value="dark"><i data-lucide="moon"></i> Tối</button>
+                <button type="button" class="btn btn-outline-secondary" data-color-mode-value="auto"><i data-lucide="sun-moon"></i> Theo hệ thống</button>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Cỡ chữ trình đọc tài liệu</label>
+                <select class="form-select" data-reader-fontsize-select>
+                  <option value="14px">Nhỏ (14px)</option>
+                  <option value="16px" selected>Vừa phải (16px - Khuyên dùng)</option>
+                  <option value="18px">Lớn (18px)</option>
+                  <option value="20px">Rất lớn (20px)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 5: Notifications -->
+          <div class="tab-pane fade" id="tab-notifications">
+            <h5 class="fw-bold mb-3">Tùy chọn thông báo</h5>
+            <div class="col-lg-6">
+              <div class="form-check form-switch mb-3">
+                <input class="form-check-input" type="checkbox" id="notif-daily" checked>
+                <label class="form-check-label" for="notif-daily">Nhắc nhở ôn tập Flashcard hàng ngày</label>
+              </div>
+              <div class="form-check form-switch mb-3">
+                <input class="form-check-input" type="checkbox" id="notif-workflow" checked>
+                <label class="form-check-label" for="notif-workflow">Thông báo khi Quy trình AI hoàn thành</label>
+              </div>
+              <div class="form-check form-switch mb-3">
+                <input class="form-check-input" type="checkbox" id="notif-share" checked>
+                <label class="form-check-label" for="notif-share">Thông báo khi liên kết chia sẻ được truy cập</label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 6: Security & Sessions -->
+          <div class="tab-pane fade" id="tab-security">
+            <h5 class="fw-bold mb-3">Các phiên đăng nhập đang hoạt động</h5>
+            <div class="list-group mb-4" data-sessions-list></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ALIAS / COMPATIBILITY VIEWS -->
+  <!-- View: Ghi chú (Notes) -->
+  <section class="note-view" data-view-panel="notes" hidden>
+    <div class="note-page-header">
+      <div>
+        <p class="text-uppercase small text-body-secondary fw-bold mb-1">TRI THỨC CÁ NHÂN</p>
+        <h1 class="h2 fw-bold mb-1">Ghi chú</h1>
+        <p class="text-body-secondary">Thu thập ý tưởng, kết nối chúng và quay lại bất cứ lúc nào.</p>
+      </div>
+      <button class="btn btn-primary" type="button" data-note-create><i data-lucide="plus"></i> Ghi chú mới</button>
+    </div>
+    <div class="note-notes-toolbar mb-3">
+      <label class="note-search-field"><i data-lucide="search"></i><input type="search" placeholder="Tìm trong ghi chú..." aria-label="Tìm ghi chú" data-note-search></label>
+      <select class="form-select" aria-label="Lọc danh mục" data-note-category><option value="">Tất cả danh mục</option></select>
+      <select class="form-select" aria-label="Lọc thẻ" data-note-tag><option value="">Tất cả tag</option></select>
+      <div class="btn-group note-view-toggle" role="group" aria-label="Kiểu hiển thị">
+        <button type="button" class="btn btn-outline-secondary active" data-note-layout="list" aria-label="Danh sách"><i data-lucide="list"></i></button>
+        <button type="button" class="btn btn-outline-secondary" data-note-layout="grid" aria-label="Lưới"><i data-lucide="layout-grid"></i></button>
+      </div>
+    </div>
+    <div class="note-editor-layout">
+      <aside class="note-panel note-list-panel"><div class="note-list-header"><span data-note-count>0 ghi chú</span></div><div class="note-list" data-note-list></div></aside>
+      <article class="note-panel note-editor-panel" data-note-editor><div class="note-empty-state"><span class="note-empty-icon"><i data-lucide="notebook-pen"></i></span><h2>Chọn một ghi chú</h2><p>Hoặc tạo ghi chú mới để bắt đầu.</p><button class="btn btn-primary" type="button" data-note-create><i data-lucide="plus"></i> Tạo ghi chú</button></div></article>
+    </div>
+  </section>
+
+  <!-- View: Bản đồ kiến thức (Graph) -->
+  <section class="note-view" data-view-panel="graph" hidden>
+    <div class="note-page-header">
+      <div>
+        <p class="text-uppercase small text-body-secondary fw-bold mb-1">MẠNG LƯỚI TRI THỨC</p>
+        <h1 class="h2 fw-bold mb-1">Bản đồ kiến thức</h1>
+        <p class="text-body-secondary">Khám phá mối liên hệ nơ-ron giữa các ghi chú và tài liệu của bạn.</p>
+      </div>
+      <span class="badge bg-secondary-subtle text-secondary">Trực quan hóa tương tác</span>
+    </div>
+    <div class="note-panel note-graph-panel">
+      <div class="note-graph-toolbar"><label class="note-search-field"><i data-lucide="search"></i><input type="search" placeholder="Tìm node..." aria-label="Tìm node" data-graph-search></label><div class="btn-group"><button class="btn btn-outline-secondary" type="button" data-graph-zoom="-1" aria-label="Thu nhỏ"><i data-lucide="minus"></i></button><button class="btn btn-outline-secondary" type="button" data-graph-zoom="reset">Vừa khung</button><button class="btn btn-outline-secondary" type="button" data-graph-zoom="1" aria-label="Phóng to"><i data-lucide="plus"></i></button></div></div>
+      <div class="note-graph-canvas"><svg viewBox="0 0 900 520" role="img" aria-label="Bản đồ liên kết ghi chú" data-graph-svg><g data-graph-world></g></svg></div>
+      <p class="note-graph-hint"><i data-lucide="mouse-pointer-2"></i> Kéo để di chuyển &bull; Cuộn để phóng to &bull; Chọn node để mở ghi chú</p>
+    </div>
+  </section>
+
+  <!-- View: Tìm kiếm toàn cục (Search) -->
+  <section class="note-view" data-view-panel="search" hidden>
+    <div class="note-page-header">
+      <div>
+        <p class="text-uppercase small text-body-secondary fw-bold mb-1">TRA CỨU</p>
+        <h1 class="h2 fw-bold mb-1">Tìm kiếm toàn cục</h1>
+        <p class="text-body-secondary">Tìm trong toàn bộ ghi chú, tài liệu, và gói nén trong không gian.</p>
+      </div>
+    </div>
+    <label class="note-search-field note-search-large mb-4"><i data-lucide="search"></i><input type="search" placeholder="Nhập từ khóa tìm kiếm..." aria-label="Tìm kiếm tri thức" data-search-query></label>
+    <div class="note-search-results" data-search-results></div>
+  </section>
+</div>
+
+<!-- ================= MODALS ================= -->
+
+<!-- Modal: Ghi chú mới/sửa -->
+<div class="modal fade" id="note-editor-modal" tabindex="-1" aria-labelledby="note-modal-title" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <form class="modal-content" data-note-form>
+      <div class="modal-header">
+        <div>
+          <p class="text-uppercase small text-body-secondary fw-bold mb-0">WORKSPACE</p>
+          <h5 class="modal-title fw-bold" id="note-modal-title">Ghi chú</h5>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng"></button>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" name="id">
+        <label class="form-label" for="note-title-input">Tiêu đề ghi chú</label>
+        <input class="form-control form-control-lg fw-bold mb-3" id="note-title-input" name="title" maxlength="120" placeholder="Đặt tên cho ý tưởng..." required>
+        <div class="row g-3 mb-3">
+          <div class="col-md-6">
+            <label class="form-label" for="note-category-input">Danh mục</label>
+            <input class="form-control" id="note-category-input" name="category" maxlength="40" placeholder="Ví dụ: Phương pháp học">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label" for="note-tags-input">Thẻ tag (phân tách bởi dấu phẩy)</label>
+            <input class="form-control" id="note-tags-input" name="tags" placeholder="học tập, tư duy, pkm">
+          </div>
+        </div>
+        <label class="form-label" for="note-content-input">Nội dung ghi chú</label>
+        <div class="note-editor-tools d-flex gap-2 p-2 bg-body-tertiary rounded-top border border-bottom-0" role="toolbar" aria-label="Định dạng">
+          <button type="button" class="btn btn-sm btn-light border" data-format="bold" aria-label="In đậm"><strong>B</strong></button>
+          <button type="button" class="btn btn-sm btn-light border" data-format="italic" aria-label="In nghiêng"><i data-lucide="italic"></i></button>
+          <button type="button" class="btn btn-sm btn-light border" data-format="insertUnorderedList" aria-label="Danh sách"><i data-lucide="list"></i></button>
+        </div>
+        <div class="note-content-editable p-3 border rounded-bottom" id="note-content-input" contenteditable="true" role="textbox" aria-multiline="true" data-note-content-editor style="min-height: 220px; outline: none;"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Hủy</button>
+        <button type="submit" class="btn btn-primary d-flex align-items-center gap-2"><i data-lucide="check"></i> Lưu ghi chú</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Modal: Tạo Thư mục mới -->
+<div class="modal fade" id="folder-modal" tabindex="-1" aria-labelledby="folder-modal-title" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <form class="modal-content" data-folder-form>
+      <div class="modal-header">
+        <h5 class="modal-title fw-bold" id="folder-modal-title">Tạo thư mục mới</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng"></button>
+      </div>
+      <div class="modal-body">
+        <label class="form-label" for="folder-name-input">Tên thư mục</label>
+        <input class="form-control mb-3" id="folder-name-input" name="name" required placeholder="Ví dụ: Tài liệu Khóa luận">
+        <label class="form-label">Thư mục cha</label>
+        <select class="form-select mb-3" name="parentId" data-folder-parent-select>
+          <option value="">(Thư mục gốc - Root)</option>
+        </select>
+        <label class="form-label">Màu sắc nhận diện</label>
+        <select class="form-select" name="color">
+          <option value="emerald">Xanh lục (Emerald)</option>
+          <option value="blue">Xanh dương (Blue)</option>
+          <option value="purple">Tím (Purple)</option>
+          <option value="amber">Vàng cam (Amber)</option>
+        </select>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Hủy</button>
+        <button type="submit" class="btn btn-primary">Tạo thư mục</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Modal: Tạo Bộ sưu tập mới -->
+<div class="modal fade" id="collection-modal" tabindex="-1" aria-labelledby="collection-modal-title" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <form class="modal-content" data-collection-form>
+      <div class="modal-header">
+        <h5 class="modal-title fw-bold" id="collection-modal-title">Tạo bộ sưu tập mới</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng"></button>
+      </div>
+      <div class="modal-body">
+        <label class="form-label">Tên bộ sưu tập</label>
+        <input class="form-control mb-3" name="name" required placeholder="Ví dụ: Học máy & Deep Learning">
+        <label class="form-label">Mô tả ngắn</label>
+        <textarea class="form-control mb-3" name="description" rows="2" placeholder="Ghi chú mục tiêu hoặc phạm vi của bộ sưu tập..."></textarea>
+        <label class="form-label">Tags (phân tách bởi dấu phẩy)</label>
+        <input class="form-control mb-3" name="tags" placeholder="AI, Machine Learning, Python">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Hủy</button>
+        <button type="submit" class="btn btn-primary">Tạo bộ sưu tập</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Modal: Tạo bài Flashcard mới -->
+<div class="modal fade" id="card-modal" tabindex="-1" aria-labelledby="card-modal-title" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <form class="modal-content" data-card-form>
+      <div class="modal-header">
+        <h5 class="modal-title fw-bold" id="card-modal-title">Tạo Flashcard mới</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng"></button>
+      </div>
+      <div class="modal-body">
+        <label class="form-label" for="card-deck-input">Bộ thẻ</label>
+        <input class="form-control mb-3" id="card-deck-input" name="deck" maxlength="60" placeholder="Tên bộ thẻ" required>
+        <label class="form-label" for="card-front-input">Mặt trước (Câu hỏi / Khái niệm)</label>
+        <textarea class="form-control mb-3" id="card-front-input" name="front" rows="2" required placeholder="Nhập câu hỏi hoặc thuật ngữ..."></textarea>
+        <label class="form-label" for="card-back-input">Mặt sau (Câu trả lời / Định nghĩa)</label>
+        <textarea class="form-control" id="card-back-input" name="back" rows="3" required placeholder="Nhập câu trả lời hoặc giải thích chi tiết..."></textarea>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline-secondary" type="button" data-bs-dismiss="modal">Hủy</button>
+        <button class="btn btn-primary" type="submit">Lưu Flashcard</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Modal: Tạo câu hỏi Quiz -->
+<div class="modal fade" id="quiz-modal" tabindex="-1" aria-labelledby="quiz-modal-title" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <form class="modal-content" data-quiz-form>
+      <div class="modal-header">
+        <h5 class="modal-title fw-bold" id="quiz-modal-title">Tạo câu hỏi trắc nghiệm mới</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng"></button>
+      </div>
+      <div class="modal-body">
+        <label class="form-label" for="quiz-title-input">Tên bộ Quiz</label>
+        <input class="form-control mb-3" id="quiz-title-input" name="title" maxlength="80" required placeholder="Ví dụ: Ôn tập Chương 1">
+        <label class="form-label" for="quiz-question-input">Nội dung câu hỏi</label>
+        <textarea class="form-control mb-3" id="quiz-question-input" name="question" rows="2" required placeholder="Nhập câu hỏi trắc nghiệm..."></textarea>
+        <div class="row g-2 mb-3">
+          <div class="col-sm-6"><label class="form-label small fw-semibold">Đáp án A</label><input class="form-control" name="optionA" required></div>
+          <div class="col-sm-6"><label class="form-label small fw-semibold">Đáp án B</label><input class="form-control" name="optionB" required></div>
+          <div class="col-sm-6"><label class="form-label small fw-semibold">Đáp án C</label><input class="form-control" name="optionC" required></div>
+          <div class="col-sm-6"><label class="form-label small fw-semibold">Đáp án D</label><input class="form-control" name="optionD" required></div>
+        </div>
+        <div class="row g-3">
+          <div class="col-sm-4">
+            <label class="form-label" for="quiz-answer-input">Đáp án đúng</label>
+            <select class="form-select" id="quiz-answer-input" name="answer">
+              <option value="0">A</option>
+              <option value="1">B</option>
+              <option value="2">C</option>
+              <option value="3">D</option>
+            </select>
+          </div>
+          <div class="col-sm-8">
+            <label class="form-label" for="quiz-explanation-input">Giải thích đáp án</label>
+            <textarea class="form-control" id="quiz-explanation-input" name="explanation" rows="2" required placeholder="Lý do tại sao đáp án này đúng..."></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline-secondary" type="button" data-bs-dismiss="modal">Hủy</button>
+        <button class="btn btn-primary" type="submit">Lưu câu hỏi</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Modal: Tạo nhiệm vụ học tập -->
+<div class="modal fade" id="task-modal" tabindex="-1" aria-labelledby="task-modal-title" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <form class="modal-content" data-task-form>
+      <div class="modal-header">
+        <h5 class="modal-title fw-bold" id="task-modal-title">Nhiệm vụ học tập mới</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng"></button>
+      </div>
+      <div class="modal-body">
+        <label class="form-label" for="task-title-input">Tên nhiệm vụ</label>
+        <input class="form-control mb-3" id="task-title-input" name="title" maxlength="100" required placeholder="Ví dụ: Ôn tập 20 thẻ Spaced Repetition">
+        <label class="form-label" for="task-date-input">Ngày học</label>
+        <input class="form-control mb-3" id="task-date-input" name="dueDate" type="date" required>
+        <label class="form-label" for="task-time-input">Thời lượng dự kiến (phút)</label>
+        <input class="form-control" id="task-time-input" name="minutes" type="number" min="5" max="480" value="25">
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline-secondary" type="button" data-bs-dismiss="modal">Hủy</button>
+        <button class="btn btn-primary" type="submit">Thêm nhiệm vụ</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Modal: Chia sẻ tài liệu (Private/Public Sharing) -->
+<div class="modal fade" id="note-share-modal" tabindex="-1" aria-labelledby="note-share-title" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div>
+          <p class="text-uppercase small text-body-secondary fw-bold mb-0">CHIA SẺ AN TOÀN</p>
+          <h5 class="modal-title fw-bold" id="note-share-title" data-share-title>Chia sẻ tài liệu</h5>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng"></button>
+      </div>
+      <div class="modal-body">
+        <p class="note-share-status" data-share-status role="status" aria-live="polite"></p>
+        <p class="small text-body-secondary" data-share-auth-required hidden>Đăng nhập tài khoản NOTE để quản lý liên kết chia sẻ. Người nhận liên kết không cần đăng nhập.</p>
+        <div class="note-share-authenticated" data-share-authenticated hidden>
+          <span data-share-user class="small fw-semibold"></span>
+        </div>
+        <section class="note-share-options" data-share-options hidden>
+          <label class="form-check note-share-toggle mb-3">
+            <input class="form-check-input" type="checkbox" data-share-enabled>
+            <span class="form-check-label fw-bold">Bật chia sẻ liên kết</span>
+          </label>
+          <label class="form-label" for="share-description">Mô tả hiển thị cho người nhận</label>
+          <textarea class="form-control mb-3" id="share-description" rows="2" maxlength="1000" data-share-description></textarea>
+          <label class="form-label" for="share-expiry">Thời hạn liên kết (tùy chọn)</label>
+          <input class="form-control mb-3" id="share-expiry" type="datetime-local" data-share-expiry>
+          <label class="form-label" for="share-link-password">Mật khẩu người nhận (tối thiểu 8 ký tự)</label>
+          <input class="form-control mb-2" id="share-link-password" type="password" autocomplete="new-password" minlength="8" maxlength="256" data-share-link-password>
+          <label class="form-check mb-2"><input class="form-check-input" type="checkbox" data-share-clear-password><span class="form-check-label small">Gỡ mật khẩu hiện tại</span></label>
+          <label class="form-check mb-2"><input class="form-check-input" type="checkbox" data-share-download><span class="form-check-label small">Cho phép người nhận tải xuống tệp gốc</span></label>
+          <label class="form-check mb-3" data-share-consent-row><input class="form-check-input" type="checkbox" data-share-consent><span class="form-check-label small text-body-secondary">Tôi xác nhận chia sẻ tài liệu này.</span></label>
+          <div class="note-share-link mb-3" data-share-link-row hidden>
+            <div class="input-group">
+              <input class="form-control" type="url" readonly aria-label="Liên kết chia sẻ" data-share-link>
+              <button class="btn btn-outline-secondary" type="button" data-share-copy><i data-lucide="copy"></i> Chép link</button>
+            </div>
+          </div>
+          <div class="note-share-actions d-flex flex-wrap gap-2">
+            <button class="btn btn-primary" type="button" data-share-create hidden disabled>Tạo liên kết</button>
+            <button class="btn btn-primary" type="button" data-share-update hidden>Lưu tùy chọn</button>
+            <button class="btn btn-outline-secondary" type="button" data-share-rotate hidden>Tạo lại link</button>
+            <button class="btn btn-outline-danger" type="button" data-share-revoke hidden>Thu hồi</button>
+          </div>
+        </section>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline-secondary" type="button" data-bs-dismiss="modal">Đóng</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: JSON Schema Preview & Validator cho AI Context -->
+<div class="modal fade" id="context-json-modal" tabindex="-1" aria-labelledby="contextJsonModalTitle" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title fw-bold" id="contextJsonModalTitle">AI Context JSON Capsule</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng"></button>
+      </div>
+      <div class="modal-body">
+        <div class="alert alert-success d-flex align-items-center gap-2 py-2" data-json-validation-status>
+          <i data-lucide="circle-check"></i> <span>Schema Validation: Cấu trúc JSON chuẩn xác theo NOTE Capsule v1.2</span>
+        </div>
+        <textarea class="form-control font-monospace small" rows="14" data-context-json-textarea readonly style="background:#0f172a;color:#f8fafc;"></textarea>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline-secondary" type="button" data-bs-dismiss="modal">Đóng</button>
+        <button class="btn btn-primary" type="button" data-copy-context-json><i data-lucide="copy"></i> Sao chép JSON</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: Document Reader Zen Mode -->
+<div class="modal fade" id="document-reader-modal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content">
+      <div class="note-reader-header">
+        <div class="d-flex align-items-center gap-3">
+          <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-dismiss="modal"><i data-lucide="arrow-left"></i> Thoát chế độ đọc</button>
+          <h5 class="mb-0 fw-bold text-truncate" style="max-width: 400px;" data-reader-doc-title>Tài liệu</h5>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <div class="input-group input-group-sm" style="width: 220px;">
+            <input type="search" class="form-control" placeholder="Tìm trong tài liệu..." data-reader-search-input>
+            <span class="input-group-text small" data-reader-search-count>0/0</span>
+          </div>
+          <button class="btn btn-sm btn-outline-secondary" type="button" data-reader-zoom="-0.1" title="Thu nhỏ"><i data-lucide="minus"></i></button>
+          <button class="btn btn-sm btn-outline-secondary" type="button" data-reader-zoom="0.1" title="Phóng to"><i data-lucide="plus"></i></button>
+          <button class="btn btn-sm btn-outline-secondary" type="button" data-reader-toggle-toc title="Bật/Tắt Mục lục"><i data-lucide="list"></i></button>
+          <button class="btn btn-sm btn-outline-primary" type="button" data-reader-toggle-ai title="Bật/Tắt AI Reading Assistant"><i data-lucide="sparkles"></i> AI Assistant</button>
+        </div>
+      </div>
+      <div class="note-reader-body">
+        <aside class="note-reader-toc" data-reader-toc-pane>
+          <h6 class="fw-bold mb-3">Mục lục tài liệu</h6>
+          <div data-reader-toc-list class="small">Chưa có mục lục phân tích.</div>
+        </aside>
+        <main class="note-reader-main" data-reader-content-pane>
+          <!-- Document Content Rendered -->
+        </main>
+        <aside class="note-reader-ai-pane" data-reader-ai-pane>
+          <div class="d-flex align-items-center justify-content-between mb-3 border-bottom pb-2">
+            <h6 class="fw-bold mb-0 d-flex align-items-center gap-2"><i data-lucide="sparkles" class="text-primary"></i> AI Reading Assistant</h6>
+          </div>
+          <div class="d-grid gap-2 mb-3">
+            <button class="btn btn-sm btn-light border text-start" type="button" data-ai-reader-action="summarize-page"><i data-lucide="file-text"></i> Tóm tắt trang hiện tại</button>
+            <button class="btn btn-sm btn-light border text-start" type="button" data-ai-reader-action="explain-terms"><i data-lucide="lightbulb"></i> Giải thích các thuật ngữ chính</button>
+            <button class="btn btn-sm btn-light border text-start" type="button" data-ai-reader-action="extract-cards"><i data-lucide="layers"></i> Trích xuất câu hỏi ôn tập</button>
+          </div>
+          <div class="p-3 bg-body-tertiary rounded small" data-ai-reader-response style="min-height: 200px;">
+            Nhấp chọn một tác vụ ở trên để trợ lý AI phân tích đoạn văn bản đang đọc.
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="note-toast-region" aria-live="polite" aria-atomic="true" data-toast-region></div>

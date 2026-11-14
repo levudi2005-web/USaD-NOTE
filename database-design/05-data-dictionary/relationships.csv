@@ -1,0 +1,52 @@
+﻿Tên ràng buộc (Constraint Name),Bảng con (Child Table),Cột con (FK Column),Bảng cha (Parent Table),Cột cha (PK Column),ON DELETE,ON UPDATE,Lực lượng kết hợp (Cardinality),Loại khóa ngoại (FK Type)
+fk_recovery_user,user_recovery_codes,user_id,users,id,CASCADE,CASCADE,"1,1 - 0,n",Single FK
+fk_sessions_user,user_sessions,user_id,users,id,CASCADE,CASCADE,"1,1 - 0,n",Single FK
+fk_folders_user,folders,user_id,users,id,CASCADE,CASCADE,"1,1 - 0,n",Single FK
+fk_folders_parent_composite,folders,"user_id, parent_id",folders,"user_id, id",CASCADE,CASCADE,"0,1 - 0,n",Composite FK
+fk_documents_user,documents,user_id,users,id,CASCADE,CASCADE,"1,1 - 0,n",Single FK
+fk_documents_folder_composite,documents,"user_id, folder_id",folders,"user_id, id",SET NULL,CASCADE,"0,1 - 0,n",Composite FK
+fk_notes_user,notes,user_id,users,id,CASCADE,CASCADE,"1,1 - 0,n",Single FK
+fk_notes_folder_composite,notes,"user_id, folder_id",folders,"user_id, id",SET NULL,CASCADE,"0,1 - 0,n",Composite FK
+fk_notes_document_composite,notes,"user_id, document_id",documents,"user_id, id",SET NULL,CASCADE,"0,1 - 0,n",Composite FK
+fk_tags_user,tags,user_id,users,id,CASCADE,CASCADE,"1,1 - 0,n",Single FK
+fk_doctags_document,document_tags,document_id,documents,id,CASCADE,CASCADE,"1,1 - 0,n",Single FK
+fk_doctags_tag,document_tags,tag_id,tags,id,CASCADE,CASCADE,"1,1 - 0,n",Single FK
+fk_collections_user,collections,user_id,users,id,CASCADE,CASCADE,"1,1 - 0,n",Single FK
+fk_coll_items_collection,collection_items,collection_id,collections,id,CASCADE,CASCADE,"1,1 - 0,n",Single FK
+fk_coll_items_document,collection_items,document_id,documents,id,CASCADE,CASCADE,"0,1 - 0,n",Explicit Nullable FK
+fk_coll_items_note,collection_items,note_id,notes,id,CASCADE,CASCADE,"0,1 - 0,n",Explicit Nullable FK
+fk_coll_items_deck,collection_items,deck_id,flashcard_decks,id,CASCADE,CASCADE,"0,1 - 0,n",Explicit Nullable FK
+fk_archives_user,archives,user_id,users,id,CASCADE,CASCADE,"1,1 - 0,n",Single FK
+fk_archext_archive,archive_extracted_files,archive_id,archives,id,CASCADE,CASCADE,"1,1 - 0,n",Single FK
+fk_archext_document,archive_extracted_files,document_id,documents,id,CASCADE,CASCADE,"1,1 - 0,n",Single FK
+fk_models_provider,ai_models,provider_id,ai_providers,id,CASCADE,CASCADE,"1,1 - 0,n",Single FK
+fk_aiconn_user,ai_connections,user_id,users,id,CASCADE,CASCADE,"1,1 - 0,n",Single FK
+fk_aiconn_provider,ai_connections,provider_id,ai_providers,id,RESTRICT,CASCADE,"1,1 - 0,n",Single FK
+fk_aiconn_model,ai_connections,default_model_id,ai_models,id,RESTRICT,CASCADE,"1,1 - 0,n",Single FK
+fk_aiconv_user,ai_conversations,user_id,users,id,CASCADE,CASCADE,"1,1 - 0,n",Single FK
+fk_aiconv_connection_composite,ai_conversations,"user_id, connection_id",ai_connections,"user_id, id",SET NULL,CASCADE,"0,1 - 0,n",Composite FK
+fk_aiconv_document_composite,ai_conversations,"user_id, pinned_document_id",documents,"user_id, id",SET NULL,CASCADE,"0,1 - 0,n",Composite FK
+fk_aimsg_conversation,ai_messages,conversation_id,ai_conversations,id,CASCADE,CASCADE,"1,1 - 0,n",Single FK
+fk_aitasks_user,ai_tasks,user_id,users,id,CASCADE,CASCADE,"1,1 - 0,n",Single FK
+fk_aitasks_document_composite,ai_tasks,"user_id, source_document_id",documents,"user_id, id",SET NULL,CASCADE,"0,1 - 0,n",Composite FK
+fk_aitasks_connection_composite,ai_tasks,"user_id, connection_id",ai_connections,"user_id, id",SET NULL,CASCADE,"0,1 - 0,n",Composite FK
+fk_tasklogs_task,ai_task_logs,task_id,ai_tasks,id,CASCADE,CASCADE,"1,1 - 0,n",Single FK
+fk_aicontext_user,ai_contexts,user_id,users,id,CASCADE,CASCADE,"1,1 - 0,n",Single FK
+fk_contextver_context,ai_context_versions,context_id,ai_contexts,id,CASCADE,CASCADE,"1,1 - 0,n",Single FK
+fk_decks_user,flashcard_decks,user_id,users,id,CASCADE,CASCADE,"1,1 - 0,n",Single FK
+fk_decks_document_composite,flashcard_decks,"user_id, document_id",documents,"user_id, id",SET NULL,CASCADE,"0,1 - 0,n",Composite FK
+fk_cards_deck,flashcards,deck_id,flashcard_decks,id,CASCADE,CASCADE,"1,1 - 0,n",Single FK
+fk_quizzes_user,quizzes,user_id,users,id,CASCADE,CASCADE,"1,1 - 0,n",Single FK
+fk_quizzes_document_composite,quizzes,"user_id, document_id",documents,"user_id, id",SET NULL,CASCADE,"0,1 - 0,n",Composite FK
+fk_questions_quiz,quiz_questions,quiz_id,quizzes,id,CASCADE,CASCADE,"1,1 - 1,n",Single FK
+fk_options_question,quiz_options,question_id,quiz_questions,id,CASCADE,CASCADE,"1,1 - 2,n",Single FK
+fk_attempts_quiz,quiz_attempts,quiz_id,quizzes,id,CASCADE,CASCADE,"1,1 - 0,n",Single FK
+fk_attempts_user,quiz_attempts,user_id,users,id,CASCADE,CASCADE,"1,1 - 0,n",Single FK
+fk_ans_attempt,quiz_attempt_answers,attempt_id,quiz_attempts,id,CASCADE,CASCADE,"1,1 - 1,n",Single FK
+fk_ans_question,quiz_attempt_answers,question_id,quiz_questions,id,CASCADE,CASCADE,"1,1 - 0,n",Single FK
+fk_ans_question_option_composite,quiz_attempt_answers,"question_id, selected_option_id",quiz_options,"question_id, id",CASCADE,CASCADE,"1,1 - 0,n",Composite FK
+fk_shared_user,shared_links,user_id,users,id,CASCADE,CASCADE,"1,1 - 0,n",Single FK
+fk_shared_document_composite,shared_links,"user_id, document_id",documents,"user_id, id",CASCADE,CASCADE,"1,1 - 0,n",Composite FK
+fk_sharelogs_link,share_access_logs,shared_link_id,shared_links,id,CASCADE,CASCADE,"1,1 - 0,n",Single FK
+fk_actlogs_user,activity_logs,user_id,users,id,CASCADE,CASCADE,"1,1 - 0,n",Single FK
+fk_notif_user,notifications,user_id,users,id,CASCADE,CASCADE,"1,1 - 0,n",Single FK

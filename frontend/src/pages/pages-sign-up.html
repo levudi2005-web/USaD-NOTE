@@ -1,0 +1,41 @@
+---
+name: pages-sign-up
+title: Đăng ký
+layout: auth.hbs
+active: { auth: true, sign-up: true }
+meta_description: "Tạo tài khoản NOTE để lưu ghi chú và tài liệu của bạn."
+---
+
+<div class="text-center mt-4">
+  <h1 class="h2">Tạo tài khoản NOTE</h1>
+  <p class="lead">
+    Lưu trữ ghi chú, tài liệu và tiến trình học tập của bạn.
+  </p>
+</div>
+
+<div class="card">
+  <div class="card-body">
+    <div class="m-sm-3">
+      <form data-register-form>
+        <div class="mb-3">
+          <label class="form-label">Họ và tên</label>
+          <input class="form-control form-control-lg" type="text" name="name" placeholder="Nhập họ và tên" required />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Email</label>
+          <input class="form-control form-control-lg" type="email" name="email" placeholder="Nhập email" required />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Mật khẩu</label>
+          <input class="form-control form-control-lg" type="password" name="password" placeholder="Tạo mật khẩu" required minlength="6" />
+        </div>
+        <div class="d-grid gap-2 mt-3">
+          <button type="submit" class="btn btn-lg btn-primary">Đăng ký</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<p class="text-center mb-3">
+  Đã có tài khoản? <a href="pages-sign-in.html">Đăng nhập</a>
+</p>

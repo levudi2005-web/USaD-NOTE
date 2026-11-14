@@ -1,0 +1,7 @@
+project_id = "note-public-sharing"
+
+[functions.manage-document-share]
+verify_jwt = false
+
+[functions.public-document-share]
+verify_jwt = false

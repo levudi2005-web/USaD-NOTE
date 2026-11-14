@@ -1,0 +1,35 @@
+---
+title: Shared document
+layout: share.hbs
+---
+
+<main class="public-share-shell" data-public-share>
+  <header class="public-share-brand">
+    <a href="/" aria-label="NOTE">
+      <img src="/img/note-logo.png" width="36" height="36" alt="">
+      <span>NOTE</span>
+    </a>
+    <span class="public-share-label">TÀI LIỆU ĐƯỢC CHIA SẺ</span>
+  </header>
+  <section class="public-share-card" aria-labelledby="share-view-title">
+    <div class="public-share-heading">
+      <p class="public-share-status" data-share-view-status role="status" aria-live="polite">Đang tải…</p>
+      <h1 id="share-view-title" data-share-view-title>Tài liệu được chia sẻ</h1>
+      <p class="public-share-description" data-share-view-description></p>
+      <div class="public-share-meta">
+        <span data-share-view-type></span>
+        <span>Cập nhật <time data-share-view-updated></time></span>
+      </div>
+      <form class="public-share-password-form" data-share-view-password-form hidden>
+        <label for="share-view-password">Mật khẩu tài liệu</label>
+        <input id="share-view-password" type="password" autocomplete="current-password" required>
+        <button type="submit">Mở tài liệu</button>
+      </form>
+    </div>
+    <article class="public-share-content" data-share-view-content hidden></article>
+    <footer class="public-share-footer">
+      <span>Tài liệu được chia sẻ qua NOTE</span>
+      <button type="button" data-share-view-download hidden>Tải xuống</button>
+    </footer>
+  </section>
+</main>

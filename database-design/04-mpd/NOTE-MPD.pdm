@@ -1,0 +1,3006 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?PowerDesigner AppLocale="UTF16" ID="{E92ED62F-725E-42A0-B5B6-FB30F1AC0BC2}" Label="" LastModificationDate="2026-11-13" Name="NOTE-MPD" Objects="300" Symbols="300" Type="{CDE44E21-9671-11D0-9C09-0000C035E752}" signature="PDM_DATA_MODEL_XML" version="16.5.0.3982"?>
+<!-- SAP PowerDesigner PDM Physical Data Model (32 Tables for MariaDB) -->
+<Model xmlns:a="attribute" xmlns:c="collection" xmlns:o="object">
+  <o:RootObject Id="o1">
+    <c:Children>
+      <o:Model Id="o2">
+        <a:ObjectID>{E92ED62F-725E-42A0-B5B6-FB30F1AC0BC2}</a:ObjectID>
+        <a:Name>NOTE-MPD</a:Name>
+        <a:Code>NOTE_MPD</a:Code>
+        <a:DBMS.Name>MySQL 5.0 / MariaDB</a:DBMS.Name>
+        <c:Tables>
+          <o:Table Id="o2001">
+            <a:ObjectID>{0D9703E6-8FE6-47A4-91B2-A6C87449B1F9}</a:ObjectID>
+            <a:Name>users</a:Name>
+            <a:Code>users</a:Code>
+            <c:Columns>
+              <o:Column Id="o2002">
+                <a:ObjectID>{664981EF-9B9A-4DFC-9D1C-B90A0845DDBE}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2003">
+                <a:ObjectID>{D1A32F71-3BAE-4150-B664-0F94D83ED191}</a:ObjectID>
+                <a:Name>email</a:Name>
+                <a:Code>email</a:Code>
+                <a:DataType>VARCHAR(191)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2004">
+                <a:ObjectID>{AF1A406E-BDAF-4A01-9E75-15467EB541F9}</a:ObjectID>
+                <a:Name>password_hash</a:Name>
+                <a:Code>password_hash</a:Code>
+                <a:DataType>VARCHAR(255)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2005">
+                <a:ObjectID>{F5FD04ED-7DD8-4528-BB47-8BA34BAA9C09}</a:ObjectID>
+                <a:Name>full_name</a:Name>
+                <a:Code>full_name</a:Code>
+                <a:DataType>VARCHAR(100)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2006">
+                <a:ObjectID>{4CCCE6AA-CE42-4D01-85A0-91719CA1653C}</a:ObjectID>
+                <a:Name>avatar_url</a:Name>
+                <a:Code>avatar_url</a:Code>
+                <a:DataType>VARCHAR(255)</a:DataType>
+                <a:Column.Mandatory>0</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2007">
+                <a:ObjectID>{0D0A3C16-78B0-42E5-BEB2-3964DE3D5186}</a:ObjectID>
+                <a:Name>title</a:Name>
+                <a:Code>title</a:Code>
+                <a:DataType>VARCHAR(100)</a:DataType>
+                <a:Column.Mandatory>0</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2008">
+                <a:ObjectID>{5D301558-C557-4341-B1AD-24AA437C4138}</a:ObjectID>
+                <a:Name>bio</a:Name>
+                <a:Code>bio</a:Code>
+                <a:DataType>TEXT</a:DataType>
+                <a:Column.Mandatory>0</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2009">
+                <a:ObjectID>{BCA3C86D-9496-4B54-B825-59061917E227}</a:ObjectID>
+                <a:Name>theme_preference</a:Name>
+                <a:Code>theme_preference</a:Code>
+                <a:DataType>ENUM('light','dark','auto')</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2010">
+                <a:ObjectID>{F108B12E-379C-4042-8A26-59840313DEB3}</a:ObjectID>
+                <a:Name>language</a:Name>
+                <a:Code>language</a:Code>
+                <a:DataType>VARCHAR(10)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2011">
+                <a:ObjectID>{88D33BE5-EF45-4CFC-B2C2-A2FEAAA9697E}</a:ObjectID>
+                <a:Name>storage_used</a:Name>
+                <a:Code>storage_used</a:Code>
+                <a:DataType>BIGINT UNSIGNED</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2012">
+                <a:ObjectID>{72A8ED4E-093A-4556-9305-FD5D59511ABB}</a:ObjectID>
+                <a:Name>storage_limit</a:Name>
+                <a:Code>storage_limit</a:Code>
+                <a:DataType>BIGINT UNSIGNED</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2013">
+                <a:ObjectID>{7A0DC38A-17D2-4F1B-B2F2-75DCAC3022FD}</a:ObjectID>
+                <a:Name>failed_recovery_attempts</a:Name>
+                <a:Code>failed_recovery_attempts</a:Code>
+                <a:DataType>TINYINT UNSIGNED</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2014">
+                <a:ObjectID>{576FA367-EB7B-43D4-B546-08B381D9C799}</a:ObjectID>
+                <a:Name>recovery_locked_until</a:Name>
+                <a:Code>recovery_locked_until</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Column.Mandatory>0</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2015">
+                <a:ObjectID>{54E5DDBC-A743-4020-8959-5651052C76D4}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2016">
+                <a:ObjectID>{419908DB-93B5-4C8D-AD7D-17E91BC041A4}</a:ObjectID>
+                <a:Name>updated_at</a:Name>
+                <a:Code>updated_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+            </c:Columns>
+            <c:Keys>
+              <o:Key Id="o2017">
+                <a:ObjectID>{01BE837A-0D28-48B3-8337-D9D63A97215B}</a:ObjectID>
+                <a:Name>pk_users</a:Name>
+                <a:Code>pk_users</a:Code>
+                <c:Key.Columns>
+                  <o:Column Ref="o2002"/>
+                </c:Key.Columns>
+              </o:Key>
+            </c:Keys>
+          </o:Table>
+          <o:Table Id="o2018">
+            <a:ObjectID>{FEBDD122-EBBC-4B14-989C-D7AE6AD9AE33}</a:ObjectID>
+            <a:Name>user_recovery_codes</a:Name>
+            <a:Code>user_recovery_codes</a:Code>
+            <c:Columns>
+              <o:Column Id="o2019">
+                <a:ObjectID>{E66D3715-99DE-4E01-96E0-53E6AF5A9D90}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>BIGINT UNSIGNED</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2020">
+                <a:ObjectID>{DB36129E-2334-450C-B41E-6A552FB4E0E4}</a:ObjectID>
+                <a:Name>user_id</a:Name>
+                <a:Code>user_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2021">
+                <a:ObjectID>{021F9AF3-6CEE-49C8-BA4A-EE380AE6AA3D}</a:ObjectID>
+                <a:Name>code_hash</a:Name>
+                <a:Code>code_hash</a:Code>
+                <a:DataType>CHAR(64)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2022">
+                <a:ObjectID>{5B29B83E-DE92-4382-93F4-698AB281B024}</a:ObjectID>
+                <a:Name>used_at</a:Name>
+                <a:Code>used_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Column.Mandatory>0</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2023">
+                <a:ObjectID>{594BFF82-FEA6-4680-9252-FA00D198F70C}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+            </c:Columns>
+            <c:Keys>
+              <o:Key Id="o2024">
+                <a:ObjectID>{865F7B74-50A7-4028-8BF3-DAF69934FFE9}</a:ObjectID>
+                <a:Name>pk_user_recovery_codes</a:Name>
+                <a:Code>pk_user_recovery_codes</a:Code>
+                <c:Key.Columns>
+                  <o:Column Ref="o2019"/>
+                </c:Key.Columns>
+              </o:Key>
+            </c:Keys>
+          </o:Table>
+          <o:Table Id="o2025">
+            <a:ObjectID>{DEFAC0CC-4CB4-4635-89E1-8A7E1214A74B}</a:ObjectID>
+            <a:Name>user_sessions</a:Name>
+            <a:Code>user_sessions</a:Code>
+            <c:Columns>
+              <o:Column Id="o2026">
+                <a:ObjectID>{0DD50B9E-0FFA-4D31-A668-FA2EF2C8F4F5}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2027">
+                <a:ObjectID>{2971D0D3-0EF5-415E-A017-677168753082}</a:ObjectID>
+                <a:Name>user_id</a:Name>
+                <a:Code>user_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2028">
+                <a:ObjectID>{CC92B03B-DCC1-48D7-958B-D94FF7C4E3C4}</a:ObjectID>
+                <a:Name>session_token_hash</a:Name>
+                <a:Code>session_token_hash</a:Code>
+                <a:DataType>CHAR(64)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2029">
+                <a:ObjectID>{A8BF191C-54F9-4A88-88E2-89090F461079}</a:ObjectID>
+                <a:Name>device_info</a:Name>
+                <a:Code>device_info</a:Code>
+                <a:DataType>VARCHAR(255)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2030">
+                <a:ObjectID>{A3FD0085-8FC4-469B-80EA-6A642D723C00}</a:ObjectID>
+                <a:Name>ip_address</a:Name>
+                <a:Code>ip_address</a:Code>
+                <a:DataType>VARCHAR(45)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2031">
+                <a:ObjectID>{FC09E14F-3BD6-49C3-B57C-2E970DC592F5}</a:ObjectID>
+                <a:Name>is_revoked</a:Name>
+                <a:Code>is_revoked</a:Code>
+                <a:DataType>TINYINT(1)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2032">
+                <a:ObjectID>{125DAB34-0DEF-43B7-9D2C-E5E87444128D}</a:ObjectID>
+                <a:Name>last_active_at</a:Name>
+                <a:Code>last_active_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2033">
+                <a:ObjectID>{0C57CD27-2668-42CC-B1AA-366C0D54BBFC}</a:ObjectID>
+                <a:Name>expires_at</a:Name>
+                <a:Code>expires_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2034">
+                <a:ObjectID>{632B315A-2952-4E68-988C-5D12B8F4AA5B}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+            </c:Columns>
+            <c:Keys>
+              <o:Key Id="o2035">
+                <a:ObjectID>{C915195C-39CD-4B3E-AEE8-8DA670251C4A}</a:ObjectID>
+                <a:Name>pk_user_sessions</a:Name>
+                <a:Code>pk_user_sessions</a:Code>
+                <c:Key.Columns>
+                  <o:Column Ref="o2026"/>
+                </c:Key.Columns>
+              </o:Key>
+            </c:Keys>
+          </o:Table>
+          <o:Table Id="o2036">
+            <a:ObjectID>{581F6869-3C21-47B0-B9FE-86B089D6DDFA}</a:ObjectID>
+            <a:Name>folders</a:Name>
+            <a:Code>folders</a:Code>
+            <c:Columns>
+              <o:Column Id="o2037">
+                <a:ObjectID>{79B5300E-0282-4A16-B950-7C60CDF88C8B}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2038">
+                <a:ObjectID>{B84511B7-59B4-4069-A576-49B0F2953B3C}</a:ObjectID>
+                <a:Name>user_id</a:Name>
+                <a:Code>user_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2039">
+                <a:ObjectID>{E155D526-AE22-41E8-8A11-581DD3C83F86}</a:ObjectID>
+                <a:Name>parent_id</a:Name>
+                <a:Code>parent_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>0</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2040">
+                <a:ObjectID>{8D9AA718-471A-4F7E-A3D8-290C2EB9F6D9}</a:ObjectID>
+                <a:Name>name</a:Name>
+                <a:Code>name</a:Code>
+                <a:DataType>VARCHAR(150)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2041">
+                <a:ObjectID>{6E745E15-E763-49B8-B76A-4E8A8D496B0E}</a:ObjectID>
+                <a:Name>color</a:Name>
+                <a:Code>color</a:Code>
+                <a:DataType>VARCHAR(30)</a:DataType>
+                <a:Column.Mandatory>0</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2042">
+                <a:ObjectID>{CCAC1794-F0F0-4A13-8903-E3C6E47F8D56}</a:ObjectID>
+                <a:Name>icon</a:Name>
+                <a:Code>icon</a:Code>
+                <a:DataType>VARCHAR(50)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2043">
+                <a:ObjectID>{83A6DABA-6D0A-4477-826E-DE820331FAA3}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2044">
+                <a:ObjectID>{507D684F-7A73-4423-A83E-B24420D83E25}</a:ObjectID>
+                <a:Name>updated_at</a:Name>
+                <a:Code>updated_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+            </c:Columns>
+            <c:Keys>
+              <o:Key Id="o2045">
+                <a:ObjectID>{92955151-126F-461C-8242-9E3E8579C265}</a:ObjectID>
+                <a:Name>pk_folders</a:Name>
+                <a:Code>pk_folders</a:Code>
+                <c:Key.Columns>
+                  <o:Column Ref="o2037"/>
+                </c:Key.Columns>
+              </o:Key>
+            </c:Keys>
+          </o:Table>
+          <o:Table Id="o2046">
+            <a:ObjectID>{6655A3E8-6AE9-4CA8-BA91-A3526201A0B2}</a:ObjectID>
+            <a:Name>documents</a:Name>
+            <a:Code>documents</a:Code>
+            <c:Columns>
+              <o:Column Id="o2047">
+                <a:ObjectID>{30B8EF5C-6630-45EC-881B-BEEA190422D9}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2048">
+                <a:ObjectID>{C850458F-815D-42B7-9171-4A17EC69C3C7}</a:ObjectID>
+                <a:Name>user_id</a:Name>
+                <a:Code>user_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2049">
+                <a:ObjectID>{EE884318-D00C-4BBF-8961-A9757846E299}</a:ObjectID>
+                <a:Name>folder_id</a:Name>
+                <a:Code>folder_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>0</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2050">
+                <a:ObjectID>{A5EEC09F-085B-4BB4-9920-5E2ACA7134B5}</a:ObjectID>
+                <a:Name>name</a:Name>
+                <a:Code>name</a:Code>
+                <a:DataType>VARCHAR(255)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2051">
+                <a:ObjectID>{5D62DB9F-876A-4F75-83D2-EB56DA6B6094}</a:ObjectID>
+                <a:Name>original_name</a:Name>
+                <a:Code>original_name</a:Code>
+                <a:DataType>VARCHAR(255)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2052">
+                <a:ObjectID>{3DEB1DF9-5B79-4CEC-A8FA-58F2E8B9D922}</a:ObjectID>
+                <a:Name>file_type</a:Name>
+                <a:Code>file_type</a:Code>
+                <a:DataType>VARCHAR(20)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2053">
+                <a:ObjectID>{475D8C7E-AC21-4E16-8F37-218342DD8D1A}</a:ObjectID>
+                <a:Name>mime_type</a:Name>
+                <a:Code>mime_type</a:Code>
+                <a:DataType>VARCHAR(100)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2054">
+                <a:ObjectID>{66F6845B-CE2B-42AE-AB9E-8313E00D3D5A}</a:ObjectID>
+                <a:Name>file_size</a:Name>
+                <a:Code>file_size</a:Code>
+                <a:DataType>BIGINT UNSIGNED</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2055">
+                <a:ObjectID>{613B9E7F-2B12-480D-B63C-99050BDE62FA}</a:ObjectID>
+                <a:Name>storage_path</a:Name>
+                <a:Code>storage_path</a:Code>
+                <a:DataType>VARCHAR(500)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2056">
+                <a:ObjectID>{AA135B6A-C239-42C0-838D-81569E5A552F}</a:ObjectID>
+                <a:Name>sha256_checksum</a:Name>
+                <a:Code>sha256_checksum</a:Code>
+                <a:DataType>CHAR(64)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2057">
+                <a:ObjectID>{1BB68B70-B010-4DA3-B6BE-808113710615}</a:ObjectID>
+                <a:Name>processing_status</a:Name>
+                <a:Code>processing_status</a:Code>
+                <a:DataType>ENUM('pending','processing','ready','failed')</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2058">
+                <a:ObjectID>{2EEEF0D2-8D8D-41C9-AD07-FF15CD663BF1}</a:ObjectID>
+                <a:Name>extracted_text</a:Name>
+                <a:Code>extracted_text</a:Code>
+                <a:DataType>LONGTEXT</a:DataType>
+                <a:Column.Mandatory>0</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2059">
+                <a:ObjectID>{8C2304C7-B500-4260-8FFB-D7CB331C5541}</a:ObjectID>
+                <a:Name>deleted_at</a:Name>
+                <a:Code>deleted_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Column.Mandatory>0</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2060">
+                <a:ObjectID>{4D30F235-DF88-4763-8834-B601FA88F763}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2061">
+                <a:ObjectID>{6AC15E62-0574-428E-8CFF-07C170D28420}</a:ObjectID>
+                <a:Name>updated_at</a:Name>
+                <a:Code>updated_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+            </c:Columns>
+            <c:Keys>
+              <o:Key Id="o2062">
+                <a:ObjectID>{82398FBD-CF32-46EA-ADFD-F27196C49D7C}</a:ObjectID>
+                <a:Name>pk_documents</a:Name>
+                <a:Code>pk_documents</a:Code>
+                <c:Key.Columns>
+                  <o:Column Ref="o2047"/>
+                </c:Key.Columns>
+              </o:Key>
+            </c:Keys>
+          </o:Table>
+          <o:Table Id="o2063">
+            <a:ObjectID>{D4EBCB70-02AE-4C92-9AC8-9BFC26998F07}</a:ObjectID>
+            <a:Name>notes</a:Name>
+            <a:Code>notes</a:Code>
+            <c:Columns>
+              <o:Column Id="o2064">
+                <a:ObjectID>{1B230989-5FF3-47F8-B396-0E8795A8A501}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2065">
+                <a:ObjectID>{0CE6410A-DD8E-471F-9C84-B11B30E36FAD}</a:ObjectID>
+                <a:Name>user_id</a:Name>
+                <a:Code>user_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2066">
+                <a:ObjectID>{05F04506-0A4B-4924-B236-F087241069D0}</a:ObjectID>
+                <a:Name>folder_id</a:Name>
+                <a:Code>folder_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>0</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2067">
+                <a:ObjectID>{5CBB411D-3385-4180-8652-54D8F4743DF5}</a:ObjectID>
+                <a:Name>document_id</a:Name>
+                <a:Code>document_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>0</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2068">
+                <a:ObjectID>{3BE4346C-6929-46E7-ACD0-822EE0CAAA54}</a:ObjectID>
+                <a:Name>title</a:Name>
+                <a:Code>title</a:Code>
+                <a:DataType>VARCHAR(255)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2069">
+                <a:ObjectID>{EE628815-3A5E-4508-BDB8-78D15D29A8B0}</a:ObjectID>
+                <a:Name>category</a:Name>
+                <a:Code>category</a:Code>
+                <a:DataType>VARCHAR(100)</a:DataType>
+                <a:Column.Mandatory>0</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2070">
+                <a:ObjectID>{BF5C5CB2-F3D3-416D-90CF-71F3B8CABC60}</a:ObjectID>
+                <a:Name>content</a:Name>
+                <a:Code>content</a:Code>
+                <a:DataType>LONGTEXT</a:DataType>
+                <a:Column.Mandatory>0</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2071">
+                <a:ObjectID>{273287A4-5844-4A19-A000-53B8598CE674}</a:ObjectID>
+                <a:Name>is_pinned</a:Name>
+                <a:Code>is_pinned</a:Code>
+                <a:DataType>TINYINT(1)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2072">
+                <a:ObjectID>{5CA9D450-C680-489D-8AE5-7B9CDC4816F8}</a:ObjectID>
+                <a:Name>is_favorite</a:Name>
+                <a:Code>is_favorite</a:Code>
+                <a:DataType>TINYINT(1)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2073">
+                <a:ObjectID>{209421FF-0C14-49CD-81E6-9216FD513242}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2074">
+                <a:ObjectID>{9D9104A4-3A50-435B-BFCF-4C71C41058DD}</a:ObjectID>
+                <a:Name>updated_at</a:Name>
+                <a:Code>updated_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+            </c:Columns>
+            <c:Keys>
+              <o:Key Id="o2075">
+                <a:ObjectID>{59077BD2-355F-4ED4-B948-A5E7D9364720}</a:ObjectID>
+                <a:Name>pk_notes</a:Name>
+                <a:Code>pk_notes</a:Code>
+                <c:Key.Columns>
+                  <o:Column Ref="o2064"/>
+                </c:Key.Columns>
+              </o:Key>
+            </c:Keys>
+          </o:Table>
+          <o:Table Id="o2076">
+            <a:ObjectID>{1ECA3950-4E25-420D-BD98-C83CE1F6AABF}</a:ObjectID>
+            <a:Name>tags</a:Name>
+            <a:Code>tags</a:Code>
+            <c:Columns>
+              <o:Column Id="o2077">
+                <a:ObjectID>{6DE507B5-ABD1-42E6-8D9F-88B48F4D5736}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>BIGINT UNSIGNED</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2078">
+                <a:ObjectID>{E029ADC2-73D1-4867-9CB6-C2966194D462}</a:ObjectID>
+                <a:Name>user_id</a:Name>
+                <a:Code>user_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2079">
+                <a:ObjectID>{328F8E60-1420-4639-848C-07F57D28BA3C}</a:ObjectID>
+                <a:Name>name</a:Name>
+                <a:Code>name</a:Code>
+                <a:DataType>VARCHAR(50)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2080">
+                <a:ObjectID>{3080982E-5A07-47E7-A7A3-77F79B07AB43}</a:ObjectID>
+                <a:Name>color</a:Name>
+                <a:Code>color</a:Code>
+                <a:DataType>VARCHAR(30)</a:DataType>
+                <a:Column.Mandatory>0</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2081">
+                <a:ObjectID>{EFF419E9-E234-4E74-848D-28AEF968D8A0}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+            </c:Columns>
+            <c:Keys>
+              <o:Key Id="o2082">
+                <a:ObjectID>{0CAF7124-5B41-41C7-8942-ABBDA772287F}</a:ObjectID>
+                <a:Name>pk_tags</a:Name>
+                <a:Code>pk_tags</a:Code>
+                <c:Key.Columns>
+                  <o:Column Ref="o2077"/>
+                </c:Key.Columns>
+              </o:Key>
+            </c:Keys>
+          </o:Table>
+          <o:Table Id="o2083">
+            <a:ObjectID>{8868C1CE-55CA-4647-93FE-D93EF210217B}</a:ObjectID>
+            <a:Name>document_tags</a:Name>
+            <a:Code>document_tags</a:Code>
+            <c:Columns>
+              <o:Column Id="o2084">
+                <a:ObjectID>{E7398E24-27F5-40BE-8CC9-89AE13C42204}</a:ObjectID>
+                <a:Name>document_id</a:Name>
+                <a:Code>document_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2085">
+                <a:ObjectID>{D6C0816A-C023-4E32-BA83-18D1B3DF88D1}</a:ObjectID>
+                <a:Name>tag_id</a:Name>
+                <a:Code>tag_id</a:Code>
+                <a:DataType>BIGINT UNSIGNED</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2086">
+                <a:ObjectID>{A7E239A2-2980-4058-BADA-0E89527934CE}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+            </c:Columns>
+            <c:Keys>
+              <o:Key Id="o2087">
+                <a:ObjectID>{48CBEF28-503F-42B0-AB1E-220BFE148624}</a:ObjectID>
+                <a:Name>pk_document_tags</a:Name>
+                <a:Code>pk_document_tags</a:Code>
+                <c:Key.Columns>
+                  <o:Column Ref="o2084"/>
+                  <o:Column Ref="o2085"/>
+                </c:Key.Columns>
+              </o:Key>
+            </c:Keys>
+          </o:Table>
+          <o:Table Id="o2088">
+            <a:ObjectID>{2CF26696-2418-43D3-A247-E0514E73B035}</a:ObjectID>
+            <a:Name>collections</a:Name>
+            <a:Code>collections</a:Code>
+            <c:Columns>
+              <o:Column Id="o2089">
+                <a:ObjectID>{7DBFD2A8-485A-4958-83BD-748247EC7D9F}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2090">
+                <a:ObjectID>{164BE979-DC59-4864-A529-7A306B8FD7F0}</a:ObjectID>
+                <a:Name>user_id</a:Name>
+                <a:Code>user_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2091">
+                <a:ObjectID>{1DAACEC9-62B7-428D-9E4A-910F248C4C47}</a:ObjectID>
+                <a:Name>name</a:Name>
+                <a:Code>name</a:Code>
+                <a:DataType>VARCHAR(150)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2092">
+                <a:ObjectID>{C002D1E8-DD34-4473-B94A-A55C99D36EAC}</a:ObjectID>
+                <a:Name>description</a:Name>
+                <a:Code>description</a:Code>
+                <a:DataType>TEXT</a:DataType>
+                <a:Column.Mandatory>0</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2093">
+                <a:ObjectID>{ECDE3088-62CA-4A30-9C35-A5ECD5ABC6B2}</a:ObjectID>
+                <a:Name>color</a:Name>
+                <a:Code>color</a:Code>
+                <a:DataType>VARCHAR(30)</a:DataType>
+                <a:Column.Mandatory>0</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2094">
+                <a:ObjectID>{ECFD2220-F70E-4A78-A54E-BA6DD51A68F3}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2095">
+                <a:ObjectID>{DEB670FF-D9F0-4F83-B045-16D4CEB67152}</a:ObjectID>
+                <a:Name>updated_at</a:Name>
+                <a:Code>updated_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+            </c:Columns>
+            <c:Keys>
+              <o:Key Id="o2096">
+                <a:ObjectID>{61C9BBA2-B935-4085-A171-6E7CDD846CB6}</a:ObjectID>
+                <a:Name>pk_collections</a:Name>
+                <a:Code>pk_collections</a:Code>
+                <c:Key.Columns>
+                  <o:Column Ref="o2089"/>
+                </c:Key.Columns>
+              </o:Key>
+            </c:Keys>
+          </o:Table>
+          <o:Table Id="o2097">
+            <a:ObjectID>{9E63FFCA-08A4-4791-8FE2-569056083C88}</a:ObjectID>
+            <a:Name>flashcard_decks</a:Name>
+            <a:Code>flashcard_decks</a:Code>
+            <c:Columns>
+              <o:Column Id="o2098">
+                <a:ObjectID>{0A76013D-C849-4027-B4C1-76F473BF11F1}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2099">
+                <a:ObjectID>{4C4D2B5C-3762-48A4-BE3F-F43E1DA891D0}</a:ObjectID>
+                <a:Name>user_id</a:Name>
+                <a:Code>user_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2100">
+                <a:ObjectID>{303E3B1D-2FE9-46D1-AA96-AA07DD5097F3}</a:ObjectID>
+                <a:Name>document_id</a:Name>
+                <a:Code>document_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>0</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2101">
+                <a:ObjectID>{72D3EB02-E9DB-4648-8A7E-8E9847B7E316}</a:ObjectID>
+                <a:Name>name</a:Name>
+                <a:Code>name</a:Code>
+                <a:DataType>VARCHAR(150)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2102">
+                <a:ObjectID>{4ABEC7AF-CAFC-4545-B033-F51B312AB7A9}</a:ObjectID>
+                <a:Name>description</a:Name>
+                <a:Code>description</a:Code>
+                <a:DataType>TEXT</a:DataType>
+                <a:Column.Mandatory>0</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2103">
+                <a:ObjectID>{C9A697EB-4C2B-415B-8345-2BC80CE82474}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2104">
+                <a:ObjectID>{CF8ABBC2-2E2A-43CD-AD76-FC32CBCA7722}</a:ObjectID>
+                <a:Name>updated_at</a:Name>
+                <a:Code>updated_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+            </c:Columns>
+            <c:Keys>
+              <o:Key Id="o2105">
+                <a:ObjectID>{D7007DA0-5A7A-43C1-8826-E54BD3C5C7A2}</a:ObjectID>
+                <a:Name>pk_flashcard_decks</a:Name>
+                <a:Code>pk_flashcard_decks</a:Code>
+                <c:Key.Columns>
+                  <o:Column Ref="o2098"/>
+                </c:Key.Columns>
+              </o:Key>
+            </c:Keys>
+          </o:Table>
+          <o:Table Id="o2106">
+            <a:ObjectID>{044D11BE-C611-44A8-8382-4302EB056269}</a:ObjectID>
+            <a:Name>flashcards</a:Name>
+            <a:Code>flashcards</a:Code>
+            <c:Columns>
+              <o:Column Id="o2107">
+                <a:ObjectID>{A76EEC84-5C17-4BBC-A306-433D1E6757E4}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2108">
+                <a:ObjectID>{646035B0-5684-45A3-A0C3-7B367B40BB29}</a:ObjectID>
+                <a:Name>deck_id</a:Name>
+                <a:Code>deck_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2109">
+                <a:ObjectID>{B75A47B8-2977-4332-B231-36DA71598506}</a:ObjectID>
+                <a:Name>front_text</a:Name>
+                <a:Code>front_text</a:Code>
+                <a:DataType>TEXT</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2110">
+                <a:ObjectID>{722B9536-94A2-4D77-AD8E-0B2F98424F34}</a:ObjectID>
+                <a:Name>back_text</a:Name>
+                <a:Code>back_text</a:Code>
+                <a:DataType>TEXT</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2111">
+                <a:ObjectID>{7211556A-0B23-46FD-B958-DDAC663A6AAA}</a:ObjectID>
+                <a:Name>is_known</a:Name>
+                <a:Code>is_known</a:Code>
+                <a:DataType>TINYINT(1)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2112">
+                <a:ObjectID>{3F81F14F-9E36-4301-8A9E-3D61F97D4F03}</a:ObjectID>
+                <a:Name>review_count</a:Name>
+                <a:Code>review_count</a:Code>
+                <a:DataType>INT UNSIGNED</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2113">
+                <a:ObjectID>{954231C6-D140-46B4-A893-BF9B4E51A978}</a:ObjectID>
+                <a:Name>last_reviewed_at</a:Name>
+                <a:Code>last_reviewed_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Column.Mandatory>0</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2114">
+                <a:ObjectID>{5702F4CA-01DA-41D3-9832-E305642932F4}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2115">
+                <a:ObjectID>{4412E1CA-6939-4533-965D-F70FE9B08288}</a:ObjectID>
+                <a:Name>updated_at</a:Name>
+                <a:Code>updated_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+            </c:Columns>
+            <c:Keys>
+              <o:Key Id="o2116">
+                <a:ObjectID>{1441F667-A7F0-413C-A485-F7AB8D37A7C9}</a:ObjectID>
+                <a:Name>pk_flashcards</a:Name>
+                <a:Code>pk_flashcards</a:Code>
+                <c:Key.Columns>
+                  <o:Column Ref="o2107"/>
+                </c:Key.Columns>
+              </o:Key>
+            </c:Keys>
+          </o:Table>
+          <o:Table Id="o2117">
+            <a:ObjectID>{75A9F386-99B0-4AAC-8A78-2229226E4AF3}</a:ObjectID>
+            <a:Name>collection_items</a:Name>
+            <a:Code>collection_items</a:Code>
+            <c:Columns>
+              <o:Column Id="o2118">
+                <a:ObjectID>{62CF1DB4-926A-49F5-8295-15A0CDEA22C6}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>BIGINT UNSIGNED</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2119">
+                <a:ObjectID>{70150A7E-3F79-4CBC-9761-1BE3CAAC2755}</a:ObjectID>
+                <a:Name>collection_id</a:Name>
+                <a:Code>collection_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2120">
+                <a:ObjectID>{CA16B8E4-AE37-42E6-961D-98C03156C420}</a:ObjectID>
+                <a:Name>document_id</a:Name>
+                <a:Code>document_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>0</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2121">
+                <a:ObjectID>{D2FC121A-A62A-4F6F-9DBA-34EA5508F461}</a:ObjectID>
+                <a:Name>note_id</a:Name>
+                <a:Code>note_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>0</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2122">
+                <a:ObjectID>{B963C6B9-5780-4386-B19B-BF457C0F859A}</a:ObjectID>
+                <a:Name>deck_id</a:Name>
+                <a:Code>deck_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>0</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2123">
+                <a:ObjectID>{7577AB3B-5DB9-4BCB-96E8-3B59E04798C7}</a:ObjectID>
+                <a:Name>added_at</a:Name>
+                <a:Code>added_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+            </c:Columns>
+            <c:Keys>
+              <o:Key Id="o2124">
+                <a:ObjectID>{6D9B31F3-591C-464B-AB72-BD2E8FAE6380}</a:ObjectID>
+                <a:Name>pk_collection_items</a:Name>
+                <a:Code>pk_collection_items</a:Code>
+                <c:Key.Columns>
+                  <o:Column Ref="o2118"/>
+                </c:Key.Columns>
+              </o:Key>
+            </c:Keys>
+          </o:Table>
+          <o:Table Id="o2125">
+            <a:ObjectID>{FC430AA1-EDDC-4397-9BDE-0B0B65D32E7D}</a:ObjectID>
+            <a:Name>archives</a:Name>
+            <a:Code>archives</a:Code>
+            <c:Columns>
+              <o:Column Id="o2126">
+                <a:ObjectID>{DAA00F79-31D0-4129-A4EF-29CD9A74F8C2}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2127">
+                <a:ObjectID>{A5BFA52A-C3FA-4BB6-B734-35F024B6F829}</a:ObjectID>
+                <a:Name>user_id</a:Name>
+                <a:Code>user_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2128">
+                <a:ObjectID>{4D4A365D-84A2-43F7-B735-F9CB28384603}</a:ObjectID>
+                <a:Name>name</a:Name>
+                <a:Code>name</a:Code>
+                <a:DataType>VARCHAR(255)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2129">
+                <a:ObjectID>{3197EDF7-682A-49D2-A5C0-3D6CA09454BA}</a:ObjectID>
+                <a:Name>original_name</a:Name>
+                <a:Code>original_name</a:Code>
+                <a:DataType>VARCHAR(255)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2130">
+                <a:ObjectID>{DDFE26FD-83F0-4941-A9C2-AD0502BB7172}</a:ObjectID>
+                <a:Name>format</a:Name>
+                <a:Code>format</a:Code>
+                <a:DataType>ENUM('zip','7z')</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2131">
+                <a:ObjectID>{DCF4FAE6-4DFC-4D3A-998C-DF90026A6CF7}</a:ObjectID>
+                <a:Name>file_size</a:Name>
+                <a:Code>file_size</a:Code>
+                <a:DataType>BIGINT UNSIGNED</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2132">
+                <a:ObjectID>{FDA7B528-9153-4F61-BCD4-1795EBADFD0C}</a:ObjectID>
+                <a:Name>uncompressed_size</a:Name>
+                <a:Code>uncompressed_size</a:Code>
+                <a:DataType>BIGINT UNSIGNED</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2133">
+                <a:ObjectID>{9DDB037D-64A9-4D84-B619-2EA1311E30BD}</a:ObjectID>
+                <a:Name>max_ratio</a:Name>
+                <a:Code>max_ratio</a:Code>
+                <a:DataType>DECIMAL(6,2)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2134">
+                <a:ObjectID>{AC98EF50-9C27-41D5-87A9-8F76CBC2819F}</a:ObjectID>
+                <a:Name>file_count</a:Name>
+                <a:Code>file_count</a:Code>
+                <a:DataType>INT UNSIGNED</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2135">
+                <a:ObjectID>{DD4159DD-10D3-48C5-B50F-091686753F35}</a:ObjectID>
+                <a:Name>storage_path</a:Name>
+                <a:Code>storage_path</a:Code>
+                <a:DataType>VARCHAR(500)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2136">
+                <a:ObjectID>{00CC75DD-0843-4D1B-81AA-7B17F9EAF657}</a:ObjectID>
+                <a:Name>sha256_checksum</a:Name>
+                <a:Code>sha256_checksum</a:Code>
+                <a:DataType>CHAR(64)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2137">
+                <a:ObjectID>{2C72A943-FF51-4335-A0AD-727EC68C477E}</a:ObjectID>
+                <a:Name>scan_status</a:Name>
+                <a:Code>scan_status</a:Code>
+                <a:DataType>ENUM('clean','warning','quarantined','rejected')</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2138">
+                <a:ObjectID>{300E5408-D894-4DB3-BA67-DCC242993B48}</a:ObjectID>
+                <a:Name>manifest_json</a:Name>
+                <a:Code>manifest_json</a:Code>
+                <a:DataType>LONGTEXT</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2139">
+                <a:ObjectID>{AD8502B8-FA40-4046-B042-C1EAC04432A2}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2140">
+                <a:ObjectID>{F89CC0C8-51F2-4125-A496-B059CA47B73D}</a:ObjectID>
+                <a:Name>updated_at</a:Name>
+                <a:Code>updated_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+            </c:Columns>
+            <c:Keys>
+              <o:Key Id="o2141">
+                <a:ObjectID>{287DD22D-8355-4F80-8959-1C0564A293A7}</a:ObjectID>
+                <a:Name>pk_archives</a:Name>
+                <a:Code>pk_archives</a:Code>
+                <c:Key.Columns>
+                  <o:Column Ref="o2126"/>
+                </c:Key.Columns>
+              </o:Key>
+            </c:Keys>
+          </o:Table>
+          <o:Table Id="o2142">
+            <a:ObjectID>{A7D67C0B-FD1D-4027-A6F5-3EE606CDBD35}</a:ObjectID>
+            <a:Name>archive_extracted_files</a:Name>
+            <a:Code>archive_extracted_files</a:Code>
+            <c:Columns>
+              <o:Column Id="o2143">
+                <a:ObjectID>{AD344F41-5D19-48A6-96E4-70428D8EBFB8}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>BIGINT UNSIGNED</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2144">
+                <a:ObjectID>{A9FE8CC9-DD1B-4EE3-BA09-E0277D6468A5}</a:ObjectID>
+                <a:Name>archive_id</a:Name>
+                <a:Code>archive_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2145">
+                <a:ObjectID>{63E46A5E-E0E8-47EE-8876-64C5859FD670}</a:ObjectID>
+                <a:Name>document_id</a:Name>
+                <a:Code>document_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2146">
+                <a:ObjectID>{926BCC76-FEDF-4FA4-9765-0E6518EAEF84}</a:ObjectID>
+                <a:Name>inner_path</a:Name>
+                <a:Code>inner_path</a:Code>
+                <a:DataType>VARCHAR(500)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2147">
+                <a:ObjectID>{CFE92E96-970E-4AEC-80CD-52B1D504BEA9}</a:ObjectID>
+                <a:Name>extracted_at</a:Name>
+                <a:Code>extracted_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+            </c:Columns>
+            <c:Keys>
+              <o:Key Id="o2148">
+                <a:ObjectID>{3AAE90B5-AAE3-4FEB-A875-1C3CAE43061D}</a:ObjectID>
+                <a:Name>pk_archive_extracted_files</a:Name>
+                <a:Code>pk_archive_extracted_files</a:Code>
+                <c:Key.Columns>
+                  <o:Column Ref="o2143"/>
+                </c:Key.Columns>
+              </o:Key>
+            </c:Keys>
+          </o:Table>
+          <o:Table Id="o2149">
+            <a:ObjectID>{0727760D-BF03-4774-9E6B-5495521ED914}</a:ObjectID>
+            <a:Name>ai_providers</a:Name>
+            <a:Code>ai_providers</a:Code>
+            <c:Columns>
+              <o:Column Id="o2150">
+                <a:ObjectID>{4A171742-8337-41F1-BF4F-86E033DF2B29}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>VARCHAR(50)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2151">
+                <a:ObjectID>{1CEAFD47-4F03-4137-B64E-F842AB9E1445}</a:ObjectID>
+                <a:Name>name</a:Name>
+                <a:Code>name</a:Code>
+                <a:DataType>VARCHAR(100)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2152">
+                <a:ObjectID>{8097D67E-9F76-4F1C-81C4-FF8D1D2C4C4C}</a:ObjectID>
+                <a:Name>api_base_url</a:Name>
+                <a:Code>api_base_url</a:Code>
+                <a:DataType>VARCHAR(255)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2153">
+                <a:ObjectID>{DF0C2E9E-AD4A-4233-ACFC-8D17B2AB3555}</a:ObjectID>
+                <a:Name>auth_header_format</a:Name>
+                <a:Code>auth_header_format</a:Code>
+                <a:DataType>VARCHAR(100)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2154">
+                <a:ObjectID>{4D3E6832-4C56-4E68-AD8B-982F4607D634}</a:ObjectID>
+                <a:Name>icon</a:Name>
+                <a:Code>icon</a:Code>
+                <a:DataType>VARCHAR(50)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2155">
+                <a:ObjectID>{787D6EB7-1D06-41B9-ADAC-4E4B9AC6D2E2}</a:ObjectID>
+                <a:Name>is_active</a:Name>
+                <a:Code>is_active</a:Code>
+                <a:DataType>TINYINT(1)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2156">
+                <a:ObjectID>{831B8C48-3A30-43C9-B89D-42EBB6A5F00C}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+            </c:Columns>
+            <c:Keys>
+              <o:Key Id="o2157">
+                <a:ObjectID>{D12D41BE-A410-4357-B118-AEAF05A57107}</a:ObjectID>
+                <a:Name>pk_ai_providers</a:Name>
+                <a:Code>pk_ai_providers</a:Code>
+                <c:Key.Columns>
+                  <o:Column Ref="o2150"/>
+                </c:Key.Columns>
+              </o:Key>
+            </c:Keys>
+          </o:Table>
+          <o:Table Id="o2158">
+            <a:ObjectID>{9CEFECAE-5620-4054-BBE3-EF4736E19B9C}</a:ObjectID>
+            <a:Name>ai_models</a:Name>
+            <a:Code>ai_models</a:Code>
+            <c:Columns>
+              <o:Column Id="o2159">
+                <a:ObjectID>{47BDCC14-9643-44E8-856B-B88D5798052B}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>VARCHAR(100)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2160">
+                <a:ObjectID>{2364162C-EC23-4778-B8D5-D191EC4A0088}</a:ObjectID>
+                <a:Name>provider_id</a:Name>
+                <a:Code>provider_id</a:Code>
+                <a:DataType>VARCHAR(50)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2161">
+                <a:ObjectID>{B0F43633-395F-4117-BE89-66DF96A685E1}</a:ObjectID>
+                <a:Name>display_name</a:Name>
+                <a:Code>display_name</a:Code>
+                <a:DataType>VARCHAR(150)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2162">
+                <a:ObjectID>{80A98443-8454-4C40-9AEF-2CF76698A572}</a:ObjectID>
+                <a:Name>context_window</a:Name>
+                <a:Code>context_window</a:Code>
+                <a:DataType>INT UNSIGNED</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2163">
+                <a:ObjectID>{D2AAD045-2618-42DB-9888-170DC36DCE9F}</a:ObjectID>
+                <a:Name>max_output_tokens</a:Name>
+                <a:Code>max_output_tokens</a:Code>
+                <a:DataType>INT UNSIGNED</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2164">
+                <a:ObjectID>{D8748F46-CDE3-4950-93A6-1D0CDC3FBB17}</a:ObjectID>
+                <a:Name>supports_vision</a:Name>
+                <a:Code>supports_vision</a:Code>
+                <a:DataType>TINYINT(1)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2165">
+                <a:ObjectID>{E27E98C3-F17A-4562-9B81-33EC2FB0C0F9}</a:ObjectID>
+                <a:Name>is_default</a:Name>
+                <a:Code>is_default</a:Code>
+                <a:DataType>TINYINT(1)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2166">
+                <a:ObjectID>{5D1C761F-5C75-4B5C-90A1-0C3C527292EA}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+            </c:Columns>
+            <c:Keys>
+              <o:Key Id="o2167">
+                <a:ObjectID>{BD51E378-768A-485B-9DCB-EDA72F32486D}</a:ObjectID>
+                <a:Name>pk_ai_models</a:Name>
+                <a:Code>pk_ai_models</a:Code>
+                <c:Key.Columns>
+                  <o:Column Ref="o2159"/>
+                </c:Key.Columns>
+              </o:Key>
+            </c:Keys>
+          </o:Table>
+          <o:Table Id="o2168">
+            <a:ObjectID>{748411BA-E59E-4D32-9C45-E657A27BF232}</a:ObjectID>
+            <a:Name>ai_connections</a:Name>
+            <a:Code>ai_connections</a:Code>
+            <c:Columns>
+              <o:Column Id="o2169">
+                <a:ObjectID>{6C984CA2-B887-4A69-B7E5-D54B2FC00132}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2170">
+                <a:ObjectID>{5C8D9A3D-B456-46B2-8DA9-66CD16D719EE}</a:ObjectID>
+                <a:Name>user_id</a:Name>
+                <a:Code>user_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2171">
+                <a:ObjectID>{E74919C5-7DD6-4649-85AB-3F1248178D39}</a:ObjectID>
+                <a:Name>provider_id</a:Name>
+                <a:Code>provider_id</a:Code>
+                <a:DataType>VARCHAR(50)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2172">
+                <a:ObjectID>{EC98FB69-E53F-4146-82E1-75FD7F8A7B8E}</a:ObjectID>
+                <a:Name>name</a:Name>
+                <a:Code>name</a:Code>
+                <a:DataType>VARCHAR(100)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2173">
+                <a:ObjectID>{25E0E7A4-D601-4FC2-B38E-F144070C1AF1}</a:ObjectID>
+                <a:Name>api_endpoint</a:Name>
+                <a:Code>api_endpoint</a:Code>
+                <a:DataType>VARCHAR(255)</a:DataType>
+                <a:Column.Mandatory>0</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2174">
+                <a:ObjectID>{C0F99628-0D6C-4063-8688-F565D01B73CA}</a:ObjectID>
+                <a:Name>encrypted_api_key</a:Name>
+                <a:Code>encrypted_api_key</a:Code>
+                <a:DataType>VARBINARY(512)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2175">
+                <a:ObjectID>{C7BD9431-F39D-4CA2-8708-F25987C579BF}</a:ObjectID>
+                <a:Name>encryption_iv</a:Name>
+                <a:Code>encryption_iv</a:Code>
+                <a:DataType>VARBINARY(16)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2176">
+                <a:ObjectID>{BD286237-505D-4722-87D9-A1226A31C2B1}</a:ObjectID>
+                <a:Name>encryption_tag</a:Name>
+                <a:Code>encryption_tag</a:Code>
+                <a:DataType>VARBINARY(16)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2177">
+                <a:ObjectID>{ED176733-F886-46CD-88F5-D5A1582E78A8}</a:ObjectID>
+                <a:Name>key_version</a:Name>
+                <a:Code>key_version</a:Code>
+                <a:DataType>INT UNSIGNED</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2178">
+                <a:ObjectID>{6DD94E35-1B9C-4652-8AD8-3FF48C391326}</a:ObjectID>
+                <a:Name>api_key_masked</a:Name>
+                <a:Code>api_key_masked</a:Code>
+                <a:DataType>VARCHAR(64)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2179">
+                <a:ObjectID>{1300F18C-4AC6-4100-B6DA-EF33103E37D4}</a:ObjectID>
+                <a:Name>default_model_id</a:Name>
+                <a:Code>default_model_id</a:Code>
+                <a:DataType>VARCHAR(100)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2180">
+                <a:ObjectID>{F3D06821-6CD3-4109-9EEF-B8CD9ED914A4}</a:ObjectID>
+                <a:Name>is_connected</a:Name>
+                <a:Code>is_connected</a:Code>
+                <a:DataType>TINYINT(1)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2181">
+                <a:ObjectID>{3CC4DADE-7256-4C85-8FB3-3D25F2B112E4}</a:ObjectID>
+                <a:Name>last_tested_at</a:Name>
+                <a:Code>last_tested_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Column.Mandatory>0</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2182">
+                <a:ObjectID>{354F33C6-AC36-44C8-B87C-AF696A630F07}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2183">
+                <a:ObjectID>{639A517A-0DFF-4E79-B334-5972D139C14F}</a:ObjectID>
+                <a:Name>updated_at</a:Name>
+                <a:Code>updated_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+            </c:Columns>
+            <c:Keys>
+              <o:Key Id="o2184">
+                <a:ObjectID>{C5493EFA-F88B-4971-B747-9E494677FBB1}</a:ObjectID>
+                <a:Name>pk_ai_connections</a:Name>
+                <a:Code>pk_ai_connections</a:Code>
+                <c:Key.Columns>
+                  <o:Column Ref="o2169"/>
+                </c:Key.Columns>
+              </o:Key>
+            </c:Keys>
+          </o:Table>
+          <o:Table Id="o2185">
+            <a:ObjectID>{17882889-3ECE-4361-89BA-6FCD666DAE12}</a:ObjectID>
+            <a:Name>ai_conversations</a:Name>
+            <a:Code>ai_conversations</a:Code>
+            <c:Columns>
+              <o:Column Id="o2186">
+                <a:ObjectID>{64234E30-AAC4-4E05-BDC2-FBCB825CF88B}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2187">
+                <a:ObjectID>{025C8E49-4B25-441A-891C-2C03A38E4EE6}</a:ObjectID>
+                <a:Name>user_id</a:Name>
+                <a:Code>user_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2188">
+                <a:ObjectID>{D7CE4058-8EE7-4275-8A18-EB99E8566F00}</a:ObjectID>
+                <a:Name>connection_id</a:Name>
+                <a:Code>connection_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>0</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2189">
+                <a:ObjectID>{DBD317E6-CAAF-4206-BF50-AA11FCFD2473}</a:ObjectID>
+                <a:Name>model_name</a:Name>
+                <a:Code>model_name</a:Code>
+                <a:DataType>VARCHAR(100)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2190">
+                <a:ObjectID>{17C1832A-5F94-4DEE-87C8-EAA56959DE26}</a:ObjectID>
+                <a:Name>title</a:Name>
+                <a:Code>title</a:Code>
+                <a:DataType>VARCHAR(200)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2191">
+                <a:ObjectID>{72C05B3D-612B-4D66-B029-1437E468FD31}</a:ObjectID>
+                <a:Name>pinned_document_id</a:Name>
+                <a:Code>pinned_document_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>0</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2192">
+                <a:ObjectID>{1A2177BC-EFB5-4E9A-97E4-E0CA909753D5}</a:ObjectID>
+                <a:Name>total_tokens_used</a:Name>
+                <a:Code>total_tokens_used</a:Code>
+                <a:DataType>INT UNSIGNED</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2193">
+                <a:ObjectID>{3F35AC8D-EDD7-4111-A68C-93C6ED92E77E}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2194">
+                <a:ObjectID>{5FF98080-266C-4449-94B4-BCC66217DEEC}</a:ObjectID>
+                <a:Name>updated_at</a:Name>
+                <a:Code>updated_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+            </c:Columns>
+            <c:Keys>
+              <o:Key Id="o2195">
+                <a:ObjectID>{EF39E91C-078C-466F-AC26-39C5C93B5964}</a:ObjectID>
+                <a:Name>pk_ai_conversations</a:Name>
+                <a:Code>pk_ai_conversations</a:Code>
+                <c:Key.Columns>
+                  <o:Column Ref="o2186"/>
+                </c:Key.Columns>
+              </o:Key>
+            </c:Keys>
+          </o:Table>
+          <o:Table Id="o2196">
+            <a:ObjectID>{BAD95EDA-DF25-4BCC-9048-3236B00743CF}</a:ObjectID>
+            <a:Name>ai_messages</a:Name>
+            <a:Code>ai_messages</a:Code>
+            <c:Columns>
+              <o:Column Id="o2197">
+                <a:ObjectID>{EA273A4B-6E6F-467D-B361-23968D76E809}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>BIGINT UNSIGNED</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2198">
+                <a:ObjectID>{79EE8D53-1748-42D2-B41A-A364E03496AC}</a:ObjectID>
+                <a:Name>conversation_id</a:Name>
+                <a:Code>conversation_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2199">
+                <a:ObjectID>{52B763CA-A2CF-4E47-8C40-500F13D6697D}</a:ObjectID>
+                <a:Name>role</a:Name>
+                <a:Code>role</a:Code>
+                <a:DataType>ENUM('user','assistant','system')</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2200">
+                <a:ObjectID>{C4ED5CC5-717E-4110-9B80-0D4D8B1A2CBA}</a:ObjectID>
+                <a:Name>content</a:Name>
+                <a:Code>content</a:Code>
+                <a:DataType>LONGTEXT</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2201">
+                <a:ObjectID>{9BC023F2-D216-45F3-8ACE-35BB2BA924EB}</a:ObjectID>
+                <a:Name>prompt_tokens</a:Name>
+                <a:Code>prompt_tokens</a:Code>
+                <a:DataType>INT UNSIGNED</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2202">
+                <a:ObjectID>{E9D690B3-0505-4FEE-ADDB-B092F2C3ECD9}</a:ObjectID>
+                <a:Name>completion_tokens</a:Name>
+                <a:Code>completion_tokens</a:Code>
+                <a:DataType>INT UNSIGNED</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2203">
+                <a:ObjectID>{0DCBBAF7-8FB7-414A-9AB4-71EC99E5971D}</a:ObjectID>
+                <a:Name>references_json</a:Name>
+                <a:Code>references_json</a:Code>
+                <a:DataType>JSON</a:DataType>
+                <a:Column.Mandatory>0</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2204">
+                <a:ObjectID>{C7AE7915-99FC-461D-AF8E-C7F9B6D99A4F}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+            </c:Columns>
+            <c:Keys>
+              <o:Key Id="o2205">
+                <a:ObjectID>{6EA60F00-7743-465A-B4D4-1AE0183F7BBD}</a:ObjectID>
+                <a:Name>pk_ai_messages</a:Name>
+                <a:Code>pk_ai_messages</a:Code>
+                <c:Key.Columns>
+                  <o:Column Ref="o2197"/>
+                </c:Key.Columns>
+              </o:Key>
+            </c:Keys>
+          </o:Table>
+          <o:Table Id="o2206">
+            <a:ObjectID>{A7A2E4F8-1E43-4567-A627-DA5010BCDEBC}</a:ObjectID>
+            <a:Name>ai_tasks</a:Name>
+            <a:Code>ai_tasks</a:Code>
+            <c:Columns>
+              <o:Column Id="o2207">
+                <a:ObjectID>{3F0087DF-BAFB-47C0-A575-C22B5B562736}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2208">
+                <a:ObjectID>{5E6A39E7-7A34-42BE-B19E-766A94F46BA8}</a:ObjectID>
+                <a:Name>user_id</a:Name>
+                <a:Code>user_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2209">
+                <a:ObjectID>{89822F31-65E3-4E1F-89D5-C3A73F61D0D9}</a:ObjectID>
+                <a:Name>source_document_id</a:Name>
+                <a:Code>source_document_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>0</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2210">
+                <a:ObjectID>{65DBE5C0-4B62-4FCF-A2B1-0C59ECF27E06}</a:ObjectID>
+                <a:Name>connection_id</a:Name>
+                <a:Code>connection_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>0</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2211">
+                <a:ObjectID>{6209DD93-2AA2-4166-B0D8-8812F63B1918}</a:ObjectID>
+                <a:Name>name</a:Name>
+                <a:Code>name</a:Code>
+                <a:DataType>VARCHAR(150)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2212">
+                <a:ObjectID>{95ABB885-13C9-4F82-BE31-5A1FFC5F71C9}</a:ObjectID>
+                <a:Name>description</a:Name>
+                <a:Code>description</a:Code>
+                <a:DataType>TEXT</a:DataType>
+                <a:Column.Mandatory>0</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2213">
+                <a:ObjectID>{1272C229-C573-4596-BAA0-E3C323BD3BEA}</a:ObjectID>
+                <a:Name>trigger_type</a:Name>
+                <a:Code>trigger_type</a:Code>
+                <a:DataType>ENUM('manual','on_upload','on_extract')</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2214">
+                <a:ObjectID>{E49605B8-33E6-4479-908A-416D03687047}</a:ObjectID>
+                <a:Name>status</a:Name>
+                <a:Code>status</a:Code>
+                <a:DataType>ENUM('queued','processing','completed','failed')</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2215">
+                <a:ObjectID>{521AAD98-727F-4747-B100-5AE7D255AB98}</a:ObjectID>
+                <a:Name>progress</a:Name>
+                <a:Code>progress</a:Code>
+                <a:DataType>TINYINT UNSIGNED</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2216">
+                <a:ObjectID>{0231FFD5-A13B-48EE-9786-70E35E3E0B89}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2217">
+                <a:ObjectID>{388EE6A6-0F96-4EAB-ADF9-9EE0335EF797}</a:ObjectID>
+                <a:Name>completed_at</a:Name>
+                <a:Code>completed_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Column.Mandatory>0</a:Column.Mandatory>
+              </o:Column>
+            </c:Columns>
+            <c:Keys>
+              <o:Key Id="o2218">
+                <a:ObjectID>{B86A0A03-E05F-4020-9A42-6C0B03B11168}</a:ObjectID>
+                <a:Name>pk_ai_tasks</a:Name>
+                <a:Code>pk_ai_tasks</a:Code>
+                <c:Key.Columns>
+                  <o:Column Ref="o2207"/>
+                </c:Key.Columns>
+              </o:Key>
+            </c:Keys>
+          </o:Table>
+          <o:Table Id="o2219">
+            <a:ObjectID>{85C2AB20-06E1-4CF4-A9EA-E35E7AF33D2C}</a:ObjectID>
+            <a:Name>ai_task_logs</a:Name>
+            <a:Code>ai_task_logs</a:Code>
+            <c:Columns>
+              <o:Column Id="o2220">
+                <a:ObjectID>{EE236998-06B8-4A73-94A2-7BF01D9DB4FD}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>BIGINT UNSIGNED</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2221">
+                <a:ObjectID>{C5E75AFD-44A6-4163-88B9-E202DE1A8AD8}</a:ObjectID>
+                <a:Name>task_id</a:Name>
+                <a:Code>task_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2222">
+                <a:ObjectID>{ABE6BD51-7EDC-4138-AEF0-65C6B3E81052}</a:ObjectID>
+                <a:Name>step_name</a:Name>
+                <a:Code>step_name</a:Code>
+                <a:DataType>VARCHAR(100)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2223">
+                <a:ObjectID>{3D904CDE-25A3-4454-9781-5A439189CD32}</a:ObjectID>
+                <a:Name>status</a:Name>
+                <a:Code>status</a:Code>
+                <a:DataType>ENUM('running','success','failed')</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2224">
+                <a:ObjectID>{CEE401B4-D635-4964-B105-705717E86B11}</a:ObjectID>
+                <a:Name>duration_ms</a:Name>
+                <a:Code>duration_ms</a:Code>
+                <a:DataType>INT UNSIGNED</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2225">
+                <a:ObjectID>{A03FF769-B147-4738-9F6F-019282561873}</a:ObjectID>
+                <a:Name>tokens_used</a:Name>
+                <a:Code>tokens_used</a:Code>
+                <a:DataType>INT UNSIGNED</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2226">
+                <a:ObjectID>{0F3CCBC8-E0A1-4C07-A4D9-447A77D29219}</a:ObjectID>
+                <a:Name>input_summary</a:Name>
+                <a:Code>input_summary</a:Code>
+                <a:DataType>TEXT</a:DataType>
+                <a:Column.Mandatory>0</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2227">
+                <a:ObjectID>{C89E0BD0-D59E-4762-A7D5-C0003065D16A}</a:ObjectID>
+                <a:Name>output_summary</a:Name>
+                <a:Code>output_summary</a:Code>
+                <a:DataType>LONGTEXT</a:DataType>
+                <a:Column.Mandatory>0</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2228">
+                <a:ObjectID>{E192963C-977D-4725-9BAF-8323C54C6FED}</a:ObjectID>
+                <a:Name>error_message</a:Name>
+                <a:Code>error_message</a:Code>
+                <a:DataType>TEXT</a:DataType>
+                <a:Column.Mandatory>0</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2229">
+                <a:ObjectID>{DEFDD84C-4FE3-4B55-8E99-5657EF39303E}</a:ObjectID>
+                <a:Name>executed_at</a:Name>
+                <a:Code>executed_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+            </c:Columns>
+            <c:Keys>
+              <o:Key Id="o2230">
+                <a:ObjectID>{6ED8E952-B38D-468B-9CF4-C5AE49AFD8B6}</a:ObjectID>
+                <a:Name>pk_ai_task_logs</a:Name>
+                <a:Code>pk_ai_task_logs</a:Code>
+                <c:Key.Columns>
+                  <o:Column Ref="o2220"/>
+                </c:Key.Columns>
+              </o:Key>
+            </c:Keys>
+          </o:Table>
+          <o:Table Id="o2231">
+            <a:ObjectID>{A25D9BE5-1FB9-47B7-B00B-1BABAED43BFC}</a:ObjectID>
+            <a:Name>ai_contexts</a:Name>
+            <a:Code>ai_contexts</a:Code>
+            <c:Columns>
+              <o:Column Id="o2232">
+                <a:ObjectID>{C4E0EF8E-1838-45ED-8853-D908AB2C5E42}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2233">
+                <a:ObjectID>{BD4E8BDA-41AB-43EF-8D82-5979863C6724}</a:ObjectID>
+                <a:Name>user_id</a:Name>
+                <a:Code>user_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2234">
+                <a:ObjectID>{D8C80E26-0AAD-4ACE-99E4-3084F46D74E6}</a:ObjectID>
+                <a:Name>title</a:Name>
+                <a:Code>title</a:Code>
+                <a:DataType>VARCHAR(200)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2235">
+                <a:ObjectID>{E1D9A678-3FF4-4AE1-9A64-44A5B120AA86}</a:ObjectID>
+                <a:Name>schema_version</a:Name>
+                <a:Code>schema_version</a:Code>
+                <a:DataType>VARCHAR(20)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2236">
+                <a:ObjectID>{4052026C-9FB9-4C0E-A092-390D45453D68}</a:ObjectID>
+                <a:Name>current_version</a:Name>
+                <a:Code>current_version</a:Code>
+                <a:DataType>VARCHAR(20)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2237">
+                <a:ObjectID>{FAD276FF-4BC8-4CD6-B888-7E63D57C25E6}</a:ObjectID>
+                <a:Name>summary</a:Name>
+                <a:Code>summary</a:Code>
+                <a:DataType>TEXT</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2238">
+                <a:ObjectID>{7F69BB15-6BB6-44D2-AE94-88D15146601E}</a:ObjectID>
+                <a:Name>knowledge_points_json</a:Name>
+                <a:Code>knowledge_points_json</a:Code>
+                <a:DataType>LONGTEXT</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2239">
+                <a:ObjectID>{3362744E-2178-41DE-91B8-5335ABC6CEDB}</a:ObjectID>
+                <a:Name>conclusions_json</a:Name>
+                <a:Code>conclusions_json</a:Code>
+                <a:DataType>LONGTEXT</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2240">
+                <a:ObjectID>{F23623FD-161D-4796-BF9B-D10E49043020}</a:ObjectID>
+                <a:Name>open_questions_json</a:Name>
+                <a:Code>open_questions_json</a:Code>
+                <a:DataType>LONGTEXT</a:DataType>
+                <a:Column.Mandatory>0</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2241">
+                <a:ObjectID>{C6D6F079-4565-4F4B-A308-C8426843D30D}</a:ObjectID>
+                <a:Name>learning_progress</a:Name>
+                <a:Code>learning_progress</a:Code>
+                <a:DataType>TINYINT UNSIGNED</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2242">
+                <a:ObjectID>{66856805-2E01-48B1-B995-45A223082CF1}</a:ObjectID>
+                <a:Name>handoff_directive</a:Name>
+                <a:Code>handoff_directive</a:Code>
+                <a:DataType>TEXT</a:DataType>
+                <a:Column.Mandatory>0</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2243">
+                <a:ObjectID>{B4AB1E18-68FD-43F9-AAA2-01D00D93C359}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2244">
+                <a:ObjectID>{1CA176F8-E38E-4B23-8287-9CD80C5E15C7}</a:ObjectID>
+                <a:Name>updated_at</a:Name>
+                <a:Code>updated_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+            </c:Columns>
+            <c:Keys>
+              <o:Key Id="o2245">
+                <a:ObjectID>{FC82C79F-3C94-4994-AB07-AF89E48A0202}</a:ObjectID>
+                <a:Name>pk_ai_contexts</a:Name>
+                <a:Code>pk_ai_contexts</a:Code>
+                <c:Key.Columns>
+                  <o:Column Ref="o2232"/>
+                </c:Key.Columns>
+              </o:Key>
+            </c:Keys>
+          </o:Table>
+          <o:Table Id="o2246">
+            <a:ObjectID>{EDEECCD1-51A4-4E87-A720-0E6359213D71}</a:ObjectID>
+            <a:Name>ai_context_versions</a:Name>
+            <a:Code>ai_context_versions</a:Code>
+            <c:Columns>
+              <o:Column Id="o2247">
+                <a:ObjectID>{F6FA1E4E-ABB6-4293-8F54-F7ABD4B5FBC9}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>BIGINT UNSIGNED</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2248">
+                <a:ObjectID>{7B83EFCA-BDF9-4B65-8662-BCA35696C538}</a:ObjectID>
+                <a:Name>context_id</a:Name>
+                <a:Code>context_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2249">
+                <a:ObjectID>{EC81A23E-405F-4D3E-AE17-C5159D296E35}</a:ObjectID>
+                <a:Name>version_tag</a:Name>
+                <a:Code>version_tag</a:Code>
+                <a:DataType>VARCHAR(20)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2250">
+                <a:ObjectID>{D9607894-D82D-4234-9578-D02AA1EA4B59}</a:ObjectID>
+                <a:Name>snapshot_json</a:Name>
+                <a:Code>snapshot_json</a:Code>
+                <a:DataType>LONGTEXT</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2251">
+                <a:ObjectID>{B8EC4598-4030-4302-86A5-1A8A108C107D}</a:ObjectID>
+                <a:Name>change_note</a:Name>
+                <a:Code>change_note</a:Code>
+                <a:DataType>VARCHAR(255)</a:DataType>
+                <a:Column.Mandatory>0</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2252">
+                <a:ObjectID>{27995E32-A7CE-474A-BF42-84CA1A130CE4}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+            </c:Columns>
+            <c:Keys>
+              <o:Key Id="o2253">
+                <a:ObjectID>{996BF2F9-028A-484C-B09B-4A5792E3A7CF}</a:ObjectID>
+                <a:Name>pk_ai_context_versions</a:Name>
+                <a:Code>pk_ai_context_versions</a:Code>
+                <c:Key.Columns>
+                  <o:Column Ref="o2247"/>
+                </c:Key.Columns>
+              </o:Key>
+            </c:Keys>
+          </o:Table>
+          <o:Table Id="o2254">
+            <a:ObjectID>{4F101448-21AC-4337-B267-45F1982F1EEE}</a:ObjectID>
+            <a:Name>quizzes</a:Name>
+            <a:Code>quizzes</a:Code>
+            <c:Columns>
+              <o:Column Id="o2255">
+                <a:ObjectID>{1CDFE275-C958-460A-BF8F-B07856F81C78}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2256">
+                <a:ObjectID>{7A18381D-158B-426E-80A3-9C7BDD61F857}</a:ObjectID>
+                <a:Name>user_id</a:Name>
+                <a:Code>user_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2257">
+                <a:ObjectID>{AE1B2560-CD8A-40E3-9882-7B62A88B30D2}</a:ObjectID>
+                <a:Name>document_id</a:Name>
+                <a:Code>document_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>0</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2258">
+                <a:ObjectID>{6BA5C1DF-CCA0-49C3-A001-652D651F58F8}</a:ObjectID>
+                <a:Name>title</a:Name>
+                <a:Code>title</a:Code>
+                <a:DataType>VARCHAR(200)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2259">
+                <a:ObjectID>{266ACE28-48B3-4BCE-BA9C-39D87210BAA6}</a:ObjectID>
+                <a:Name>description</a:Name>
+                <a:Code>description</a:Code>
+                <a:DataType>TEXT</a:DataType>
+                <a:Column.Mandatory>0</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2260">
+                <a:ObjectID>{D69CFF9C-B484-4F78-B9DF-4A8104E675CF}</a:ObjectID>
+                <a:Name>time_limit_sec</a:Name>
+                <a:Code>time_limit_sec</a:Code>
+                <a:DataType>INT UNSIGNED</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2261">
+                <a:ObjectID>{20831514-F45F-4EBF-9217-1802ECC42E58}</a:ObjectID>
+                <a:Name>max_attempts</a:Name>
+                <a:Code>max_attempts</a:Code>
+                <a:DataType>TINYINT UNSIGNED</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2262">
+                <a:ObjectID>{9586AE63-A8A7-44C5-A0D6-E09647890C9C}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2263">
+                <a:ObjectID>{E3B054CD-E5D0-4236-AEEA-16DB82EA8056}</a:ObjectID>
+                <a:Name>updated_at</a:Name>
+                <a:Code>updated_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+            </c:Columns>
+            <c:Keys>
+              <o:Key Id="o2264">
+                <a:ObjectID>{3865BA24-F43C-4A2E-BA67-774E0062A50B}</a:ObjectID>
+                <a:Name>pk_quizzes</a:Name>
+                <a:Code>pk_quizzes</a:Code>
+                <c:Key.Columns>
+                  <o:Column Ref="o2255"/>
+                </c:Key.Columns>
+              </o:Key>
+            </c:Keys>
+          </o:Table>
+          <o:Table Id="o2265">
+            <a:ObjectID>{C8E9C407-2BF3-4B97-9BCC-2D314C16FA6C}</a:ObjectID>
+            <a:Name>quiz_questions</a:Name>
+            <a:Code>quiz_questions</a:Code>
+            <c:Columns>
+              <o:Column Id="o2266">
+                <a:ObjectID>{FE113FDB-86D2-4BE8-9385-3B0C092E4176}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2267">
+                <a:ObjectID>{19BF2459-5A26-407F-9D3D-E3BB65C129E6}</a:ObjectID>
+                <a:Name>quiz_id</a:Name>
+                <a:Code>quiz_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2268">
+                <a:ObjectID>{5AF0EB56-85B3-4A29-A522-DB79748D6186}</a:ObjectID>
+                <a:Name>question_text</a:Name>
+                <a:Code>question_text</a:Code>
+                <a:DataType>TEXT</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2269">
+                <a:ObjectID>{9F910BF3-2DFD-4821-92A7-27A2CF9B2EF4}</a:ObjectID>
+                <a:Name>order_index</a:Name>
+                <a:Code>order_index</a:Code>
+                <a:DataType>INT UNSIGNED</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2270">
+                <a:ObjectID>{18E5E71F-3906-4387-BD95-EF0E75B908C1}</a:ObjectID>
+                <a:Name>explanation</a:Name>
+                <a:Code>explanation</a:Code>
+                <a:DataType>TEXT</a:DataType>
+                <a:Column.Mandatory>0</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2271">
+                <a:ObjectID>{F0485309-10E1-4566-8BA5-D814D0A17781}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+            </c:Columns>
+            <c:Keys>
+              <o:Key Id="o2272">
+                <a:ObjectID>{D460A2B9-08B9-40CE-AFF8-95FF86A31A65}</a:ObjectID>
+                <a:Name>pk_quiz_questions</a:Name>
+                <a:Code>pk_quiz_questions</a:Code>
+                <c:Key.Columns>
+                  <o:Column Ref="o2266"/>
+                </c:Key.Columns>
+              </o:Key>
+            </c:Keys>
+          </o:Table>
+          <o:Table Id="o2273">
+            <a:ObjectID>{D4344AA2-B5A8-4E41-B4BF-E505F94A17F7}</a:ObjectID>
+            <a:Name>quiz_options</a:Name>
+            <a:Code>quiz_options</a:Code>
+            <c:Columns>
+              <o:Column Id="o2274">
+                <a:ObjectID>{4E8002F9-9836-446E-8C9B-B47E2BF7B283}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2275">
+                <a:ObjectID>{2D1FD14D-EC4D-47BB-B6D9-A35D3D8B929E}</a:ObjectID>
+                <a:Name>question_id</a:Name>
+                <a:Code>question_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2276">
+                <a:ObjectID>{4C74668B-DB59-47CA-8A27-62F90FFA3BA9}</a:ObjectID>
+                <a:Name>option_text</a:Name>
+                <a:Code>option_text</a:Code>
+                <a:DataType>TEXT</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2277">
+                <a:ObjectID>{CAD5DD9E-3EEC-49C6-877C-750A84E61538}</a:ObjectID>
+                <a:Name>is_correct</a:Name>
+                <a:Code>is_correct</a:Code>
+                <a:DataType>TINYINT(1)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2278">
+                <a:ObjectID>{CA028489-F4EE-4048-9347-55DCAC1B1BD8}</a:ObjectID>
+                <a:Name>order_index</a:Name>
+                <a:Code>order_index</a:Code>
+                <a:DataType>TINYINT UNSIGNED</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+            </c:Columns>
+            <c:Keys>
+              <o:Key Id="o2279">
+                <a:ObjectID>{602E93DA-CFB5-4308-83DB-51930FA6321A}</a:ObjectID>
+                <a:Name>pk_quiz_options</a:Name>
+                <a:Code>pk_quiz_options</a:Code>
+                <c:Key.Columns>
+                  <o:Column Ref="o2274"/>
+                </c:Key.Columns>
+              </o:Key>
+            </c:Keys>
+          </o:Table>
+          <o:Table Id="o2280">
+            <a:ObjectID>{D8A87B54-4048-4609-A610-A529ED3F6AFC}</a:ObjectID>
+            <a:Name>quiz_attempts</a:Name>
+            <a:Code>quiz_attempts</a:Code>
+            <c:Columns>
+              <o:Column Id="o2281">
+                <a:ObjectID>{0EA869D4-F8B2-4F62-8310-69E953888281}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2282">
+                <a:ObjectID>{EC389BE5-810F-4D56-97D5-724E13069573}</a:ObjectID>
+                <a:Name>quiz_id</a:Name>
+                <a:Code>quiz_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2283">
+                <a:ObjectID>{74434EC1-CDBB-486E-BC4C-8075CF8EC1CD}</a:ObjectID>
+                <a:Name>user_id</a:Name>
+                <a:Code>user_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2284">
+                <a:ObjectID>{5510C6F5-8226-482D-ABA3-4084C23016BA}</a:ObjectID>
+                <a:Name>score</a:Name>
+                <a:Code>score</a:Code>
+                <a:DataType>DECIMAL(5,2)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2285">
+                <a:ObjectID>{04D0B6DB-8282-4D57-800C-2BFA37ACFCB5}</a:ObjectID>
+                <a:Name>correct_answers</a:Name>
+                <a:Code>correct_answers</a:Code>
+                <a:DataType>INT UNSIGNED</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2286">
+                <a:ObjectID>{7581CAFC-F31C-4D5B-8724-11873F4FA50F}</a:ObjectID>
+                <a:Name>total_questions</a:Name>
+                <a:Code>total_questions</a:Code>
+                <a:DataType>INT UNSIGNED</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2287">
+                <a:ObjectID>{21056653-3B72-4DB1-BE4F-5AE17D5AFCA3}</a:ObjectID>
+                <a:Name>duration_sec</a:Name>
+                <a:Code>duration_sec</a:Code>
+                <a:DataType>INT UNSIGNED</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2288">
+                <a:ObjectID>{4493959B-8346-4667-B402-C59C7D6694A0}</a:ObjectID>
+                <a:Name>started_at</a:Name>
+                <a:Code>started_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2289">
+                <a:ObjectID>{515EA754-2487-4939-BEB1-49F0BAEDDCCE}</a:ObjectID>
+                <a:Name>completed_at</a:Name>
+                <a:Code>completed_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+            </c:Columns>
+            <c:Keys>
+              <o:Key Id="o2290">
+                <a:ObjectID>{BD63E067-8389-4CD1-AF7B-025C0F9E6633}</a:ObjectID>
+                <a:Name>pk_quiz_attempts</a:Name>
+                <a:Code>pk_quiz_attempts</a:Code>
+                <c:Key.Columns>
+                  <o:Column Ref="o2281"/>
+                </c:Key.Columns>
+              </o:Key>
+            </c:Keys>
+          </o:Table>
+          <o:Table Id="o2291">
+            <a:ObjectID>{7510A4D8-10A9-48D6-9C96-105A49D093C2}</a:ObjectID>
+            <a:Name>quiz_attempt_answers</a:Name>
+            <a:Code>quiz_attempt_answers</a:Code>
+            <c:Columns>
+              <o:Column Id="o2292">
+                <a:ObjectID>{50E11C93-2695-4C5F-8A9C-0A5C16980478}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>BIGINT UNSIGNED</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2293">
+                <a:ObjectID>{E4445F35-CA19-4AA4-A9B3-E7C5B0B4BDA0}</a:ObjectID>
+                <a:Name>attempt_id</a:Name>
+                <a:Code>attempt_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2294">
+                <a:ObjectID>{D0D71F15-39D4-466D-8E7F-3385F21E01D6}</a:ObjectID>
+                <a:Name>question_id</a:Name>
+                <a:Code>question_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2295">
+                <a:ObjectID>{29E6535D-3B8D-40BA-800F-64A6BDDB2D78}</a:ObjectID>
+                <a:Name>selected_option_id</a:Name>
+                <a:Code>selected_option_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2296">
+                <a:ObjectID>{1677E181-FE16-4E2F-ACA9-9D776062D033}</a:ObjectID>
+                <a:Name>is_correct</a:Name>
+                <a:Code>is_correct</a:Code>
+                <a:DataType>TINYINT(1)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+            </c:Columns>
+            <c:Keys>
+              <o:Key Id="o2297">
+                <a:ObjectID>{6623AB23-1C40-4656-9392-2E038265DE19}</a:ObjectID>
+                <a:Name>pk_quiz_attempt_answers</a:Name>
+                <a:Code>pk_quiz_attempt_answers</a:Code>
+                <c:Key.Columns>
+                  <o:Column Ref="o2292"/>
+                </c:Key.Columns>
+              </o:Key>
+            </c:Keys>
+          </o:Table>
+          <o:Table Id="o2298">
+            <a:ObjectID>{704415C8-9C64-4B00-BE3E-1CE0575E10C3}</a:ObjectID>
+            <a:Name>shared_links</a:Name>
+            <a:Code>shared_links</a:Code>
+            <c:Columns>
+              <o:Column Id="o2299">
+                <a:ObjectID>{BA40555C-EEE1-4813-B427-BAEE3AA43C02}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2300">
+                <a:ObjectID>{DCE7FC57-AAC7-4C61-99CD-5480D67906DD}</a:ObjectID>
+                <a:Name>user_id</a:Name>
+                <a:Code>user_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2301">
+                <a:ObjectID>{5B3141DC-66B0-414B-AC12-03265F53D13C}</a:ObjectID>
+                <a:Name>document_id</a:Name>
+                <a:Code>document_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2302">
+                <a:ObjectID>{F430261D-2695-4305-9D57-FAAD339A9864}</a:ObjectID>
+                <a:Name>title</a:Name>
+                <a:Code>title</a:Code>
+                <a:DataType>VARCHAR(255)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2303">
+                <a:ObjectID>{E12AE893-CE28-4112-AE54-6DBEAEE720FE}</a:ObjectID>
+                <a:Name>token_hash</a:Name>
+                <a:Code>token_hash</a:Code>
+                <a:DataType>CHAR(64)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2304">
+                <a:ObjectID>{A1A9561A-E55B-493A-A555-1998E5D06C38}</a:ObjectID>
+                <a:Name>password_hash</a:Name>
+                <a:Code>password_hash</a:Code>
+                <a:DataType>VARCHAR(255)</a:DataType>
+                <a:Column.Mandatory>0</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2305">
+                <a:ObjectID>{30EF53F7-95A2-4276-B138-12EE28FFBDC9}</a:ObjectID>
+                <a:Name>allow_download</a:Name>
+                <a:Code>allow_download</a:Code>
+                <a:DataType>TINYINT(1)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2306">
+                <a:ObjectID>{1E03F0B8-E849-4B85-A140-DB9E7BF931CC}</a:ObjectID>
+                <a:Name>expires_at</a:Name>
+                <a:Code>expires_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Column.Mandatory>0</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2307">
+                <a:ObjectID>{E45140C9-F08B-416B-A1F1-4214EEA74284}</a:ObjectID>
+                <a:Name>views_count</a:Name>
+                <a:Code>views_count</a:Code>
+                <a:DataType>INT UNSIGNED</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2308">
+                <a:ObjectID>{63C9E4EE-3982-4B25-AC27-804E43F7B7B9}</a:ObjectID>
+                <a:Name>failed_pass_attempts</a:Name>
+                <a:Code>failed_pass_attempts</a:Code>
+                <a:DataType>INT UNSIGNED</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2309">
+                <a:ObjectID>{6D3DE97C-2828-478E-A477-5E59BADADD8D}</a:ObjectID>
+                <a:Name>pass_locked_until</a:Name>
+                <a:Code>pass_locked_until</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Column.Mandatory>0</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2310">
+                <a:ObjectID>{84C89406-F89A-47BB-82C1-2448F8CD49B7}</a:ObjectID>
+                <a:Name>is_revoked</a:Name>
+                <a:Code>is_revoked</a:Code>
+                <a:DataType>TINYINT(1)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2311">
+                <a:ObjectID>{782070DB-99D4-4092-88FF-2CED64F87B0D}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2312">
+                <a:ObjectID>{41B27532-6AD0-4C8B-9FFD-34F36DDB4BE1}</a:ObjectID>
+                <a:Name>updated_at</a:Name>
+                <a:Code>updated_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+            </c:Columns>
+            <c:Keys>
+              <o:Key Id="o2313">
+                <a:ObjectID>{487A9F7C-F291-469B-88BB-7CC377B8AD3C}</a:ObjectID>
+                <a:Name>pk_shared_links</a:Name>
+                <a:Code>pk_shared_links</a:Code>
+                <c:Key.Columns>
+                  <o:Column Ref="o2299"/>
+                </c:Key.Columns>
+              </o:Key>
+            </c:Keys>
+          </o:Table>
+          <o:Table Id="o2314">
+            <a:ObjectID>{488DB8C9-80A9-43EB-BF59-956A4FFEAD2F}</a:ObjectID>
+            <a:Name>share_access_logs</a:Name>
+            <a:Code>share_access_logs</a:Code>
+            <c:Columns>
+              <o:Column Id="o2315">
+                <a:ObjectID>{A13F3502-BD9F-4734-9001-714448696CFC}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>BIGINT UNSIGNED</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2316">
+                <a:ObjectID>{CBEB1FED-70EA-4ABF-87AC-B19BFA33DA73}</a:ObjectID>
+                <a:Name>shared_link_id</a:Name>
+                <a:Code>shared_link_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2317">
+                <a:ObjectID>{40BF06A8-DBCC-48B7-8F6B-69093AEA2080}</a:ObjectID>
+                <a:Name>action</a:Name>
+                <a:Code>action</a:Code>
+                <a:DataType>ENUM('view','download')</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2318">
+                <a:ObjectID>{13330A08-C5F2-4EC0-B405-B3F65F86A689}</a:ObjectID>
+                <a:Name>ip_address</a:Name>
+                <a:Code>ip_address</a:Code>
+                <a:DataType>VARCHAR(45)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2319">
+                <a:ObjectID>{064BD273-C3C6-4337-8A8D-EE04A2316707}</a:ObjectID>
+                <a:Name>user_agent</a:Name>
+                <a:Code>user_agent</a:Code>
+                <a:DataType>VARCHAR(255)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2320">
+                <a:ObjectID>{6CEB809A-7C04-4416-98AC-C48540566178}</a:ObjectID>
+                <a:Name>accessed_at</a:Name>
+                <a:Code>accessed_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+            </c:Columns>
+            <c:Keys>
+              <o:Key Id="o2321">
+                <a:ObjectID>{3FD440DF-0C9B-491D-ACB1-D4AA77E72E82}</a:ObjectID>
+                <a:Name>pk_share_access_logs</a:Name>
+                <a:Code>pk_share_access_logs</a:Code>
+                <c:Key.Columns>
+                  <o:Column Ref="o2315"/>
+                </c:Key.Columns>
+              </o:Key>
+            </c:Keys>
+          </o:Table>
+          <o:Table Id="o2322">
+            <a:ObjectID>{A6D2329B-2FEC-47F8-BA4B-7E10EADC7789}</a:ObjectID>
+            <a:Name>activity_logs</a:Name>
+            <a:Code>activity_logs</a:Code>
+            <c:Columns>
+              <o:Column Id="o2323">
+                <a:ObjectID>{A3BF7B97-DC13-457C-BADD-0CFD95927EE8}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>BIGINT UNSIGNED</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2324">
+                <a:ObjectID>{932CF31C-A541-454E-AB29-B3F67D269476}</a:ObjectID>
+                <a:Name>user_id</a:Name>
+                <a:Code>user_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2325">
+                <a:ObjectID>{D1660B7F-DE85-4714-A3CE-7958D703D724}</a:ObjectID>
+                <a:Name>event_type</a:Name>
+                <a:Code>event_type</a:Code>
+                <a:DataType>VARCHAR(50)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2326">
+                <a:ObjectID>{2B038449-C46F-4846-82F8-6B98E0577F5B}</a:ObjectID>
+                <a:Name>description</a:Name>
+                <a:Code>description</a:Code>
+                <a:DataType>VARCHAR(255)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2327">
+                <a:ObjectID>{C19323B8-F39B-4DD8-9786-DC215FDAF168}</a:ObjectID>
+                <a:Name>entity_type</a:Name>
+                <a:Code>entity_type</a:Code>
+                <a:DataType>VARCHAR(30)</a:DataType>
+                <a:Column.Mandatory>0</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2328">
+                <a:ObjectID>{5C110994-84AB-45D5-8E38-9B6938E7BCF4}</a:ObjectID>
+                <a:Name>entity_id</a:Name>
+                <a:Code>entity_id</a:Code>
+                <a:DataType>VARCHAR(36)</a:DataType>
+                <a:Column.Mandatory>0</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2329">
+                <a:ObjectID>{DA4B58FC-111D-462A-9DC6-975681CA3FF6}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+            </c:Columns>
+            <c:Keys>
+              <o:Key Id="o2330">
+                <a:ObjectID>{E68924AD-F85E-4FA9-8FB1-56DB7E26679F}</a:ObjectID>
+                <a:Name>pk_activity_logs</a:Name>
+                <a:Code>pk_activity_logs</a:Code>
+                <c:Key.Columns>
+                  <o:Column Ref="o2323"/>
+                </c:Key.Columns>
+              </o:Key>
+            </c:Keys>
+          </o:Table>
+          <o:Table Id="o2331">
+            <a:ObjectID>{881F0555-CA86-4986-AE7A-95688DE08676}</a:ObjectID>
+            <a:Name>notifications</a:Name>
+            <a:Code>notifications</a:Code>
+            <c:Columns>
+              <o:Column Id="o2332">
+                <a:ObjectID>{F5B284A3-CBBF-4BC2-96CD-69FBC8B59293}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2333">
+                <a:ObjectID>{34532B4B-AFBE-4497-8645-AA77E78F1BEE}</a:ObjectID>
+                <a:Name>user_id</a:Name>
+                <a:Code>user_id</a:Code>
+                <a:DataType>CHAR(36)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2334">
+                <a:ObjectID>{977917F2-B75F-40A2-9EEE-718AD438A3CE}</a:ObjectID>
+                <a:Name>title</a:Name>
+                <a:Code>title</a:Code>
+                <a:DataType>VARCHAR(150)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2335">
+                <a:ObjectID>{77DA7441-1F9A-40AC-818B-80F8E93B86F9}</a:ObjectID>
+                <a:Name>message</a:Name>
+                <a:Code>message</a:Code>
+                <a:DataType>TEXT</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2336">
+                <a:ObjectID>{C9DC62C0-D809-4012-AF40-B96772737F11}</a:ObjectID>
+                <a:Name>type</a:Name>
+                <a:Code>type</a:Code>
+                <a:DataType>ENUM('learning','ai','share','system')</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2337">
+                <a:ObjectID>{599672D2-E048-49D5-AC94-B2B26F6914D7}</a:ObjectID>
+                <a:Name>icon</a:Name>
+                <a:Code>icon</a:Code>
+                <a:DataType>VARCHAR(50)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2338">
+                <a:ObjectID>{74C5B153-F462-44A1-BA11-7171C6F49042}</a:ObjectID>
+                <a:Name>is_read</a:Name>
+                <a:Code>is_read</a:Code>
+                <a:DataType>TINYINT(1)</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+              <o:Column Id="o2339">
+                <a:ObjectID>{136AFBFC-7128-4E1D-9F1C-3BFD22B41F90}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Column.Mandatory>1</a:Column.Mandatory>
+              </o:Column>
+            </c:Columns>
+            <c:Keys>
+              <o:Key Id="o2340">
+                <a:ObjectID>{00B5B38D-F035-4517-98F9-677E705A8E38}</a:ObjectID>
+                <a:Name>pk_notifications</a:Name>
+                <a:Code>pk_notifications</a:Code>
+                <c:Key.Columns>
+                  <o:Column Ref="o2332"/>
+                </c:Key.Columns>
+              </o:Key>
+            </c:Keys>
+          </o:Table>
+        </c:Tables>
+        <c:References>
+          <o:Reference Id="o2341">
+            <a:ObjectID>{BF6DB564-0C92-4F32-B8DD-3196D4793DFD}</a:ObjectID>
+            <a:Name>fk_recovery_user</a:Name>
+            <a:Code>fk_recovery_user</a:Code>
+            <a:ParentTable Ref="o2001"/>
+            <a:ChildTable Ref="o2018"/>
+            <a:ForeignKeyConstraintName>fk_recovery_user</a:ForeignKeyConstraintName>
+            <a:DeleteConstraint>CASCADE</a:DeleteConstraint>
+            <a:UpdateConstraint>CASCADE</a:UpdateConstraint>
+          </o:Reference>
+          <o:Reference Id="o2342">
+            <a:ObjectID>{0E5F4251-9588-4010-A1B2-A2DFD109EA12}</a:ObjectID>
+            <a:Name>fk_sessions_user</a:Name>
+            <a:Code>fk_sessions_user</a:Code>
+            <a:ParentTable Ref="o2001"/>
+            <a:ChildTable Ref="o2025"/>
+            <a:ForeignKeyConstraintName>fk_sessions_user</a:ForeignKeyConstraintName>
+            <a:DeleteConstraint>CASCADE</a:DeleteConstraint>
+            <a:UpdateConstraint>CASCADE</a:UpdateConstraint>
+          </o:Reference>
+          <o:Reference Id="o2343">
+            <a:ObjectID>{995692D1-337D-4E9A-8CB8-0965BF213435}</a:ObjectID>
+            <a:Name>fk_folders_user</a:Name>
+            <a:Code>fk_folders_user</a:Code>
+            <a:ParentTable Ref="o2001"/>
+            <a:ChildTable Ref="o2036"/>
+            <a:ForeignKeyConstraintName>fk_folders_user</a:ForeignKeyConstraintName>
+            <a:DeleteConstraint>CASCADE</a:DeleteConstraint>
+            <a:UpdateConstraint>CASCADE</a:UpdateConstraint>
+          </o:Reference>
+          <o:Reference Id="o2344">
+            <a:ObjectID>{17038D48-4526-4296-86C9-005D19A60C57}</a:ObjectID>
+            <a:Name>fk_folders_parent_composite</a:Name>
+            <a:Code>fk_folders_parent_composite</a:Code>
+            <a:ParentTable Ref="o2036"/>
+            <a:ChildTable Ref="o2036"/>
+            <a:ForeignKeyConstraintName>fk_folders_parent_composite</a:ForeignKeyConstraintName>
+            <a:DeleteConstraint>CASCADE</a:DeleteConstraint>
+            <a:UpdateConstraint>CASCADE</a:UpdateConstraint>
+          </o:Reference>
+          <o:Reference Id="o2345">
+            <a:ObjectID>{F10ADB36-DE2B-44A6-89E4-E291B2B9A4E8}</a:ObjectID>
+            <a:Name>fk_documents_user</a:Name>
+            <a:Code>fk_documents_user</a:Code>
+            <a:ParentTable Ref="o2001"/>
+            <a:ChildTable Ref="o2046"/>
+            <a:ForeignKeyConstraintName>fk_documents_user</a:ForeignKeyConstraintName>
+            <a:DeleteConstraint>CASCADE</a:DeleteConstraint>
+            <a:UpdateConstraint>CASCADE</a:UpdateConstraint>
+          </o:Reference>
+          <o:Reference Id="o2346">
+            <a:ObjectID>{340552A1-D08E-4ABD-A5F6-305C5868AD5E}</a:ObjectID>
+            <a:Name>fk_documents_folder_composite</a:Name>
+            <a:Code>fk_documents_folder_composite</a:Code>
+            <a:ParentTable Ref="o2036"/>
+            <a:ChildTable Ref="o2046"/>
+            <a:ForeignKeyConstraintName>fk_documents_folder_composite</a:ForeignKeyConstraintName>
+            <a:DeleteConstraint>SET NULL</a:DeleteConstraint>
+            <a:UpdateConstraint>CASCADE</a:UpdateConstraint>
+          </o:Reference>
+          <o:Reference Id="o2347">
+            <a:ObjectID>{315BA5EE-7F4B-4AA4-9395-9E93C243C146}</a:ObjectID>
+            <a:Name>fk_notes_user</a:Name>
+            <a:Code>fk_notes_user</a:Code>
+            <a:ParentTable Ref="o2001"/>
+            <a:ChildTable Ref="o2063"/>
+            <a:ForeignKeyConstraintName>fk_notes_user</a:ForeignKeyConstraintName>
+            <a:DeleteConstraint>CASCADE</a:DeleteConstraint>
+            <a:UpdateConstraint>CASCADE</a:UpdateConstraint>
+          </o:Reference>
+          <o:Reference Id="o2348">
+            <a:ObjectID>{0B19F0D3-C05D-4400-9F71-1C567002FA7F}</a:ObjectID>
+            <a:Name>fk_notes_folder_composite</a:Name>
+            <a:Code>fk_notes_folder_composite</a:Code>
+            <a:ParentTable Ref="o2036"/>
+            <a:ChildTable Ref="o2063"/>
+            <a:ForeignKeyConstraintName>fk_notes_folder_composite</a:ForeignKeyConstraintName>
+            <a:DeleteConstraint>SET NULL</a:DeleteConstraint>
+            <a:UpdateConstraint>CASCADE</a:UpdateConstraint>
+          </o:Reference>
+          <o:Reference Id="o2349">
+            <a:ObjectID>{73C7CFBB-2B49-407F-8C28-51CAD43522EA}</a:ObjectID>
+            <a:Name>fk_notes_document_composite</a:Name>
+            <a:Code>fk_notes_document_composite</a:Code>
+            <a:ParentTable Ref="o2046"/>
+            <a:ChildTable Ref="o2063"/>
+            <a:ForeignKeyConstraintName>fk_notes_document_composite</a:ForeignKeyConstraintName>
+            <a:DeleteConstraint>SET NULL</a:DeleteConstraint>
+            <a:UpdateConstraint>CASCADE</a:UpdateConstraint>
+          </o:Reference>
+          <o:Reference Id="o2350">
+            <a:ObjectID>{9AF80F8D-B1D6-422F-A32E-92A904DFD4D5}</a:ObjectID>
+            <a:Name>fk_tags_user</a:Name>
+            <a:Code>fk_tags_user</a:Code>
+            <a:ParentTable Ref="o2001"/>
+            <a:ChildTable Ref="o2076"/>
+            <a:ForeignKeyConstraintName>fk_tags_user</a:ForeignKeyConstraintName>
+            <a:DeleteConstraint>CASCADE</a:DeleteConstraint>
+            <a:UpdateConstraint>CASCADE</a:UpdateConstraint>
+          </o:Reference>
+          <o:Reference Id="o2351">
+            <a:ObjectID>{3AC58BA1-2D42-4980-91F6-10BDFABE949A}</a:ObjectID>
+            <a:Name>fk_doctags_document</a:Name>
+            <a:Code>fk_doctags_document</a:Code>
+            <a:ParentTable Ref="o2046"/>
+            <a:ChildTable Ref="o2083"/>
+            <a:ForeignKeyConstraintName>fk_doctags_document</a:ForeignKeyConstraintName>
+            <a:DeleteConstraint>CASCADE</a:DeleteConstraint>
+            <a:UpdateConstraint>CASCADE</a:UpdateConstraint>
+          </o:Reference>
+          <o:Reference Id="o2352">
+            <a:ObjectID>{0EB51B6D-8036-4B41-AB98-B04DD09169A6}</a:ObjectID>
+            <a:Name>fk_doctags_tag</a:Name>
+            <a:Code>fk_doctags_tag</a:Code>
+            <a:ParentTable Ref="o2076"/>
+            <a:ChildTable Ref="o2083"/>
+            <a:ForeignKeyConstraintName>fk_doctags_tag</a:ForeignKeyConstraintName>
+            <a:DeleteConstraint>CASCADE</a:DeleteConstraint>
+            <a:UpdateConstraint>CASCADE</a:UpdateConstraint>
+          </o:Reference>
+          <o:Reference Id="o2353">
+            <a:ObjectID>{0EF68473-F72F-4E1B-9745-83C6B8C24166}</a:ObjectID>
+            <a:Name>fk_collections_user</a:Name>
+            <a:Code>fk_collections_user</a:Code>
+            <a:ParentTable Ref="o2001"/>
+            <a:ChildTable Ref="o2088"/>
+            <a:ForeignKeyConstraintName>fk_collections_user</a:ForeignKeyConstraintName>
+            <a:DeleteConstraint>CASCADE</a:DeleteConstraint>
+            <a:UpdateConstraint>CASCADE</a:UpdateConstraint>
+          </o:Reference>
+          <o:Reference Id="o2354">
+            <a:ObjectID>{E9EAE552-DF97-4D0C-ABA7-AE361367CB41}</a:ObjectID>
+            <a:Name>fk_coll_items_collection</a:Name>
+            <a:Code>fk_coll_items_collection</a:Code>
+            <a:ParentTable Ref="o2088"/>
+            <a:ChildTable Ref="o2117"/>
+            <a:ForeignKeyConstraintName>fk_coll_items_collection</a:ForeignKeyConstraintName>
+            <a:DeleteConstraint>CASCADE</a:DeleteConstraint>
+            <a:UpdateConstraint>CASCADE</a:UpdateConstraint>
+          </o:Reference>
+          <o:Reference Id="o2355">
+            <a:ObjectID>{5D3A0044-4118-4547-A70B-12AF80FF2961}</a:ObjectID>
+            <a:Name>fk_coll_items_document</a:Name>
+            <a:Code>fk_coll_items_document</a:Code>
+            <a:ParentTable Ref="o2046"/>
+            <a:ChildTable Ref="o2117"/>
+            <a:ForeignKeyConstraintName>fk_coll_items_document</a:ForeignKeyConstraintName>
+            <a:DeleteConstraint>CASCADE</a:DeleteConstraint>
+            <a:UpdateConstraint>CASCADE</a:UpdateConstraint>
+          </o:Reference>
+          <o:Reference Id="o2356">
+            <a:ObjectID>{9D08C7A1-8522-44E8-A315-EA175F6E07AF}</a:ObjectID>
+            <a:Name>fk_coll_items_note</a:Name>
+            <a:Code>fk_coll_items_note</a:Code>
+            <a:ParentTable Ref="o2063"/>
+            <a:ChildTable Ref="o2117"/>
+            <a:ForeignKeyConstraintName>fk_coll_items_note</a:ForeignKeyConstraintName>
+            <a:DeleteConstraint>CASCADE</a:DeleteConstraint>
+            <a:UpdateConstraint>CASCADE</a:UpdateConstraint>
+          </o:Reference>
+          <o:Reference Id="o2357">
+            <a:ObjectID>{0380134B-9C5C-4E24-82FD-3B852229A55D}</a:ObjectID>
+            <a:Name>fk_coll_items_deck</a:Name>
+            <a:Code>fk_coll_items_deck</a:Code>
+            <a:ParentTable Ref="o2097"/>
+            <a:ChildTable Ref="o2117"/>
+            <a:ForeignKeyConstraintName>fk_coll_items_deck</a:ForeignKeyConstraintName>
+            <a:DeleteConstraint>CASCADE</a:DeleteConstraint>
+            <a:UpdateConstraint>CASCADE</a:UpdateConstraint>
+          </o:Reference>
+          <o:Reference Id="o2358">
+            <a:ObjectID>{E18B5F2B-D35F-40E9-AC19-0DE5DD5F0741}</a:ObjectID>
+            <a:Name>fk_archives_user</a:Name>
+            <a:Code>fk_archives_user</a:Code>
+            <a:ParentTable Ref="o2001"/>
+            <a:ChildTable Ref="o2125"/>
+            <a:ForeignKeyConstraintName>fk_archives_user</a:ForeignKeyConstraintName>
+            <a:DeleteConstraint>CASCADE</a:DeleteConstraint>
+            <a:UpdateConstraint>CASCADE</a:UpdateConstraint>
+          </o:Reference>
+          <o:Reference Id="o2359">
+            <a:ObjectID>{5C434831-63C5-4FB1-A904-2DEA71AE6629}</a:ObjectID>
+            <a:Name>fk_archext_archive</a:Name>
+            <a:Code>fk_archext_archive</a:Code>
+            <a:ParentTable Ref="o2125"/>
+            <a:ChildTable Ref="o2142"/>
+            <a:ForeignKeyConstraintName>fk_archext_archive</a:ForeignKeyConstraintName>
+            <a:DeleteConstraint>CASCADE</a:DeleteConstraint>
+            <a:UpdateConstraint>CASCADE</a:UpdateConstraint>
+          </o:Reference>
+          <o:Reference Id="o2360">
+            <a:ObjectID>{867B9094-30FD-4853-844D-B0749B819117}</a:ObjectID>
+            <a:Name>fk_archext_document</a:Name>
+            <a:Code>fk_archext_document</a:Code>
+            <a:ParentTable Ref="o2046"/>
+            <a:ChildTable Ref="o2142"/>
+            <a:ForeignKeyConstraintName>fk_archext_document</a:ForeignKeyConstraintName>
+            <a:DeleteConstraint>CASCADE</a:DeleteConstraint>
+            <a:UpdateConstraint>CASCADE</a:UpdateConstraint>
+          </o:Reference>
+          <o:Reference Id="o2361">
+            <a:ObjectID>{11950BC5-D825-4826-A26E-B7FB2FA58B09}</a:ObjectID>
+            <a:Name>fk_models_provider</a:Name>
+            <a:Code>fk_models_provider</a:Code>
+            <a:ParentTable Ref="o2149"/>
+            <a:ChildTable Ref="o2158"/>
+            <a:ForeignKeyConstraintName>fk_models_provider</a:ForeignKeyConstraintName>
+            <a:DeleteConstraint>CASCADE</a:DeleteConstraint>
+            <a:UpdateConstraint>CASCADE</a:UpdateConstraint>
+          </o:Reference>
+          <o:Reference Id="o2362">
+            <a:ObjectID>{E018232C-F771-4428-9B5A-204D95022DF7}</a:ObjectID>
+            <a:Name>fk_aiconn_user</a:Name>
+            <a:Code>fk_aiconn_user</a:Code>
+            <a:ParentTable Ref="o2001"/>
+            <a:ChildTable Ref="o2168"/>
+            <a:ForeignKeyConstraintName>fk_aiconn_user</a:ForeignKeyConstraintName>
+            <a:DeleteConstraint>CASCADE</a:DeleteConstraint>
+            <a:UpdateConstraint>CASCADE</a:UpdateConstraint>
+          </o:Reference>
+          <o:Reference Id="o2363">
+            <a:ObjectID>{6958ABD2-6CA3-481F-B58C-E3BE70090E0E}</a:ObjectID>
+            <a:Name>fk_aiconn_provider</a:Name>
+            <a:Code>fk_aiconn_provider</a:Code>
+            <a:ParentTable Ref="o2149"/>
+            <a:ChildTable Ref="o2168"/>
+            <a:ForeignKeyConstraintName>fk_aiconn_provider</a:ForeignKeyConstraintName>
+            <a:DeleteConstraint>RESTRICT</a:DeleteConstraint>
+            <a:UpdateConstraint>CASCADE</a:UpdateConstraint>
+          </o:Reference>
+          <o:Reference Id="o2364">
+            <a:ObjectID>{F1770CD2-9EB7-48FB-B439-600E4D682BCB}</a:ObjectID>
+            <a:Name>fk_aiconn_model</a:Name>
+            <a:Code>fk_aiconn_model</a:Code>
+            <a:ParentTable Ref="o2158"/>
+            <a:ChildTable Ref="o2168"/>
+            <a:ForeignKeyConstraintName>fk_aiconn_model</a:ForeignKeyConstraintName>
+            <a:DeleteConstraint>RESTRICT</a:DeleteConstraint>
+            <a:UpdateConstraint>CASCADE</a:UpdateConstraint>
+          </o:Reference>
+          <o:Reference Id="o2365">
+            <a:ObjectID>{D52B60FA-9866-4836-B881-2B23B158BA53}</a:ObjectID>
+            <a:Name>fk_aiconv_user</a:Name>
+            <a:Code>fk_aiconv_user</a:Code>
+            <a:ParentTable Ref="o2001"/>
+            <a:ChildTable Ref="o2185"/>
+            <a:ForeignKeyConstraintName>fk_aiconv_user</a:ForeignKeyConstraintName>
+            <a:DeleteConstraint>CASCADE</a:DeleteConstraint>
+            <a:UpdateConstraint>CASCADE</a:UpdateConstraint>
+          </o:Reference>
+          <o:Reference Id="o2366">
+            <a:ObjectID>{7ED462F7-3984-451D-BA7F-5B5A0E45AC27}</a:ObjectID>
+            <a:Name>fk_aiconv_connection_composite</a:Name>
+            <a:Code>fk_aiconv_connection_composite</a:Code>
+            <a:ParentTable Ref="o2168"/>
+            <a:ChildTable Ref="o2185"/>
+            <a:ForeignKeyConstraintName>fk_aiconv_connection_composite</a:ForeignKeyConstraintName>
+            <a:DeleteConstraint>SET NULL</a:DeleteConstraint>
+            <a:UpdateConstraint>CASCADE</a:UpdateConstraint>
+          </o:Reference>
+          <o:Reference Id="o2367">
+            <a:ObjectID>{E96054B1-82D2-4F52-BD4A-EB7DD9A822EB}</a:ObjectID>
+            <a:Name>fk_aiconv_document_composite</a:Name>
+            <a:Code>fk_aiconv_document_composite</a:Code>
+            <a:ParentTable Ref="o2046"/>
+            <a:ChildTable Ref="o2185"/>
+            <a:ForeignKeyConstraintName>fk_aiconv_document_composite</a:ForeignKeyConstraintName>
+            <a:DeleteConstraint>SET NULL</a:DeleteConstraint>
+            <a:UpdateConstraint>CASCADE</a:UpdateConstraint>
+          </o:Reference>
+          <o:Reference Id="o2368">
+            <a:ObjectID>{673C0198-ECEC-4E8A-A03F-2D4BC1E5CA54}</a:ObjectID>
+            <a:Name>fk_aimsg_conversation</a:Name>
+            <a:Code>fk_aimsg_conversation</a:Code>
+            <a:ParentTable Ref="o2185"/>
+            <a:ChildTable Ref="o2196"/>
+            <a:ForeignKeyConstraintName>fk_aimsg_conversation</a:ForeignKeyConstraintName>
+            <a:DeleteConstraint>CASCADE</a:DeleteConstraint>
+            <a:UpdateConstraint>CASCADE</a:UpdateConstraint>
+          </o:Reference>
+          <o:Reference Id="o2369">
+            <a:ObjectID>{CBFD5524-7096-47B8-B04B-4D630F6D6B52}</a:ObjectID>
+            <a:Name>fk_aitasks_user</a:Name>
+            <a:Code>fk_aitasks_user</a:Code>
+            <a:ParentTable Ref="o2001"/>
+            <a:ChildTable Ref="o2206"/>
+            <a:ForeignKeyConstraintName>fk_aitasks_user</a:ForeignKeyConstraintName>
+            <a:DeleteConstraint>CASCADE</a:DeleteConstraint>
+            <a:UpdateConstraint>CASCADE</a:UpdateConstraint>
+          </o:Reference>
+          <o:Reference Id="o2370">
+            <a:ObjectID>{3647E5F4-E812-4FD4-BD90-2960CA7D647F}</a:ObjectID>
+            <a:Name>fk_aitasks_document_composite</a:Name>
+            <a:Code>fk_aitasks_document_composite</a:Code>
+            <a:ParentTable Ref="o2046"/>
+            <a:ChildTable Ref="o2206"/>
+            <a:ForeignKeyConstraintName>fk_aitasks_document_composite</a:ForeignKeyConstraintName>
+            <a:DeleteConstraint>SET NULL</a:DeleteConstraint>
+            <a:UpdateConstraint>CASCADE</a:UpdateConstraint>
+          </o:Reference>
+          <o:Reference Id="o2371">
+            <a:ObjectID>{08646A80-3347-4812-AD70-C1DB1CFE8459}</a:ObjectID>
+            <a:Name>fk_aitasks_connection_composite</a:Name>
+            <a:Code>fk_aitasks_connection_composite</a:Code>
+            <a:ParentTable Ref="o2168"/>
+            <a:ChildTable Ref="o2206"/>
+            <a:ForeignKeyConstraintName>fk_aitasks_connection_composite</a:ForeignKeyConstraintName>
+            <a:DeleteConstraint>SET NULL</a:DeleteConstraint>
+            <a:UpdateConstraint>CASCADE</a:UpdateConstraint>
+          </o:Reference>
+          <o:Reference Id="o2372">
+            <a:ObjectID>{9F22B76D-DC9D-4756-B3BB-EAF61AA52B05}</a:ObjectID>
+            <a:Name>fk_tasklogs_task</a:Name>
+            <a:Code>fk_tasklogs_task</a:Code>
+            <a:ParentTable Ref="o2206"/>
+            <a:ChildTable Ref="o2219"/>
+            <a:ForeignKeyConstraintName>fk_tasklogs_task</a:ForeignKeyConstraintName>
+            <a:DeleteConstraint>CASCADE</a:DeleteConstraint>
+            <a:UpdateConstraint>CASCADE</a:UpdateConstraint>
+          </o:Reference>
+          <o:Reference Id="o2373">
+            <a:ObjectID>{C66E0AE2-CB58-4969-8394-0A63086739F5}</a:ObjectID>
+            <a:Name>fk_aicontext_user</a:Name>
+            <a:Code>fk_aicontext_user</a:Code>
+            <a:ParentTable Ref="o2001"/>
+            <a:ChildTable Ref="o2231"/>
+            <a:ForeignKeyConstraintName>fk_aicontext_user</a:ForeignKeyConstraintName>
+            <a:DeleteConstraint>CASCADE</a:DeleteConstraint>
+            <a:UpdateConstraint>CASCADE</a:UpdateConstraint>
+          </o:Reference>
+          <o:Reference Id="o2374">
+            <a:ObjectID>{1D521CB7-12D6-44E0-9D63-8D4D9C8F370B}</a:ObjectID>
+            <a:Name>fk_contextver_context</a:Name>
+            <a:Code>fk_contextver_context</a:Code>
+            <a:ParentTable Ref="o2231"/>
+            <a:ChildTable Ref="o2246"/>
+            <a:ForeignKeyConstraintName>fk_contextver_context</a:ForeignKeyConstraintName>
+            <a:DeleteConstraint>CASCADE</a:DeleteConstraint>
+            <a:UpdateConstraint>CASCADE</a:UpdateConstraint>
+          </o:Reference>
+          <o:Reference Id="o2375">
+            <a:ObjectID>{B6925D36-24F4-4EFB-AEED-A99B01DFB1AD}</a:ObjectID>
+            <a:Name>fk_decks_user</a:Name>
+            <a:Code>fk_decks_user</a:Code>
+            <a:ParentTable Ref="o2001"/>
+            <a:ChildTable Ref="o2097"/>
+            <a:ForeignKeyConstraintName>fk_decks_user</a:ForeignKeyConstraintName>
+            <a:DeleteConstraint>CASCADE</a:DeleteConstraint>
+            <a:UpdateConstraint>CASCADE</a:UpdateConstraint>
+          </o:Reference>
+          <o:Reference Id="o2376">
+            <a:ObjectID>{B5B1EC71-B813-4C28-ADDF-5375FD9B7C3A}</a:ObjectID>
+            <a:Name>fk_decks_document_composite</a:Name>
+            <a:Code>fk_decks_document_composite</a:Code>
+            <a:ParentTable Ref="o2046"/>
+            <a:ChildTable Ref="o2097"/>
+            <a:ForeignKeyConstraintName>fk_decks_document_composite</a:ForeignKeyConstraintName>
+            <a:DeleteConstraint>SET NULL</a:DeleteConstraint>
+            <a:UpdateConstraint>CASCADE</a:UpdateConstraint>
+          </o:Reference>
+          <o:Reference Id="o2377">
+            <a:ObjectID>{A991C6B9-C63B-41FE-B6F9-E468A4FD6865}</a:ObjectID>
+            <a:Name>fk_cards_deck</a:Name>
+            <a:Code>fk_cards_deck</a:Code>
+            <a:ParentTable Ref="o2097"/>
+            <a:ChildTable Ref="o2106"/>
+            <a:ForeignKeyConstraintName>fk_cards_deck</a:ForeignKeyConstraintName>
+            <a:DeleteConstraint>CASCADE</a:DeleteConstraint>
+            <a:UpdateConstraint>CASCADE</a:UpdateConstraint>
+          </o:Reference>
+          <o:Reference Id="o2378">
+            <a:ObjectID>{0A67D04B-E6A7-47BB-9E88-693E35F11D96}</a:ObjectID>
+            <a:Name>fk_quizzes_user</a:Name>
+            <a:Code>fk_quizzes_user</a:Code>
+            <a:ParentTable Ref="o2001"/>
+            <a:ChildTable Ref="o2254"/>
+            <a:ForeignKeyConstraintName>fk_quizzes_user</a:ForeignKeyConstraintName>
+            <a:DeleteConstraint>CASCADE</a:DeleteConstraint>
+            <a:UpdateConstraint>CASCADE</a:UpdateConstraint>
+          </o:Reference>
+          <o:Reference Id="o2379">
+            <a:ObjectID>{415B9E87-65C3-46B9-8877-E5E569EB148A}</a:ObjectID>
+            <a:Name>fk_quizzes_document_composite</a:Name>
+            <a:Code>fk_quizzes_document_composite</a:Code>
+            <a:ParentTable Ref="o2046"/>
+            <a:ChildTable Ref="o2254"/>
+            <a:ForeignKeyConstraintName>fk_quizzes_document_composite</a:ForeignKeyConstraintName>
+            <a:DeleteConstraint>SET NULL</a:DeleteConstraint>
+            <a:UpdateConstraint>CASCADE</a:UpdateConstraint>
+          </o:Reference>
+          <o:Reference Id="o2380">
+            <a:ObjectID>{44BFF3DC-02C4-4A06-8F79-C1A18243B9E6}</a:ObjectID>
+            <a:Name>fk_questions_quiz</a:Name>
+            <a:Code>fk_questions_quiz</a:Code>
+            <a:ParentTable Ref="o2254"/>
+            <a:ChildTable Ref="o2265"/>
+            <a:ForeignKeyConstraintName>fk_questions_quiz</a:ForeignKeyConstraintName>
+            <a:DeleteConstraint>CASCADE</a:DeleteConstraint>
+            <a:UpdateConstraint>CASCADE</a:UpdateConstraint>
+          </o:Reference>
+          <o:Reference Id="o2381">
+            <a:ObjectID>{2712DABE-2936-4B6C-ACBD-98C8BC88C632}</a:ObjectID>
+            <a:Name>fk_options_question</a:Name>
+            <a:Code>fk_options_question</a:Code>
+            <a:ParentTable Ref="o2265"/>
+            <a:ChildTable Ref="o2273"/>
+            <a:ForeignKeyConstraintName>fk_options_question</a:ForeignKeyConstraintName>
+            <a:DeleteConstraint>CASCADE</a:DeleteConstraint>
+            <a:UpdateConstraint>CASCADE</a:UpdateConstraint>
+          </o:Reference>
+          <o:Reference Id="o2382">
+            <a:ObjectID>{B45AAB27-E2D4-44BF-AAB6-9259AD1427D3}</a:ObjectID>
+            <a:Name>fk_attempts_quiz</a:Name>
+            <a:Code>fk_attempts_quiz</a:Code>
+            <a:ParentTable Ref="o2254"/>
+            <a:ChildTable Ref="o2280"/>
+            <a:ForeignKeyConstraintName>fk_attempts_quiz</a:ForeignKeyConstraintName>
+            <a:DeleteConstraint>CASCADE</a:DeleteConstraint>
+            <a:UpdateConstraint>CASCADE</a:UpdateConstraint>
+          </o:Reference>
+          <o:Reference Id="o2383">
+            <a:ObjectID>{D45C5BB6-5DE7-4010-B4EF-F8A185C1CAD4}</a:ObjectID>
+            <a:Name>fk_attempts_user</a:Name>
+            <a:Code>fk_attempts_user</a:Code>
+            <a:ParentTable Ref="o2001"/>
+            <a:ChildTable Ref="o2280"/>
+            <a:ForeignKeyConstraintName>fk_attempts_user</a:ForeignKeyConstraintName>
+            <a:DeleteConstraint>CASCADE</a:DeleteConstraint>
+            <a:UpdateConstraint>CASCADE</a:UpdateConstraint>
+          </o:Reference>
+          <o:Reference Id="o2384">
+            <a:ObjectID>{FA7189E9-4D5F-4231-88BA-7266FF1A13DB}</a:ObjectID>
+            <a:Name>fk_ans_attempt</a:Name>
+            <a:Code>fk_ans_attempt</a:Code>
+            <a:ParentTable Ref="o2280"/>
+            <a:ChildTable Ref="o2291"/>
+            <a:ForeignKeyConstraintName>fk_ans_attempt</a:ForeignKeyConstraintName>
+            <a:DeleteConstraint>CASCADE</a:DeleteConstraint>
+            <a:UpdateConstraint>CASCADE</a:UpdateConstraint>
+          </o:Reference>
+          <o:Reference Id="o2385">
+            <a:ObjectID>{A17D7149-AC20-4128-A166-3B58B33D3078}</a:ObjectID>
+            <a:Name>fk_ans_question</a:Name>
+            <a:Code>fk_ans_question</a:Code>
+            <a:ParentTable Ref="o2265"/>
+            <a:ChildTable Ref="o2291"/>
+            <a:ForeignKeyConstraintName>fk_ans_question</a:ForeignKeyConstraintName>
+            <a:DeleteConstraint>CASCADE</a:DeleteConstraint>
+            <a:UpdateConstraint>CASCADE</a:UpdateConstraint>
+          </o:Reference>
+          <o:Reference Id="o2386">
+            <a:ObjectID>{E9D3928E-1A0D-4271-8F9D-2AF9CB35B953}</a:ObjectID>
+            <a:Name>fk_ans_question_option_composite</a:Name>
+            <a:Code>fk_ans_question_option_composite</a:Code>
+            <a:ParentTable Ref="o2273"/>
+            <a:ChildTable Ref="o2291"/>
+            <a:ForeignKeyConstraintName>fk_ans_question_option_composite</a:ForeignKeyConstraintName>
+            <a:DeleteConstraint>CASCADE</a:DeleteConstraint>
+            <a:UpdateConstraint>CASCADE</a:UpdateConstraint>
+          </o:Reference>
+          <o:Reference Id="o2387">
+            <a:ObjectID>{C20C1347-9539-495A-840C-8A097555FE40}</a:ObjectID>
+            <a:Name>fk_shared_user</a:Name>
+            <a:Code>fk_shared_user</a:Code>
+            <a:ParentTable Ref="o2001"/>
+            <a:ChildTable Ref="o2298"/>
+            <a:ForeignKeyConstraintName>fk_shared_user</a:ForeignKeyConstraintName>
+            <a:DeleteConstraint>CASCADE</a:DeleteConstraint>
+            <a:UpdateConstraint>CASCADE</a:UpdateConstraint>
+          </o:Reference>
+          <o:Reference Id="o2388">
+            <a:ObjectID>{D201A5D2-03B4-463B-9A1F-BE0F301EAFCF}</a:ObjectID>
+            <a:Name>fk_shared_document_composite</a:Name>
+            <a:Code>fk_shared_document_composite</a:Code>
+            <a:ParentTable Ref="o2046"/>
+            <a:ChildTable Ref="o2298"/>
+            <a:ForeignKeyConstraintName>fk_shared_document_composite</a:ForeignKeyConstraintName>
+            <a:DeleteConstraint>CASCADE</a:DeleteConstraint>
+            <a:UpdateConstraint>CASCADE</a:UpdateConstraint>
+          </o:Reference>
+          <o:Reference Id="o2389">
+            <a:ObjectID>{A67B4A3A-C57E-4091-BABA-AF1D622B66D0}</a:ObjectID>
+            <a:Name>fk_sharelogs_link</a:Name>
+            <a:Code>fk_sharelogs_link</a:Code>
+            <a:ParentTable Ref="o2298"/>
+            <a:ChildTable Ref="o2314"/>
+            <a:ForeignKeyConstraintName>fk_sharelogs_link</a:ForeignKeyConstraintName>
+            <a:DeleteConstraint>CASCADE</a:DeleteConstraint>
+            <a:UpdateConstraint>CASCADE</a:UpdateConstraint>
+          </o:Reference>
+          <o:Reference Id="o2390">
+            <a:ObjectID>{C55837E6-408F-4A66-A944-78DEDFD8F4F0}</a:ObjectID>
+            <a:Name>fk_actlogs_user</a:Name>
+            <a:Code>fk_actlogs_user</a:Code>
+            <a:ParentTable Ref="o2001"/>
+            <a:ChildTable Ref="o2322"/>
+            <a:ForeignKeyConstraintName>fk_actlogs_user</a:ForeignKeyConstraintName>
+            <a:DeleteConstraint>CASCADE</a:DeleteConstraint>
+            <a:UpdateConstraint>CASCADE</a:UpdateConstraint>
+          </o:Reference>
+          <o:Reference Id="o2391">
+            <a:ObjectID>{572FBA4F-6224-4FDC-B222-C5BE2F415778}</a:ObjectID>
+            <a:Name>fk_notif_user</a:Name>
+            <a:Code>fk_notif_user</a:Code>
+            <a:ParentTable Ref="o2001"/>
+            <a:ChildTable Ref="o2331"/>
+            <a:ForeignKeyConstraintName>fk_notif_user</a:ForeignKeyConstraintName>
+            <a:DeleteConstraint>CASCADE</a:DeleteConstraint>
+            <a:UpdateConstraint>CASCADE</a:UpdateConstraint>
+          </o:Reference>
+        </c:References>
+      </o:Model>
+    </c:Children>
+  </o:RootObject>
+</Model>

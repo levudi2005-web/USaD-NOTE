@@ -1,0 +1,277 @@
+﻿Bảng (Table),Thực thể (Entity),Tên cột (Column),Kiểu dữ liệu (Data Type),Kiểu logic,Khóa (Key),Ràng buộc (Constraints),Ý nghĩa & Mô tả
+users,USER,id,CHAR(36),UUID,PK,NN,UUID v4 định danh tài khoản
+users,USER,email,VARCHAR(191),VARCHAR,,NN UQ,Email đăng nhập duy nhất
+users,USER,password_hash,VARCHAR(255),VARCHAR,,NN,Mã băm mật khẩu Argon2id / Bcrypt
+users,USER,full_name,VARCHAR(100),VARCHAR,,NN,Họ và tên hiển thị
+users,USER,avatar_url,VARCHAR(255),VARCHAR,,,Đường dẫn ảnh đại diện
+users,USER,title,VARCHAR(100),VARCHAR,,,Chức danh nghề nghiệp
+users,USER,bio,TEXT,TEXT,,,Tiểu sử cá nhân
+users,USER,theme_preference,"ENUM('light','dark','auto')",ENUM,,NN,Chế độ giao diện
+users,USER,language,VARCHAR(10),VARCHAR,,NN,"Ngôn ngữ giao diện (vi, en)"
+users,USER,storage_used,BIGINT UNSIGNED,BIGINT,,NN,Dung lượng đã sử dụng (bytes)
+users,USER,storage_limit,BIGINT UNSIGNED,BIGINT,,NN,Hạn mức lưu trữ (bytes)
+users,USER,failed_recovery_attempts,TINYINT UNSIGNED,TINYINT,,NN,Số lần nhập sai recovery code
+users,USER,recovery_locked_until,DATETIME,DATETIME,,,Thời điểm khóa nếu brute-force
+users,USER,created_at,DATETIME,DATETIME,,NN,Thời điểm đăng ký (UTC)
+users,USER,updated_at,DATETIME,DATETIME,,NN,Thời điểm cập nhật hồ sơ
+user_recovery_codes,USER_RECOVERY_CODE,id,BIGINT UNSIGNED,BIGINT,PK,NN AI,Khóa chính tự tăng
+user_recovery_codes,USER_RECOVERY_CODE,user_id,CHAR(36),UUID,FK -> users(id),NN,Tài khoản sở hữu mã
+user_recovery_codes,USER_RECOVERY_CODE,code_hash,CHAR(64),CHAR,,NN,Mã băm SHA-256 của Recovery Code
+user_recovery_codes,USER_RECOVERY_CODE,used_at,DATETIME,DATETIME,,,Thời điểm sử dụng mã (NULL = còn hiệu lực)
+user_recovery_codes,USER_RECOVERY_CODE,created_at,DATETIME,DATETIME,,NN,Thời điểm sinh mã
+user_sessions,USER_SESSION,id,CHAR(36),UUID,PK,NN,UUID v4 định danh phiên
+user_sessions,USER_SESSION,user_id,CHAR(36),UUID,FK -> users(id),NN,Tài khoản đăng nhập
+user_sessions,USER_SESSION,session_token_hash,CHAR(64),CHAR,,NN UQ,Mã băm SHA-256 Session Token
+user_sessions,USER_SESSION,device_info,VARCHAR(255),VARCHAR,,NN,Thông tin thiết bị và trình duyệt
+user_sessions,USER_SESSION,ip_address,VARCHAR(45),VARCHAR,,NN,Địa chỉ IPv4/IPv6
+user_sessions,USER_SESSION,is_revoked,TINYINT(1),BOOLEAN,,NN,Cờ thu hồi phiên chủ động
+user_sessions,USER_SESSION,last_active_at,DATETIME,DATETIME,,NN,Thời điểm hoạt động gần nhất
+user_sessions,USER_SESSION,expires_at,DATETIME,DATETIME,,NN,Thời điểm hết hạn phiên
+user_sessions,USER_SESSION,created_at,DATETIME,DATETIME,,NN,Thời điểm khởi tạo phiên
+folders,FOLDER,id,CHAR(36),UUID,PK,NN,UUID v4 định danh thư mục
+folders,FOLDER,user_id,CHAR(36),UUID,FK -> users(id),NN,Tài khoản sở hữu thư mục
+folders,FOLDER,parent_id,CHAR(36),UUID,"Composite FK -> folders(user_id, id)",,Thư mục cha
+folders,FOLDER,name,VARCHAR(150),VARCHAR,,NN,Tên thư mục
+folders,FOLDER,color,VARCHAR(30),VARCHAR,,,Mã màu nhận diện giao diện
+folders,FOLDER,icon,VARCHAR(50),VARCHAR,,NN,Tên icon Lucide
+folders,FOLDER,created_at,DATETIME,DATETIME,,NN,Thời điểm tạo thư mục
+folders,FOLDER,updated_at,DATETIME,DATETIME,,NN,Thời điểm sửa thư mục
+documents,DOCUMENT,id,CHAR(36),UUID,PK,NN,UUID v4 định danh tài liệu
+documents,DOCUMENT,user_id,CHAR(36),UUID,FK -> users(id),NN,Tài khoản sở hữu tài liệu
+documents,DOCUMENT,folder_id,CHAR(36),UUID,"Composite FK -> folders(user_id, id)",,Thư mục chứa tài liệu
+documents,DOCUMENT,name,VARCHAR(255),VARCHAR,,NN,Tên hiển thị tài liệu
+documents,DOCUMENT,original_name,VARCHAR(255),VARCHAR,,NN,Tên file gốc khi tải lên
+documents,DOCUMENT,file_type,VARCHAR(20),VARCHAR,,NN,"Định dạng mở rộng (pdf, docx...)"
+documents,DOCUMENT,mime_type,VARCHAR(100),VARCHAR,,NN,MIME type chuẩn
+documents,DOCUMENT,file_size,BIGINT UNSIGNED,BIGINT,,NN,Kích thước tệp (bytes)
+documents,DOCUMENT,storage_path,VARCHAR(500),VARCHAR,,NN,Đường dẫn vật lý trên Storage
+documents,DOCUMENT,sha256_checksum,CHAR(64),CHAR,,NN,Mã băm SHA-256 toàn vẹn
+documents,DOCUMENT,processing_status,"ENUM('pending','processing','ready','failed')",ENUM,,NN,Trạng thái xử lý
+documents,DOCUMENT,extracted_text,LONGTEXT,TEXT,,,Toàn văn trích xuất tìm kiếm
+documents,DOCUMENT,deleted_at,DATETIME,DATETIME,,,Thời điểm xóa mềm
+documents,DOCUMENT,created_at,DATETIME,DATETIME,,NN,Thời điểm tải lên
+documents,DOCUMENT,updated_at,DATETIME,DATETIME,,NN,Thời điểm sửa metadata
+notes,NOTE,id,CHAR(36),UUID,PK,NN,UUID v4 định danh ghi chú
+notes,NOTE,user_id,CHAR(36),UUID,FK -> users(id),NN,Tài khoản sở hữu ghi chú
+notes,NOTE,folder_id,CHAR(36),UUID,"Composite FK -> folders(user_id, id)",,Thư mục phân loại
+notes,NOTE,document_id,CHAR(36),UUID,"Composite FK -> documents(user_id, id)",,Tài liệu liên kết
+notes,NOTE,title,VARCHAR(255),VARCHAR,,NN,Tiêu đề ghi chú
+notes,NOTE,category,VARCHAR(100),VARCHAR,,,Danh mục chủ đề
+notes,NOTE,content,LONGTEXT,TEXT,,,Nội dung ghi chú HTML/Markdown
+notes,NOTE,is_pinned,TINYINT(1),BOOLEAN,,NN,Cờ đánh dấu ghim
+notes,NOTE,is_favorite,TINYINT(1),BOOLEAN,,NN,Cờ đánh dấu yêu thích
+notes,NOTE,created_at,DATETIME,DATETIME,,NN,Thời điểm tạo
+notes,NOTE,updated_at,DATETIME,DATETIME,,NN,Thời điểm sửa
+tags,TAG,id,BIGINT UNSIGNED,BIGINT,PK,NN AI,Khóa chính tự tăng
+tags,TAG,user_id,CHAR(36),UUID,FK -> users(id),NN,Tài khoản sở hữu nhãn
+tags,TAG,name,VARCHAR(50),VARCHAR,,NN,Tên nhãn từ khóa
+tags,TAG,color,VARCHAR(30),VARCHAR,,,Mã màu nhận diện
+tags,TAG,created_at,DATETIME,DATETIME,,NN,Thời điểm tạo
+document_tags,DOCUMENT_TAG,document_id,CHAR(36),UUID,"PK, FK -> documents(id)",NN,Tài liệu được gắn thẻ
+document_tags,DOCUMENT_TAG,tag_id,BIGINT UNSIGNED,BIGINT,"PK, FK -> tags(id)",NN,Nhãn được gắn
+document_tags,DOCUMENT_TAG,created_at,DATETIME,DATETIME,,NN,Thời điểm gắn thẻ
+collections,COLLECTION,id,CHAR(36),UUID,PK,NN,UUID v4 định danh bộ sưu tập
+collections,COLLECTION,user_id,CHAR(36),UUID,FK -> users(id),NN,Tài khoản sở hữu bộ sưu tập
+collections,COLLECTION,name,VARCHAR(150),VARCHAR,,NN,Tên bộ sưu tập
+collections,COLLECTION,description,TEXT,TEXT,,,Mô tả bộ sưu tập
+collections,COLLECTION,color,VARCHAR(30),VARCHAR,,,Mã màu nhận diện
+collections,COLLECTION,created_at,DATETIME,DATETIME,,NN,Thời điểm tạo
+collections,COLLECTION,updated_at,DATETIME,DATETIME,,NN,Thời điểm sửa
+flashcard_decks,FLASHCARD_DECK,id,CHAR(36),UUID,PK,NN,UUID v4 định danh bộ thẻ
+flashcard_decks,FLASHCARD_DECK,user_id,CHAR(36),UUID,FK -> users(id),NN,Tài khoản sở hữu bộ thẻ
+flashcard_decks,FLASHCARD_DECK,document_id,CHAR(36),UUID,"Composite FK -> documents(user_id, id)",,Tài liệu nguồn liên quan
+flashcard_decks,FLASHCARD_DECK,name,VARCHAR(150),VARCHAR,,NN,Tên bộ thẻ
+flashcard_decks,FLASHCARD_DECK,description,TEXT,TEXT,,,Mô tả bộ thẻ
+flashcard_decks,FLASHCARD_DECK,created_at,DATETIME,DATETIME,,NN,Thời điểm tạo
+flashcard_decks,FLASHCARD_DECK,updated_at,DATETIME,DATETIME,,NN,Thời điểm cập nhật
+flashcards,FLASHCARD,id,CHAR(36),UUID,PK,NN,UUID v4 định danh thẻ
+flashcards,FLASHCARD,deck_id,CHAR(36),UUID,FK -> flashcard_decks(id),NN,Bộ thẻ chứa thẻ này
+flashcards,FLASHCARD,front_text,TEXT,TEXT,,NN,Nội dung câu hỏi mặt trước
+flashcards,FLASHCARD,back_text,TEXT,TEXT,,NN,Nội dung câu trả lời mặt sau
+flashcards,FLASHCARD,is_known,TINYINT(1),BOOLEAN,,NN,Trạng thái đã ghi nhớ
+flashcards,FLASHCARD,review_count,INT UNSIGNED,INT,,NN,Số lần đã ôn tập
+flashcards,FLASHCARD,last_reviewed_at,DATETIME,DATETIME,,,Thời điểm ôn tập gần nhất
+flashcards,FLASHCARD,created_at,DATETIME,DATETIME,,NN,Thời điểm tạo thẻ
+flashcards,FLASHCARD,updated_at,DATETIME,DATETIME,,NN,Thời điểm cập nhật thẻ
+collection_items,COLLECTION_ITEM,id,BIGINT UNSIGNED,BIGINT,PK,NN AI,Khóa chính tự tăng
+collection_items,COLLECTION_ITEM,collection_id,CHAR(36),UUID,FK -> collections(id),NN,Bộ sưu tập chứa phần tử
+collection_items,COLLECTION_ITEM,document_id,CHAR(36),UUID,FK -> documents(id),,Tài liệu liên kết
+collection_items,COLLECTION_ITEM,note_id,CHAR(36),UUID,FK -> notes(id),,Ghi chú liên kết
+collection_items,COLLECTION_ITEM,deck_id,CHAR(36),UUID,FK -> flashcard_decks(id),,Bộ thẻ liên kết
+collection_items,COLLECTION_ITEM,added_at,DATETIME,DATETIME,,NN,Thời điểm thêm vào
+archives,ARCHIVE,id,CHAR(36),UUID,PK,NN,UUID v4 định danh gói nén
+archives,ARCHIVE,user_id,CHAR(36),UUID,FK -> users(id),NN,Tài khoản sở hữu gói nén
+archives,ARCHIVE,name,VARCHAR(255),VARCHAR,,NN,Tên hiển thị gói nén
+archives,ARCHIVE,original_name,VARCHAR(255),VARCHAR,,NN,Tên file gốc khi upload
+archives,ARCHIVE,format,"ENUM('zip','7z')",ENUM,,NN,Định dạng gói nén
+archives,ARCHIVE,file_size,BIGINT UNSIGNED,BIGINT,,NN,Kích thước file nén (bytes)
+archives,ARCHIVE,uncompressed_size,BIGINT UNSIGNED,BIGINT,,NN,Dung lượng sau giải nén (bytes)
+archives,ARCHIVE,max_ratio,"DECIMAL(6,2)",DECIMAL,,NN,Tỉ lệ bung nén
+archives,ARCHIVE,file_count,INT UNSIGNED,INT,,NN,Tổng số file bên trong gói
+archives,ARCHIVE,storage_path,VARCHAR(500),VARCHAR,,NN,Đường dẫn lưu trữ gói gốc
+archives,ARCHIVE,sha256_checksum,CHAR(64),CHAR,,NN,Mã băm SHA-256 đối soát toàn vẹn
+archives,ARCHIVE,scan_status,"ENUM('clean','warning','quarantined','rejected')",ENUM,,NN,Trạng thái quét
+archives,ARCHIVE,manifest_json,LONGTEXT,JSON,,NN,Cây thư mục và danh sách file JSON
+archives,ARCHIVE,created_at,DATETIME,DATETIME,,NN,Thời điểm tải lên
+archives,ARCHIVE,updated_at,DATETIME,DATETIME,,NN,Thời điểm cập nhật
+archive_extracted_files,ARCHIVE_EXTRACTED_FILE,id,BIGINT UNSIGNED,BIGINT,PK,NN AI,Khóa chính tự tăng
+archive_extracted_files,ARCHIVE_EXTRACTED_FILE,archive_id,CHAR(36),UUID,FK -> archives(id),NN,Gói nén nguồn
+archive_extracted_files,ARCHIVE_EXTRACTED_FILE,document_id,CHAR(36),UUID,FK -> documents(id),NN,Tài liệu đích đã tạo
+archive_extracted_files,ARCHIVE_EXTRACTED_FILE,inner_path,VARCHAR(500),VARCHAR,,NN,Đường dẫn tương đối trong archive
+archive_extracted_files,ARCHIVE_EXTRACTED_FILE,extracted_at,DATETIME,DATETIME,,NN,Thời điểm giải nén
+ai_providers,AI_PROVIDER,id,VARCHAR(50),VARCHAR,PK,NN,"Mã nhà cung cấp (gemini, openai...)"
+ai_providers,AI_PROVIDER,name,VARCHAR(100),VARCHAR,,NN,Tên hiển thị provider
+ai_providers,AI_PROVIDER,api_base_url,VARCHAR(255),VARCHAR,,NN,URL endpoint API gốc
+ai_providers,AI_PROVIDER,auth_header_format,VARCHAR(100),VARCHAR,,NN,Định dạng header xác thực
+ai_providers,AI_PROVIDER,icon,VARCHAR(50),VARCHAR,,NN,Tên icon Lucide
+ai_providers,AI_PROVIDER,is_active,TINYINT(1),BOOLEAN,,NN,Trạng thái kích hoạt
+ai_providers,AI_PROVIDER,created_at,DATETIME,DATETIME,,NN,Thời điểm tạo
+ai_models,AI_MODEL,id,VARCHAR(100),VARCHAR,PK,NN,Mã model định danh (gemini-1.5-flash...)
+ai_models,AI_MODEL,provider_id,VARCHAR(50),VARCHAR,FK -> ai_providers(id),NN,Nhà cung cấp sở hữu model
+ai_models,AI_MODEL,display_name,VARCHAR(150),VARCHAR,,NN,Tên hiển thị giao diện
+ai_models,AI_MODEL,context_window,INT UNSIGNED,INT,,NN,Độ dài ngữ cảnh tối đa (tokens)
+ai_models,AI_MODEL,max_output_tokens,INT UNSIGNED,INT,,NN,Số token đầu ra tối đa
+ai_models,AI_MODEL,supports_vision,TINYINT(1),BOOLEAN,,NN,Hỗ trợ hình ảnh/PDF trực tiếp
+ai_models,AI_MODEL,is_default,TINYINT(1),BOOLEAN,,NN,Cờ model khuyên dùng mặc định
+ai_models,AI_MODEL,created_at,DATETIME,DATETIME,,NN,Thời điểm tạo
+ai_connections,AI_CONNECTION,id,CHAR(36),UUID,PK,NN,UUID v4 định danh kết nối
+ai_connections,AI_CONNECTION,user_id,CHAR(36),UUID,FK -> users(id),NN,Tài khoản sở hữu kết nối
+ai_connections,AI_CONNECTION,provider_id,VARCHAR(50),VARCHAR,FK -> ai_providers(id),NN,Nhà cung cấp AI
+ai_connections,AI_CONNECTION,name,VARCHAR(100),VARCHAR,,NN,Tên kết nối do người dùng đặt
+ai_connections,AI_CONNECTION,api_endpoint,VARCHAR(255),VARCHAR,,,Custom API Endpoint nếu có
+ai_connections,AI_CONNECTION,encrypted_api_key,VARBINARY(512),VARBINARY,,NN,Khóa API mã hóa AES-256-GCM
+ai_connections,AI_CONNECTION,encryption_iv,VARBINARY(16),VARBINARY,,NN,IV ngẫu nhiên cho mã hóa
+ai_connections,AI_CONNECTION,encryption_tag,VARBINARY(16),VARBINARY,,NN,Auth Tag xác thực tính toàn vẹn
+ai_connections,AI_CONNECTION,key_version,INT UNSIGNED,INT,,NN,Phiên bản Master Key mã hóa
+ai_connections,AI_CONNECTION,api_key_masked,VARCHAR(64),VARCHAR,,NN,Chuỗi làm mờ API Key hiển thị UI
+ai_connections,AI_CONNECTION,default_model_id,VARCHAR(100),VARCHAR,FK -> ai_models(id),NN,Model mặc định được chọn
+ai_connections,AI_CONNECTION,is_connected,TINYINT(1),BOOLEAN,,NN,Trạng thái kiểm tra kết nối
+ai_connections,AI_CONNECTION,last_tested_at,DATETIME,DATETIME,,,Thời điểm kiểm tra kết nối gần nhất
+ai_connections,AI_CONNECTION,created_at,DATETIME,DATETIME,,NN,Thời điểm tạo kết nối
+ai_connections,AI_CONNECTION,updated_at,DATETIME,DATETIME,,NN,Thời điểm sửa kết nối
+ai_conversations,AI_CONVERSATION,id,CHAR(36),UUID,PK,NN,UUID v4 định danh cuộc trò chuyện
+ai_conversations,AI_CONVERSATION,user_id,CHAR(36),UUID,FK -> users(id),NN,Tài khoản sở hữu cuộc trò chuyện
+ai_conversations,AI_CONVERSATION,connection_id,CHAR(36),UUID,"Composite FK -> ai_connections(user_id, id)",,Kết nối AI BYOK
+ai_conversations,AI_CONVERSATION,model_name,VARCHAR(100),VARCHAR,,NN,Tên model đã sử dụng
+ai_conversations,AI_CONVERSATION,title,VARCHAR(200),VARCHAR,,NN,Tiêu đề cuộc trò chuyện
+ai_conversations,AI_CONVERSATION,pinned_document_id,CHAR(36),UUID,"Composite FK -> documents(user_id, id)",,Tài liệu ghim ngữ cảnh
+ai_conversations,AI_CONVERSATION,total_tokens_used,INT UNSIGNED,INT,,NN,Tổng số token tiêu thụ
+ai_conversations,AI_CONVERSATION,created_at,DATETIME,DATETIME,,NN,Thời điểm tạo
+ai_conversations,AI_CONVERSATION,updated_at,DATETIME,DATETIME,,NN,Thời điểm cập nhật
+ai_messages,AI_MESSAGE,id,BIGINT UNSIGNED,BIGINT,PK,NN AI,Khóa chính tự tăng
+ai_messages,AI_MESSAGE,conversation_id,CHAR(36),UUID,FK -> ai_conversations(id),NN,Cuộc trò chuyện chứa tin nhắn
+ai_messages,AI_MESSAGE,role,"ENUM('user','assistant','system')",ENUM,,NN,Vai trò người gửi
+ai_messages,AI_MESSAGE,content,LONGTEXT,TEXT,,NN,Nội dung tin nhắn Markdown/Code
+ai_messages,AI_MESSAGE,prompt_tokens,INT UNSIGNED,INT,,NN,Số token đầu vào
+ai_messages,AI_MESSAGE,completion_tokens,INT UNSIGNED,INT,,NN,Số token sinh ra
+ai_messages,AI_MESSAGE,references_json,JSON,JSON,,,Nguồn tài liệu trích dẫn tham chiếu
+ai_messages,AI_MESSAGE,created_at,DATETIME,DATETIME,,NN,Thời điểm gửi
+ai_tasks,AI_TASK,id,CHAR(36),UUID,PK,NN,UUID v4 định danh tác vụ
+ai_tasks,AI_TASK,user_id,CHAR(36),UUID,FK -> users(id),NN,Tài khoản sở hữu tác vụ
+ai_tasks,AI_TASK,source_document_id,CHAR(36),UUID,"Composite FK -> documents(user_id, id)",,Tài liệu nguồn liên quan
+ai_tasks,AI_TASK,connection_id,CHAR(36),UUID,"Composite FK -> ai_connections(user_id, id)",,Kết nối AI thực thi
+ai_tasks,AI_TASK,name,VARCHAR(150),VARCHAR,,NN,Tên quy trình / tác vụ
+ai_tasks,AI_TASK,description,TEXT,TEXT,,,Mô tả chi tiết tác vụ
+ai_tasks,AI_TASK,trigger_type,"ENUM('manual','on_upload','on_extract')",ENUM,,NN,Cơ chế kích hoạt
+ai_tasks,AI_TASK,status,"ENUM('queued','processing','completed','failed')",ENUM,,NN,Trạng thái tác vụ
+ai_tasks,AI_TASK,progress,TINYINT UNSIGNED,TINYINT,,NN,Tiến độ xử lý (0-100%)
+ai_tasks,AI_TASK,created_at,DATETIME,DATETIME,,NN,Thời điểm tạo tác vụ
+ai_tasks,AI_TASK,completed_at,DATETIME,DATETIME,,,Thời điểm hoàn thành tác vụ
+ai_task_logs,AI_TASK_LOG,id,BIGINT UNSIGNED,BIGINT,PK,NN AI,Khóa chính tự tăng
+ai_task_logs,AI_TASK_LOG,task_id,CHAR(36),UUID,FK -> ai_tasks(id),NN,Tác vụ liên quan
+ai_task_logs,AI_TASK_LOG,step_name,VARCHAR(100),VARCHAR,,NN,Tên bước thực hiện
+ai_task_logs,AI_TASK_LOG,status,"ENUM('running','success','failed')",ENUM,,NN,Trạng thái bước
+ai_task_logs,AI_TASK_LOG,duration_ms,INT UNSIGNED,INT,,NN,Thời gian thực thi (mili-giây)
+ai_task_logs,AI_TASK_LOG,tokens_used,INT UNSIGNED,INT,,NN,Số token đã tiêu thụ
+ai_task_logs,AI_TASK_LOG,input_summary,TEXT,TEXT,,,Đầu vào tóm lược
+ai_task_logs,AI_TASK_LOG,output_summary,LONGTEXT,TEXT,,,Đầu ra kết quả
+ai_task_logs,AI_TASK_LOG,error_message,TEXT,TEXT,,,Thông báo lỗi nếu có
+ai_task_logs,AI_TASK_LOG,executed_at,DATETIME,DATETIME,,NN,Thời điểm chạy bước
+ai_contexts,AI_CONTEXT,id,CHAR(36),UUID,PK,NN,UUID v4 định danh AI Context
+ai_contexts,AI_CONTEXT,user_id,CHAR(36),UUID,FK -> users(id),NN,Tài khoản sở hữu Context
+ai_contexts,AI_CONTEXT,title,VARCHAR(200),VARCHAR,,NN,Tiêu đề ngữ cảnh tri thức
+ai_contexts,AI_CONTEXT,schema_version,VARCHAR(20),VARCHAR,,NN,Phiên bản schema JSON
+ai_contexts,AI_CONTEXT,current_version,VARCHAR(20),VARCHAR,,NN,Phiên bản nội dung tri thức
+ai_contexts,AI_CONTEXT,summary,TEXT,TEXT,,NN,Tóm tắt tổng quan tri thức
+ai_contexts,AI_CONTEXT,knowledge_points_json,LONGTEXT,JSON,,NN,Mảng JSON chứa các luận điểm tri thức
+ai_contexts,AI_CONTEXT,conclusions_json,LONGTEXT,JSON,,NN,Mảng JSON chứa các kết luận
+ai_contexts,AI_CONTEXT,open_questions_json,LONGTEXT,JSON,,,Mảng JSON chứa các câu hỏi mở
+ai_contexts,AI_CONTEXT,learning_progress,TINYINT UNSIGNED,TINYINT,,NN,Điểm tiến độ thấu hiểu (0-100%)
+ai_contexts,AI_CONTEXT,handoff_directive,TEXT,TEXT,,,Chỉ dẫn sư phạm cho phiên AI tiếp theo
+ai_contexts,AI_CONTEXT,created_at,DATETIME,DATETIME,,NN,Thời điểm khởi tạo
+ai_contexts,AI_CONTEXT,updated_at,DATETIME,DATETIME,,NN,Thời điểm cập nhật
+ai_context_versions,AI_CONTEXT_VERSION,id,BIGINT UNSIGNED,BIGINT,PK,NN AI,Khóa chính tự tăng
+ai_context_versions,AI_CONTEXT_VERSION,context_id,CHAR(36),UUID,FK -> ai_contexts(id),NN,AI Context được chụp
+ai_context_versions,AI_CONTEXT_VERSION,version_tag,VARCHAR(20),VARCHAR,,NN,Số hiệu phiên bản snapshot
+ai_context_versions,AI_CONTEXT_VERSION,snapshot_json,LONGTEXT,JSON,,NN,Bản sao lưu toàn bộ dữ liệu JSON
+ai_context_versions,AI_CONTEXT_VERSION,change_note,VARCHAR(255),VARCHAR,,,Ghi chú lý do cập nhật
+ai_context_versions,AI_CONTEXT_VERSION,created_at,DATETIME,DATETIME,,NN,Thời điểm tạo snapshot
+quizzes,QUIZ,id,CHAR(36),UUID,PK,NN,UUID v4 định danh bài quiz
+quizzes,QUIZ,user_id,CHAR(36),UUID,FK -> users(id),NN,Tài khoản sở hữu bài thi
+quizzes,QUIZ,document_id,CHAR(36),UUID,"Composite FK -> documents(user_id, id)",,Tài liệu nguồn liên quan
+quizzes,QUIZ,title,VARCHAR(200),VARCHAR,,NN,Tiêu đề bài trắc nghiệm
+quizzes,QUIZ,description,TEXT,TEXT,,,Mô tả bài trắc nghiệm
+quizzes,QUIZ,time_limit_sec,INT UNSIGNED,INT,,NN,Thời gian làm bài tối đa (giây)
+quizzes,QUIZ,max_attempts,TINYINT UNSIGNED,TINYINT,,NN,Số lần làm lại tối đa
+quizzes,QUIZ,created_at,DATETIME,DATETIME,,NN,Thời điểm tạo
+quizzes,QUIZ,updated_at,DATETIME,DATETIME,,NN,Thời điểm cập nhật
+quiz_questions,QUIZ_QUESTION,id,CHAR(36),UUID,PK,NN,UUID v4 định danh câu hỏi
+quiz_questions,QUIZ_QUESTION,quiz_id,CHAR(36),UUID,FK -> quizzes(id),NN,Bài quiz chứa câu hỏi
+quiz_questions,QUIZ_QUESTION,question_text,TEXT,TEXT,,NN,Nội dung câu hỏi
+quiz_questions,QUIZ_QUESTION,order_index,INT UNSIGNED,INT,,NN,Thứ tự hiển thị câu hỏi
+quiz_questions,QUIZ_QUESTION,explanation,TEXT,TEXT,,,Giải thích đáp án chi tiết
+quiz_questions,QUIZ_QUESTION,created_at,DATETIME,DATETIME,,NN,Thời điểm tạo
+quiz_options,QUIZ_OPTION,id,CHAR(36),UUID,PK,NN,UUID v4 định danh đáp án
+quiz_options,QUIZ_OPTION,question_id,CHAR(36),UUID,FK -> quiz_questions(id),NN,Câu hỏi chứa đáp án
+quiz_options,QUIZ_OPTION,option_text,TEXT,TEXT,,NN,Nội dung đáp án
+quiz_options,QUIZ_OPTION,is_correct,TINYINT(1),BOOLEAN,,NN,Cờ xác định đáp án đúng
+quiz_options,QUIZ_OPTION,order_index,TINYINT UNSIGNED,TINYINT,,NN,"Thứ tự đáp án (1=A, 2=B, 3=C, 4=D)"
+quiz_attempts,QUIZ_ATTEMPT,id,CHAR(36),UUID,PK,NN,UUID v4 định danh lượt làm bài
+quiz_attempts,QUIZ_ATTEMPT,quiz_id,CHAR(36),UUID,FK -> quizzes(id),NN,Bài quiz được làm
+quiz_attempts,QUIZ_ATTEMPT,user_id,CHAR(36),UUID,FK -> users(id),NN,Tài khoản làm bài
+quiz_attempts,QUIZ_ATTEMPT,score,"DECIMAL(5,2)",DECIMAL,,NN,Điểm số đạt được (0.00-100.00)
+quiz_attempts,QUIZ_ATTEMPT,correct_answers,INT UNSIGNED,INT,,NN,Số câu trả lời đúng
+quiz_attempts,QUIZ_ATTEMPT,total_questions,INT UNSIGNED,INT,,NN,Tổng số câu hỏi
+quiz_attempts,QUIZ_ATTEMPT,duration_sec,INT UNSIGNED,INT,,NN,Thời gian hoàn thành (giây)
+quiz_attempts,QUIZ_ATTEMPT,started_at,DATETIME,DATETIME,,NN,Thời điểm bắt đầu làm bài
+quiz_attempts,QUIZ_ATTEMPT,completed_at,DATETIME,DATETIME,,NN,Thời điểm nộp bài
+quiz_attempt_answers,QUIZ_ATTEMPT_ANSWER,id,BIGINT UNSIGNED,BIGINT,PK,NN AI,Khóa chính tự tăng
+quiz_attempt_answers,QUIZ_ATTEMPT_ANSWER,attempt_id,CHAR(36),UUID,FK -> quiz_attempts(id),NN,Lượt làm bài liên quan
+quiz_attempt_answers,QUIZ_ATTEMPT_ANSWER,question_id,CHAR(36),UUID,FK -> quiz_questions(id),NN,Câu hỏi được trả lời
+quiz_attempt_answers,QUIZ_ATTEMPT_ANSWER,selected_option_id,CHAR(36),UUID,"Composite FK -> quiz_options(question_id, id)",NN,Đáp án đã chọn
+quiz_attempt_answers,QUIZ_ATTEMPT_ANSWER,is_correct,TINYINT(1),BOOLEAN,,NN,Kết quả câu trả lời
+shared_links,SHARED_LINK,id,CHAR(36),UUID,PK,NN,UUID v4 định danh liên kết
+shared_links,SHARED_LINK,user_id,CHAR(36),UUID,FK -> users(id),NN,Tài khoản phát hành liên kết
+shared_links,SHARED_LINK,document_id,CHAR(36),UUID,"Composite FK -> documents(user_id, id)",NN,Tài liệu được chia sẻ
+shared_links,SHARED_LINK,title,VARCHAR(255),VARCHAR,,NN,Tiêu đề hiển thị công khai
+shared_links,SHARED_LINK,token_hash,CHAR(64),CHAR,,NN UQ,Mã băm SHA-256 Share Token
+shared_links,SHARED_LINK,password_hash,VARCHAR(255),VARCHAR,,,Mã băm mật khẩu nếu có
+shared_links,SHARED_LINK,allow_download,TINYINT(1),BOOLEAN,,NN,Cờ cho phép tải file gốc
+shared_links,SHARED_LINK,expires_at,DATETIME,DATETIME,,,Thời điểm hết hạn
+shared_links,SHARED_LINK,views_count,INT UNSIGNED,INT,,NN,Số lượt truy cập
+shared_links,SHARED_LINK,failed_pass_attempts,INT UNSIGNED,INT,,NN,Số lần nhập sai mật khẩu
+shared_links,SHARED_LINK,pass_locked_until,DATETIME,DATETIME,,,Thời điểm khóa nếu brute-force
+shared_links,SHARED_LINK,is_revoked,TINYINT(1),BOOLEAN,,NN,Cờ thu hồi liên kết tức thì
+shared_links,SHARED_LINK,created_at,DATETIME,DATETIME,,NN,Thời điểm tạo liên kết
+shared_links,SHARED_LINK,updated_at,DATETIME,DATETIME,,NN,Thời điểm cập nhật
+share_access_logs,SHARE_ACCESS_LOG,id,BIGINT UNSIGNED,BIGINT,PK,NN AI,Khóa chính tự tăng
+share_access_logs,SHARE_ACCESS_LOG,shared_link_id,CHAR(36),UUID,FK -> shared_links(id),NN,Liên kết chia sẻ
+share_access_logs,SHARE_ACCESS_LOG,action,"ENUM('view','download')",ENUM,,NN,Hành vi truy cập
+share_access_logs,SHARE_ACCESS_LOG,ip_address,VARCHAR(45),VARCHAR,,NN,Địa chỉ IPv4/IPv6
+share_access_logs,SHARE_ACCESS_LOG,user_agent,VARCHAR(255),VARCHAR,,NN,Trình duyệt và thiết bị
+share_access_logs,SHARE_ACCESS_LOG,accessed_at,DATETIME,DATETIME,,NN,Thời điểm truy cập
+activity_logs,ACTIVITY_LOG,id,BIGINT UNSIGNED,BIGINT,PK,NN AI,Khóa chính tự tăng
+activity_logs,ACTIVITY_LOG,user_id,CHAR(36),UUID,FK -> users(id),NN,Tài khoản phát sinh hành động
+activity_logs,ACTIVITY_LOG,event_type,VARCHAR(50),VARCHAR,,NN,Mã loại sự kiện
+activity_logs,ACTIVITY_LOG,description,VARCHAR(255),VARCHAR,,NN,Mô tả tóm tắt hành động
+activity_logs,ACTIVITY_LOG,entity_type,VARCHAR(30),VARCHAR,,,Loại thực thể bị tác động
+activity_logs,ACTIVITY_LOG,entity_id,VARCHAR(36),VARCHAR,,,ID thực thể bị tác động
+activity_logs,ACTIVITY_LOG,created_at,DATETIME,DATETIME,,NN,Thời điểm ghi nhận sự kiện
+notifications,NOTIFICATION,id,CHAR(36),UUID,PK,NN,UUID v4 định danh thông báo
+notifications,NOTIFICATION,user_id,CHAR(36),UUID,FK -> users(id),NN,Tài khoản nhận thông báo
+notifications,NOTIFICATION,title,VARCHAR(150),VARCHAR,,NN,Tiêu đề thông báo
+notifications,NOTIFICATION,message,TEXT,TEXT,,NN,Nội dung chi tiết thông báo
+notifications,NOTIFICATION,type,"ENUM('learning','ai','share','system')",ENUM,,NN,Phân loại thông báo
+notifications,NOTIFICATION,icon,VARCHAR(50),VARCHAR,,NN,Tên icon Lucide
+notifications,NOTIFICATION,is_read,TINYINT(1),BOOLEAN,,NN,Cờ đánh dấu đã đọc
+notifications,NOTIFICATION,created_at,DATETIME,DATETIME,,NN,Thời điểm gửi thông báo

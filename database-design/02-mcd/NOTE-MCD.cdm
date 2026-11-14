@@ -1,0 +1,2788 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?PowerDesigner AppLocale="UTF16" ID="{3005961D-74F6-4685-A98F-99948CE1FA76}" Label="" LastModificationDate="2026-11-13" Name="NOTE-MCD" Objects="250" Symbols="250" Type="{1E597170-9350-11D1-AB3C-0020AF71E433}" signature="CDM_DATA_MODEL_XML" version="16.5.0.3982"?>
+<!-- SAP PowerDesigner CDM Conceptual Data Model (32 Entities) -->
+<Model xmlns:a="attribute" xmlns:c="collection" xmlns:o="object">
+  <o:RootObject Id="o1">
+    <c:Children>
+      <o:Model Id="o2">
+        <a:ObjectID>{3005961D-74F6-4685-A98F-99948CE1FA76}</a:ObjectID>
+        <a:Name>NOTE-MCD</a:Name>
+        <a:Code>NOTE_MCD</a:Code>
+        <c:Entities>
+          <o:Entity Id="o11">
+            <a:ObjectID>{B853FA5C-5635-4288-B19A-B94295467767}</a:ObjectID>
+            <a:Name>USER</a:Name>
+            <a:Code>USER</a:Code>
+            <a:Comment>Tài khoản người dùng độc lập</a:Comment>
+            <c:Attributes>
+              <o:EntityAttribute Id="o12">
+                <a:ObjectID>{6E171B8E-D06C-428C-8A85-A93A47A59FC4}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>UUID v4 định danh tài khoản</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o13">
+                <a:ObjectID>{AA8F6FDB-D8D0-417A-AD90-DE20584A10E5}</a:ObjectID>
+                <a:Name>email</a:Name>
+                <a:Code>email</a:Code>
+                <a:DataType>VARCHAR</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Email đăng nhập duy nhất</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o14">
+                <a:ObjectID>{8D9938F7-1006-4EF4-8ECB-5829F39A41AC}</a:ObjectID>
+                <a:Name>password_hash</a:Name>
+                <a:Code>password_hash</a:Code>
+                <a:DataType>VARCHAR</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Mã băm mật khẩu Argon2id / Bcrypt</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o15">
+                <a:ObjectID>{8FA8F85E-5CA3-41BF-9F22-233FCC973DD0}</a:ObjectID>
+                <a:Name>full_name</a:Name>
+                <a:Code>full_name</a:Code>
+                <a:DataType>VARCHAR</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Họ và tên hiển thị</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o16">
+                <a:ObjectID>{57014B1F-9BEA-4D5C-ADAB-E63FE8DC44F9}</a:ObjectID>
+                <a:Name>avatar_url</a:Name>
+                <a:Code>avatar_url</a:Code>
+                <a:DataType>VARCHAR</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+                <a:Comment>Đường dẫn ảnh đại diện</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o17">
+                <a:ObjectID>{3EAD67CB-FAC3-4D74-9C44-5E21EF12E363}</a:ObjectID>
+                <a:Name>title</a:Name>
+                <a:Code>title</a:Code>
+                <a:DataType>VARCHAR</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+                <a:Comment>Chức danh nghề nghiệp</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o18">
+                <a:ObjectID>{F69CD828-A9C4-4A52-ABE6-25D1C5171E75}</a:ObjectID>
+                <a:Name>bio</a:Name>
+                <a:Code>bio</a:Code>
+                <a:DataType>TEXT</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+                <a:Comment>Tiểu sử cá nhân</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o19">
+                <a:ObjectID>{93F750F0-4D06-4EF8-8DEC-4951C681B346}</a:ObjectID>
+                <a:Name>theme_preference</a:Name>
+                <a:Code>theme_preference</a:Code>
+                <a:DataType>ENUM</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Chế độ giao diện</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o20">
+                <a:ObjectID>{DCBAE52F-2076-416A-B3D3-7726EC4419C9}</a:ObjectID>
+                <a:Name>language</a:Name>
+                <a:Code>language</a:Code>
+                <a:DataType>VARCHAR</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Ngôn ngữ giao diện (vi, en)</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o21">
+                <a:ObjectID>{238A5D66-932C-4F5F-99E2-F66BFD6687C3}</a:ObjectID>
+                <a:Name>storage_used</a:Name>
+                <a:Code>storage_used</a:Code>
+                <a:DataType>BIGINT</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Dung lượng đã sử dụng (bytes)</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o22">
+                <a:ObjectID>{B8C976FA-C569-47F2-B107-9BADDCC070F2}</a:ObjectID>
+                <a:Name>storage_limit</a:Name>
+                <a:Code>storage_limit</a:Code>
+                <a:DataType>BIGINT</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Hạn mức lưu trữ (bytes)</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o23">
+                <a:ObjectID>{D3D3D219-44A9-46E6-8DD3-AE2ACFA774C4}</a:ObjectID>
+                <a:Name>failed_recovery_attempts</a:Name>
+                <a:Code>failed_recovery_attempts</a:Code>
+                <a:DataType>TINYINT</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Số lần nhập sai recovery code</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o24">
+                <a:ObjectID>{1A8F6E45-794E-4EBC-893D-5A5AB7C0DC41}</a:ObjectID>
+                <a:Name>recovery_locked_until</a:Name>
+                <a:Code>recovery_locked_until</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+                <a:Comment>Thời điểm khóa nếu brute-force</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o25">
+                <a:ObjectID>{813F52F2-226E-46F7-8AB9-1EA2B3A47641}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Thời điểm đăng ký (UTC)</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o26">
+                <a:ObjectID>{1E3E7133-3F10-4623-9F94-473F378C5CBC}</a:ObjectID>
+                <a:Name>updated_at</a:Name>
+                <a:Code>updated_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Thời điểm cập nhật hồ sơ</a:Comment>
+              </o:EntityAttribute>
+            </c:Attributes>
+          </o:Entity>
+          <o:Entity Id="o27">
+            <a:ObjectID>{767AA716-434A-4103-AA8D-4EDBB7CBC178}</a:ObjectID>
+            <a:Name>USER_RECOVERY_CODE</a:Name>
+            <a:Code>USER_RECOVERY_CODE</a:Code>
+            <a:Comment>Mã khôi phục mật khẩu dự phòng</a:Comment>
+            <c:Attributes>
+              <o:EntityAttribute Id="o28">
+                <a:ObjectID>{011DF63D-A5AF-4B78-8011-9954B04494A4}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>BIGINT</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Khóa chính tự tăng</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o29">
+                <a:ObjectID>{76568F2A-C097-43D5-8FD2-4D6D36CE73AF}</a:ObjectID>
+                <a:Name>user_id</a:Name>
+                <a:Code>user_id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Tài khoản sở hữu mã</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o30">
+                <a:ObjectID>{1F297F66-2B80-42AF-82F5-77FC8E2F0DB4}</a:ObjectID>
+                <a:Name>code_hash</a:Name>
+                <a:Code>code_hash</a:Code>
+                <a:DataType>CHAR</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Mã băm SHA-256 của Recovery Code</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o31">
+                <a:ObjectID>{4918F5FD-05AA-46DE-8AD6-DF942648EB1B}</a:ObjectID>
+                <a:Name>used_at</a:Name>
+                <a:Code>used_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+                <a:Comment>Thời điểm sử dụng mã (NULL = còn hiệu lực)</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o32">
+                <a:ObjectID>{9B075413-718E-4D7D-A4E6-4C07CCEB449C}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Thời điểm sinh mã</a:Comment>
+              </o:EntityAttribute>
+            </c:Attributes>
+          </o:Entity>
+          <o:Entity Id="o33">
+            <a:ObjectID>{18FB28DC-9511-4681-838A-DC7678E6BCF2}</a:ObjectID>
+            <a:Name>USER_SESSION</a:Name>
+            <a:Code>USER_SESSION</a:Code>
+            <a:Comment>Phiên làm việc người dùng</a:Comment>
+            <c:Attributes>
+              <o:EntityAttribute Id="o34">
+                <a:ObjectID>{4F6ED08A-60BB-43EA-943A-9765B28E2EF8}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>UUID v4 định danh phiên</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o35">
+                <a:ObjectID>{F37E5CC0-D222-4E42-A374-BC878E3FEA11}</a:ObjectID>
+                <a:Name>user_id</a:Name>
+                <a:Code>user_id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Tài khoản đăng nhập</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o36">
+                <a:ObjectID>{5886B0C8-4931-46F4-8D07-EB364BFAB396}</a:ObjectID>
+                <a:Name>session_token_hash</a:Name>
+                <a:Code>session_token_hash</a:Code>
+                <a:DataType>CHAR</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Mã băm SHA-256 Session Token</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o37">
+                <a:ObjectID>{761E8C20-850B-47D0-B5A8-DCBB70F23E77}</a:ObjectID>
+                <a:Name>device_info</a:Name>
+                <a:Code>device_info</a:Code>
+                <a:DataType>VARCHAR</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Thông tin thiết bị và trình duyệt</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o38">
+                <a:ObjectID>{FDD7D744-48EE-40C2-94CA-883027DCCE1C}</a:ObjectID>
+                <a:Name>ip_address</a:Name>
+                <a:Code>ip_address</a:Code>
+                <a:DataType>VARCHAR</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Địa chỉ IPv4/IPv6</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o39">
+                <a:ObjectID>{802EA6DF-D72E-412F-BB3F-A95A047002D2}</a:ObjectID>
+                <a:Name>is_revoked</a:Name>
+                <a:Code>is_revoked</a:Code>
+                <a:DataType>BOOLEAN</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Cờ thu hồi phiên chủ động</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o40">
+                <a:ObjectID>{7DA35858-0E31-43C1-AE34-F3EC1256F30E}</a:ObjectID>
+                <a:Name>last_active_at</a:Name>
+                <a:Code>last_active_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Thời điểm hoạt động gần nhất</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o41">
+                <a:ObjectID>{EC62997E-F8B3-4A76-8086-5F27F6F08A9A}</a:ObjectID>
+                <a:Name>expires_at</a:Name>
+                <a:Code>expires_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Thời điểm hết hạn phiên</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o42">
+                <a:ObjectID>{26C7F8F9-40F9-4F62-A423-E7AC53C9B6C9}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Thời điểm khởi tạo phiên</a:Comment>
+              </o:EntityAttribute>
+            </c:Attributes>
+          </o:Entity>
+          <o:Entity Id="o43">
+            <a:ObjectID>{43564C36-4DE6-48F3-AAB3-006F94B52372}</a:ObjectID>
+            <a:Name>FOLDER</a:Name>
+            <a:Code>FOLDER</a:Code>
+            <a:Comment>Thư mục phân cấp quản lý tài liệu</a:Comment>
+            <c:Attributes>
+              <o:EntityAttribute Id="o44">
+                <a:ObjectID>{E0C798E7-BE0D-4D75-A7B1-5377C16CF718}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>UUID v4 định danh thư mục</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o45">
+                <a:ObjectID>{6B76DA96-B751-4A03-937C-5EC1A8B83230}</a:ObjectID>
+                <a:Name>user_id</a:Name>
+                <a:Code>user_id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Tài khoản sở hữu thư mục</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o46">
+                <a:ObjectID>{03818FB1-8E76-47A3-975A-AFFEB4A72994}</a:ObjectID>
+                <a:Name>parent_id</a:Name>
+                <a:Code>parent_id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+                <a:Comment>Thư mục cha</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o47">
+                <a:ObjectID>{4CCC4265-BAF3-40BA-869C-ACFE35EFC07E}</a:ObjectID>
+                <a:Name>name</a:Name>
+                <a:Code>name</a:Code>
+                <a:DataType>VARCHAR</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Tên thư mục</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o48">
+                <a:ObjectID>{A2051394-79E1-4FF7-90CF-C62A16D18DB6}</a:ObjectID>
+                <a:Name>color</a:Name>
+                <a:Code>color</a:Code>
+                <a:DataType>VARCHAR</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+                <a:Comment>Mã màu nhận diện giao diện</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o49">
+                <a:ObjectID>{A199046A-1737-4AFC-BC78-0F0CC52D5B63}</a:ObjectID>
+                <a:Name>icon</a:Name>
+                <a:Code>icon</a:Code>
+                <a:DataType>VARCHAR</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Tên icon Lucide</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o50">
+                <a:ObjectID>{783E91ED-662E-4FFA-A527-FDC0C16B709D}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Thời điểm tạo thư mục</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o51">
+                <a:ObjectID>{CF73743D-7D8B-4B9D-BA7D-9AAC33EDD1F3}</a:ObjectID>
+                <a:Name>updated_at</a:Name>
+                <a:Code>updated_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Thời điểm sửa thư mục</a:Comment>
+              </o:EntityAttribute>
+            </c:Attributes>
+          </o:Entity>
+          <o:Entity Id="o52">
+            <a:ObjectID>{EE01E472-C224-4288-BC5A-92CEE3AD7C85}</a:ObjectID>
+            <a:Name>DOCUMENT</a:Name>
+            <a:Code>DOCUMENT</a:Code>
+            <a:Comment>Metadata tài liệu số trong thư viện</a:Comment>
+            <c:Attributes>
+              <o:EntityAttribute Id="o53">
+                <a:ObjectID>{33941101-57EF-4C46-B0FF-6C2BA6FB074A}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>UUID v4 định danh tài liệu</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o54">
+                <a:ObjectID>{D15DA1AE-31E0-4D89-A03D-54EAD50A9D6D}</a:ObjectID>
+                <a:Name>user_id</a:Name>
+                <a:Code>user_id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Tài khoản sở hữu tài liệu</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o55">
+                <a:ObjectID>{F7A7C930-FC13-4E8B-854B-3D53F7381B41}</a:ObjectID>
+                <a:Name>folder_id</a:Name>
+                <a:Code>folder_id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+                <a:Comment>Thư mục chứa tài liệu</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o56">
+                <a:ObjectID>{D86E54B3-2A5C-4A38-A404-EBB989E150F7}</a:ObjectID>
+                <a:Name>name</a:Name>
+                <a:Code>name</a:Code>
+                <a:DataType>VARCHAR</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Tên hiển thị tài liệu</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o57">
+                <a:ObjectID>{1B40B288-971F-4F24-A96E-53FC7B164849}</a:ObjectID>
+                <a:Name>original_name</a:Name>
+                <a:Code>original_name</a:Code>
+                <a:DataType>VARCHAR</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Tên file gốc khi tải lên</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o58">
+                <a:ObjectID>{DACF68F1-85FD-47A1-9145-6ACF90BCF160}</a:ObjectID>
+                <a:Name>file_type</a:Name>
+                <a:Code>file_type</a:Code>
+                <a:DataType>VARCHAR</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Định dạng mở rộng (pdf, docx...)</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o59">
+                <a:ObjectID>{ED5EF212-74DE-4686-B99E-61EF1B693D8C}</a:ObjectID>
+                <a:Name>mime_type</a:Name>
+                <a:Code>mime_type</a:Code>
+                <a:DataType>VARCHAR</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>MIME type chuẩn</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o60">
+                <a:ObjectID>{B8337294-FFA5-4562-80D0-CC09948FB126}</a:ObjectID>
+                <a:Name>file_size</a:Name>
+                <a:Code>file_size</a:Code>
+                <a:DataType>BIGINT</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Kích thước tệp (bytes)</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o61">
+                <a:ObjectID>{1FAA8BF8-ADA2-4651-B643-4B41D6621A14}</a:ObjectID>
+                <a:Name>storage_path</a:Name>
+                <a:Code>storage_path</a:Code>
+                <a:DataType>VARCHAR</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Đường dẫn vật lý trên Storage</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o62">
+                <a:ObjectID>{9FE5F9FB-2CDF-451F-80C7-929F40492182}</a:ObjectID>
+                <a:Name>sha256_checksum</a:Name>
+                <a:Code>sha256_checksum</a:Code>
+                <a:DataType>CHAR</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Mã băm SHA-256 toàn vẹn</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o63">
+                <a:ObjectID>{4AB55B5F-EB91-427E-8DD6-05AA59227A6E}</a:ObjectID>
+                <a:Name>processing_status</a:Name>
+                <a:Code>processing_status</a:Code>
+                <a:DataType>ENUM</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Trạng thái xử lý</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o64">
+                <a:ObjectID>{016C33E5-9F95-4B14-8B49-7AE81768E785}</a:ObjectID>
+                <a:Name>extracted_text</a:Name>
+                <a:Code>extracted_text</a:Code>
+                <a:DataType>TEXT</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+                <a:Comment>Toàn văn trích xuất tìm kiếm</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o65">
+                <a:ObjectID>{327F80BA-5DF3-4E98-BD67-CDC769CAB6B0}</a:ObjectID>
+                <a:Name>deleted_at</a:Name>
+                <a:Code>deleted_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+                <a:Comment>Thời điểm xóa mềm</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o66">
+                <a:ObjectID>{5682498F-34C6-4168-AC77-650C1B29D8AC}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Thời điểm tải lên</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o67">
+                <a:ObjectID>{F9D835E1-7C8A-44EE-9718-A70F358C2061}</a:ObjectID>
+                <a:Name>updated_at</a:Name>
+                <a:Code>updated_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Thời điểm sửa metadata</a:Comment>
+              </o:EntityAttribute>
+            </c:Attributes>
+          </o:Entity>
+          <o:Entity Id="o68">
+            <a:ObjectID>{AC2637BB-4ECF-4E8D-BC2D-EB773B985F4B}</a:ObjectID>
+            <a:Name>NOTE</a:Name>
+            <a:Code>NOTE</a:Code>
+            <a:Comment>Ghi chú cá nhân và ghi chú tài liệu</a:Comment>
+            <c:Attributes>
+              <o:EntityAttribute Id="o69">
+                <a:ObjectID>{B44FAE9C-9852-447D-89E7-93B8FC75FD7D}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>UUID v4 định danh ghi chú</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o70">
+                <a:ObjectID>{CDE2A7B4-6478-4368-A13D-DFBBE918A3A2}</a:ObjectID>
+                <a:Name>user_id</a:Name>
+                <a:Code>user_id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Tài khoản sở hữu ghi chú</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o71">
+                <a:ObjectID>{A8C6EAC2-5E71-4C56-AA5D-3867ABBF17FD}</a:ObjectID>
+                <a:Name>folder_id</a:Name>
+                <a:Code>folder_id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+                <a:Comment>Thư mục phân loại</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o72">
+                <a:ObjectID>{49B59A65-B3BA-4EAC-9F48-A2F883E573F7}</a:ObjectID>
+                <a:Name>document_id</a:Name>
+                <a:Code>document_id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+                <a:Comment>Tài liệu liên kết</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o73">
+                <a:ObjectID>{5C969121-05AE-4EA6-B212-E4B49AD14BAF}</a:ObjectID>
+                <a:Name>title</a:Name>
+                <a:Code>title</a:Code>
+                <a:DataType>VARCHAR</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Tiêu đề ghi chú</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o74">
+                <a:ObjectID>{4314A3DA-CB1A-498D-9EFB-064EC057A8ED}</a:ObjectID>
+                <a:Name>category</a:Name>
+                <a:Code>category</a:Code>
+                <a:DataType>VARCHAR</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+                <a:Comment>Danh mục chủ đề</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o75">
+                <a:ObjectID>{9D40BAFB-E124-4E04-A40C-7F754C802481}</a:ObjectID>
+                <a:Name>content</a:Name>
+                <a:Code>content</a:Code>
+                <a:DataType>TEXT</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+                <a:Comment>Nội dung ghi chú HTML/Markdown</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o76">
+                <a:ObjectID>{F3410914-72DC-4B51-BF0D-0639BF9CD3BF}</a:ObjectID>
+                <a:Name>is_pinned</a:Name>
+                <a:Code>is_pinned</a:Code>
+                <a:DataType>BOOLEAN</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Cờ đánh dấu ghim</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o77">
+                <a:ObjectID>{6FC77899-6BA8-4EE7-A24F-8F5CF6754C51}</a:ObjectID>
+                <a:Name>is_favorite</a:Name>
+                <a:Code>is_favorite</a:Code>
+                <a:DataType>BOOLEAN</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Cờ đánh dấu yêu thích</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o78">
+                <a:ObjectID>{063BBE12-9F89-4C29-BFEB-42DCBB70E3B9}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Thời điểm tạo</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o79">
+                <a:ObjectID>{152F6592-F23E-45BB-8AFD-9B9DDA4D4D6C}</a:ObjectID>
+                <a:Name>updated_at</a:Name>
+                <a:Code>updated_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Thời điểm sửa</a:Comment>
+              </o:EntityAttribute>
+            </c:Attributes>
+          </o:Entity>
+          <o:Entity Id="o80">
+            <a:ObjectID>{537AFF4D-D4AA-45D8-A6C5-1990472EABFC}</a:ObjectID>
+            <a:Name>TAG</a:Name>
+            <a:Code>TAG</a:Code>
+            <a:Comment>Nhãn phân loại từ khóa tự do</a:Comment>
+            <c:Attributes>
+              <o:EntityAttribute Id="o81">
+                <a:ObjectID>{F19D418A-8A9F-4ECA-B467-97370B660854}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>BIGINT</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Khóa chính tự tăng</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o82">
+                <a:ObjectID>{57E8CF94-4A30-408A-82A2-2E69BA8DD302}</a:ObjectID>
+                <a:Name>user_id</a:Name>
+                <a:Code>user_id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Tài khoản sở hữu nhãn</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o83">
+                <a:ObjectID>{07938566-5F98-408D-B18F-53366DFED2A4}</a:ObjectID>
+                <a:Name>name</a:Name>
+                <a:Code>name</a:Code>
+                <a:DataType>VARCHAR</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Tên nhãn từ khóa</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o84">
+                <a:ObjectID>{D7FA4B9C-DA3E-41BA-A84B-DE3A7333ABDB}</a:ObjectID>
+                <a:Name>color</a:Name>
+                <a:Code>color</a:Code>
+                <a:DataType>VARCHAR</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+                <a:Comment>Mã màu nhận diện</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o85">
+                <a:ObjectID>{0B6E6A64-9305-47F3-8390-8C784513C557}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Thời điểm tạo</a:Comment>
+              </o:EntityAttribute>
+            </c:Attributes>
+          </o:Entity>
+          <o:Entity Id="o86">
+            <a:ObjectID>{7ECA678B-853C-4309-B1E8-51B065BCDFA6}</a:ObjectID>
+            <a:Name>DOCUMENT_TAG</a:Name>
+            <a:Code>DOCUMENT_TAG</a:Code>
+            <a:Comment>Bảng kết hợp N-N Tài liệu và Nhãn</a:Comment>
+            <c:Attributes>
+              <o:EntityAttribute Id="o87">
+                <a:ObjectID>{CE7D2CAA-88AF-4576-8D01-C44E1948B9A1}</a:ObjectID>
+                <a:Name>document_id</a:Name>
+                <a:Code>document_id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Tài liệu được gắn thẻ</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o88">
+                <a:ObjectID>{A6F9E447-09B0-4B56-852C-A93850B5825D}</a:ObjectID>
+                <a:Name>tag_id</a:Name>
+                <a:Code>tag_id</a:Code>
+                <a:DataType>BIGINT</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Nhãn được gắn</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o89">
+                <a:ObjectID>{E44FF48D-5A72-495E-949F-A090A8435512}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Thời điểm gắn thẻ</a:Comment>
+              </o:EntityAttribute>
+            </c:Attributes>
+          </o:Entity>
+          <o:Entity Id="o90">
+            <a:ObjectID>{C9760CF4-163A-478D-8F09-40381DE78841}</a:ObjectID>
+            <a:Name>COLLECTION</a:Name>
+            <a:Code>COLLECTION</a:Code>
+            <a:Comment>Bộ sưu tập chuyên đề</a:Comment>
+            <c:Attributes>
+              <o:EntityAttribute Id="o91">
+                <a:ObjectID>{BE310720-BC7A-43B5-9218-536AB821FC78}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>UUID v4 định danh bộ sưu tập</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o92">
+                <a:ObjectID>{65343D0E-DC5F-439F-B03E-7CE3C49CBE52}</a:ObjectID>
+                <a:Name>user_id</a:Name>
+                <a:Code>user_id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Tài khoản sở hữu bộ sưu tập</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o93">
+                <a:ObjectID>{5FE1B533-A3AC-4F4A-8540-9A308D333D79}</a:ObjectID>
+                <a:Name>name</a:Name>
+                <a:Code>name</a:Code>
+                <a:DataType>VARCHAR</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Tên bộ sưu tập</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o94">
+                <a:ObjectID>{AEF6BC66-9312-482F-9ED0-5FE78D3C08BE}</a:ObjectID>
+                <a:Name>description</a:Name>
+                <a:Code>description</a:Code>
+                <a:DataType>TEXT</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+                <a:Comment>Mô tả bộ sưu tập</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o95">
+                <a:ObjectID>{41CA39B5-E57F-4B9B-B7F5-D05982623495}</a:ObjectID>
+                <a:Name>color</a:Name>
+                <a:Code>color</a:Code>
+                <a:DataType>VARCHAR</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+                <a:Comment>Mã màu nhận diện</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o96">
+                <a:ObjectID>{69A59A4A-DBED-43F2-AA7A-55492A58C810}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Thời điểm tạo</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o97">
+                <a:ObjectID>{61F510DE-7A92-487D-80A2-10C2ADE9124E}</a:ObjectID>
+                <a:Name>updated_at</a:Name>
+                <a:Code>updated_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Thời điểm sửa</a:Comment>
+              </o:EntityAttribute>
+            </c:Attributes>
+          </o:Entity>
+          <o:Entity Id="o98">
+            <a:ObjectID>{B237C5D3-1D06-4B84-956A-1C535F34BAEB}</a:ObjectID>
+            <a:Name>FLASHCARD_DECK</a:Name>
+            <a:Code>FLASHCARD_DECK</a:Code>
+            <a:Comment>Bộ thẻ ghi nhớ Flashcard</a:Comment>
+            <c:Attributes>
+              <o:EntityAttribute Id="o99">
+                <a:ObjectID>{9BD36A4D-2426-42CC-B8E0-4CC4BDED45A0}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>UUID v4 định danh bộ thẻ</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o100">
+                <a:ObjectID>{361D43AA-65C3-4DAE-BEB3-A040108FFE68}</a:ObjectID>
+                <a:Name>user_id</a:Name>
+                <a:Code>user_id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Tài khoản sở hữu bộ thẻ</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o101">
+                <a:ObjectID>{43B7723B-7695-45F7-B3E5-A53D7EABC072}</a:ObjectID>
+                <a:Name>document_id</a:Name>
+                <a:Code>document_id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+                <a:Comment>Tài liệu nguồn liên quan</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o102">
+                <a:ObjectID>{3BCC66EF-DFD9-436F-AADF-2DE88ACF131F}</a:ObjectID>
+                <a:Name>name</a:Name>
+                <a:Code>name</a:Code>
+                <a:DataType>VARCHAR</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Tên bộ thẻ</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o103">
+                <a:ObjectID>{E49DD7B3-909A-4A5B-82D3-24AD7ECFACF0}</a:ObjectID>
+                <a:Name>description</a:Name>
+                <a:Code>description</a:Code>
+                <a:DataType>TEXT</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+                <a:Comment>Mô tả bộ thẻ</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o104">
+                <a:ObjectID>{F58373C3-8E02-4890-87B9-D7D909B7C8A4}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Thời điểm tạo</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o105">
+                <a:ObjectID>{C23B5DE5-538C-4D7F-9DBB-4304887D81C8}</a:ObjectID>
+                <a:Name>updated_at</a:Name>
+                <a:Code>updated_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Thời điểm cập nhật</a:Comment>
+              </o:EntityAttribute>
+            </c:Attributes>
+          </o:Entity>
+          <o:Entity Id="o106">
+            <a:ObjectID>{9512D7D7-F772-413C-ABB2-25F94568B7E9}</a:ObjectID>
+            <a:Name>FLASHCARD</a:Name>
+            <a:Code>FLASHCARD</a:Code>
+            <a:Comment>Thẻ ghi nhớ Flashcard chi tiết</a:Comment>
+            <c:Attributes>
+              <o:EntityAttribute Id="o107">
+                <a:ObjectID>{A03CFCE5-5CC3-407F-B8AA-416312AE4D25}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>UUID v4 định danh thẻ</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o108">
+                <a:ObjectID>{5A69CBAA-B33A-4FE6-A69F-4409A253C311}</a:ObjectID>
+                <a:Name>deck_id</a:Name>
+                <a:Code>deck_id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Bộ thẻ chứa thẻ này</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o109">
+                <a:ObjectID>{2D0B9C6C-7867-4A07-8B15-A24911C9223C}</a:ObjectID>
+                <a:Name>front_text</a:Name>
+                <a:Code>front_text</a:Code>
+                <a:DataType>TEXT</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Nội dung câu hỏi mặt trước</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o110">
+                <a:ObjectID>{4E00B013-B76D-4565-92EA-5D289BD35398}</a:ObjectID>
+                <a:Name>back_text</a:Name>
+                <a:Code>back_text</a:Code>
+                <a:DataType>TEXT</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Nội dung câu trả lời mặt sau</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o111">
+                <a:ObjectID>{E78F39A6-FF41-42CF-9BC3-2945B8267EC0}</a:ObjectID>
+                <a:Name>is_known</a:Name>
+                <a:Code>is_known</a:Code>
+                <a:DataType>BOOLEAN</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Trạng thái đã ghi nhớ</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o112">
+                <a:ObjectID>{9511517E-DF3B-4F6D-8A99-14C7B9A2F886}</a:ObjectID>
+                <a:Name>review_count</a:Name>
+                <a:Code>review_count</a:Code>
+                <a:DataType>INT</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Số lần đã ôn tập</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o113">
+                <a:ObjectID>{8B75A45C-16DE-4A09-BDEC-4807C68B8BB8}</a:ObjectID>
+                <a:Name>last_reviewed_at</a:Name>
+                <a:Code>last_reviewed_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+                <a:Comment>Thời điểm ôn tập gần nhất</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o114">
+                <a:ObjectID>{2E1167E9-3D86-4185-A6D2-2FB30D7305EB}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Thời điểm tạo thẻ</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o115">
+                <a:ObjectID>{E0B24062-2C63-4E5E-81A5-FEB8B36C2EE5}</a:ObjectID>
+                <a:Name>updated_at</a:Name>
+                <a:Code>updated_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Thời điểm cập nhật thẻ</a:Comment>
+              </o:EntityAttribute>
+            </c:Attributes>
+          </o:Entity>
+          <o:Entity Id="o116">
+            <a:ObjectID>{4E91A91F-BA25-4003-AE18-63602D18FECD}</a:ObjectID>
+            <a:Name>COLLECTION_ITEM</a:Name>
+            <a:Code>COLLECTION_ITEM</a:Code>
+            <a:Comment>Phần tử trong bộ sưu tập (Khóa ngoại tường minh)</a:Comment>
+            <c:Attributes>
+              <o:EntityAttribute Id="o117">
+                <a:ObjectID>{D720F5F9-3A2C-4CC6-ADE5-0EB5082EEA9B}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>BIGINT</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Khóa chính tự tăng</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o118">
+                <a:ObjectID>{2D91D035-7A97-458E-97D0-6566C9ABE0A1}</a:ObjectID>
+                <a:Name>collection_id</a:Name>
+                <a:Code>collection_id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Bộ sưu tập chứa phần tử</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o119">
+                <a:ObjectID>{85E68400-152E-4020-B77F-821E493795D7}</a:ObjectID>
+                <a:Name>document_id</a:Name>
+                <a:Code>document_id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+                <a:Comment>Tài liệu liên kết</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o120">
+                <a:ObjectID>{EF3DAD0F-64B0-4B25-BA06-846A24DF0DA1}</a:ObjectID>
+                <a:Name>note_id</a:Name>
+                <a:Code>note_id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+                <a:Comment>Ghi chú liên kết</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o121">
+                <a:ObjectID>{D8AFEE10-F58E-404D-8FB0-177CE1C10080}</a:ObjectID>
+                <a:Name>deck_id</a:Name>
+                <a:Code>deck_id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+                <a:Comment>Bộ thẻ liên kết</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o122">
+                <a:ObjectID>{CC0DC480-73A2-4F97-8CAF-F6C6297E3E98}</a:ObjectID>
+                <a:Name>added_at</a:Name>
+                <a:Code>added_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Thời điểm thêm vào</a:Comment>
+              </o:EntityAttribute>
+            </c:Attributes>
+          </o:Entity>
+          <o:Entity Id="o123">
+            <a:ObjectID>{0758A376-DA5C-404B-B28D-C494191EB333}</a:ObjectID>
+            <a:Name>ARCHIVE</a:Name>
+            <a:Code>ARCHIVE</a:Code>
+            <a:Comment>Gói nén ZIP và 7Z gốc</a:Comment>
+            <c:Attributes>
+              <o:EntityAttribute Id="o124">
+                <a:ObjectID>{4704D25C-A262-434E-A0FD-55D6C1D051C4}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>UUID v4 định danh gói nén</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o125">
+                <a:ObjectID>{BF7ADFB1-7AAE-45E2-86AF-D2EE7D999F37}</a:ObjectID>
+                <a:Name>user_id</a:Name>
+                <a:Code>user_id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Tài khoản sở hữu gói nén</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o126">
+                <a:ObjectID>{353E923E-E6BB-4CF2-A0CC-0B5E0FFCA5EF}</a:ObjectID>
+                <a:Name>name</a:Name>
+                <a:Code>name</a:Code>
+                <a:DataType>VARCHAR</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Tên hiển thị gói nén</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o127">
+                <a:ObjectID>{BE13633B-0AD8-4B74-8935-1AD030BCD3A0}</a:ObjectID>
+                <a:Name>original_name</a:Name>
+                <a:Code>original_name</a:Code>
+                <a:DataType>VARCHAR</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Tên file gốc khi upload</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o128">
+                <a:ObjectID>{B93D2325-22E4-4157-9279-BDEB33CC5284}</a:ObjectID>
+                <a:Name>format</a:Name>
+                <a:Code>format</a:Code>
+                <a:DataType>ENUM</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Định dạng gói nén</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o129">
+                <a:ObjectID>{11DCAB25-D9A0-4103-9A78-8E034784E39E}</a:ObjectID>
+                <a:Name>file_size</a:Name>
+                <a:Code>file_size</a:Code>
+                <a:DataType>BIGINT</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Kích thước file nén (bytes)</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o130">
+                <a:ObjectID>{DCE6204D-E716-4FAA-AF49-A697636D5ABE}</a:ObjectID>
+                <a:Name>uncompressed_size</a:Name>
+                <a:Code>uncompressed_size</a:Code>
+                <a:DataType>BIGINT</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Dung lượng sau giải nén (bytes)</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o131">
+                <a:ObjectID>{03E8C0DB-E466-4C4F-A095-919DAD2D07E3}</a:ObjectID>
+                <a:Name>max_ratio</a:Name>
+                <a:Code>max_ratio</a:Code>
+                <a:DataType>DECIMAL</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Tỉ lệ bung nén</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o132">
+                <a:ObjectID>{5254E1AE-A060-4537-801A-990A7C160EA5}</a:ObjectID>
+                <a:Name>file_count</a:Name>
+                <a:Code>file_count</a:Code>
+                <a:DataType>INT</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Tổng số file bên trong gói</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o133">
+                <a:ObjectID>{FBD0C595-F668-4C00-9C11-218E9C57318D}</a:ObjectID>
+                <a:Name>storage_path</a:Name>
+                <a:Code>storage_path</a:Code>
+                <a:DataType>VARCHAR</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Đường dẫn lưu trữ gói gốc</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o134">
+                <a:ObjectID>{1064B977-7DAE-4DCA-B26C-6E9D722A5A1E}</a:ObjectID>
+                <a:Name>sha256_checksum</a:Name>
+                <a:Code>sha256_checksum</a:Code>
+                <a:DataType>CHAR</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Mã băm SHA-256 đối soát toàn vẹn</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o135">
+                <a:ObjectID>{4098719A-EE69-44BE-8376-6ED5D0EF08C1}</a:ObjectID>
+                <a:Name>scan_status</a:Name>
+                <a:Code>scan_status</a:Code>
+                <a:DataType>ENUM</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Trạng thái quét</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o136">
+                <a:ObjectID>{EC6B3CC6-7F2E-4421-B6CF-2AF4E1CE167A}</a:ObjectID>
+                <a:Name>manifest_json</a:Name>
+                <a:Code>manifest_json</a:Code>
+                <a:DataType>JSON</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Cây thư mục và danh sách file JSON</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o137">
+                <a:ObjectID>{EF3D18BA-68AD-4362-AAD5-9FEE3967B066}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Thời điểm tải lên</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o138">
+                <a:ObjectID>{00B14956-CDB0-43E4-ADDE-0D56945DBC6F}</a:ObjectID>
+                <a:Name>updated_at</a:Name>
+                <a:Code>updated_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Thời điểm cập nhật</a:Comment>
+              </o:EntityAttribute>
+            </c:Attributes>
+          </o:Entity>
+          <o:Entity Id="o139">
+            <a:ObjectID>{8F02B7CA-8D5F-4F63-8CA1-D6E1FDAE9B1C}</a:ObjectID>
+            <a:Name>ARCHIVE_EXTRACTED_FILE</a:Name>
+            <a:Code>ARCHIVE_EXTRACTED_FILE</a:Code>
+            <a:Comment>Liên kết file giải nén từ gói nén vào thư viện</a:Comment>
+            <c:Attributes>
+              <o:EntityAttribute Id="o140">
+                <a:ObjectID>{BB319FEF-D79C-4FDB-8498-8B6B768B71AA}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>BIGINT</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Khóa chính tự tăng</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o141">
+                <a:ObjectID>{EFF7B801-C70F-40A2-9F63-46C30981C835}</a:ObjectID>
+                <a:Name>archive_id</a:Name>
+                <a:Code>archive_id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Gói nén nguồn</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o142">
+                <a:ObjectID>{9D8981D4-2144-495E-896A-089617D3DB93}</a:ObjectID>
+                <a:Name>document_id</a:Name>
+                <a:Code>document_id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Tài liệu đích đã tạo</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o143">
+                <a:ObjectID>{DF56F0FD-F1BA-44B4-BCA3-1DFF9324A60B}</a:ObjectID>
+                <a:Name>inner_path</a:Name>
+                <a:Code>inner_path</a:Code>
+                <a:DataType>VARCHAR</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Đường dẫn tương đối trong archive</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o144">
+                <a:ObjectID>{210BB031-1757-43B4-86DA-7D6360D15A07}</a:ObjectID>
+                <a:Name>extracted_at</a:Name>
+                <a:Code>extracted_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Thời điểm giải nén</a:Comment>
+              </o:EntityAttribute>
+            </c:Attributes>
+          </o:Entity>
+          <o:Entity Id="o145">
+            <a:ObjectID>{AAA1A4A4-7237-4442-9A9E-9F8F7F6AFB4A}</a:ObjectID>
+            <a:Name>AI_PROVIDER</a:Name>
+            <a:Code>AI_PROVIDER</a:Code>
+            <a:Comment>Danh mục nhà cung cấp AI hệ thống hỗ trợ</a:Comment>
+            <c:Attributes>
+              <o:EntityAttribute Id="o146">
+                <a:ObjectID>{969F1352-ACAD-4D8B-ABF6-DC948D422209}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>VARCHAR</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Mã nhà cung cấp (gemini, openai...)</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o147">
+                <a:ObjectID>{DDDDC0DD-26CF-49C6-A43B-98CB1D21B8E5}</a:ObjectID>
+                <a:Name>name</a:Name>
+                <a:Code>name</a:Code>
+                <a:DataType>VARCHAR</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Tên hiển thị provider</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o148">
+                <a:ObjectID>{6148B38C-93BB-4624-958F-316BD2013639}</a:ObjectID>
+                <a:Name>api_base_url</a:Name>
+                <a:Code>api_base_url</a:Code>
+                <a:DataType>VARCHAR</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>URL endpoint API gốc</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o149">
+                <a:ObjectID>{C6758C81-1AFD-4065-BECE-5F4CF34B2424}</a:ObjectID>
+                <a:Name>auth_header_format</a:Name>
+                <a:Code>auth_header_format</a:Code>
+                <a:DataType>VARCHAR</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Định dạng header xác thực</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o150">
+                <a:ObjectID>{90313CBA-E782-42BB-9A71-04BF399A1A46}</a:ObjectID>
+                <a:Name>icon</a:Name>
+                <a:Code>icon</a:Code>
+                <a:DataType>VARCHAR</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Tên icon Lucide</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o151">
+                <a:ObjectID>{B18C04A2-327C-49ED-9871-5DD7388413CD}</a:ObjectID>
+                <a:Name>is_active</a:Name>
+                <a:Code>is_active</a:Code>
+                <a:DataType>BOOLEAN</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Trạng thái kích hoạt</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o152">
+                <a:ObjectID>{AAC02F8F-0B37-484A-A775-EC0F12A040AB}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Thời điểm tạo</a:Comment>
+              </o:EntityAttribute>
+            </c:Attributes>
+          </o:Entity>
+          <o:Entity Id="o153">
+            <a:ObjectID>{E9B51F3D-51C7-49C1-9E23-DFEC69853170}</a:ObjectID>
+            <a:Name>AI_MODEL</a:Name>
+            <a:Code>AI_MODEL</a:Code>
+            <a:Comment>Danh mục model AI và thông số kỹ thuật</a:Comment>
+            <c:Attributes>
+              <o:EntityAttribute Id="o154">
+                <a:ObjectID>{BFA3B163-4577-4EB3-B99C-F39F1AB426B6}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>VARCHAR</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Mã model định danh (gemini-1.5-flash...)</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o155">
+                <a:ObjectID>{D887F9FC-08EC-425F-BAFE-D543AF1C95B0}</a:ObjectID>
+                <a:Name>provider_id</a:Name>
+                <a:Code>provider_id</a:Code>
+                <a:DataType>VARCHAR</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Nhà cung cấp sở hữu model</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o156">
+                <a:ObjectID>{63EC99C3-AB74-413E-BDAA-B3F73DFE1B33}</a:ObjectID>
+                <a:Name>display_name</a:Name>
+                <a:Code>display_name</a:Code>
+                <a:DataType>VARCHAR</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Tên hiển thị giao diện</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o157">
+                <a:ObjectID>{31F36B4F-2C84-4C1C-893B-E3A978CD4B7D}</a:ObjectID>
+                <a:Name>context_window</a:Name>
+                <a:Code>context_window</a:Code>
+                <a:DataType>INT</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Độ dài ngữ cảnh tối đa (tokens)</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o158">
+                <a:ObjectID>{94E518A5-8E73-4AF8-80D7-E62AA2A781C9}</a:ObjectID>
+                <a:Name>max_output_tokens</a:Name>
+                <a:Code>max_output_tokens</a:Code>
+                <a:DataType>INT</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Số token đầu ra tối đa</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o159">
+                <a:ObjectID>{458001E9-1433-4FEF-A435-F65DDD66E646}</a:ObjectID>
+                <a:Name>supports_vision</a:Name>
+                <a:Code>supports_vision</a:Code>
+                <a:DataType>BOOLEAN</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Hỗ trợ hình ảnh/PDF trực tiếp</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o160">
+                <a:ObjectID>{C25932FC-AAA6-416A-A933-E5D8BF7942E1}</a:ObjectID>
+                <a:Name>is_default</a:Name>
+                <a:Code>is_default</a:Code>
+                <a:DataType>BOOLEAN</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Cờ model khuyên dùng mặc định</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o161">
+                <a:ObjectID>{F2CCD0DC-9CFA-4DF5-BFA2-FB25DCDE3127}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Thời điểm tạo</a:Comment>
+              </o:EntityAttribute>
+            </c:Attributes>
+          </o:Entity>
+          <o:Entity Id="o162">
+            <a:ObjectID>{6AEF6335-4F68-400F-9AFF-9650A3103B87}</a:ObjectID>
+            <a:Name>AI_CONNECTION</a:Name>
+            <a:Code>AI_CONNECTION</a:Code>
+            <a:Comment>Cấu hình kết nối AI BYOK của người dùng</a:Comment>
+            <c:Attributes>
+              <o:EntityAttribute Id="o163">
+                <a:ObjectID>{88C08A29-06DC-4BC4-815E-16B12DE17731}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>UUID v4 định danh kết nối</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o164">
+                <a:ObjectID>{BA6AA169-8DD8-49EA-967B-932E2B32C72E}</a:ObjectID>
+                <a:Name>user_id</a:Name>
+                <a:Code>user_id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Tài khoản sở hữu kết nối</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o165">
+                <a:ObjectID>{2FDBBA1F-BFB0-41B8-AC7B-680C11AFB0BF}</a:ObjectID>
+                <a:Name>provider_id</a:Name>
+                <a:Code>provider_id</a:Code>
+                <a:DataType>VARCHAR</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Nhà cung cấp AI</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o166">
+                <a:ObjectID>{EF868673-520E-4832-9BCC-D0E5F048EA07}</a:ObjectID>
+                <a:Name>name</a:Name>
+                <a:Code>name</a:Code>
+                <a:DataType>VARCHAR</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Tên kết nối do người dùng đặt</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o167">
+                <a:ObjectID>{7BE01E1D-14FC-43D9-940A-2BEA2620BCCF}</a:ObjectID>
+                <a:Name>api_endpoint</a:Name>
+                <a:Code>api_endpoint</a:Code>
+                <a:DataType>VARCHAR</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+                <a:Comment>Custom API Endpoint nếu có</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o168">
+                <a:ObjectID>{562B9AA0-76D5-4E27-8778-4592DD75AAE3}</a:ObjectID>
+                <a:Name>encrypted_api_key</a:Name>
+                <a:Code>encrypted_api_key</a:Code>
+                <a:DataType>VARBINARY</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Khóa API mã hóa AES-256-GCM</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o169">
+                <a:ObjectID>{B79A5C7F-B3BB-497A-9508-60DE51B0C3B6}</a:ObjectID>
+                <a:Name>encryption_iv</a:Name>
+                <a:Code>encryption_iv</a:Code>
+                <a:DataType>VARBINARY</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>IV ngẫu nhiên cho mã hóa</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o170">
+                <a:ObjectID>{03C8C837-9456-47D9-89CA-EF551D590DE6}</a:ObjectID>
+                <a:Name>encryption_tag</a:Name>
+                <a:Code>encryption_tag</a:Code>
+                <a:DataType>VARBINARY</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Auth Tag xác thực tính toàn vẹn</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o171">
+                <a:ObjectID>{69C5D4A4-9664-47A5-8B51-C8F72B81881B}</a:ObjectID>
+                <a:Name>key_version</a:Name>
+                <a:Code>key_version</a:Code>
+                <a:DataType>INT</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Phiên bản Master Key mã hóa</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o172">
+                <a:ObjectID>{6F71523C-79D8-4073-BE12-A0E94E2D7D3A}</a:ObjectID>
+                <a:Name>api_key_masked</a:Name>
+                <a:Code>api_key_masked</a:Code>
+                <a:DataType>VARCHAR</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Chuỗi làm mờ API Key hiển thị UI</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o173">
+                <a:ObjectID>{FAE9A00C-D25B-435D-9B6A-282F2E4BC720}</a:ObjectID>
+                <a:Name>default_model_id</a:Name>
+                <a:Code>default_model_id</a:Code>
+                <a:DataType>VARCHAR</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Model mặc định được chọn</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o174">
+                <a:ObjectID>{88EA738E-C02F-4F3D-A8FF-82AF303A7FD4}</a:ObjectID>
+                <a:Name>is_connected</a:Name>
+                <a:Code>is_connected</a:Code>
+                <a:DataType>BOOLEAN</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Trạng thái kiểm tra kết nối</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o175">
+                <a:ObjectID>{A65B94B9-E0DD-427C-B3D4-7BCCD7DB64B2}</a:ObjectID>
+                <a:Name>last_tested_at</a:Name>
+                <a:Code>last_tested_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+                <a:Comment>Thời điểm kiểm tra kết nối gần nhất</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o176">
+                <a:ObjectID>{D1C6A6A3-4013-4A1B-B6FB-24599A094744}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Thời điểm tạo kết nối</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o177">
+                <a:ObjectID>{A4EDC258-DEC7-42D3-8A98-1D8663EBD839}</a:ObjectID>
+                <a:Name>updated_at</a:Name>
+                <a:Code>updated_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Thời điểm sửa kết nối</a:Comment>
+              </o:EntityAttribute>
+            </c:Attributes>
+          </o:Entity>
+          <o:Entity Id="o178">
+            <a:ObjectID>{DE65A1B8-0511-43AF-AA68-B80A5585A98F}</a:ObjectID>
+            <a:Name>AI_CONVERSATION</a:Name>
+            <a:Code>AI_CONVERSATION</a:Code>
+            <a:Comment>Các phiên trò chuyện với Trợ lý AI</a:Comment>
+            <c:Attributes>
+              <o:EntityAttribute Id="o179">
+                <a:ObjectID>{A54EF3AE-EE62-4AD6-AC66-391DAB62371B}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>UUID v4 định danh cuộc trò chuyện</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o180">
+                <a:ObjectID>{74619171-90F0-45EC-A143-046D428EF630}</a:ObjectID>
+                <a:Name>user_id</a:Name>
+                <a:Code>user_id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Tài khoản sở hữu cuộc trò chuyện</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o181">
+                <a:ObjectID>{8DD9ABC9-1626-4969-AB5D-417396E7EE03}</a:ObjectID>
+                <a:Name>connection_id</a:Name>
+                <a:Code>connection_id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+                <a:Comment>Kết nối AI BYOK</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o182">
+                <a:ObjectID>{7D969887-6197-4FA1-B06F-3CCD23A32D89}</a:ObjectID>
+                <a:Name>model_name</a:Name>
+                <a:Code>model_name</a:Code>
+                <a:DataType>VARCHAR</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Tên model đã sử dụng</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o183">
+                <a:ObjectID>{EF3F3977-88C4-409D-8E75-53CA49D9F980}</a:ObjectID>
+                <a:Name>title</a:Name>
+                <a:Code>title</a:Code>
+                <a:DataType>VARCHAR</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Tiêu đề cuộc trò chuyện</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o184">
+                <a:ObjectID>{F3FDAF9A-49B5-4ED9-97B1-A0F5240DDA43}</a:ObjectID>
+                <a:Name>pinned_document_id</a:Name>
+                <a:Code>pinned_document_id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+                <a:Comment>Tài liệu ghim ngữ cảnh</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o185">
+                <a:ObjectID>{05FB77D0-8363-4FC5-87BE-94E7BCA266E8}</a:ObjectID>
+                <a:Name>total_tokens_used</a:Name>
+                <a:Code>total_tokens_used</a:Code>
+                <a:DataType>INT</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Tổng số token tiêu thụ</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o186">
+                <a:ObjectID>{B9C3DBA3-EA18-4980-B5BB-33500218C138}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Thời điểm tạo</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o187">
+                <a:ObjectID>{CC0082EF-7B22-487C-9395-18380C976990}</a:ObjectID>
+                <a:Name>updated_at</a:Name>
+                <a:Code>updated_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Thời điểm cập nhật</a:Comment>
+              </o:EntityAttribute>
+            </c:Attributes>
+          </o:Entity>
+          <o:Entity Id="o188">
+            <a:ObjectID>{800EB02F-2B7F-4163-A86A-BDA65A91109F}</a:ObjectID>
+            <a:Name>AI_MESSAGE</a:Name>
+            <a:Code>AI_MESSAGE</a:Code>
+            <a:Comment>Chi tiết tin nhắn trong cuộc trò chuyện AI</a:Comment>
+            <c:Attributes>
+              <o:EntityAttribute Id="o189">
+                <a:ObjectID>{56F93C25-4231-4115-ABEB-807E7503D615}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>BIGINT</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Khóa chính tự tăng</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o190">
+                <a:ObjectID>{7C0454A8-CF7E-4883-ABD5-FDF38ABD46FD}</a:ObjectID>
+                <a:Name>conversation_id</a:Name>
+                <a:Code>conversation_id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Cuộc trò chuyện chứa tin nhắn</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o191">
+                <a:ObjectID>{73ACC450-5B38-4760-B3E1-387C8F57F081}</a:ObjectID>
+                <a:Name>role</a:Name>
+                <a:Code>role</a:Code>
+                <a:DataType>ENUM</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Vai trò người gửi</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o192">
+                <a:ObjectID>{45E87195-8BA5-4BDC-AB89-E6DEE03D4CED}</a:ObjectID>
+                <a:Name>content</a:Name>
+                <a:Code>content</a:Code>
+                <a:DataType>TEXT</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Nội dung tin nhắn Markdown/Code</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o193">
+                <a:ObjectID>{F3D32D7E-2533-40C5-A23F-E4669A138BF5}</a:ObjectID>
+                <a:Name>prompt_tokens</a:Name>
+                <a:Code>prompt_tokens</a:Code>
+                <a:DataType>INT</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Số token đầu vào</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o194">
+                <a:ObjectID>{9BE60A40-A76E-4F43-9101-8CBF25EE4924}</a:ObjectID>
+                <a:Name>completion_tokens</a:Name>
+                <a:Code>completion_tokens</a:Code>
+                <a:DataType>INT</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Số token sinh ra</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o195">
+                <a:ObjectID>{A94BEB5A-B103-4637-A405-9A3CAA386CA8}</a:ObjectID>
+                <a:Name>references_json</a:Name>
+                <a:Code>references_json</a:Code>
+                <a:DataType>JSON</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+                <a:Comment>Nguồn tài liệu trích dẫn tham chiếu</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o196">
+                <a:ObjectID>{11A76A8F-1B27-4310-B5AA-8B3D996B7782}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Thời điểm gửi</a:Comment>
+              </o:EntityAttribute>
+            </c:Attributes>
+          </o:Entity>
+          <o:Entity Id="o197">
+            <a:ObjectID>{D7771BFB-0F6B-4886-83C8-9F6C57C7D020}</a:ObjectID>
+            <a:Name>AI_TASK</a:Name>
+            <a:Code>AI_TASK</a:Code>
+            <a:Comment>Quy trình xử lý AI tự động</a:Comment>
+            <c:Attributes>
+              <o:EntityAttribute Id="o198">
+                <a:ObjectID>{AAB5B579-1F77-4F03-9E2B-1106515ECBDA}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>UUID v4 định danh tác vụ</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o199">
+                <a:ObjectID>{EAF3B121-346D-4E9C-B583-65AD2286E385}</a:ObjectID>
+                <a:Name>user_id</a:Name>
+                <a:Code>user_id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Tài khoản sở hữu tác vụ</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o200">
+                <a:ObjectID>{9AFA4D75-8DF5-4954-A925-219E79CF99EF}</a:ObjectID>
+                <a:Name>source_document_id</a:Name>
+                <a:Code>source_document_id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+                <a:Comment>Tài liệu nguồn liên quan</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o201">
+                <a:ObjectID>{6965C40D-86AB-4390-A190-6C512D77E665}</a:ObjectID>
+                <a:Name>connection_id</a:Name>
+                <a:Code>connection_id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+                <a:Comment>Kết nối AI thực thi</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o202">
+                <a:ObjectID>{665AFCDF-E228-43A5-A0DC-C42909E78EE9}</a:ObjectID>
+                <a:Name>name</a:Name>
+                <a:Code>name</a:Code>
+                <a:DataType>VARCHAR</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Tên quy trình / tác vụ</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o203">
+                <a:ObjectID>{F485FE25-5DF4-435D-B374-37AC9062BA8D}</a:ObjectID>
+                <a:Name>description</a:Name>
+                <a:Code>description</a:Code>
+                <a:DataType>TEXT</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+                <a:Comment>Mô tả chi tiết tác vụ</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o204">
+                <a:ObjectID>{09B502E5-32B0-421F-B656-4090E638AF2E}</a:ObjectID>
+                <a:Name>trigger_type</a:Name>
+                <a:Code>trigger_type</a:Code>
+                <a:DataType>ENUM</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Cơ chế kích hoạt</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o205">
+                <a:ObjectID>{C62E6214-EEED-47F5-912D-62687C9B7DB4}</a:ObjectID>
+                <a:Name>status</a:Name>
+                <a:Code>status</a:Code>
+                <a:DataType>ENUM</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Trạng thái tác vụ</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o206">
+                <a:ObjectID>{D18F71E6-A3FD-4AE7-B37A-4723A90C44E4}</a:ObjectID>
+                <a:Name>progress</a:Name>
+                <a:Code>progress</a:Code>
+                <a:DataType>TINYINT</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Tiến độ xử lý (0-100%)</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o207">
+                <a:ObjectID>{5ABB5E41-12BE-4E21-AA32-56FC77F04864}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Thời điểm tạo tác vụ</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o208">
+                <a:ObjectID>{369FD5DC-E691-455D-9F17-50A0E2AF363F}</a:ObjectID>
+                <a:Name>completed_at</a:Name>
+                <a:Code>completed_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+                <a:Comment>Thời điểm hoàn thành tác vụ</a:Comment>
+              </o:EntityAttribute>
+            </c:Attributes>
+          </o:Entity>
+          <o:Entity Id="o209">
+            <a:ObjectID>{6BBC5D91-355E-4845-A0C5-A07F6469A297}</a:ObjectID>
+            <a:Name>AI_TASK_LOG</a:Name>
+            <a:Code>AI_TASK_LOG</a:Code>
+            <a:Comment>Nhật ký thực thi từng bước tác vụ AI</a:Comment>
+            <c:Attributes>
+              <o:EntityAttribute Id="o210">
+                <a:ObjectID>{A59D870E-FB61-4335-A821-F284ECA4E752}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>BIGINT</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Khóa chính tự tăng</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o211">
+                <a:ObjectID>{11E89AA7-5FDD-450D-9B6C-A6BB469D6CB5}</a:ObjectID>
+                <a:Name>task_id</a:Name>
+                <a:Code>task_id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Tác vụ liên quan</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o212">
+                <a:ObjectID>{484E615D-4007-4758-A921-CAB0B18960E5}</a:ObjectID>
+                <a:Name>step_name</a:Name>
+                <a:Code>step_name</a:Code>
+                <a:DataType>VARCHAR</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Tên bước thực hiện</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o213">
+                <a:ObjectID>{898EFA39-E183-46FE-A64D-B7A3045AF442}</a:ObjectID>
+                <a:Name>status</a:Name>
+                <a:Code>status</a:Code>
+                <a:DataType>ENUM</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Trạng thái bước</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o214">
+                <a:ObjectID>{ECED0B21-3624-4050-86D2-41FE80BB9861}</a:ObjectID>
+                <a:Name>duration_ms</a:Name>
+                <a:Code>duration_ms</a:Code>
+                <a:DataType>INT</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Thời gian thực thi (mili-giây)</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o215">
+                <a:ObjectID>{F5A6AF92-E574-437C-986B-45CAA0C70A23}</a:ObjectID>
+                <a:Name>tokens_used</a:Name>
+                <a:Code>tokens_used</a:Code>
+                <a:DataType>INT</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Số token đã tiêu thụ</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o216">
+                <a:ObjectID>{D9555020-D95C-460A-B0ED-DFC091512DF0}</a:ObjectID>
+                <a:Name>input_summary</a:Name>
+                <a:Code>input_summary</a:Code>
+                <a:DataType>TEXT</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+                <a:Comment>Đầu vào tóm lược</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o217">
+                <a:ObjectID>{275B7733-DB14-49BC-85E4-97489955F8DF}</a:ObjectID>
+                <a:Name>output_summary</a:Name>
+                <a:Code>output_summary</a:Code>
+                <a:DataType>TEXT</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+                <a:Comment>Đầu ra kết quả</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o218">
+                <a:ObjectID>{C531345D-EA82-4561-A911-899B5F99B8C2}</a:ObjectID>
+                <a:Name>error_message</a:Name>
+                <a:Code>error_message</a:Code>
+                <a:DataType>TEXT</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+                <a:Comment>Thông báo lỗi nếu có</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o219">
+                <a:ObjectID>{F48C63B4-3876-49C9-B1D5-B0A3EBB391D0}</a:ObjectID>
+                <a:Name>executed_at</a:Name>
+                <a:Code>executed_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Thời điểm chạy bước</a:Comment>
+              </o:EntityAttribute>
+            </c:Attributes>
+          </o:Entity>
+          <o:Entity Id="o220">
+            <a:ObjectID>{154F2E27-875D-4F36-92CF-C0662941DEBC}</a:ObjectID>
+            <a:Name>AI_CONTEXT</a:Name>
+            <a:Code>AI_CONTEXT</a:Code>
+            <a:Comment>Kho ngữ cảnh tri thức AI Capsule</a:Comment>
+            <c:Attributes>
+              <o:EntityAttribute Id="o221">
+                <a:ObjectID>{68DC2809-4A24-4741-8A3D-D3ED4343AE8C}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>UUID v4 định danh AI Context</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o222">
+                <a:ObjectID>{F593683A-F227-4815-994F-7D3DDA7BFD24}</a:ObjectID>
+                <a:Name>user_id</a:Name>
+                <a:Code>user_id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Tài khoản sở hữu Context</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o223">
+                <a:ObjectID>{61773DC9-5E4B-47D3-B6CD-3CD761579EFB}</a:ObjectID>
+                <a:Name>title</a:Name>
+                <a:Code>title</a:Code>
+                <a:DataType>VARCHAR</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Tiêu đề ngữ cảnh tri thức</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o224">
+                <a:ObjectID>{4AF23A40-157A-41FC-8B93-9428BA1EB850}</a:ObjectID>
+                <a:Name>schema_version</a:Name>
+                <a:Code>schema_version</a:Code>
+                <a:DataType>VARCHAR</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Phiên bản schema JSON</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o225">
+                <a:ObjectID>{E00EB1DB-97F3-4EA0-935C-10FF45D70052}</a:ObjectID>
+                <a:Name>current_version</a:Name>
+                <a:Code>current_version</a:Code>
+                <a:DataType>VARCHAR</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Phiên bản nội dung tri thức</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o226">
+                <a:ObjectID>{52B6AF27-7414-48A4-8CD3-A7B4D7010298}</a:ObjectID>
+                <a:Name>summary</a:Name>
+                <a:Code>summary</a:Code>
+                <a:DataType>TEXT</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Tóm tắt tổng quan tri thức</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o227">
+                <a:ObjectID>{DCC9224E-3A3D-43F8-9075-6AEED8B1A4C1}</a:ObjectID>
+                <a:Name>knowledge_points_json</a:Name>
+                <a:Code>knowledge_points_json</a:Code>
+                <a:DataType>JSON</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Mảng JSON chứa các luận điểm tri thức</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o228">
+                <a:ObjectID>{BC65335D-CFC7-4429-A5CC-3BA23284D8D2}</a:ObjectID>
+                <a:Name>conclusions_json</a:Name>
+                <a:Code>conclusions_json</a:Code>
+                <a:DataType>JSON</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Mảng JSON chứa các kết luận</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o229">
+                <a:ObjectID>{5719358E-66D9-4436-8449-67470026F6F7}</a:ObjectID>
+                <a:Name>open_questions_json</a:Name>
+                <a:Code>open_questions_json</a:Code>
+                <a:DataType>JSON</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+                <a:Comment>Mảng JSON chứa các câu hỏi mở</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o230">
+                <a:ObjectID>{E634DC0C-A9C6-44FB-B1FC-688C6D5FE5BF}</a:ObjectID>
+                <a:Name>learning_progress</a:Name>
+                <a:Code>learning_progress</a:Code>
+                <a:DataType>TINYINT</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Điểm tiến độ thấu hiểu (0-100%)</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o231">
+                <a:ObjectID>{6EBAEAFC-CCD4-443A-B0B2-3FDBFE64FD1F}</a:ObjectID>
+                <a:Name>handoff_directive</a:Name>
+                <a:Code>handoff_directive</a:Code>
+                <a:DataType>TEXT</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+                <a:Comment>Chỉ dẫn sư phạm cho phiên AI tiếp theo</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o232">
+                <a:ObjectID>{BC0DDBB3-1B0E-42F7-9C26-26CE71DC8948}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Thời điểm khởi tạo</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o233">
+                <a:ObjectID>{0D555F6E-9241-44D5-9134-4950A1E1EB04}</a:ObjectID>
+                <a:Name>updated_at</a:Name>
+                <a:Code>updated_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Thời điểm cập nhật</a:Comment>
+              </o:EntityAttribute>
+            </c:Attributes>
+          </o:Entity>
+          <o:Entity Id="o234">
+            <a:ObjectID>{CA7C08CB-30FB-4696-8D67-78FB72FF7848}</a:ObjectID>
+            <a:Name>AI_CONTEXT_VERSION</a:Name>
+            <a:Code>AI_CONTEXT_VERSION</a:Code>
+            <a:Comment>Lịch sử snapshot phiên bản AI Context</a:Comment>
+            <c:Attributes>
+              <o:EntityAttribute Id="o235">
+                <a:ObjectID>{C326EA4B-2687-46BD-B1B5-0ACEBB55D274}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>BIGINT</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Khóa chính tự tăng</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o236">
+                <a:ObjectID>{999158B8-E688-4CE7-91ED-8159AD76A69F}</a:ObjectID>
+                <a:Name>context_id</a:Name>
+                <a:Code>context_id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>AI Context được chụp</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o237">
+                <a:ObjectID>{6F352E35-0884-48C1-842F-836BD529BB72}</a:ObjectID>
+                <a:Name>version_tag</a:Name>
+                <a:Code>version_tag</a:Code>
+                <a:DataType>VARCHAR</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Số hiệu phiên bản snapshot</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o238">
+                <a:ObjectID>{4028B784-C8CA-465F-BB59-FE11492C9A75}</a:ObjectID>
+                <a:Name>snapshot_json</a:Name>
+                <a:Code>snapshot_json</a:Code>
+                <a:DataType>JSON</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Bản sao lưu toàn bộ dữ liệu JSON</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o239">
+                <a:ObjectID>{11BD6768-C7E5-4545-8376-D9A865D7C026}</a:ObjectID>
+                <a:Name>change_note</a:Name>
+                <a:Code>change_note</a:Code>
+                <a:DataType>VARCHAR</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+                <a:Comment>Ghi chú lý do cập nhật</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o240">
+                <a:ObjectID>{A767AB31-6A7D-45D8-804F-0F8BBB704D73}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Thời điểm tạo snapshot</a:Comment>
+              </o:EntityAttribute>
+            </c:Attributes>
+          </o:Entity>
+          <o:Entity Id="o241">
+            <a:ObjectID>{15BA318F-2F46-4FD5-8F57-F9EDF439E93A}</a:ObjectID>
+            <a:Name>QUIZ</a:Name>
+            <a:Code>QUIZ</a:Code>
+            <a:Comment>Bài kiểm tra trắc nghiệm</a:Comment>
+            <c:Attributes>
+              <o:EntityAttribute Id="o242">
+                <a:ObjectID>{D37F7080-933B-40DC-90F6-F2A525DDD5FE}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>UUID v4 định danh bài quiz</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o243">
+                <a:ObjectID>{51A1CC38-17BA-45F1-AC46-72066DE3619A}</a:ObjectID>
+                <a:Name>user_id</a:Name>
+                <a:Code>user_id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Tài khoản sở hữu bài thi</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o244">
+                <a:ObjectID>{3296AA12-A32C-4CAD-B673-9CF5BD83FA40}</a:ObjectID>
+                <a:Name>document_id</a:Name>
+                <a:Code>document_id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+                <a:Comment>Tài liệu nguồn liên quan</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o245">
+                <a:ObjectID>{AA124E9A-D47C-48AE-9325-8BD8000F76D9}</a:ObjectID>
+                <a:Name>title</a:Name>
+                <a:Code>title</a:Code>
+                <a:DataType>VARCHAR</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Tiêu đề bài trắc nghiệm</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o246">
+                <a:ObjectID>{A1013BBB-C459-4AFA-909A-3C4870B32B06}</a:ObjectID>
+                <a:Name>description</a:Name>
+                <a:Code>description</a:Code>
+                <a:DataType>TEXT</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+                <a:Comment>Mô tả bài trắc nghiệm</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o247">
+                <a:ObjectID>{B26351DC-34E2-454A-AE03-9FE5E4D9F5EF}</a:ObjectID>
+                <a:Name>time_limit_sec</a:Name>
+                <a:Code>time_limit_sec</a:Code>
+                <a:DataType>INT</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Thời gian làm bài tối đa (giây)</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o248">
+                <a:ObjectID>{B7423CC8-EE44-4D9D-A410-21DD380470FC}</a:ObjectID>
+                <a:Name>max_attempts</a:Name>
+                <a:Code>max_attempts</a:Code>
+                <a:DataType>TINYINT</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Số lần làm lại tối đa</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o249">
+                <a:ObjectID>{3E4C487D-798B-48F3-B76C-6ECAD18F8004}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Thời điểm tạo</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o250">
+                <a:ObjectID>{52F6CB74-F223-4014-861C-2A61CD1134A4}</a:ObjectID>
+                <a:Name>updated_at</a:Name>
+                <a:Code>updated_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Thời điểm cập nhật</a:Comment>
+              </o:EntityAttribute>
+            </c:Attributes>
+          </o:Entity>
+          <o:Entity Id="o251">
+            <a:ObjectID>{CCF7A205-EDBB-4EAE-9540-8204EF5BCCDC}</a:ObjectID>
+            <a:Name>QUIZ_QUESTION</a:Name>
+            <a:Code>QUIZ_QUESTION</a:Code>
+            <a:Comment>Câu hỏi trắc nghiệm</a:Comment>
+            <c:Attributes>
+              <o:EntityAttribute Id="o252">
+                <a:ObjectID>{E11F3C4E-B871-4641-A72F-2E1540CA1E91}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>UUID v4 định danh câu hỏi</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o253">
+                <a:ObjectID>{0D5C71AC-B635-4731-B912-550C46A73EAE}</a:ObjectID>
+                <a:Name>quiz_id</a:Name>
+                <a:Code>quiz_id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Bài quiz chứa câu hỏi</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o254">
+                <a:ObjectID>{2659A9EB-0C81-4C58-B1D4-946F693C1521}</a:ObjectID>
+                <a:Name>question_text</a:Name>
+                <a:Code>question_text</a:Code>
+                <a:DataType>TEXT</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Nội dung câu hỏi</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o255">
+                <a:ObjectID>{B7217186-DAAC-41AE-BCD9-AD2EC46D110D}</a:ObjectID>
+                <a:Name>order_index</a:Name>
+                <a:Code>order_index</a:Code>
+                <a:DataType>INT</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Thứ tự hiển thị câu hỏi</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o256">
+                <a:ObjectID>{D9545F09-D1E9-4098-8354-C7D184F06143}</a:ObjectID>
+                <a:Name>explanation</a:Name>
+                <a:Code>explanation</a:Code>
+                <a:DataType>TEXT</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+                <a:Comment>Giải thích đáp án chi tiết</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o257">
+                <a:ObjectID>{89BFF95F-5659-4F6F-94F9-991931CB54C4}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Thời điểm tạo</a:Comment>
+              </o:EntityAttribute>
+            </c:Attributes>
+          </o:Entity>
+          <o:Entity Id="o258">
+            <a:ObjectID>{16CB3A01-7105-4B85-AC24-B4DE25FBB09A}</a:ObjectID>
+            <a:Name>QUIZ_OPTION</a:Name>
+            <a:Code>QUIZ_OPTION</a:Code>
+            <a:Comment>Các đáp án lựa chọn trắc nghiệm</a:Comment>
+            <c:Attributes>
+              <o:EntityAttribute Id="o259">
+                <a:ObjectID>{F902345C-9F12-459C-B126-0EFD4AFB1CA6}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>UUID v4 định danh đáp án</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o260">
+                <a:ObjectID>{46AA0DA6-C2FF-45DA-9309-08DEE27C10A7}</a:ObjectID>
+                <a:Name>question_id</a:Name>
+                <a:Code>question_id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Câu hỏi chứa đáp án</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o261">
+                <a:ObjectID>{AD230C85-46A8-44DA-93D1-704C697C6EAC}</a:ObjectID>
+                <a:Name>option_text</a:Name>
+                <a:Code>option_text</a:Code>
+                <a:DataType>TEXT</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Nội dung đáp án</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o262">
+                <a:ObjectID>{8603EFE1-A9BC-4991-86FC-A9D6C11043B6}</a:ObjectID>
+                <a:Name>is_correct</a:Name>
+                <a:Code>is_correct</a:Code>
+                <a:DataType>BOOLEAN</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Cờ xác định đáp án đúng</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o263">
+                <a:ObjectID>{F6FA7149-6973-4AC1-BA0D-7CCC55F4C1C2}</a:ObjectID>
+                <a:Name>order_index</a:Name>
+                <a:Code>order_index</a:Code>
+                <a:DataType>TINYINT</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Thứ tự đáp án (1=A, 2=B, 3=C, 4=D)</a:Comment>
+              </o:EntityAttribute>
+            </c:Attributes>
+          </o:Entity>
+          <o:Entity Id="o264">
+            <a:ObjectID>{C70DC987-CA2D-4FE9-BE57-ED0147500FA9}</a:ObjectID>
+            <a:Name>QUIZ_ATTEMPT</a:Name>
+            <a:Code>QUIZ_ATTEMPT</a:Code>
+            <a:Comment>Lượt làm bài trắc nghiệm</a:Comment>
+            <c:Attributes>
+              <o:EntityAttribute Id="o265">
+                <a:ObjectID>{B2472F88-A76E-414F-BE6A-CE1815078E96}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>UUID v4 định danh lượt làm bài</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o266">
+                <a:ObjectID>{75811D18-60AF-436A-A8E3-F14CA023A4C0}</a:ObjectID>
+                <a:Name>quiz_id</a:Name>
+                <a:Code>quiz_id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Bài quiz được làm</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o267">
+                <a:ObjectID>{FC78A2D3-FCE0-44AD-AF09-405631FFB6F9}</a:ObjectID>
+                <a:Name>user_id</a:Name>
+                <a:Code>user_id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Tài khoản làm bài</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o268">
+                <a:ObjectID>{AD430F4F-0B8B-446C-A90A-91961FE63A81}</a:ObjectID>
+                <a:Name>score</a:Name>
+                <a:Code>score</a:Code>
+                <a:DataType>DECIMAL</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Điểm số đạt được (0.00-100.00)</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o269">
+                <a:ObjectID>{655DC1AD-C011-4F30-B983-DD424BF3BC58}</a:ObjectID>
+                <a:Name>correct_answers</a:Name>
+                <a:Code>correct_answers</a:Code>
+                <a:DataType>INT</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Số câu trả lời đúng</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o270">
+                <a:ObjectID>{99BE498A-2B29-4F27-9131-6548EADB40A5}</a:ObjectID>
+                <a:Name>total_questions</a:Name>
+                <a:Code>total_questions</a:Code>
+                <a:DataType>INT</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Tổng số câu hỏi</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o271">
+                <a:ObjectID>{F9AA4A47-97E9-4F74-B766-FB067B325A23}</a:ObjectID>
+                <a:Name>duration_sec</a:Name>
+                <a:Code>duration_sec</a:Code>
+                <a:DataType>INT</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Thời gian hoàn thành (giây)</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o272">
+                <a:ObjectID>{F231ACE2-8B64-4C0A-8149-6B8371959004}</a:ObjectID>
+                <a:Name>started_at</a:Name>
+                <a:Code>started_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Thời điểm bắt đầu làm bài</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o273">
+                <a:ObjectID>{17844796-877E-4C31-BF16-76C80BB5E10A}</a:ObjectID>
+                <a:Name>completed_at</a:Name>
+                <a:Code>completed_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Thời điểm nộp bài</a:Comment>
+              </o:EntityAttribute>
+            </c:Attributes>
+          </o:Entity>
+          <o:Entity Id="o274">
+            <a:ObjectID>{159B4D63-1A98-417E-AD50-4E2286504CF0}</a:ObjectID>
+            <a:Name>QUIZ_ATTEMPT_ANSWER</a:Name>
+            <a:Code>QUIZ_ATTEMPT_ANSWER</a:Code>
+            <a:Comment>Chi tiết câu trả lời từng lượt làm bài</a:Comment>
+            <c:Attributes>
+              <o:EntityAttribute Id="o275">
+                <a:ObjectID>{989D6CF1-D2C6-42A3-88DB-563AD8FA30B9}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>BIGINT</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Khóa chính tự tăng</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o276">
+                <a:ObjectID>{03FB6770-C45C-4ABE-88A6-03AF5D8CC2DC}</a:ObjectID>
+                <a:Name>attempt_id</a:Name>
+                <a:Code>attempt_id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Lượt làm bài liên quan</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o277">
+                <a:ObjectID>{1288D1C1-712F-4DFB-AADB-D146C31F0D5F}</a:ObjectID>
+                <a:Name>question_id</a:Name>
+                <a:Code>question_id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Câu hỏi được trả lời</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o278">
+                <a:ObjectID>{FE731410-F514-4D40-B3FD-7CB3524B2848}</a:ObjectID>
+                <a:Name>selected_option_id</a:Name>
+                <a:Code>selected_option_id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Đáp án đã chọn</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o279">
+                <a:ObjectID>{FC388F12-41A0-45F6-AD1E-4C820D7F6DAF}</a:ObjectID>
+                <a:Name>is_correct</a:Name>
+                <a:Code>is_correct</a:Code>
+                <a:DataType>BOOLEAN</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Kết quả câu trả lời</a:Comment>
+              </o:EntityAttribute>
+            </c:Attributes>
+          </o:Entity>
+          <o:Entity Id="o280">
+            <a:ObjectID>{5B1B2AC5-5A8D-4B8C-B369-B1587E765C3A}</a:ObjectID>
+            <a:Name>SHARED_LINK</a:Name>
+            <a:Code>SHARED_LINK</a:Code>
+            <a:Comment>Liên kết chia sẻ tài liệu ra ngoài</a:Comment>
+            <c:Attributes>
+              <o:EntityAttribute Id="o281">
+                <a:ObjectID>{2079A8E9-EFEC-46C1-A34E-F78ED3DDF029}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>UUID v4 định danh liên kết</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o282">
+                <a:ObjectID>{C6B3B507-52EE-419F-8AFB-27A26E7C1850}</a:ObjectID>
+                <a:Name>user_id</a:Name>
+                <a:Code>user_id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Tài khoản phát hành liên kết</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o283">
+                <a:ObjectID>{DEAB4423-6AFE-45B6-90AD-093BD86F9FD0}</a:ObjectID>
+                <a:Name>document_id</a:Name>
+                <a:Code>document_id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Tài liệu được chia sẻ</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o284">
+                <a:ObjectID>{678E0C12-A6B2-4B98-AE42-4C4C9C4B208D}</a:ObjectID>
+                <a:Name>title</a:Name>
+                <a:Code>title</a:Code>
+                <a:DataType>VARCHAR</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Tiêu đề hiển thị công khai</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o285">
+                <a:ObjectID>{FE4DB3FF-0D40-40C2-80B7-4C6FE60E7601}</a:ObjectID>
+                <a:Name>token_hash</a:Name>
+                <a:Code>token_hash</a:Code>
+                <a:DataType>CHAR</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Mã băm SHA-256 Share Token</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o286">
+                <a:ObjectID>{84AFDA8A-672E-4EDC-AC20-B4A785F5EA0C}</a:ObjectID>
+                <a:Name>password_hash</a:Name>
+                <a:Code>password_hash</a:Code>
+                <a:DataType>VARCHAR</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+                <a:Comment>Mã băm mật khẩu nếu có</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o287">
+                <a:ObjectID>{F299C203-515C-4927-A657-B7B3CC85B302}</a:ObjectID>
+                <a:Name>allow_download</a:Name>
+                <a:Code>allow_download</a:Code>
+                <a:DataType>BOOLEAN</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Cờ cho phép tải file gốc</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o288">
+                <a:ObjectID>{61454267-1119-4F7A-83FD-AF8BEE74662F}</a:ObjectID>
+                <a:Name>expires_at</a:Name>
+                <a:Code>expires_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+                <a:Comment>Thời điểm hết hạn</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o289">
+                <a:ObjectID>{92017E38-F0BF-42C2-AC15-EA111D62BFD6}</a:ObjectID>
+                <a:Name>views_count</a:Name>
+                <a:Code>views_count</a:Code>
+                <a:DataType>INT</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Số lượt truy cập</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o290">
+                <a:ObjectID>{A878AC2B-33D6-410B-A41E-AC97C50A1BBD}</a:ObjectID>
+                <a:Name>failed_pass_attempts</a:Name>
+                <a:Code>failed_pass_attempts</a:Code>
+                <a:DataType>INT</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Số lần nhập sai mật khẩu</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o291">
+                <a:ObjectID>{6A015AF0-CF3F-4D07-A02F-EA8EFF2C7C6D}</a:ObjectID>
+                <a:Name>pass_locked_until</a:Name>
+                <a:Code>pass_locked_until</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+                <a:Comment>Thời điểm khóa nếu brute-force</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o292">
+                <a:ObjectID>{47BB8199-6B7B-4797-BA0D-8BDEE69311DB}</a:ObjectID>
+                <a:Name>is_revoked</a:Name>
+                <a:Code>is_revoked</a:Code>
+                <a:DataType>BOOLEAN</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Cờ thu hồi liên kết tức thì</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o293">
+                <a:ObjectID>{B6DDBCE5-05B3-4848-B4A2-97F979A221EE}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Thời điểm tạo liên kết</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o294">
+                <a:ObjectID>{3A458EA5-A0AC-4DA9-A268-B69344AE0E86}</a:ObjectID>
+                <a:Name>updated_at</a:Name>
+                <a:Code>updated_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Thời điểm cập nhật</a:Comment>
+              </o:EntityAttribute>
+            </c:Attributes>
+          </o:Entity>
+          <o:Entity Id="o295">
+            <a:ObjectID>{1581084F-B4EC-4FC5-B34B-3F6111503F2A}</a:ObjectID>
+            <a:Name>SHARE_ACCESS_LOG</a:Name>
+            <a:Code>SHARE_ACCESS_LOG</a:Code>
+            <a:Comment>Nhật ký lượt truy cập liên kết chia sẻ</a:Comment>
+            <c:Attributes>
+              <o:EntityAttribute Id="o296">
+                <a:ObjectID>{5F160EB8-FC47-485B-B942-B380B6100D3C}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>BIGINT</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Khóa chính tự tăng</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o297">
+                <a:ObjectID>{DB77B1C1-1A78-447D-84AF-7991E74F53C3}</a:ObjectID>
+                <a:Name>shared_link_id</a:Name>
+                <a:Code>shared_link_id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Liên kết chia sẻ</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o298">
+                <a:ObjectID>{15BB6724-A42D-40A0-A15F-9BECADA5EA8D}</a:ObjectID>
+                <a:Name>action</a:Name>
+                <a:Code>action</a:Code>
+                <a:DataType>ENUM</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Hành vi truy cập</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o299">
+                <a:ObjectID>{12D52CE4-13A1-43B0-B963-309760BE6107}</a:ObjectID>
+                <a:Name>ip_address</a:Name>
+                <a:Code>ip_address</a:Code>
+                <a:DataType>VARCHAR</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Địa chỉ IPv4/IPv6</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o300">
+                <a:ObjectID>{6481978B-46CB-4B94-BC8F-C2A7995480C8}</a:ObjectID>
+                <a:Name>user_agent</a:Name>
+                <a:Code>user_agent</a:Code>
+                <a:DataType>VARCHAR</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Trình duyệt và thiết bị</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o301">
+                <a:ObjectID>{C00376FF-1297-49DF-A3E3-B81C1776F41C}</a:ObjectID>
+                <a:Name>accessed_at</a:Name>
+                <a:Code>accessed_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Thời điểm truy cập</a:Comment>
+              </o:EntityAttribute>
+            </c:Attributes>
+          </o:Entity>
+          <o:Entity Id="o302">
+            <a:ObjectID>{ECB11357-F29A-429E-858C-BCB06D9D843E}</a:ObjectID>
+            <a:Name>ACTIVITY_LOG</a:Name>
+            <a:Code>ACTIVITY_LOG</a:Code>
+            <a:Comment>Nhật ký hoạt động hệ thống (Audit Trail)</a:Comment>
+            <c:Attributes>
+              <o:EntityAttribute Id="o303">
+                <a:ObjectID>{F1DDDB9F-18A2-4DEB-8036-945DC0EC558E}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>BIGINT</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Khóa chính tự tăng</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o304">
+                <a:ObjectID>{8C0E98EA-9F61-45BB-BD0D-AAD1458E8021}</a:ObjectID>
+                <a:Name>user_id</a:Name>
+                <a:Code>user_id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Tài khoản phát sinh hành động</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o305">
+                <a:ObjectID>{2B4DDA0C-1462-4978-9636-E4342E6A8E74}</a:ObjectID>
+                <a:Name>event_type</a:Name>
+                <a:Code>event_type</a:Code>
+                <a:DataType>VARCHAR</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Mã loại sự kiện</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o306">
+                <a:ObjectID>{6E1405C6-4C23-40A5-92A9-D760630A5CB2}</a:ObjectID>
+                <a:Name>description</a:Name>
+                <a:Code>description</a:Code>
+                <a:DataType>VARCHAR</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Mô tả tóm tắt hành động</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o307">
+                <a:ObjectID>{93145166-E934-4C10-A494-F1003DECB391}</a:ObjectID>
+                <a:Name>entity_type</a:Name>
+                <a:Code>entity_type</a:Code>
+                <a:DataType>VARCHAR</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+                <a:Comment>Loại thực thể bị tác động</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o308">
+                <a:ObjectID>{74AD9517-81A0-42A2-8984-2D2FE577A589}</a:ObjectID>
+                <a:Name>entity_id</a:Name>
+                <a:Code>entity_id</a:Code>
+                <a:DataType>VARCHAR</a:DataType>
+                <a:Mandatory>0</a:Mandatory>
+                <a:Comment>ID thực thể bị tác động</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o309">
+                <a:ObjectID>{A02EE769-B704-41D5-A0BD-454AA199F8B7}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Thời điểm ghi nhận sự kiện</a:Comment>
+              </o:EntityAttribute>
+            </c:Attributes>
+          </o:Entity>
+          <o:Entity Id="o310">
+            <a:ObjectID>{203BE7E9-8E56-4829-B5BE-216D64BDE007}</a:ObjectID>
+            <a:Name>NOTIFICATION</a:Name>
+            <a:Code>NOTIFICATION</a:Code>
+            <a:Comment>Thông báo hệ thống gửi đến người dùng</a:Comment>
+            <c:Attributes>
+              <o:EntityAttribute Id="o311">
+                <a:ObjectID>{7449ABA1-10BB-4912-B7E5-223A938B23B4}</a:ObjectID>
+                <a:Name>id</a:Name>
+                <a:Code>id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>UUID v4 định danh thông báo</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o312">
+                <a:ObjectID>{9CC7D637-0C46-4BBA-A8BD-6DB37664E66C}</a:ObjectID>
+                <a:Name>user_id</a:Name>
+                <a:Code>user_id</a:Code>
+                <a:DataType>UUID</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Tài khoản nhận thông báo</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o313">
+                <a:ObjectID>{608E8C98-A4BC-47AC-9AFF-EE2DF3F7B961}</a:ObjectID>
+                <a:Name>title</a:Name>
+                <a:Code>title</a:Code>
+                <a:DataType>VARCHAR</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Tiêu đề thông báo</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o314">
+                <a:ObjectID>{071B0637-4150-49FC-8D9C-2A802221D9A7}</a:ObjectID>
+                <a:Name>message</a:Name>
+                <a:Code>message</a:Code>
+                <a:DataType>TEXT</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Nội dung chi tiết thông báo</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o315">
+                <a:ObjectID>{B20D10B2-615A-48B7-8285-E4893473F967}</a:ObjectID>
+                <a:Name>type</a:Name>
+                <a:Code>type</a:Code>
+                <a:DataType>ENUM</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Phân loại thông báo</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o316">
+                <a:ObjectID>{13408368-9361-4048-99C7-A27AE2CB4EF5}</a:ObjectID>
+                <a:Name>icon</a:Name>
+                <a:Code>icon</a:Code>
+                <a:DataType>VARCHAR</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Tên icon Lucide</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o317">
+                <a:ObjectID>{FB5FFBC0-24FF-450F-A235-2ACA2F5F8375}</a:ObjectID>
+                <a:Name>is_read</a:Name>
+                <a:Code>is_read</a:Code>
+                <a:DataType>BOOLEAN</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Cờ đánh dấu đã đọc</a:Comment>
+              </o:EntityAttribute>
+              <o:EntityAttribute Id="o318">
+                <a:ObjectID>{DCA13547-C513-404C-A118-57E6201F6874}</a:ObjectID>
+                <a:Name>created_at</a:Name>
+                <a:Code>created_at</a:Code>
+                <a:DataType>DATETIME</a:DataType>
+                <a:Mandatory>1</a:Mandatory>
+                <a:Comment>Thời điểm gửi thông báo</a:Comment>
+              </o:EntityAttribute>
+            </c:Attributes>
+          </o:Entity>
+        </c:Entities>
+        <c:Relationships>
+          <o:Relationship Id="o319">
+            <a:ObjectID>{29AD2F1C-E800-4058-81E4-834C55DFA9DA}</a:ObjectID>
+            <a:Name>fk_recovery_user</a:Name>
+            <a:Code>fk_recovery_user</a:Code>
+            <a:Cardinality>1,1</a:Cardinality>
+          </o:Relationship>
+          <o:Relationship Id="o320">
+            <a:ObjectID>{876A1267-F1E2-42CE-994E-68936B19F611}</a:ObjectID>
+            <a:Name>fk_sessions_user</a:Name>
+            <a:Code>fk_sessions_user</a:Code>
+            <a:Cardinality>1,1</a:Cardinality>
+          </o:Relationship>
+          <o:Relationship Id="o321">
+            <a:ObjectID>{CAAC7A5B-BD77-4546-A217-AB380FF31A6C}</a:ObjectID>
+            <a:Name>fk_folders_user</a:Name>
+            <a:Code>fk_folders_user</a:Code>
+            <a:Cardinality>1,1</a:Cardinality>
+          </o:Relationship>
+          <o:Relationship Id="o322">
+            <a:ObjectID>{781A4CE5-9435-4E76-A769-9AB383958A85}</a:ObjectID>
+            <a:Name>fk_folders_parent_composite</a:Name>
+            <a:Code>fk_folders_parent_composite</a:Code>
+            <a:Cardinality>0,1</a:Cardinality>
+          </o:Relationship>
+          <o:Relationship Id="o323">
+            <a:ObjectID>{9FBCA5EB-68AF-4469-A5B0-ECF92B32630E}</a:ObjectID>
+            <a:Name>fk_documents_user</a:Name>
+            <a:Code>fk_documents_user</a:Code>
+            <a:Cardinality>1,1</a:Cardinality>
+          </o:Relationship>
+          <o:Relationship Id="o324">
+            <a:ObjectID>{FB61D9A2-3C6D-4DDC-9315-EC8C337674B1}</a:ObjectID>
+            <a:Name>fk_documents_folder_composite</a:Name>
+            <a:Code>fk_documents_folder_composite</a:Code>
+            <a:Cardinality>0,1</a:Cardinality>
+          </o:Relationship>
+          <o:Relationship Id="o325">
+            <a:ObjectID>{2B9E04A1-8361-4E7B-9F28-77BF62A25DB9}</a:ObjectID>
+            <a:Name>fk_notes_user</a:Name>
+            <a:Code>fk_notes_user</a:Code>
+            <a:Cardinality>1,1</a:Cardinality>
+          </o:Relationship>
+          <o:Relationship Id="o326">
+            <a:ObjectID>{092B9E41-5B07-46F2-AAA4-0BB4822CFBCC}</a:ObjectID>
+            <a:Name>fk_notes_folder_composite</a:Name>
+            <a:Code>fk_notes_folder_composite</a:Code>
+            <a:Cardinality>0,1</a:Cardinality>
+          </o:Relationship>
+          <o:Relationship Id="o327">
+            <a:ObjectID>{7EB35845-644A-4F9E-A852-7CF042E6D0E0}</a:ObjectID>
+            <a:Name>fk_notes_document_composite</a:Name>
+            <a:Code>fk_notes_document_composite</a:Code>
+            <a:Cardinality>0,1</a:Cardinality>
+          </o:Relationship>
+          <o:Relationship Id="o328">
+            <a:ObjectID>{93218D58-32D0-499C-8434-DF5ACE3AFE92}</a:ObjectID>
+            <a:Name>fk_tags_user</a:Name>
+            <a:Code>fk_tags_user</a:Code>
+            <a:Cardinality>1,1</a:Cardinality>
+          </o:Relationship>
+          <o:Relationship Id="o329">
+            <a:ObjectID>{6C00EC01-FFD8-47FF-B84B-173A0B93238A}</a:ObjectID>
+            <a:Name>fk_doctags_document</a:Name>
+            <a:Code>fk_doctags_document</a:Code>
+            <a:Cardinality>1,1</a:Cardinality>
+          </o:Relationship>
+          <o:Relationship Id="o330">
+            <a:ObjectID>{09F51497-5C0A-46BE-AC0F-B308B65AA380}</a:ObjectID>
+            <a:Name>fk_doctags_tag</a:Name>
+            <a:Code>fk_doctags_tag</a:Code>
+            <a:Cardinality>1,1</a:Cardinality>
+          </o:Relationship>
+          <o:Relationship Id="o331">
+            <a:ObjectID>{A3929653-D572-43C7-AE01-73B33EA781B2}</a:ObjectID>
+            <a:Name>fk_collections_user</a:Name>
+            <a:Code>fk_collections_user</a:Code>
+            <a:Cardinality>1,1</a:Cardinality>
+          </o:Relationship>
+          <o:Relationship Id="o332">
+            <a:ObjectID>{CC56842F-343C-4731-9FF2-2352A47C100B}</a:ObjectID>
+            <a:Name>fk_coll_items_collection</a:Name>
+            <a:Code>fk_coll_items_collection</a:Code>
+            <a:Cardinality>1,1</a:Cardinality>
+          </o:Relationship>
+          <o:Relationship Id="o333">
+            <a:ObjectID>{CCF2AC95-944F-4EBC-9502-67FCEB4017DC}</a:ObjectID>
+            <a:Name>fk_coll_items_document</a:Name>
+            <a:Code>fk_coll_items_document</a:Code>
+            <a:Cardinality>0,1</a:Cardinality>
+          </o:Relationship>
+          <o:Relationship Id="o334">
+            <a:ObjectID>{70FFAC53-FF68-470C-9646-45FBD8601B86}</a:ObjectID>
+            <a:Name>fk_coll_items_note</a:Name>
+            <a:Code>fk_coll_items_note</a:Code>
+            <a:Cardinality>0,1</a:Cardinality>
+          </o:Relationship>
+          <o:Relationship Id="o335">
+            <a:ObjectID>{28E54ADB-3D22-476A-9DC6-1D2D1DBB3445}</a:ObjectID>
+            <a:Name>fk_coll_items_deck</a:Name>
+            <a:Code>fk_coll_items_deck</a:Code>
+            <a:Cardinality>0,1</a:Cardinality>
+          </o:Relationship>
+          <o:Relationship Id="o336">
+            <a:ObjectID>{E104C825-A5FD-4146-9BCF-5764F74D52E5}</a:ObjectID>
+            <a:Name>fk_archives_user</a:Name>
+            <a:Code>fk_archives_user</a:Code>
+            <a:Cardinality>1,1</a:Cardinality>
+          </o:Relationship>
+          <o:Relationship Id="o337">
+            <a:ObjectID>{C128D382-9217-4C13-9F46-98C306308AED}</a:ObjectID>
+            <a:Name>fk_archext_archive</a:Name>
+            <a:Code>fk_archext_archive</a:Code>
+            <a:Cardinality>1,1</a:Cardinality>
+          </o:Relationship>
+          <o:Relationship Id="o338">
+            <a:ObjectID>{04151B27-411D-4A18-BE2D-AD26EA6873B9}</a:ObjectID>
+            <a:Name>fk_archext_document</a:Name>
+            <a:Code>fk_archext_document</a:Code>
+            <a:Cardinality>1,1</a:Cardinality>
+          </o:Relationship>
+          <o:Relationship Id="o339">
+            <a:ObjectID>{399DC267-B7C7-4814-B7CB-C61848D8B1C1}</a:ObjectID>
+            <a:Name>fk_models_provider</a:Name>
+            <a:Code>fk_models_provider</a:Code>
+            <a:Cardinality>1,1</a:Cardinality>
+          </o:Relationship>
+          <o:Relationship Id="o340">
+            <a:ObjectID>{A9B6B87E-670E-4CC5-8EB7-E0F49E87E1EA}</a:ObjectID>
+            <a:Name>fk_aiconn_user</a:Name>
+            <a:Code>fk_aiconn_user</a:Code>
+            <a:Cardinality>1,1</a:Cardinality>
+          </o:Relationship>
+          <o:Relationship Id="o341">
+            <a:ObjectID>{ED9D7211-85C0-4CC3-8470-C1EC8DFB75A6}</a:ObjectID>
+            <a:Name>fk_aiconn_provider</a:Name>
+            <a:Code>fk_aiconn_provider</a:Code>
+            <a:Cardinality>1,1</a:Cardinality>
+          </o:Relationship>
+          <o:Relationship Id="o342">
+            <a:ObjectID>{4EA4E739-4141-4F37-83BB-4848D5A31780}</a:ObjectID>
+            <a:Name>fk_aiconn_model</a:Name>
+            <a:Code>fk_aiconn_model</a:Code>
+            <a:Cardinality>1,1</a:Cardinality>
+          </o:Relationship>
+          <o:Relationship Id="o343">
+            <a:ObjectID>{6AD9A972-DE4C-4249-921B-5F2E757AFDF2}</a:ObjectID>
+            <a:Name>fk_aiconv_user</a:Name>
+            <a:Code>fk_aiconv_user</a:Code>
+            <a:Cardinality>1,1</a:Cardinality>
+          </o:Relationship>
+          <o:Relationship Id="o344">
+            <a:ObjectID>{FB3286C9-DFF8-4476-B255-2F1A736AAE05}</a:ObjectID>
+            <a:Name>fk_aiconv_connection_composite</a:Name>
+            <a:Code>fk_aiconv_connection_composite</a:Code>
+            <a:Cardinality>0,1</a:Cardinality>
+          </o:Relationship>
+          <o:Relationship Id="o345">
+            <a:ObjectID>{7167F9E9-E08E-47C7-8245-FB7AB59E4C78}</a:ObjectID>
+            <a:Name>fk_aiconv_document_composite</a:Name>
+            <a:Code>fk_aiconv_document_composite</a:Code>
+            <a:Cardinality>0,1</a:Cardinality>
+          </o:Relationship>
+          <o:Relationship Id="o346">
+            <a:ObjectID>{15840511-5ADF-4C85-A2C8-C4242F404A88}</a:ObjectID>
+            <a:Name>fk_aimsg_conversation</a:Name>
+            <a:Code>fk_aimsg_conversation</a:Code>
+            <a:Cardinality>1,1</a:Cardinality>
+          </o:Relationship>
+          <o:Relationship Id="o347">
+            <a:ObjectID>{58D41291-5478-4513-9754-871D698F9EDD}</a:ObjectID>
+            <a:Name>fk_aitasks_user</a:Name>
+            <a:Code>fk_aitasks_user</a:Code>
+            <a:Cardinality>1,1</a:Cardinality>
+          </o:Relationship>
+          <o:Relationship Id="o348">
+            <a:ObjectID>{89909BD7-5A12-4E2B-9A63-6901B8A8CDFF}</a:ObjectID>
+            <a:Name>fk_aitasks_document_composite</a:Name>
+            <a:Code>fk_aitasks_document_composite</a:Code>
+            <a:Cardinality>0,1</a:Cardinality>
+          </o:Relationship>
+          <o:Relationship Id="o349">
+            <a:ObjectID>{850E39A3-BDE6-427C-9BFB-7744415D995C}</a:ObjectID>
+            <a:Name>fk_aitasks_connection_composite</a:Name>
+            <a:Code>fk_aitasks_connection_composite</a:Code>
+            <a:Cardinality>0,1</a:Cardinality>
+          </o:Relationship>
+          <o:Relationship Id="o350">
+            <a:ObjectID>{2ACA50F7-BA82-43C2-8C84-35297610635C}</a:ObjectID>
+            <a:Name>fk_tasklogs_task</a:Name>
+            <a:Code>fk_tasklogs_task</a:Code>
+            <a:Cardinality>1,1</a:Cardinality>
+          </o:Relationship>
+          <o:Relationship Id="o351">
+            <a:ObjectID>{596F31F8-FE6F-419D-B89A-3BB4E047E453}</a:ObjectID>
+            <a:Name>fk_aicontext_user</a:Name>
+            <a:Code>fk_aicontext_user</a:Code>
+            <a:Cardinality>1,1</a:Cardinality>
+          </o:Relationship>
+          <o:Relationship Id="o352">
+            <a:ObjectID>{B00DB228-5281-4791-A7C6-3DF091D179C6}</a:ObjectID>
+            <a:Name>fk_contextver_context</a:Name>
+            <a:Code>fk_contextver_context</a:Code>
+            <a:Cardinality>1,1</a:Cardinality>
+          </o:Relationship>
+          <o:Relationship Id="o353">
+            <a:ObjectID>{F0EE6AAC-562D-4981-B280-76FC2C1BA3B8}</a:ObjectID>
+            <a:Name>fk_decks_user</a:Name>
+            <a:Code>fk_decks_user</a:Code>
+            <a:Cardinality>1,1</a:Cardinality>
+          </o:Relationship>
+          <o:Relationship Id="o354">
+            <a:ObjectID>{687A3500-6AFF-4D1A-BF11-28C2F4D256E2}</a:ObjectID>
+            <a:Name>fk_decks_document_composite</a:Name>
+            <a:Code>fk_decks_document_composite</a:Code>
+            <a:Cardinality>0,1</a:Cardinality>
+          </o:Relationship>
+          <o:Relationship Id="o355">
+            <a:ObjectID>{33D69C11-C1E2-48EF-B59D-BB70233944B5}</a:ObjectID>
+            <a:Name>fk_cards_deck</a:Name>
+            <a:Code>fk_cards_deck</a:Code>
+            <a:Cardinality>1,1</a:Cardinality>
+          </o:Relationship>
+          <o:Relationship Id="o356">
+            <a:ObjectID>{B1C5ACA9-1109-4FFB-B5F7-4D77436B191C}</a:ObjectID>
+            <a:Name>fk_quizzes_user</a:Name>
+            <a:Code>fk_quizzes_user</a:Code>
+            <a:Cardinality>1,1</a:Cardinality>
+          </o:Relationship>
+          <o:Relationship Id="o357">
+            <a:ObjectID>{CDDD770C-76F3-46A5-A157-390EED713467}</a:ObjectID>
+            <a:Name>fk_quizzes_document_composite</a:Name>
+            <a:Code>fk_quizzes_document_composite</a:Code>
+            <a:Cardinality>0,1</a:Cardinality>
+          </o:Relationship>
+          <o:Relationship Id="o358">
+            <a:ObjectID>{C231015E-ED00-476C-9BDB-AD8918A662D3}</a:ObjectID>
+            <a:Name>fk_questions_quiz</a:Name>
+            <a:Code>fk_questions_quiz</a:Code>
+            <a:Cardinality>1,1</a:Cardinality>
+          </o:Relationship>
+          <o:Relationship Id="o359">
+            <a:ObjectID>{1861CA83-5500-44F0-8CFD-4EF8F722C367}</a:ObjectID>
+            <a:Name>fk_options_question</a:Name>
+            <a:Code>fk_options_question</a:Code>
+            <a:Cardinality>1,1</a:Cardinality>
+          </o:Relationship>
+          <o:Relationship Id="o360">
+            <a:ObjectID>{ACE86B22-AD2A-49B4-B7BA-BBDAC0504ABE}</a:ObjectID>
+            <a:Name>fk_attempts_quiz</a:Name>
+            <a:Code>fk_attempts_quiz</a:Code>
+            <a:Cardinality>1,1</a:Cardinality>
+          </o:Relationship>
+          <o:Relationship Id="o361">
+            <a:ObjectID>{6D4DD1AA-1557-4F1C-A41A-CF430F7EB812}</a:ObjectID>
+            <a:Name>fk_attempts_user</a:Name>
+            <a:Code>fk_attempts_user</a:Code>
+            <a:Cardinality>1,1</a:Cardinality>
+          </o:Relationship>
+          <o:Relationship Id="o362">
+            <a:ObjectID>{C67ADBF7-A9B5-4C9D-98F8-82AE6A3942E6}</a:ObjectID>
+            <a:Name>fk_ans_attempt</a:Name>
+            <a:Code>fk_ans_attempt</a:Code>
+            <a:Cardinality>1,1</a:Cardinality>
+          </o:Relationship>
+          <o:Relationship Id="o363">
+            <a:ObjectID>{4A69A6A8-5B0F-4BEA-BF8B-EAAAC4607CFF}</a:ObjectID>
+            <a:Name>fk_ans_question</a:Name>
+            <a:Code>fk_ans_question</a:Code>
+            <a:Cardinality>1,1</a:Cardinality>
+          </o:Relationship>
+          <o:Relationship Id="o364">
+            <a:ObjectID>{7422854E-FC2D-4AAC-A2F2-813CFB6BA97D}</a:ObjectID>
+            <a:Name>fk_ans_question_option_composite</a:Name>
+            <a:Code>fk_ans_question_option_composite</a:Code>
+            <a:Cardinality>1,1</a:Cardinality>
+          </o:Relationship>
+          <o:Relationship Id="o365">
+            <a:ObjectID>{578948E9-CA4D-43D6-ADAA-473B2BD9BD4C}</a:ObjectID>
+            <a:Name>fk_shared_user</a:Name>
+            <a:Code>fk_shared_user</a:Code>
+            <a:Cardinality>1,1</a:Cardinality>
+          </o:Relationship>
+          <o:Relationship Id="o366">
+            <a:ObjectID>{9CBC6BFE-BC13-4FE0-9871-61F4C328238F}</a:ObjectID>
+            <a:Name>fk_shared_document_composite</a:Name>
+            <a:Code>fk_shared_document_composite</a:Code>
+            <a:Cardinality>1,1</a:Cardinality>
+          </o:Relationship>
+          <o:Relationship Id="o367">
+            <a:ObjectID>{5883166A-0FD3-4EB9-B80F-B7E6CF9CC592}</a:ObjectID>
+            <a:Name>fk_sharelogs_link</a:Name>
+            <a:Code>fk_sharelogs_link</a:Code>
+            <a:Cardinality>1,1</a:Cardinality>
+          </o:Relationship>
+          <o:Relationship Id="o368">
+            <a:ObjectID>{F6876C32-D09B-4C02-A99B-5CCFB5018570}</a:ObjectID>
+            <a:Name>fk_actlogs_user</a:Name>
+            <a:Code>fk_actlogs_user</a:Code>
+            <a:Cardinality>1,1</a:Cardinality>
+          </o:Relationship>
+          <o:Relationship Id="o369">
+            <a:ObjectID>{0292DB39-3C62-4FF4-A304-632AD75A8286}</a:ObjectID>
+            <a:Name>fk_notif_user</a:Name>
+            <a:Code>fk_notif_user</a:Code>
+            <a:Cardinality>1,1</a:Cardinality>
+          </o:Relationship>
+        </c:Relationships>
+      </o:Model>
+    </c:Children>
+  </o:RootObject>
+</Model>
